@@ -1,0 +1,14 @@
+{
+  "SettingVal": {
+    "RetestTimes": 1,
+    "WaitRetest": 2000,
+    "DelayUPDOWN": 300,
+    "MaxNum": 40000,
+    "ShouldWarning": false,
+    "CurNum": 146,
+    "ComPort": "COM3",
+    "LogDirectory": "E:\\TNG\\LEDVISION\\MODELS",
+    "PersistEnabled": true,
+    "PersistFrames": 10
+  }
+}

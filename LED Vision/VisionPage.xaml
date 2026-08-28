@@ -1,0 +1,394 @@
+﻿<Page
+    x:Class="LEDVision.VisionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+    xmlns:local="clr-namespace:LEDVision"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vb="clr-namespace:LEDVision.Camera"
+    xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+
+    xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+    Title="VisionPage">
+    <Page.Resources>
+        <ResourceDictionary>
+            <TransformGroup x:Key="sharedTransform">
+                <ScaleTransform x:Name="scaleTransform" ScaleX="1.0" ScaleY="1.0" />
+                <TranslateTransform x:Name="translateTransform" X="0" Y="0" />
+            </TransformGroup>
+            <local:HueConverter x:Key="HueConverter" />
+            <local:SaturationConverter x:Key="SatConverter" />
+            <local:ValuePercentTo255Converter x:Key="ValueConverter" />
+
+            <!--  Style cho 1 hàng thông số camera trong Expander  -->
+            <Style x:Key="CamLbl" TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="11" />
+            </Style>
+            <Style x:Key="CamSld" TargetType="Slider">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="8,0" />
+                <Setter Property="IsSnapToTickEnabled" Value="True" />
+                <Setter Property="TickFrequency" Value="1" />
+            </Style>
+            <Style x:Key="CamVal" TargetType="TextBlock">
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="TextAlignment" Value="Right" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Width" Value="38" />
+            </Style>
+
+        </ResourceDictionary>
+
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <!--  Khung chứa CỐ ĐỊNH 680x906 (giữ đúng chỗ trên UI). Canvas đặt căn giữa ở ĐÚNG kích thước
+                      tỉ lệ ảnh thô (EnsureSurfaceSized) — KHÔNG scale, KHÔNG kéo giãn → không méo, stroke giữ nguyên.  -->
+                <Grid Width="680" Height="906">
+                    <Canvas x:Name="mainCanvas" Width="680" Height="906" HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="True" MouseWheel="Canvas_MouseWheel">
+                        <Image x:Name="cameraViewer" Width="680" Height="906" Stretch="Uniform" RenderTransform="{StaticResource sharedTransform}" />
+                        <vb:VisionBuilder  x:Name="builder"  Width="680" Height="906"  RenderTransform="{StaticResource sharedTransform}" />
+                    </Canvas>
+                </Grid>
+            </StackPanel>
+
+
+
+            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="360">
+
+
+
+
+                <!--  POWER / UP / DOWN: điều khiển thiết bị  -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6">
+                    <Button Width="44" Height="36" Margin="6,0" Background="Transparent" BorderThickness="0" Click="POWER_Btn_Click" Cursor="Hand" ToolTip="Power">
+                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="PowerOff" />
+                    </Button>
+                    <Button Width="44" Height="36" Margin="6,0" Background="Transparent" BorderThickness="0" Click="UP_Btn_Click" Cursor="Hand" ToolTip="Cylinder Up">
+                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="ArrowUp" />
+                    </Button>
+                    <Button Width="44" Height="36" Margin="6,0" Background="Transparent" BorderThickness="0" Click="DOWN_Btn_Click" Cursor="Hand" ToolTip="Cylinder Down">
+                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="ArrowDown" />
+                    </Button>
+                </StackPanel>
+
+                <!--  Tab: Camera Settings / Inspection Settings (chọn tab này thì ẩn tab kia)  -->
+                <TabControl x:Name="settingsTabs" Margin="0,0,0,8" SelectedIndex="1">
+                <TabItem Header="Camera Settings">
+                    <StackPanel x:Name="cameraSettingsPanel" Margin="6,6,6,2">
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                            <CheckBox Content="Auto Exp" Margin="0,0,12,0" VerticalContentAlignment="Center" IsChecked="{Binding AutoExposure}" />
+                            <CheckBox Content="Auto WB" Margin="0,0,12,0" VerticalContentAlignment="Center" IsChecked="{Binding AutoWhiteBalance}" />
+                            <CheckBox Content="Auto Focus" VerticalContentAlignment="Center" IsChecked="{Binding AutoFocus}" />
+                        </StackPanel>
+                        <Separator Margin="0,0,0,4" />
+
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Exposure" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="-13" Maximum="0" Value="{Binding Exposure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Exposure, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Gain" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="255" Value="{Binding Gain, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Gain, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Brightness" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="255" Value="{Binding Brightness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Brightness, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Contrast" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="255" Value="{Binding Contrast, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Contrast, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Saturation" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="255" Value="{Binding Saturation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Saturation, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Hue" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="-180" Maximum="180" Value="{Binding Hue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Hue, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Gamma" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="500" Value="{Binding Gamma, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Gamma, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Sharpness" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="255" Value="{Binding Sharpness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Sharpness, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Backlight" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="10" Value="{Binding BacklightComp, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding BacklightComp, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="White Bal." />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="2000" Maximum="6500" TickFrequency="10" Value="{Binding WhiteBalanceBlueU, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding WhiteBalanceBlueU, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Focus" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="0" Maximum="255" Value="{Binding Focus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Focus, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Zoom" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="100" Maximum="500" Value="{Binding Zoom, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Zoom, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Pan" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="-180" Maximum="180" Value="{Binding Pan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Pan, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+                        <Grid Margin="0,3">
+                            <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Tilt" />
+                            <Slider Grid.Column="1" Style="{StaticResource CamSld}" Minimum="-180" Maximum="180" Value="{Binding Tilt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Tilt, Mode=OneWay, StringFormat=F0}" />
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,6,0,2">
+                            <Button Content="Default" Click="ResetCameraDefault_Click" Width="90" Height="26" Margin="0,0,6,0" ToolTip="Reset thông số camera về mặc định" />
+                            <Button Content="Revert" Click="RevertCamera_Click" Width="90" Height="26" ToolTip="Restore parameters from the loaded model file" />
+                        </StackPanel>
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Inspection Settings">
+                    <StackPanel Margin="6,0,0,0">
+
+                    <!--  Công cụ: Group Select, Reset Zoom, Persist  -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,4,0,6">
+                        <Button x:Name="GroupSelectionBtn" Width="36" Height="32" Margin="4,0" BorderThickness="0" Click="GroupSelection_Click" Cursor="Hand" ToolTip="Group Select">
+                            <fa:IconImage x:Name="GroupSelectionIcon" Foreground="#323F4E" Icon="ObjectGroup" Width="20" />
+                        </Button>
+                        <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="ResetZoomBtn_Click" Cursor="Hand" ToolTip="Reset Zoom">
+                            <fa:IconImage Foreground="#323F4E" Icon="MagnifyingGlassMinus" Width="20" />
+                        </Button>
+                        <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="Chống nhấp nháy kết quả: giữ qua N khung hình liên tiếp mới đổi PASS/NG" />
+                        <TextBlock Text="frames" VerticalAlignment="Center" Margin="6,0,3,0" FontSize="11" />
+                        <TextBox x:Name="persistFramesBox" Width="36" VerticalAlignment="Center" TextAlignment="Center" Text="5" LostFocus="PersistFrames_Changed" />
+                    </StackPanel>
+
+                    <!--  Group Name  -->
+                    <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
+                        <TextBlock Text="Group Name" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
+                        <WrapPanel HorizontalAlignment="Center">
+                            <CheckBox x:Name="ledCheckBox" VerticalContentAlignment="Center" Content="4-LED" Checked="CheckBox_Checked" Margin="4" />
+                            <CheckBox x:Name="decimalPointCheckBox" VerticalContentAlignment="Center" Content="Decimal Point" Checked="CheckBox_Checked" Margin="4" />
+                            <CheckBox x:Name="segmentCheckBox" VerticalContentAlignment="Center" Content="7-Segment" Checked="CheckBox_Checked" Margin="4" />
+                            <CheckBox x:Name="defaultCheckBox" VerticalContentAlignment="Center" Content="None" Checked="CheckBox_Checked" Margin="4" IsChecked="True" />
+                        </WrapPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="ROI Size" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,4,0,2" />
+                        <StackPanel Margin="6,6,0,2">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Label Content="Radius" />
+                                    <TextBlock Width="50" Margin="0,5,0,0"  Text="{Binding ElementName=radiusSlider, Path=Value}" />
+                                </StackPanel>
+                                <Slider Margin="10, 0, 0, 0" VerticalAlignment="Center" x:Name="radiusSlider" Width="250" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="50" Minimum="5" TickFrequency="1" ValueChanged="cntRadiusSlider_ValueChanged"  />
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Area Threshold" />
+                                    <TextBlock Width="50" Margin="0,5,0,0" Text="{Binding ElementName=cntSizeSlider, Path=Value}" />
+                                </StackPanel>
+                                <Slider Margin="10, 0, 0, 0" VerticalAlignment="Center" x:Name="cntSizeSlider" Width="250" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="500" Minimum="0" TickFrequency="1" ValueChanged="cntSizeSlider_ValueChanged" />
+                            </StackPanel>
+                        </StackPanel>
+
+                    <TextBlock Text="HSV Range" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,8,0,2" />
+                    <StackPanel Margin="6 6">
+                        <StackPanel Orientation="Horizontal" Margin="5" >
+                            <Label Content="H" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGray" Width="28" Height="58" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+                            <StackPanel>
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Content="Set" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"  Margin="15 0 30 0"/>
+
+
+                                    <TextBox x:Name="HueMin"   PreviewMouseLeftButtonDown="TextBlockColor_Click" FontSize="13"  Width="40"   Padding="0 0"  VerticalAlignment="Center"  TextAlignment="Center"  >0</TextBox>
+                                    <Label Content="~" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" />
+                                    <TextBox x:Name="HueMax"   PreviewMouseLeftButtonDown="TextBlockColor_Click"  FontSize="13"  Width="40"   Padding="0 0"  VerticalAlignment="Center"  TextAlignment="Center" >179</TextBox>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 0"  VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3"  StrokeDashArray="1 1" Margin="35 0 30 0"/>
+                                    <TextBlock Width="120" x:Name="selectedROIHue" HorizontalAlignment="Center"  FontSize="13" VerticalAlignment="Center" TextAlignment="Center"  />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 0"  VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3" Margin="35 0 30 0"/>
+                                    <TextBlock Width="120" x:Name="fullROIHue" HorizontalAlignment="Center"  FontSize="13" VerticalAlignment="Center" TextAlignment="Center"  />
+                                </StackPanel>
+                            </StackPanel>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5" >
+                            <Label Content="S" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGray" Width="28" Height="58" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+
+                            <StackPanel>
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 0">
+
+                                    <Label Content="Set" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"  Margin="15 0 30 0"/>
+
+                                    <TextBox x:Name="SatMin"   PreviewMouseLeftButtonDown="TextBlockColor_Click"   FontSize="13" Width="40"   Padding="0 0" VerticalAlignment="Center"  TextAlignment="Center" >0</TextBox>
+                                    <Label Content="~" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" />
+                                    <TextBox x:Name="SatMax"   PreviewMouseLeftButtonDown="TextBlockColor_Click"   FontSize="13" Width="40"   Padding="0 0"  VerticalAlignment="Center"  TextAlignment="Center" >255</TextBox>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="5 0"  VerticalAlignment="Center" HorizontalAlignment="Left" >
+
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3"  StrokeDashArray="1 1" Margin="35 0 30 0"/>
+
+                                    <TextBlock Width="120" x:Name="selectedROISat" HorizontalAlignment="Center"  FontSize="13" VerticalAlignment="Center" TextAlignment="Center"  />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 0"  VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3" Margin="35 0 30 0"/>
+                                    <TextBlock Width="120" x:Name="fullROISat" HorizontalAlignment="Center"  FontSize="13" VerticalAlignment="Center" TextAlignment="Center"  />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="5" >
+                            <Label Content="V" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightGray" Width="28" Height="58" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+
+
+                            <StackPanel>
+
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Label Content="Set" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="13"  Margin="15 0 30 0"/>
+
+                                    <TextBox x:Name="ValueMin"   PreviewMouseLeftButtonDown="TextBlockColor_Click"  FontSize="13"  Width="40"   Padding="0 0" VerticalAlignment="Center"  TextAlignment="Center" >0</TextBox>
+                                    <Label Content="~" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="13" />
+                                    <TextBox x:Name="ValueMax"   PreviewMouseLeftButtonDown="TextBlockColor_Click"  FontSize="13"  Width="40"   Padding="0 0" VerticalAlignment="Center"  TextAlignment="Center" >255</TextBox>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="5 0"  VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3"  StrokeDashArray="1 1" Margin="35 0 30 0"/>
+                                    <TextBlock Width="120" x:Name="selectedROIValue" HorizontalAlignment="Center"  FontSize="13" VerticalAlignment="Center" TextAlignment="Center"  />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="5 0"  VerticalAlignment="Center" HorizontalAlignment="Left" >
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3" Margin="35 0 30 0"/>
+                                    <TextBlock Width="120" x:Name="fullROIValue" HorizontalAlignment="Center"  FontSize="13" VerticalAlignment="Center" TextAlignment="Center"  />
+                                </StackPanel>
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4">
+                            <StackPanel Orientation="Vertical" Margin="10 0"  VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+                                <Label  Content="All" HorizontalAlignment="Center" VerticalAlignment="Center"   />
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3" Margin="5 0"/>
+                                    <Rectangle Width="20" Height="20" Fill="#339af0"  />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Margin="10 0"  VerticalAlignment="Center" HorizontalAlignment="Center"   >
+                                <Label  Content="Selected" HorizontalAlignment="Center" VerticalAlignment="Center"   />
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Width="20" Height="20" Stroke="Black" StrokeThickness="3"  StrokeDashArray="1 1" Margin="5 0"/>
+                                    <Rectangle Width="20" Height="20" Fill="Purple"  />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!--  Đồ thị H/S/V chung chỗ với HSV: click tab để xem  -->
+                        <TabControl Margin="0,8,0,2" HorizontalAlignment="Stretch" Height="210">
+                            <TabItem>
+                                <TabItem.Header><TextBlock Text="H" FontSize="18" FontWeight="Bold" Padding="14,2" /></TabItem.Header>
+                                <lvc:CartesianChart Name="HueChart" Height="165" DisableAnimations="True" MouseDown="Chart_MouseDown" />
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header><TextBlock Text="S" FontSize="18" FontWeight="Bold" Padding="14,2" /></TabItem.Header>
+                                <lvc:CartesianChart Name="SatChart" Height="165" DisableAnimations="True" MouseDown="Chart_MouseDown" />
+                            </TabItem>
+                            <TabItem>
+                                <TabItem.Header><TextBlock Text="V" FontSize="18" FontWeight="Bold" Padding="14,2" /></TabItem.Header>
+                                <lvc:CartesianChart Name="ValueChart" Height="165" DisableAnimations="True" MouseDown="Chart_MouseDown" />
+                            </TabItem>
+                        </TabControl>
+                    </StackPanel>
+
+                    </StackPanel>
+                </TabItem>
+                </TabControl>
+
+                    <StackPanel  Margin="0 0"  Orientation="Vertical" Visibility="Collapsed" >
+                        <Label FontWeight="Bold" Content="HSV Mean" />
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Width="80" HorizontalAlignment="Center" VerticalAlignment="Center"  >
+                                <StackPanel Orientation="Horizontal" >
+                                    <Label Content="H =" />
+                                    <TextBlock  Margin="0,5,0,0"   Text="{Binding ElementName=colorpickerMain, Path=ColorState.HSV_H,  Converter={StaticResource HueConverter}}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="S =" />
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding ElementName=colorpickerMain, Path=ColorState.HSV_S, Converter={StaticResource SatConverter}}"  />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="V =" />
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding ElementName=colorpickerMain, Path=ColorState.HSV_V, Converter={StaticResource ValueConverter}}"  />
+                                </StackPanel>
+
+                            </StackPanel>
+
+                            <colorpicker:SquarePicker  x:Name="colorpickerMain"   Width="300"  Height="180" PickerType="HSV"  MouseUp="ColorpickerMain_ColorChanged" MouseWheel="ColorpickerMain_ColorChanged"  />
+
+                        </StackPanel>
+                    </StackPanel>
+
+
+
+
+            </StackPanel>
+            </ScrollViewer>
+            <StackPanel Orientation="Vertical"  Grid.Column="2">
+                <Image x:Name="adjustedImageViewer"  Width="680"  Height="906" Stretch="Uniform" />
+            </StackPanel>
+        </Grid>
+
+        
+
+    </Grid>
+</Page>

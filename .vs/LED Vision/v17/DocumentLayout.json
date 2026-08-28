@@ -1,0 +1,1093 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\TNG\\LEDVISION\\CodeBase_backup\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\autopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\autopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\visionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\visionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|e:\\tng\\ledvision\\codebase_backup\\led vision\\visionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\visionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\visiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\visiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\groupled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\groupled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\model\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\model\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\devicecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\devicecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\autopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\autopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\settingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\settingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\546399cc19f4f5508fa5587b924a31b0739e07c70af9c0d3565cd81263a2de15\\DependencyObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\settingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\settingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\histogramanalyzing.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\histogramanalyzing.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\camerasetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\camerasetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visiontester.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\visiontester.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\obj\\Debug\\SettingPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LED Vision\\obj\\Debug\\SettingPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\vision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\vision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\singleled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\singleled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\colorcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\colorcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\colorcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\colorcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visionbuilder.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\visionbuilder.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visiontester.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\visiontester.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\vision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\vision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\histogramanalyzing.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\histogramanalyzing.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visionbuilder.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\visionbuilder.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\hsvcolorspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\camera\\hsvcolorspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\dec0b7659fe707591b36d870559be7e88057de20c59522342468b2af8a9f4ab1\\UIElement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\2b4ab4eeae24d9e23d7e27edcfe4c14d3a1b31e2cfa2f541e5dd6812431c08be\\Dispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\autopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\autopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\model\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\model\\setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visiontester.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\visiontester.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visionbuilder.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\visionbuilder.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visionbuilder.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\visionbuilder.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\visiontester.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\visiontester.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\autopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\autopage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\settingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\settingpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\singleled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\singleled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\groupled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\groupled.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\camerasetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\camerasetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LEDVision||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\camera\\hsvcolorspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\camera\\hsvcolorspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\visiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\visiontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\devicecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\devicecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\settingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\settingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\visionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\visionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LEDVision.csproj|solutionrelative:led vision\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MinhNhatTNG\\[MOONSUNG]_LED_VISION\\SOURCE\\LED Vision\\obj\\Debug\\VisionPage.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\6c9b9ef50a986690ead2f9d2712a9865cfa6f9120da613ae88ff0e56fa8b27de\\KeyEventArgs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\working\\#projects\\09_[MOONSUNG]_LED_VISION\\MOONSUNG-LED.VISION-main\\LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\d81c7d6d452930d0b4e514ab40ac52065638ae8596524fbdb31c6c5f25eb84d7\\DispatcherOperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|E:\\TNG\\LEDVISION\\CodeBase_backup\\led vision\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{BF1D6181-A7E1-4601-B5E0-A8D111F3BF7A}|LED Vision\\LED Vision.csproj|solutionrelative:led vision\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\1300d66ecbfd4ed19328df16904ac32630fdd480c488ed3d55b6601f60be8cb0\\CulturePreservingExecutionContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\2a6ac60fd00efb558b79afd118b6af3ab0859d2743f1fff670a4f2dfceaa3c4c\\ExecutionContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\1d847b7e82bfe901ac149c40340171c1305559cec88e178a2ad5fcbe36176777\\VisualCollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ADMIN\\Desktop\\TNG\\MOONSUNG-LED.VISION-main\\LED Vision\\bin\\Debug\\settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\test3.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rgmin\\AppData\\Local\\Temp\\.vsdbgsrc\\c024da45c4f942570cfeee8aa470d526448de8dfc48c5200ded98a4f951fb5d3\\VideoCapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\rgmin\\AppData\\Local\\Temp\\.vsdbgsrc\\b8f27ae00b0ec660f71a8cc5b1452d6748db299c78c357e255f35f467b93caf7\\Page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Vision.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\Vision.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\Vision.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\Vision.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\Vision.cs",
+              "ViewState": "AgIAALEAAAAAAAAAAAAwwA8BAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T09:56:07.421Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VisionPage.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionPage.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\VisionPage.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionPage.xaml.cs",
+              "RelativeToolTip": "LED Vision\\VisionPage.xaml.cs",
+              "ViewState": "AgIAACkDAAAAAAAAAAAuwDsDAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T22:39:18.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "KeyEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\6c9b9ef50a986690ead2f9d2712a9865cfa6f9120da613ae88ff0e56fa8b27de\\KeyEventArgs.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\6c9b9ef50a986690ead2f9d2712a9865cfa6f9120da613ae88ff0e56fa8b27de\\KeyEventArgs.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T09:44:42.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutoPage.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\AutoPage.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml.cs",
+              "RelativeToolTip": "LED Vision\\AutoPage.xaml.cs",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAuwBUBAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:20:49.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml.cs",
+              "RelativeToolTip": "LED Vision\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAkwIMAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T01:37:11.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VisionTest.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionTest.cs",
+              "RelativeDocumentMoniker": "LED Vision\\VisionTest.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionTest.cs",
+              "RelativeToolTip": "LED Vision\\VisionTest.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:53:35.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Setting.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Setting.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Model\\Setting.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Setting.cs",
+              "RelativeToolTip": "LED Vision\\Model\\Setting.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAIAwwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:23:43.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Model.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Model.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Model\\Model.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Model.cs",
+              "RelativeToolTip": "LED Vision\\Model\\Model.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:23:43.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VisionPage.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionPage.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\VisionPage.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionPage.xaml",
+              "RelativeToolTip": "LED Vision\\VisionPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T09:02:33.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GroupLED.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\GroupLED.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\GroupLED.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\GroupLED.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\GroupLED.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAmwEEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:19:30.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\MainWindow.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml",
+              "RelativeToolTip": "LED Vision\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-03T01:37:00.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SettingPage.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\SettingPage.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml",
+              "RelativeToolTip": "LED Vision\\SettingPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-23T09:04:24.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AutoPage.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\AutoPage.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml",
+              "RelativeToolTip": "LED Vision\\AutoPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-09T09:57:48.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeviceControl.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\DeviceControl.cs",
+              "RelativeDocumentMoniker": "LED Vision\\DeviceControl.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\DeviceControl.cs",
+              "RelativeToolTip": "LED Vision\\DeviceControl.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:53:22.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "VisionBuilder.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAuwIsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:23:18.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ColorComponent.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\ColorComponent.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\ColorComponent.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\ColorComponent.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\ColorComponent.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwBMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T07:59:51.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HistogramAnalyzing.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\HistogramAnalyzing.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\HistogramAnalyzing.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\HistogramAnalyzing.xaml",
+              "RelativeToolTip": "LED Vision\\HistogramAnalyzing.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-03T04:32:47.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HistogramAnalyzing.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\HistogramAnalyzing.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\HistogramAnalyzing.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\HistogramAnalyzing.xaml.cs",
+              "RelativeToolTip": "LED Vision\\HistogramAnalyzing.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAnwCEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T03:22:01.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "HSVColorSpace.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\HSVColorSpace.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\HSVColorSpace.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\HSVColorSpace.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\HSVColorSpace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T01:36:04.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "VisionBuilder.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionBuilder.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionBuilder.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-02T07:23:15.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\App.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.xaml.cs",
+              "RelativeToolTip": "LED Vision\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwCQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T09:47:39.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "DispatcherOperation.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\d81c7d6d452930d0b4e514ab40ac52065638ae8596524fbdb31c6c5f25eb84d7\\DispatcherOperation.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\d81c7d6d452930d0b4e514ab40ac52065638ae8596524fbdb31c6c5f25eb84d7\\DispatcherOperation.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:53:07.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "ExecutionContext.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\2a6ac60fd00efb558b79afd118b6af3ab0859d2743f1fff670a4f2dfceaa3c4c\\ExecutionContext.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\2a6ac60fd00efb558b79afd118b6af3ab0859d2743f1fff670a4f2dfceaa3c4c\\ExecutionContext.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:53:10.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "settings.json",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\TNG\\MOONSUNG-LED.VISION-main\\LED Vision\\bin\\Debug\\settings.json",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\TNG\\MOONSUNG-LED.VISION-main\\LED Vision\\bin\\Debug\\settings.json",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-07T08:55:26.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "test3.json",
+              "DocumentMoniker": "D:\\test3.json",
+              "ToolTip": "D:\\test3.json",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-17T08:34:00.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "Page.cs",
+              "DocumentMoniker": "C:\\Users\\rgmin\\AppData\\Local\\Temp\\.vsdbgsrc\\b8f27ae00b0ec660f71a8cc5b1452d6748db299c78c357e255f35f467b93caf7\\Page.cs",
+              "ToolTip": "C:\\Users\\rgmin\\AppData\\Local\\Temp\\.vsdbgsrc\\b8f27ae00b0ec660f71a8cc5b1452d6748db299c78c357e255f35f467b93caf7\\Page.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T10:48:51.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "VideoCapture.cs",
+              "DocumentMoniker": "C:\\Users\\rgmin\\AppData\\Local\\Temp\\.vsdbgsrc\\c024da45c4f942570cfeee8aa470d526448de8dfc48c5200ded98a4f951fb5d3\\VideoCapture.cs",
+              "ToolTip": "C:\\Users\\rgmin\\AppData\\Local\\Temp\\.vsdbgsrc\\c024da45c4f942570cfeee8aa470d526448de8dfc48c5200ded98a4f951fb5d3\\VideoCapture.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T05:38:54.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SettingPage.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\SettingPage.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml.cs",
+              "RelativeToolTip": "LED Vision\\SettingPage.xaml.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAQwC0AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:19:44.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "VisionTester.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionTester.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionTester.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-02T07:23:15.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\App.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.xaml.cs",
+              "RelativeToolTip": "LED Vision\\App.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T12:03:26.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DependencyObject.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\546399cc19f4f5508fa5587b924a31b0739e07c70af9c0d3565cd81263a2de15\\DependencyObject.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\546399cc19f4f5508fa5587b924a31b0739e07c70af9c0d3565cd81263a2de15\\DependencyObject.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T02:35:36.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "VisionBuilder.g.cs",
+              "DocumentMoniker": "D:\\working\\#projects\\09_[MOONSUNG]_LED_VISION\\MOONSUNG-LED.VISION-main\\LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.cs",
+              "ToolTip": "D:\\working\\#projects\\09_[MOONSUNG]_LED_VISION\\MOONSUNG-LED.VISION-main\\LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T07:24:19.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SingleLED.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\SingleLED.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\SingleLED.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\SingleLED.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\SingleLED.cs",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAvwBgBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:19:30.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Vision.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\Vision.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\Vision.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\Vision.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\Vision.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAvwKgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:52:16.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "VisionBuilder.g.i.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.i.cs",
+              "RelativeDocumentMoniker": "LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.i.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.i.cs",
+              "RelativeToolTip": "LED Vision\\obj\\Debug\\Camera\\VisionBuilder.g.i.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T13:04:21.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "VisionPage.g.cs",
+              "DocumentMoniker": "D:\\MinhNhatTNG\\[MOONSUNG]_LED_VISION\\SOURCE\\LED Vision\\obj\\Debug\\VisionPage.g.cs",
+              "ToolTip": "D:\\MinhNhatTNG\\[MOONSUNG]_LED_VISION\\SOURCE\\LED Vision\\obj\\Debug\\VisionPage.g.cs",
+              "ViewState": "AgIAABwBAAAAAAAAAAAMwC4BAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:33:32.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "CulturePreservingExecutionContext.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\1300d66ecbfd4ed19328df16904ac32630fdd480c488ed3d55b6601f60be8cb0\\CulturePreservingExecutionContext.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\1300d66ecbfd4ed19328df16904ac32630fdd480c488ed3d55b6601f60be8cb0\\CulturePreservingExecutionContext.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:53:09.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "VisualCollection.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\1d847b7e82bfe901ac149c40340171c1305559cec88e178a2ad5fcbe36176777\\VisualCollection.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\1d847b7e82bfe901ac149c40340171c1305559cec88e178a2ad5fcbe36176777\\VisualCollection.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:47:58.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Dispatcher.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\2b4ab4eeae24d9e23d7e27edcfe4c14d3a1b31e2cfa2f541e5dd6812431c08be\\Dispatcher.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\2b4ab4eeae24d9e23d7e27edcfe4c14d3a1b31e2cfa2f541e5dd6812431c08be\\Dispatcher.cs [Read Only]",
+              "ViewState": "AgIAAI0BAAAAAAAAAAAAAKABAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T12:55:49.445Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UIElement.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\dec0b7659fe707591b36d870559be7e88057de20c59522342468b2af8a9f4ab1\\UIElement.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\.vsdbgsrc\\dec0b7659fe707591b36d870559be7e88057de20c59522342468b2af8a9f4ab1\\UIElement.cs [Read Only]",
+              "ViewState": "AgIAAM0DAAAAAAAAAAAAAOADAAADAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T12:56:36.386Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SettingPage.g.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\obj\\Debug\\SettingPage.g.cs",
+              "RelativeDocumentMoniker": "LED Vision\\obj\\Debug\\SettingPage.g.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\obj\\Debug\\SettingPage.g.cs",
+              "RelativeToolTip": "LED Vision\\obj\\Debug\\SettingPage.g.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAvwIAAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-24T02:33:07.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AutoPage.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\AutoPage.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml",
+              "RelativeToolTip": "LED Vision\\AutoPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T05:36:28.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Utility.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Utility.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Utility.cs",
+              "RelativeToolTip": "LED Vision\\Utility.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T10:53:32.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml.cs",
+              "RelativeToolTip": "LED Vision\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAAAALkAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T08:48:02.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\MainWindow.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\MainWindow.xaml",
+              "RelativeToolTip": "LED Vision\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T06:09:23.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CameraSetting.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\CameraSetting.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\CameraSetting.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\CameraSetting.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\CameraSetting.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAEwB8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:19:28.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "VisionPage.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionPage.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\VisionPage.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionPage.xaml",
+              "RelativeToolTip": "LED Vision\\VisionPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-25T05:03:03.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "LEDVision",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\LEDVision.csproj",
+              "RelativeDocumentMoniker": "LED Vision\\LEDVision.csproj",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\LEDVision.csproj",
+              "RelativeToolTip": "LED Vision\\LEDVision.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-24T15:32:05.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "DeviceControl.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\DeviceControl.cs",
+              "RelativeDocumentMoniker": "LED Vision\\DeviceControl.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\DeviceControl.cs",
+              "RelativeToolTip": "LED Vision\\DeviceControl.cs",
+              "ViewState": "AgIAAP0AAAAAAAAAAAAAAEoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T08:11:43.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Setting.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Setting.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Model\\Setting.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Setting.cs",
+              "RelativeToolTip": "LED Vision\\Model\\Setting.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAIAwwDcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T17:24:51.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "VisionTester.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionTester.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionTester.xaml.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwDIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:14:48.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Model.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Model.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Model\\Model.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Model\\Model.cs",
+              "RelativeToolTip": "LED Vision\\Model\\Model.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAArwBcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T05:30:15.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VisionTester.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionTester.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionTester.xaml.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T07:23:32.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "VisionBuilder.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionBuilder.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionBuilder.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-03T09:21:46.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "VisionTester.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionTester.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionTester.xaml",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionTester.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-31T02:57:41.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "VisionBuilder.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\VisionBuilder.xaml.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAIsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T09:31:42.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "SettingPage.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\SettingPage.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml.cs",
+              "RelativeToolTip": "LED Vision\\SettingPage.xaml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAQwFkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T07:36:30.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "SingleLED.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\SingleLED.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\SingleLED.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\SingleLED.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\SingleLED.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T04:18:08.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AutoPage.xaml.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml.cs",
+              "RelativeDocumentMoniker": "LED Vision\\AutoPage.xaml.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\AutoPage.xaml.cs",
+              "RelativeToolTip": "LED Vision\\AutoPage.xaml.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAcwMkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T11:54:08.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "GroupLED.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\GroupLED.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\GroupLED.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\GroupLED.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\GroupLED.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T04:16:20.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CameraSetting.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\CameraSetting.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\CameraSetting.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\CameraSetting.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\CameraSetting.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwCMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T08:06:22.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Utility.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Utility.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Utility.cs",
+              "RelativeToolTip": "LED Vision\\Utility.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T07:30:01.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "VisionTest.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionTest.cs",
+              "RelativeDocumentMoniker": "LED Vision\\VisionTest.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\VisionTest.cs",
+              "RelativeToolTip": "LED Vision\\VisionTest.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAawGoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T08:44:46.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "HSVColorSpace.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\HSVColorSpace.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\HSVColorSpace.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\HSVColorSpace.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\HSVColorSpace.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T05:49:19.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "SettingPage.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\SettingPage.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\SettingPage.xaml",
+              "RelativeToolTip": "LED Vision\\SettingPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-29T09:45:50.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "packages.config",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\packages.config",
+              "RelativeDocumentMoniker": "LED Vision\\packages.config",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\packages.config",
+              "RelativeToolTip": "LED Vision\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-12-03T18:48:14.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "packages.config",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\packages.config",
+              "RelativeDocumentMoniker": "LED Vision\\packages.config",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\packages.config",
+              "RelativeToolTip": "LED Vision\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-05-23T08:02:33.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ColorComponent.cs",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\ColorComponent.cs",
+              "RelativeDocumentMoniker": "LED Vision\\Camera\\ColorComponent.cs",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\Camera\\ColorComponent.cs",
+              "RelativeToolTip": "LED Vision\\Camera\\ColorComponent.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T05:53:14.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "App.xaml",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.xaml",
+              "RelativeDocumentMoniker": "LED Vision\\App.xaml",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.xaml",
+              "RelativeToolTip": "LED Vision\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-29T10:39:36.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "App.config",
+              "DocumentMoniker": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.config",
+              "RelativeDocumentMoniker": "LED Vision\\App.config",
+              "ToolTip": "E:\\TNG\\LEDVISION\\CodeBase_backup\\LED Vision\\App.config",
+              "RelativeToolTip": "LED Vision\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-25T16:52:17.007Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

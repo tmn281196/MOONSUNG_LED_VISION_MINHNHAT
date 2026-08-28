@@ -1,0 +1,959 @@
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\AutoPage.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\MainWindow.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\SettingPage.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\VisionPage.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\App.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\LED Vision.exe.config
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\LED Vision.exe
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\LED Vision.pdb
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\DirectShowLib.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Buffers.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Memory.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Text.Json.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Buffers.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Memory.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Text.Json.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\AutoPage.baml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\MainWindow.baml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\SettingPage.baml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\VisionPage.baml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.g.resources
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.exe
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\obj\Debug\LED Vision.pdb
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\MOONSUNG\LED VISION\LED Vision\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\App.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Data.SqlClient.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Downloads\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\App.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ADMIN\Desktop\TNG\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe.config
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.pdb
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.pdb
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\App.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.g.resources
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.exe
+D:\working\#projects\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\App.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe.config
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.Models.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.dll
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.pdb
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.xml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\App.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_Content.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.baml
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.g.resources
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.exe
+E:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe.config
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.exe
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LED Vision.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Core.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Azure.Identity.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Buffers.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ClientModel.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Text.Json.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\App.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\AutoPage.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\MainWindow.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\SettingPage.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\VisionPage.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.g.resources
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.exe
+D:\MinhNhatTNG\09_[MOONSUNG]_LED_VISION\MOONSUNG-LED.VISION-main\LED Vision\obj\Debug\LED Vision.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LED Vision.exe.config
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LED Vision.exe
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LED Vision.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Core.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Identity.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\ColorPicker.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\DirectShowLib.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Buffers.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ClientModel.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Json.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Core.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Identity.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Buffers.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ClientModel.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Json.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.csproj.AssemblyReference.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\AutoPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\MainWindow.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\SettingPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\VisionPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\App.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\AutoPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\MainWindow.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\SettingPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\VisionPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.g.resources
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.csproj.GenerateResource.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.csproj.CoreCompileInputs.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.csproj.Up2Date
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.exe
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.pdb

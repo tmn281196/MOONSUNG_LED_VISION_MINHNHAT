@@ -1,0 +1,108 @@
+{
+  "Vision": {
+    "FourLED": {
+      "Colection": [
+        {
+          "RoiRadius": 32,
+          "ResultFinal": 1,
+          "RoiPoint": {
+            "X": 520.74999999999989,
+            "Y": 145.55428571428567
+          }
+        },
+        {
+          "RoiRadius": 32,
+          "ResultFinal": 1,
+          "RoiPoint": {
+            "X": 121.74999999999989,
+            "Y": 730.5542857142857
+          }
+        },
+        {
+          "RoiRadius": 32,
+          "ResultFinal": 1,
+          "RoiPoint": {
+            "X": 201.74999999999989,
+            "Y": 499.5542857142857
+          }
+        }
+      ],
+      "ContourArea": 0,
+      "RoiRadius": 32,
+      "HSV": {
+        "HUE": {
+          "Max": 112,
+          "Min": 105
+        },
+        "SAT": {
+          "Max": 255,
+          "Min": 0
+        },
+        "VAL": {
+          "Max": 255,
+          "Min": 0
+        }
+      },
+      "MaintainState": true
+    },
+    "SevenSEG": {
+      "Colection": [],
+      "ContourArea": 0,
+      "RoiRadius": 8,
+      "HSV": {
+        "HUE": {
+          "Max": 179,
+          "Min": 0
+        },
+        "SAT": {
+          "Max": 255,
+          "Min": 0
+        },
+        "VAL": {
+          "Max": 255,
+          "Min": 0
+        }
+      },
+      "MaintainState": true
+    },
+    "DecimalPoint": {
+      "Colection": [],
+      "ContourArea": 0,
+      "RoiRadius": 8,
+      "HSV": {
+        "HUE": {
+          "Max": 179,
+          "Min": 0
+        },
+        "SAT": {
+          "Max": 255,
+          "Min": 0
+        },
+        "VAL": {
+          "Max": 255,
+          "Min": 0
+        }
+      },
+      "MaintainState": true
+    }
+  },
+  "CameraSettingValues": {
+    "Brightness": 111,
+    "Contrast": 51,
+    "Saturation": 255,
+    "Hue": 0,
+    "Sharpness": 255,
+    "WhiteBalanceBlueU": 2990,
+    "BacklightComp": 0,
+    "Gain": 0,
+    "Zoom": 129,
+    "Focus": 20,
+    "Exposure": -3,
+    "Pan": 0,
+    "Tilt": 0,
+    "Gamma": 100,
+    "AutoExposure": false,
+    "AutoWhiteBalance": false,
+    "AutoFocus": false
+  }
+}

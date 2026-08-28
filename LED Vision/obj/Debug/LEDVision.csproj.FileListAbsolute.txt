@@ -1,0 +1,1924 @@
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LED Vision.exe.config
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LED Vision.exe
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LED Vision.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Core.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Identity.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\ColorPicker.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\DirectShowLib.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Buffers.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ClientModel.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Json.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Core.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Azure.Identity.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Buffers.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ClientModel.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Text.Json.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\AutoPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\MainWindow.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\SettingPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\VisionPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\App.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\AutoPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\MainWindow.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\SettingPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\VisionPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.g.resources
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.exe
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\SOURCE\LED Vision\obj\Debug\LED Vision.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe.config
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\App.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.g.resources
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.exe
+D:\MinhNhatTNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe.config
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\App.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.g.resources
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.exe
+D:\TNG\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe.config
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\App.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.g.resources
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.exe
+D:\TNG\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\App.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\TNG-Project\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+D:\#focus.projects\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\ADMIN\Desktop\[MOONSUNG]_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+E:\MSI\MOONSUNG_LED_VISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\TNG RD\Desktop\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe.config
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+C:\Users\TNG RD\Desktop\TMN\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+D:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe.config
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe.config
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.exe
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LED Vision.pdb
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\ColorPicker.Models.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.dll
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Core.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Azure.Identity.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\DirectShowLib.pdb
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.pdb
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Buffers.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ClientModel.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.pdb
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Drawing.Common.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Memory.Data.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.AccessControl.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Text.Json.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\bin\Debug\System.ValueTuple.xml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\App.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_Content.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\AutoPage.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\Camera\VisionTester.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\MainWindow.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\SettingPage.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\VisionPage.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\HistogramAnalyzing.baml
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.g.resources
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.exe
+E:\TNG\LEDVISION\CodeBase_backup\LED Vision\obj\Debug\LED Vision.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LED Vision.exe.config
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LED Vision.exe
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LED Vision.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Azure.Core.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Azure.Identity.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\ColorPicker.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\DirectShowLib.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LiveCharts.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Buffers.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.ClientModel.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Memory.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Text.Json.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Azure.Core.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Azure.Identity.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LiveCharts.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LiveCharts.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Buffers.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.ClientModel.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Memory.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Text.Json.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\AutoPage.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\MainWindow.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\SettingPage.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\VisionPage.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\App.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\AutoPage.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\MainWindow.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\SettingPage.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\VisionPage.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED Vision.g.resources
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED Vision.exe
+D:\1ABC\TNG\#LATEST\LEDVISION\C#\LED Vision\obj\Debug\LED Vision.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\dll\x86\OpenCvSharpExtern.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\dll\x86\opencv_videoio_ffmpeg4100.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\dll\x64\OpenCvSharpExtern.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\dll\x64\opencv_videoio_ffmpeg4100_64.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LED Vision.exe.config
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LED Vision.exe
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LED Vision.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Azure.Core.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Azure.Identity.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\ColorPicker.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\ColorPicker.Models.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\DirectShowLib.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\FontAwesome.Sharp.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\FontAwesome.Sharp.Pro.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LiveCharts.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LiveCharts.Wpf.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Options.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Identity.Client.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\OpenCvSharp.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\OpenCvSharp.Extensions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Buffers.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.ClientModel.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Drawing.Common.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Memory.Data.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Memory.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Numerics.Vectors.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.AccessControl.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.Principal.Windows.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Text.Encodings.Web.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Text.Json.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.ValueTuple.dll
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Azure.Core.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Azure.Identity.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\DirectShowLib.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LiveCharts.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LiveCharts.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LiveCharts.Wpf.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\LiveCharts.Wpf.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Bcl.Cryptography.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Options.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Identity.Client.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\OpenCvSharp.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\OpenCvSharp.Extensions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\OpenCvSharp.WpfExtensions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Buffers.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.ClientModel.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Drawing.Common.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Drawing.Common.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Memory.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Memory.Data.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Numerics.Vectors.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.AccessControl.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Security.Principal.Windows.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Text.Encodings.Web.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Text.Json.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\bin\Debug\System.ValueTuple.xml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LEDVision.csproj.AssemblyReference.cache
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\AutoPage.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\Camera\VisionBuilder.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\Camera\VisionTester.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\MainWindow.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\SettingPage.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\VisionPage.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\HistogramAnalyzing.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\App.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED Vision_Content.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED Vision_MarkupCompile.cache
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED Vision_MarkupCompile.lref
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\AutoPage.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\Camera\VisionBuilder.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\Camera\VisionTester.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\MainWindow.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\SettingPage.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\VisionPage.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\HistogramAnalyzing.baml
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED Vision.g.resources
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED_Vision.Properties.Resources.resources
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LEDVision.csproj.GenerateResource.cache
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LEDVision.csproj.CoreCompileInputs.cache
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LEDVision.csproj.Up2Date
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED Vision.exe
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\LED Vision.pdb
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\CameraSettingWindow.g.cs
+D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\CameraSettingWindow.baml
