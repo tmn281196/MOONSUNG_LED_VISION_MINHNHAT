@@ -290,13 +290,13 @@
                         <!--  Dịch ảnh (digital pan/tilt). Ảnh trong app đã xoay 90° CCW nên: NGANG = Tilt, DỌC = Pan.
                               Min/Max của mọi slider được đọc lại từ camera khi camera mở (ApplyCameraRanges).  -->
                         <TextBlock Text="Image shift (needs Zoom &gt; 100)" FontSize="11" FontWeight="Bold" Margin="0,0,0,2" />
-                        <Grid Margin="0,3" ToolTip="Dịch ảnh theo chiều NGANG (camera Tilt, vì ảnh đã xoay 90°). Chỉ có tác dụng khi Zoom &gt; 100.">
+                        <Grid Margin="0,3" ToolTip="Shift the image horizontally (camera Tilt, because the frame is rotated 90°). Only works when Zoom &gt; 100.">
                             <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Shift ↔" />
                             <Slider x:Name="sldShiftH" Grid.Column="1" Style="{StaticResource CamSld}" Minimum="-10" Maximum="10" Value="{Binding Tilt, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                             <TextBlock Grid.Column="2" Style="{StaticResource CamVal}" Text="{Binding Tilt, Mode=OneWay, StringFormat=F0}" />
                         </Grid>
-                        <Grid Margin="0,3" ToolTip="Dịch ảnh theo chiều DỌC (camera Pan, vì ảnh đã xoay 90°). Chỉ có tác dụng khi Zoom &gt; 100.">
+                        <Grid Margin="0,3" ToolTip="Shift the image vertically (camera Pan, because the frame is rotated 90°). Only works when Zoom &gt; 100.">
                             <Grid.ColumnDefinitions><ColumnDefinition Width="80" /><ColumnDefinition Width="*" /><ColumnDefinition Width="Auto" /></Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Style="{StaticResource CamLbl}" Text="Shift ↕" />
                             <Slider x:Name="sldShiftV" Grid.Column="1" Style="{StaticResource CamSld}" Minimum="-10" Maximum="10" Value="{Binding Pan, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
@@ -304,9 +304,9 @@
                         </Grid>
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,6,0,2">
-                            <Button Content="Sync" Click="SyncCamera_Click" Width="60" Height="26" Margin="0,0,6,0" ToolTip="Đọc lại thông số ĐANG DÙNG của camera lên các slider" />
-                            <Button Content="Driver..." Click="DriverDialog_Click" Width="64" Height="26" Margin="0,0,6,0" ToolTip="Mở hộp thoại thuộc tính của driver camera (Logitech Properties); đóng xong app tự đọc lại" />
-                            <Button Content="Default" Click="ResetCameraDefault_Click" Width="70" Height="26" Margin="0,0,6,0" ToolTip="Reset thông số camera về mặc định" />
+                            <Button Content="Sync" Click="SyncCamera_Click" Width="60" Height="26" Margin="0,0,6,0" ToolTip="Read the values the camera is currently using back into the sliders" />
+                            <Button Content="Driver..." Click="DriverDialog_Click" Width="64" Height="26" Margin="0,0,6,0" ToolTip="Open the camera driver properties dialog (Logitech); values are read back when it closes" />
+                            <Button Content="Default" Click="ResetCameraDefault_Click" Width="70" Height="26" Margin="0,0,6,0" ToolTip="Reset camera parameters to defaults" />
                             <Button Content="Revert" Click="RevertCamera_Click" Width="70" Height="26" ToolTip="Restore parameters from the loaded model file" />
                         </StackPanel>
                     </StackPanel>
@@ -326,10 +326,10 @@
                         <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="RoiHelp_Click" Cursor="Hand" ToolTip="Help: how to draw / move / copy / paste ROI (EN / TH)">
                             <fa:IconImage Foreground="#323F4E" Icon="CircleQuestion" Width="20" />
                         </Button>
-                        <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="Pixel phải sáng LIÊN TỤC đủ thời gian này mới được tính là sáng (lọc chớp / nhiễu). Tính bằng ms, tự đổi ra số khung theo nhịp của từng trang." />
+                        <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="A pixel counts as lit only after staying lit for this time (filters flicker / noise). In ms; converted to frames per page." />
                         <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="6,0,0,0" LostFocus="PersistFrames_Changed" />
                         <TextBlock Text="ms" VerticalAlignment="Center" Margin="3,0,0,0" FontSize="11" />
-                        <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#6B7A8C" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Bộ đếm persist đang tích lũy, kết quả chưa ổn định" />
+                        <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#6B7A8C" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Persist counters are still accumulating; the result is not stable yet" />
                     </StackPanel>
 
                     <!--  Group Name  -->
@@ -426,15 +426,15 @@
 
                             <!--  Tiêu đề cột (kèm chú giải)  -->
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="Set" Style="{StaticResource HsvHdr}" />
-                            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="ROI đang chọn (viền đứt trên ảnh)">
+                            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Selected ROI (dashed outline on the image)">
                                 <Ellipse Width="12" Height="12" Stroke="#F5A623" StrokeThickness="2" StrokeDashArray="1 1" Margin="0,0,4,0" />
                                 <TextBlock Text="Selected" Style="{StaticResource HsvHdr}" />
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Các ROI chưa chọn trong nhóm">
+                            <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Unselected ROIs of the group">
                                 <Ellipse Width="12" Height="12" Stroke="#007ACC" StrokeThickness="2" Margin="0,0,4,0" />
                                 <TextBlock Text="Unselected" Style="{StaticResource HsvHdr}" />
                             </StackPanel>
-                            <TextBlock Grid.Row="0" Grid.Column="4" Text="All" Style="{StaticResource HsvHdr}" ToolTip="Tất cả ROI trong nhóm" />
+                            <TextBlock Grid.Row="0" Grid.Column="4" Text="All" Style="{StaticResource HsvHdr}" ToolTip="All ROIs of the group" />
 
                             <!--  H  -->
                             <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource HsvBadge}"><TextBlock Text="H" Style="{StaticResource HsvBadgeText}" /></Border>

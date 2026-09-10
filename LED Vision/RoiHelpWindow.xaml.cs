@@ -244,7 +244,7 @@ namespace LEDVision
                                     "Everything is dark and V is low → raise Exposure, or lower V min.",
                                     "Two colours overlap in Hue (e.g. orange vs yellow) → narrow both ranges and give each its own group.",
                                     "Reflections from the housing count as lit pixels → shrink the ROI radius or raise Area Threshold.",
-                                    "Result flickers between PASS and NG → enable Persist with 3 ~ 5 frames."),
+                                    "Result flickers between PASS and NG → enable Persist with about 300 ~ 500 ms."),
                             }
                         }
                     },
@@ -287,7 +287,7 @@ namespace LEDVision
                                     "ภาพมืดทั้งหมดและ V ต่ำ → เพิ่ม Exposure หรือลด V min",
                                     "สองสีมี Hue ทับกัน (เช่น ส้มกับเหลือง) → บีบช่วงของทั้งคู่ให้แคบและแยกคนละกลุ่ม",
                                     "แสงสะท้อนจากตัวเครื่องถูกนับเป็นพิกเซลสว่าง → ลดรัศมี ROI หรือเพิ่ม Area Threshold",
-                                    "ผลกะพริบสลับ PASS / NG → เปิด Persist ที่ 3 ~ 5 เฟรม"),
+                                    "ผลกะพริบสลับ PASS / NG → เปิด Persist ประมาณ 300 ~ 500 ms"),
                             }
                         }
                     },

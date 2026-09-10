@@ -66,6 +66,8 @@
                     <TextBlock x:Name="failCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding FailCnt}" />
                     <TextBlock HorizontalAlignment="Center" FontSize="34" Text="FAIL" />
                 </StackPanel>
+                <!--  CLEAR nhỏ: xóa TOTAL / PASS / FAIL  -->
+                <Button Click="ClearCounters_Click" Content="CLEAR" Width="60" Height="24" FontSize="11" FontWeight="SemiBold" Margin="18,0,0,0" VerticalAlignment="Bottom" Cursor="Hand" Focusable="False" Background="#E1E5EA" Foreground="#323F4E" BorderThickness="0" ToolTip="Reset TOTAL / PASS / FAIL counters" />
             </StackPanel>
 
             <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
@@ -85,8 +87,8 @@
 
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="150" Height="44" Margin="0,30,0,0" Cursor="Hand" Focusable="False"
-                    ToolTip="Buộc chạy test khi không có tín hiệu trigger gửi tới">
+            <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="200" Height="44" Margin="0,30,0,0" Cursor="Hand" Focusable="False"
+                    ToolTip="Start a test manually (no trigger needed). While a test runs this button becomes EMERGENCY STOP.">
                 <Button.Style>
                     <!--  Nút phẳng xám, chữ + icon tối, rê chuột đậm hơn một chút  -->
                     <Style TargetType="Button">
@@ -98,37 +100,6 @@
                                 <ControlTemplate TargetType="Button">
                                     <Border x:Name="bd" Background="{TemplateBinding Background}">
                                         <TextBlock Text="{TemplateBinding Content}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
-                                    </Border>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter TargetName="bd" Property="Background" Value="#D2D8DF" />
-                                        </Trigger>
-                                        <Trigger Property="IsPressed" Value="True">
-                                            <Setter TargetName="bd" Property="Background" Value="#C0C8D1" />
-                                        </Trigger>
-                                        <Trigger Property="IsEnabled" Value="False">
-                                            <Setter Property="Opacity" Value="0.4" />
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </Button.Style>
-            </Button>
-            <Button Click="ClearCounters_Click" Width="110" Height="44" Margin="12,30,0,0" Cursor="Hand" Focusable="False"
-                    ToolTip="Xóa thống kê TOTAL / PASS / FAIL">
-                <Button.Style>
-                    <!--  Nút phẳng xám, chữ + icon tối, rê chuột đậm hơn một chút  -->
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#E1E5EA" />
-                        <Setter Property="Foreground" Value="#323F4E" />
-                        <Setter Property="BorderThickness" Value="0" />
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="Button">
-                                    <Border x:Name="bd" Background="{TemplateBinding Background}">
-                                        <TextBlock Text="CLEAR" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
                                     </Border>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">

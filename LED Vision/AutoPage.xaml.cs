@@ -574,8 +574,21 @@ namespace LEDVision
         {
             if (startBtn == null) return;
             bool busy = testBusy || VisionTest?.CurrentTestState == TestState.Testing;
-            string text = busy ? "CANCEL" : "START";
-            if (!Equals(startBtn.Content, text)) startBtn.Content = text;
+            string text = busy ? "EMERGENCY STOP" : "START";
+            if (!Equals(startBtn.Content, text))
+            {
+                startBtn.Content = text;
+                if (busy)
+                {
+                    startBtn.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D));
+                    startBtn.Foreground = System.Windows.Media.Brushes.White;
+                }
+                else
+                {
+                    startBtn.ClearValue(BackgroundProperty);
+                    startBtn.ClearValue(ForegroundProperty);
+                }
+            }
         }
 
         private void ResetCurNum_Click(object sender, RoutedEventArgs e)
