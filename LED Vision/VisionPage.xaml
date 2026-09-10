@@ -96,7 +96,7 @@
                                     <Setter TargetName="knob" Property="Fill" Value="#46556A" />
                                 </Trigger>
                                 <Trigger Property="IsDragging" Value="True">
-                                    <Setter TargetName="knob" Property="Fill" Value="#F39C12" />
+                                    <Setter TargetName="knob" Property="Fill" Value="#007ACC" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
@@ -329,7 +329,7 @@
                         <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="Pixel phải sáng LIÊN TỤC đủ thời gian này mới được tính là sáng (lọc chớp / nhiễu). Tính bằng ms, tự đổi ra số khung theo nhịp của từng trang." />
                         <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="6,0,0,0" LostFocus="PersistFrames_Changed" />
                         <TextBlock Text="ms" VerticalAlignment="Center" Margin="3,0,0,0" FontSize="11" />
-                        <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#F39C12" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Bộ đếm persist đang tích lũy, kết quả chưa ổn định" />
+                        <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#6B7A8C" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Bộ đếm persist đang tích lũy, kết quả chưa ổn định" />
                     </StackPanel>
 
                     <!--  Group Name  -->
@@ -430,7 +430,7 @@
                             <!--  Tiêu đề cột (kèm chú giải)  -->
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="Set" Style="{StaticResource HsvHdr}" />
                             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="ROI đang chọn (viền đứt trên ảnh)">
-                                <Ellipse Width="12" Height="12" Stroke="#F39C12" StrokeThickness="2" StrokeDashArray="1 1" Margin="0,0,4,0" />
+                                <Ellipse Width="12" Height="12" Stroke="#007ACC" StrokeThickness="2" StrokeDashArray="1 1" Margin="0,0,4,0" />
                                 <TextBlock Text="Selected" Style="{StaticResource HsvHdr}" />
                             </StackPanel>
                             <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Các ROI chưa chọn trong nhóm">
@@ -446,7 +446,7 @@
                                 <TextBlock Text="~" Style="{StaticResource HsvTilde}" />
                                 <TextBox x:Name="HueMax" Style="{StaticResource HsvBox}" PreviewMouseLeftButtonDown="TextBlockColor_Click">179</TextBox>
                             </StackPanel>
-                            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="selectedROIHue" Style="{StaticResource HsvVal}" Foreground="#F39C12" />
+                            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="selectedROIHue" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
                             <TextBlock Grid.Row="1" Grid.Column="3" x:Name="fullROIHue" Style="{StaticResource HsvVal}" Foreground="#339af0" />
                             <TextBlock Grid.Row="1" Grid.Column="4" x:Name="allROIHue" Style="{StaticResource HsvVal}" />
                             <!--  S  -->
@@ -456,7 +456,7 @@
                                 <TextBlock Text="~" Style="{StaticResource HsvTilde}" />
                                 <TextBox x:Name="SatMax" Style="{StaticResource HsvBox}" PreviewMouseLeftButtonDown="TextBlockColor_Click">255</TextBox>
                             </StackPanel>
-                            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="selectedROISat" Style="{StaticResource HsvVal}" Foreground="#F39C12" />
+                            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="selectedROISat" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
                             <TextBlock Grid.Row="2" Grid.Column="3" x:Name="fullROISat" Style="{StaticResource HsvVal}" Foreground="#339af0" />
                             <TextBlock Grid.Row="2" Grid.Column="4" x:Name="allROISat" Style="{StaticResource HsvVal}" />
                             <!--  V  -->
@@ -466,7 +466,7 @@
                                 <TextBlock Text="~" Style="{StaticResource HsvTilde}" />
                                 <TextBox x:Name="ValueMax" Style="{StaticResource HsvBox}" PreviewMouseLeftButtonDown="TextBlockColor_Click">255</TextBox>
                             </StackPanel>
-                            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="selectedROIValue" Style="{StaticResource HsvVal}" Foreground="#F39C12" />
+                            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="selectedROIValue" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
                             <TextBlock Grid.Row="3" Grid.Column="3" x:Name="fullROIValue" Style="{StaticResource HsvVal}" Foreground="#339af0" />
                             <TextBlock Grid.Row="3" Grid.Column="4" x:Name="allROIValue" Style="{StaticResource HsvVal}" />
                             </Grid>

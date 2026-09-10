@@ -45,7 +45,7 @@
             <Grid Height="240" Margin="0,0,0,16">
                 <Label x:Name="ngPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Red" Content="NG" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
                 <Label x:Name="testingPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Yellow" Content="TESTING" FontSize="80" FontWeight="Bold" Foreground="Black" Visibility="Collapsed" />
-                <Label x:Name="readyPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Orange" Content="READY" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
+                <Label x:Name="readyPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#007ACC" Content="READY" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
                 <Label x:Name="passPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#06C755" Content="PASS" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
             </Grid>
 

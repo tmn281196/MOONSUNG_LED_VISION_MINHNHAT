@@ -15,7 +15,7 @@
         <SolidColorBrush x:Key="Muted" Color="#6B7A8C" />
         <SolidColorBrush x:Key="Line" Color="#DDE3EA" />
         <SolidColorBrush x:Key="Accent" Color="#80C4E9" />
-        <SolidColorBrush x:Key="Orange" Color="#F39C12" />
+        <SolidColorBrush x:Key="Orange" Color="#323F4E" />
         <SolidColorBrush x:Key="PageBg" Color="#F4F6F8" />
 
         <!--  Thẻ (card) cho từng nhóm thiết lập  -->

@@ -1010,7 +1010,7 @@ namespace LEDVision
         {
             if (histSeriesReady) return;
             var blue = new SolidColorBrush(Color.FromRgb(0x33, 0x9A, 0xF0));   // Unselected
-            var orange = new SolidColorBrush(Color.FromRgb(0xF3, 0x9C, 0x12)); // Selected
+            var orange = new SolidColorBrush(Color.FromRgb(0x00, 0x7A, 0xCC)); // Selected (xanh đậm)
 
             hUnselSeries = MakeSeries(blue, 180, "Unselected");
             sUnselSeries = MakeSeries(blue, 256, "Unselected");
