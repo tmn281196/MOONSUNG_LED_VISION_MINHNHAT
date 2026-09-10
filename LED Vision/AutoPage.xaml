@@ -53,11 +53,27 @@
             <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
             <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,28">
             <StackPanel>
-            <!--  Hàng đếm: nền trong suốt để bắt hover cả hàng; nút CLEAR chỉ hiện khi rê chuột vào hàng này  -->
-            <StackPanel x:Name="countersRow" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24" Background="Transparent">
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
+                <!--  Cột TOTAL: rê chuột vào là nút CLEAR hiện đè lên chữ TOTAL  -->
+                <StackPanel x:Name="totalCol" Orientation="Vertical" HorizontalAlignment="Center" Background="Transparent">
                     <TextBlock x:Name="totalCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding TotalCnt}" />
-                    <TextBlock HorizontalAlignment="Center" FontSize="34" Text="TOTAL" />
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center" FontSize="34" Text="TOTAL" />
+                        <Button Click="ClearCounters_Click" Content="CLEAR" FontSize="16" FontWeight="Bold" Cursor="Hand" Focusable="False"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#E5484D" Foreground="White" BorderThickness="0"
+                                ToolTip="Reset TOTAL / PASS / FAIL counters">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Visibility" Value="Hidden" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsMouseOver, ElementName=totalCol}" Value="True">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </Grid>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="48,0">
                     <TextBlock x:Name="passCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding PassCnt}" />
@@ -67,19 +83,6 @@
                     <TextBlock x:Name="failCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding FailCnt}" />
                     <TextBlock HorizontalAlignment="Center" FontSize="34" Text="FAIL" />
                 </StackPanel>
-                <!--  CLEAR nhỏ: xóa TOTAL / PASS / FAIL  -->
-                <Button Click="ClearCounters_Click" Content="CLEAR" Width="60" Height="24" FontSize="11" FontWeight="SemiBold" Margin="18,0,0,0" VerticalAlignment="Bottom" Cursor="Hand" Focusable="False" Background="#E1E5EA" Foreground="#323F4E" BorderThickness="0" ToolTip="Reset TOTAL / PASS / FAIL counters">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Visibility" Value="Hidden" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsMouseOver, ElementName=countersRow}" Value="True">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
             </StackPanel>
 
             <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
