@@ -33,6 +33,10 @@ namespace LEDVision
 
         private const int PortTimeoutMs = 500;
 
+        // true trong lúc đang TEST: ghi bị timeout cũng coi là mất kết nối (board phải trả lời khi test).
+        // false lúc rảnh: timeout chỉ bỏ qua gói (tránh icon COM tắt xanh khi chuyển trang).
+        public bool TreatTimeoutAsDisconnect { get; set; } = false;
+
         public DeviceControl()
         {
             port = new SerialPort()
@@ -253,8 +257,13 @@ namespace LEDVision
             }
             catch (TimeoutException)
             {
-                // Board bận / chưa đọc kịp: bỏ qua gói này, KHÔNG coi là mất kết nối
-                // (trước đây đóng cổng luôn → icon COM tắt xanh mỗi khi chuyển trang)
+                // Lúc rảnh: board bận / chưa đọc kịp → bỏ qua gói này, giữ kết nối.
+                // Lúc đang test: coi là mất kết nối để báo ngay.
+                if (TreatTimeoutAsDisconnect)
+                {
+                    IsConnected = false;
+                    try { port.Close(); } catch (Exception) { }
+                }
             }
             catch (Exception)
             {

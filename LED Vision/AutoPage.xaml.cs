@@ -258,6 +258,7 @@ namespace LEDVision
             // Switch to Testing Stage
             VisionTest.FailCount = 0;
             VisionTest.CurrentTestState = TestState.Testing;
+            if (VisionTest.Device != null) VisionTest.Device.TreatTimeoutAsDisconnect = true;
         }
 
         private void VisionTest_TestFinished(object sender, EventArgs e)
@@ -319,6 +320,7 @@ namespace LEDVision
             // Switch to Ready Stage
             VisionTest.Device.TriggerTest = false;
             VisionTest.CurrentTestState = TestState.Ready;
+            if (VisionTest.Device != null) VisionTest.Device.TreatTimeoutAsDisconnect = false;
 
             Task.Delay(100).Wait();
 
