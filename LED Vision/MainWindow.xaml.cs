@@ -210,15 +210,35 @@ namespace LEDVision
             base.OnClosing(e);
         }
 
-        // Nháy chữ "Saved" cạnh tên model 1.5 s sau khi lưu xong
+        // Nháy icon nút Save màu xanh lá 3 lần sau khi lưu xong (không hiện chữ)
+        private System.Windows.Threading.DispatcherTimer flashTimer;
+        private int flashStep = 0;
+
         public void FlashSaved()
         {
             try
             {
-                savedText.Visibility = Visibility.Visible;
-                var t = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromSeconds(1.5) };
-                t.Tick += (s, a) => { t.Stop(); savedText.Visibility = Visibility.Collapsed; };
-                t.Start();
+                var green = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55));
+                if (flashTimer == null)
+                {
+                    flashTimer = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
+                    flashTimer.Tick += (s, a) =>
+                    {
+                        flashStep++;
+                        if (flashStep >= 6)
+                        {
+                            flashTimer.Stop();
+                            saveModelBtn.ClearValue(ForegroundProperty);   // về màu của style
+                            return;
+                        }
+                        if (flashStep % 2 == 0) saveModelBtn.Foreground = green;
+                        else saveModelBtn.ClearValue(ForegroundProperty);
+                    };
+                }
+                flashStep = 0;
+                saveModelBtn.Foreground = green;
+                flashTimer.Stop();
+                flashTimer.Start();
             }
             catch (Exception)
             {
