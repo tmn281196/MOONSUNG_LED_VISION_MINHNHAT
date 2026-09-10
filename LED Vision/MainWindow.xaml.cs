@@ -256,7 +256,7 @@ namespace LEDVision
             try
             {
                 Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
-                Camera.SingleLED.PersistFrames = settingModel.SettingVal.PersistFrames;
+                Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
             }
             catch (Exception)
             {

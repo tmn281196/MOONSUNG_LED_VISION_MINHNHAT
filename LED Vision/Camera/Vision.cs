@@ -229,11 +229,29 @@ namespace LEDVision.Camera
             return 0;
         }
 
+        // Xóa bộ đếm persist của mọi ROI
+        public void ResetPersistAll()
+        {
+            foreach (var led in FourLED.Colection) led.ResetPersist();
+            foreach (var led in SevenSEG.Colection) led.ResetPersist();
+            foreach (var led in DecimalPoint.Colection) led.ResetPersist();
+        }
+
         public (List<bool>, List<bool>, List<bool>) InspectAll()
         {
             List<bool> ledResults = new List<bool>();
             List<bool> segmentResults = new List<bool>();
             List<bool> dpResults = new List<bool>();
+
+            // Persist ở Auto: lấy mẫu 100 ms → đổi ms ra số khung; bắt đầu test mới thì xóa bộ đếm.
+            // Các mẫu đầu (giai đoạn "ổn định", chưa đủ N khung) KHÔNG chấm điểm, nếu không test luôn NG.
+            const int sampleMs = 100;
+            SingleLED.PersistFrames = SingleLED.FramesFor(sampleMs);
+            ResetPersistAll();
+            int settle = (SingleLED.PersistEnabled && SingleLED.PersistFrames > 1) ? SingleLED.PersistFrames : 0;
+            int maxSettle = (int)(2000 / sampleMs) - 5;          // luôn chừa ít nhất 5 mẫu để chấm
+            if (settle > maxSettle) settle = maxSettle;
+            int sampleIndex = 0;
 
             try
             {
@@ -264,30 +282,32 @@ namespace LEDVision.Camera
                     if (CameraSetting.Instance.LastMatFrame != null)
                     {
                         Mat frame = CameraSetting.Instance.LastMatFrame.Clone();
+                        bool score = sampleIndex >= settle;   // mẫu trong giai đoạn ổn định chỉ nuôi bộ đếm
 
                         // Process DecimalPoint collection
                         foreach (var led in DecimalPoint.Colection)
                         {
                             string output = led.CheckBlueArea(frame, DecimalPoint);
-                            dpResults.Add(output == "1");
+                            if (score) dpResults.Add(output == "1");
                         }
 
                         // Process SevenSEG collection
                         foreach (var led in SevenSEG.Colection)
                         {
                             string output = led.CheckBlueArea(frame, SevenSEG);
-                            segmentResults.Add(output == "1");
+                            if (score) segmentResults.Add(output == "1");
                         }
 
                         // Process FourLED collection
                         foreach (var led in FourLED.Colection)
                         {
                             string output = led.CheckBlueArea(frame, FourLED);
-                            ledResults.Add(output == "1");
+                            if (score) ledResults.Add(output == "1");
                         }
                         frame.Dispose();
+                        sampleIndex++;
                     }
-                    Task.Delay(100).Wait();
+                    Task.Delay(sampleMs).Wait();
                 }            
             }
             catch(Exception ex)

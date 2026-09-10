@@ -326,9 +326,10 @@
                         <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="RoiHelp_Click" Cursor="Hand" ToolTip="Help: how to draw / move / copy / paste ROI (EN / TH)">
                             <fa:IconImage Foreground="#323F4E" Icon="CircleQuestion" Width="20" />
                         </Button>
-                        <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="Chống nhấp nháy kết quả: giữ qua N khung hình liên tiếp mới đổi PASS/NG" />
-                        <TextBlock Text="frames" VerticalAlignment="Center" Margin="6,0,3,0" FontSize="11" />
-                        <TextBox x:Name="persistFramesBox" Width="36" VerticalAlignment="Center" TextAlignment="Center" Text="5" LostFocus="PersistFrames_Changed" />
+                        <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="Pixel phải sáng LIÊN TỤC đủ thời gian này mới được tính là sáng (lọc chớp / nhiễu). Tính bằng ms, tự đổi ra số khung theo nhịp của từng trang." />
+                        <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="6,0,0,0" LostFocus="PersistFrames_Changed" />
+                        <TextBlock Text="ms" VerticalAlignment="Center" Margin="3,0,0,0" FontSize="11" />
+                        <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#F39C12" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Bộ đếm persist đang tích lũy, kết quả chưa ổn định" />
                     </StackPanel>
 
                     <!--  Group Name  -->

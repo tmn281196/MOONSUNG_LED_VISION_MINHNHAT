@@ -48,7 +48,22 @@ namespace LEDVision.Camera
         public static readonly System.Windows.Media.Brush PassBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55));
 
         public static bool PersistEnabled = false;
+
+        // Persist đặt theo ms; mỗi nơi lấy mẫu (Vision 250 ms, Auto 100 ms) tự đổi ra số khung bằng FramesFor().
+        public static int PersistMs = 500;
         public static int PersistFrames = 5;
+
+        public static int FramesFor(int sampleIntervalMs)
+        {
+            if (sampleIntervalMs <= 0) return 1;
+            return Math.Max(1, (int)Math.Round(PersistMs / (double)sampleIntervalMs));
+        }
+
+        // Xóa bộ đếm (khi đổi tham số / bắt đầu test mới): số cũ không còn ý nghĩa với mask mới
+        public void ResetPersist()
+        {
+            try { consecOnMat?.SetTo(Scalar.All(0)); } catch (Exception) { }
+        }
 
         // Persist mức mask (AND): ảnh đếm "số khung sáng LIÊN TIẾP" của từng pixel (CV_32S, kích thước ROI).
         private Mat consecOnMat;

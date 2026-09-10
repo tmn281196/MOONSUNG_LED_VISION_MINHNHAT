@@ -212,6 +212,24 @@ namespace LEDVision.Model
             }
         }
 
+        // Thời gian persist tính bằng ms (không phụ thuộc nhịp lấy mẫu). PersistFrames cũ giữ để tương thích file cũ.
+        private int persistMs = 500;
+        public int PersistMs
+        {
+            get
+            {
+                return persistMs;
+            }
+            set
+            {
+                if (persistMs != value)
+                {
+                    persistMs = value;
+                    NotifyPropertyChanged(nameof(PersistMs));
+                }
+            }
+        }
+
         private int persistFrames = 5;
         public int PersistFrames
         {

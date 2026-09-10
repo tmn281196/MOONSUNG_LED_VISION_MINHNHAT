@@ -122,11 +122,37 @@ namespace LEDVision
 
             loadingPersist = true;
             persistCheckBox.IsChecked = settingModel.SettingVal.PersistEnabled;
-            persistFramesBox.Text = settingModel.SettingVal.PersistFrames.ToString();
+            persistFramesBox.Text = settingModel.SettingVal.PersistMs.ToString();
             loadingPersist = false;
 
             Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
-            Camera.SingleLED.PersistFrames = settingModel.SettingVal.PersistFrames;
+            Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
+            ResetPersistCounters();
+        }
+
+        // ---- Persist: bộ đếm + giai đoạn ổn định (học theo SurfaceInspection) ----
+        private const int PreviewIntervalMs = 250;   // nhịp timer xem trực tiếp
+        private int framesSinceReset = 0;
+
+        // Đổi tham số (HSV, ngưỡng, bán kính, nhóm...) → số đếm cũ vô nghĩa → xóa và đếm lại từ đầu
+        private void ResetPersistCounters()
+        {
+            try { ProgramModel?.Vision?.ResetPersistAll(); } catch (Exception) { }
+            framesSinceReset = 0;
+        }
+
+        // Gọi mỗi tick xem trực tiếp: đặt số khung theo nhịp 250 ms, cập nhật chữ "settling"
+        private void TickPersist()
+        {
+            Camera.SingleLED.PersistFrames = Camera.SingleLED.FramesFor(PreviewIntervalMs);
+            bool active = Camera.SingleLED.PersistEnabled && Camera.SingleLED.PersistFrames > 1;
+            if (active && framesSinceReset < Camera.SingleLED.PersistFrames) framesSinceReset++;
+            bool settling = active && framesSinceReset < Camera.SingleLED.PersistFrames;
+            if (persistSettlingText != null)
+            {
+                var v = settling ? Visibility.Visible : Visibility.Collapsed;
+                if (persistSettlingText.Visibility != v) persistSettlingText.Visibility = v;
+            }
         }
 
         private void Persist_Changed(object sender, RoutedEventArgs e)
@@ -147,17 +173,18 @@ namespace LEDVision
 
             settingModel.SettingVal.PersistEnabled = persistCheckBox.IsChecked == true;
 
-            if (int.TryParse(persistFramesBox.Text, out int frames) && frames >= 1)
+            if (int.TryParse(persistFramesBox.Text, out int ms) && ms >= 0 && ms <= 5000)
             {
-                settingModel.SettingVal.PersistFrames = frames;
+                settingModel.SettingVal.PersistMs = ms;
             }
             else
             {
-                persistFramesBox.Text = settingModel.SettingVal.PersistFrames.ToString();
+                persistFramesBox.Text = settingModel.SettingVal.PersistMs.ToString();
             }
 
             Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
-            Camera.SingleLED.PersistFrames = settingModel.SettingVal.PersistFrames;
+            Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
+            ResetPersistCounters();
 
             try { mainWindow?.settingPage?.SaveSettingModel(); } catch { }
         }
@@ -328,6 +355,7 @@ namespace LEDVision
 
                     try
                     {
+                        TickPersist();
                         ProgramModel.Vision.Inspect(CameraSetting.Instance.LastMatFrame.Clone());
                         UpdateHistogram();
 
@@ -628,6 +656,7 @@ namespace LEDVision
         }
         private void cntSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            ResetPersistCounters();
             if (ProgramModel.Vision.SelectedGroupLED != null)
             {
                 ProgramModel.Vision.SelectedGroupLED.ContourArea = (int)cntSizeSlider.Value;
@@ -689,6 +718,7 @@ namespace LEDVision
 
         private void UpdateSettings(string checkBoxName)
         {
+            ResetPersistCounters();
             if (ProgramModel.Vision.SelectedGroupLED == null)
             {
                 return;
@@ -711,6 +741,7 @@ namespace LEDVision
         }
         private void cntRadiusSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            ResetPersistCounters();
             builder.RoiRadius = (int)radiusSlider.Value;
 
             if (ProgramModel.Vision.SelectedGroupLED != null)
@@ -1091,6 +1122,7 @@ namespace LEDVision
         }
         private void ApplyRange_Click(object sender, RoutedEventArgs e)
         {
+            ResetPersistCounters();
             double hueMax = double.Parse(HueMax.Text);
             double hueMin = double.Parse(HueMin.Text);
             double hueMean = Math.Floor((hueMax + hueMin) / 2);
