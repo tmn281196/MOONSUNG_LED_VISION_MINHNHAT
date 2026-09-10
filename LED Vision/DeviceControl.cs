@@ -174,6 +174,19 @@ namespace LEDVision
             return SS_DOWN;
         }
 
+        // Chờ cảm biến DOWN nhả (xi lanh đã rời vị trí dưới). Chỉ có một cảm biến nên đây là dấu hiệu "đang lên".
+        public bool WaitForLeaveDown(int timeoutMs)
+        {
+            if (!IsConnected) return true;
+            var start = DateTime.Now;
+            while ((DateTime.Now - start).TotalMilliseconds < timeoutMs)
+            {
+                if (!SS_DOWN) return true;
+                System.Threading.Thread.Sleep(20);
+            }
+            return !SS_DOWN;
+        }
+
         public void CheckCommunication(Rectangle statusLamp)
         {
             if (port != null)
