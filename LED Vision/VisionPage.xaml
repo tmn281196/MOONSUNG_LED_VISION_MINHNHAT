@@ -190,14 +190,14 @@
 
                 <!--  POWER / UP / DOWN: điều khiển thiết bị  -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6">
-                    <Button Width="44" Height="36" Margin="6,0" Background="Transparent" BorderThickness="0" Click="POWER_Btn_Click" Cursor="Hand" ToolTip="Power">
-                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="PowerOff" />
+                    <Button Width="64" Height="52" Margin="8,0" Background="Transparent" BorderThickness="0" Click="POWER_Btn_Click" Cursor="Hand" ToolTip="Power">
+                        <fa:IconImage Width="34" Foreground="#323F4E" Icon="PowerOff" />
                     </Button>
-                    <Button Width="44" Height="36" Margin="6,0" Background="Transparent" BorderThickness="0" Click="UP_Btn_Click" Cursor="Hand" ToolTip="Cylinder Up">
-                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="ArrowUp" />
+                    <Button Width="64" Height="52" Margin="8,0" Background="Transparent" BorderThickness="0" Click="UP_Btn_Click" Cursor="Hand" ToolTip="Cylinder Up">
+                        <fa:IconImage Width="34" Foreground="#323F4E" Icon="ArrowUp" />
                     </Button>
-                    <Button Width="44" Height="36" Margin="6,0" Background="Transparent" BorderThickness="0" Click="DOWN_Btn_Click" Cursor="Hand" ToolTip="Cylinder Down">
-                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="ArrowDown" />
+                    <Button Width="64" Height="52" Margin="8,0" Background="Transparent" BorderThickness="0" Click="DOWN_Btn_Click" Cursor="Hand" ToolTip="Cylinder Down">
+                        <fa:IconImage Width="34" Foreground="#323F4E" Icon="ArrowDown" />
                     </Button>
                 </StackPanel>
 
