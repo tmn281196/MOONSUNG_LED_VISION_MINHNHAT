@@ -169,10 +169,10 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Vertical" Grid.Column="0">
+            <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Center">
                 <!--  Khung chứa CỐ ĐỊNH 680x906 (giữ đúng chỗ trên UI). Canvas đặt căn giữa ở ĐÚNG kích thước
                       tỉ lệ ảnh thô (EnsureSurfaceSized) — KHÔNG scale, KHÔNG kéo giãn → không méo, stroke giữ nguyên.  -->
-                <Grid Width="680" Height="906" Background="Black" Margin="12,12,0,0">
+                <Grid Width="680" Height="906" Background="Black" Margin="12,0,0,0">
                     <Canvas x:Name="mainCanvas" Width="680" Height="906" HorizontalAlignment="Center" VerticalAlignment="Center" ClipToBounds="True" MouseWheel="Canvas_MouseWheel">
                         <Image x:Name="cameraViewer" Width="680" Height="906" Stretch="Uniform" RenderTransform="{StaticResource sharedTransform}" />
                         <vb:VisionBuilder  x:Name="builder"  Width="680" Height="906"  RenderTransform="{StaticResource sharedTransform}" />
@@ -531,8 +531,8 @@
 
             </StackPanel>
             </ScrollViewer>
-            <StackPanel Orientation="Vertical"  Grid.Column="1">
-                <Grid Width="680" Height="906" Background="Black" Margin="12,12,0,0">
+            <StackPanel Orientation="Vertical"  Grid.Column="1" VerticalAlignment="Center">
+                <Grid Width="680" Height="906" Background="Black" Margin="12,0,0,0">
                     <Image x:Name="adjustedImageViewer" Width="680" Height="906" Stretch="Uniform" />
                 </Grid>
             </StackPanel>
