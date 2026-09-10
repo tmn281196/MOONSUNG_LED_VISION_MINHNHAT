@@ -3,32 +3,32 @@
     "FourLED": {
       "Colection": [
         {
-          "RoiRadius": 9,
+          "RoiRadius": 7,
           "ResultFinal": 1,
           "RoiPoint": {
-            "X": 408.74999999999989,
-            "Y": 249.55428571428567
+            "X": 546.74999999999989,
+            "Y": 457.5542857142857
           }
         },
         {
-          "RoiRadius": 9,
+          "RoiRadius": 7,
           "ResultFinal": 1,
           "RoiPoint": {
-            "X": 337.74999999999989,
-            "Y": 209.55428571428567
+            "X": 314.74999999999989,
+            "Y": 293.5542857142857
           }
         },
         {
-          "RoiRadius": 9,
+          "RoiRadius": 7,
           "ResultFinal": 1,
           "RoiPoint": {
-            "X": 396.74999999999989,
-            "Y": 331.5542857142857
+            "X": 344.74999999999989,
+            "Y": 333.5542857142857
           }
         }
       ],
       "ContourArea": 0,
-      "RoiRadius": 9,
+      "RoiRadius": 7,
       "HSV": {
         "HUE": {
           "Max": 179,
@@ -49,7 +49,7 @@
       "Colection": [
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 322.75,
             "Y": 320.82352941176464
@@ -57,7 +57,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 364.75,
             "Y": 357.82352941176464
@@ -65,7 +65,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 417.75,
             "Y": 354.82352941176464
@@ -73,7 +73,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 388.75,
             "Y": 267.82352941176464
@@ -81,7 +81,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 365.75,
             "Y": 277.82352941176464
@@ -89,7 +89,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 418.75,
             "Y": 406.82352941176464
@@ -97,7 +97,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 446.75,
             "Y": 335.82352941176464
@@ -126,7 +126,7 @@
       "Colection": [
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 417.75,
             "Y": 284.57142857142856
@@ -134,7 +134,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 395.75,
             "Y": 231.57142857142853
@@ -142,7 +142,7 @@
         },
         {
           "RoiRadius": 8,
-          "ResultFinal": 1,
+          "ResultFinal": 0,
           "RoiPoint": {
             "X": 228.75,
             "Y": 254.57142857142853

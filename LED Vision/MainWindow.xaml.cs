@@ -293,6 +293,19 @@ namespace LEDVision
             };
             openFile.Filter = "Vision Model File (*.json)|*.json";
             openFile.RestoreDirectory = true;
+            // Mở sẵn thư mục của model mở / lưu gần nhất
+            try
+            {
+                string last = settingModel?.SettingVal?.LastModelPath;
+                if (!string.IsNullOrEmpty(last))
+                {
+                    string dir = System.IO.Path.GetDirectoryName(last);
+                    if (!string.IsNullOrEmpty(dir) && Directory.Exists(dir)) openFile.InitialDirectory = dir;
+                }
+            }
+            catch (Exception)
+            {
+            }
 
             if (openFile.ShowDialog() == true)
             {
