@@ -17,7 +17,8 @@ namespace LEDVision
             return JsonSerializer.Deserialize<T>(serialized);
         }
 
-        public static void SaveModel<T>(this T source, string filePath, string fileName)
+        // Trả về true khi ghi file thành công (trước đây nuốt lỗi im lặng → người dùng tưởng đã lưu).
+        public static bool SaveModel<T>(this T source, string filePath, string fileName)
         {
             try
             {
@@ -31,11 +32,12 @@ namespace LEDVision
                 });
 
                 File.WriteAllText(filePath, json);
-
-                
+                return true;
             }
             catch (Exception ex)
             {
+                Console.WriteLine("SaveModel failed: " + ex.Message);
+                return false;
             }
         }
 

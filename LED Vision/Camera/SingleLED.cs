@@ -44,6 +44,9 @@ namespace LEDVision.Camera
         public RESULT ResultFinal { get; set; } = RESULT.UNKNOWN;
 
         // Cấu hình persist TOÀN CỤC (đồng bộ từ setting.json). Chống nhấp nháy kết quả PASS/NG.
+        // Màu ROI khi PASS / mặc định: xanh LINE (#06C755), cùng màu popup PASS
+        public static readonly System.Windows.Media.Brush PassBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55));
+
         public static bool PersistEnabled = false;
         public static int PersistFrames = 5;
 
@@ -78,7 +81,7 @@ namespace LEDVision.Camera
                 if (value != null)
                 {
                     roi = value;
-                    roi.Stroke = System.Windows.Media.Brushes.Green;
+                    roi.Stroke = PassBrush;
                     roi.StrokeThickness = 2;
                     roi.Fill = Brushes.Transparent;
 
@@ -144,49 +147,55 @@ namespace LEDVision.Camera
             Canvas.SetLeft(Roi, RoiPoint.X - RoiRadius);
             Canvas.SetTop(Roi, RoiPoint.Y - RoiRadius);
         }
+        // Kéo ROI bằng chuột trái. Bắt chuột (CaptureMouse) khi bấm để con trỏ trượt ra ngoài vòng tròn
+        // ROI vẫn đi theo; không phụ thuộc vào phần tử đang có focus bàn phím.
+        private bool isDragging = false;
+
         public void Roi_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                Roi.Cursor = Cursors.SizeAll;
-                Keyboard.Focus(Roi);
-                startPoint = e.GetPosition(mainCanvas);
-                initialX = Canvas.GetLeft(Roi);
-                initialY = Canvas.GetTop(Roi);
-            }
+            if (e.ChangedButton != MouseButton.Left || mainCanvas == null) return;
+
+            isDragging = true;
+            Roi.Cursor = Cursors.SizeAll;
+            Keyboard.Focus(Roi);
+            startPoint = e.GetPosition(mainCanvas);
+            initialX = Canvas.GetLeft(Roi);
+            initialY = Canvas.GetTop(Roi);
+            Roi.CaptureMouse();
         }
 
         public void Roi_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            var focusedElement = Keyboard.FocusedElement;
-            if (focusedElement == null)
+            if (!isDragging || mainCanvas == null) return;
+            if (e.LeftButton != MouseButtonState.Pressed)
             {
+                EndDrag();
                 return;
             }
-            if (e.LeftButton == MouseButtonState.Pressed && focusedElement.GetType() == typeof(Ellipse))
-            {
-                System.Windows.Point currentPosition = e.GetPosition(mainCanvas);
-                double offsetX = currentPosition.X - startPoint.X;
-                double offsetY = currentPosition.Y - startPoint.Y;
 
-                Canvas.SetLeft(Roi, initialX + offsetX);
-                Canvas.SetTop(Roi, initialY + offsetY);
-            }
+            System.Windows.Point currentPosition = e.GetPosition(mainCanvas);
+            double offsetX = currentPosition.X - startPoint.X;
+            double offsetY = currentPosition.Y - startPoint.Y;
+
+            Canvas.SetLeft(Roi, initialX + offsetX);
+            Canvas.SetTop(Roi, initialY + offsetY);
         }
 
         public void Roi_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            if (Roi.Cursor == Cursors.SizeAll)
-            {
-                System.Windows.Point currentPosition = e.GetPosition(mainCanvas);
-                var x = Canvas.GetLeft(Roi);
-                var y = Canvas.GetTop(Roi);
+            if (e.ChangedButton != MouseButton.Left) return;
+            if (isDragging) EndDrag();
+        }
 
-                RoiPoint = new System.Windows.Point(x + Roi.Width / 2, y + Roi.Height / 2);
-
-                Roi.ReleaseMouseCapture();
-                Roi.Cursor = Cursors.Arrow;
-            }
+        // Kết thúc kéo: ghi vị trí mới vào RoiPoint, thả chuột
+        private void EndDrag()
+        {
+            isDragging = false;
+            var x = Canvas.GetLeft(Roi);
+            var y = Canvas.GetTop(Roi);
+            RoiPoint = new System.Windows.Point(x + Roi.Width / 2, y + Roi.Height / 2);
+            Roi.ReleaseMouseCapture();
+            Roi.Cursor = Cursors.Arrow;
         }
 
         public void SetParentCanvas(Canvas mainCanvas)
@@ -350,14 +359,14 @@ namespace LEDVision.Camera
                     // Check if we need to invoke (if not on UI thread)
                     if (Roi.Dispatcher.CheckAccess())
                         {
-                            Roi.Stroke = result ? Brushes.Green : Brushes.Red;
+                            Roi.Stroke = result ? PassBrush : Brushes.Red;
                         }
                         else
                         {
                             // Invoke on UI thread
                             Roi.Dispatcher.Invoke(() =>
                             {
-                                Roi.Stroke = result ? Brushes.Green : Brushes.Red;
+                                Roi.Stroke = result ? PassBrush : Brushes.Red;
                             });
                         }
                  

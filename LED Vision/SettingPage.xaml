@@ -4,186 +4,262 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:LEDVision"
-        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-
+    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="SettingPage">
+    Title="SettingPage"
+    FontFamily="Segoe UI">
 
-    <Grid>
-        <StackPanel Margin="5">
+    <!--  Bảng màu dùng chung với app: nền tối #323F4E, nhấn #80C4E9, icon cam  -->
+    <Page.Resources>
+        <SolidColorBrush x:Key="Ink" Color="#323F4E" />
+        <SolidColorBrush x:Key="Muted" Color="#6B7A8C" />
+        <SolidColorBrush x:Key="Line" Color="#DDE3EA" />
+        <SolidColorBrush x:Key="Accent" Color="#80C4E9" />
+        <SolidColorBrush x:Key="Orange" Color="#F39C12" />
+        <SolidColorBrush x:Key="PageBg" Color="#F4F6F8" />
 
+        <!--  Thẻ (card) cho từng nhóm thiết lập  -->
+        <Style x:Key="Card" TargetType="Border">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="{StaticResource Line}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="0" />
+            <Setter Property="Padding" Value="18,14,18,16" />
+            <Setter Property="Margin" Value="0,0,0,14" />
+        </Style>
 
-            <StackPanel>
+        <Style x:Key="CardTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="8,0,0,0" />
+        </Style>
 
-                <StackPanel Orientation="Vertical">
-                    <Label Content="System Controller" FontWeight="Bold" FontSize="20" />
+        <Style x:Key="CardHint" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11.5" />
+            <Setter Property="Foreground" Value="{StaticResource Muted}" />
+            <Setter Property="Margin" Value="0,2,0,10" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
 
-                    <StackPanel Orientation="Horizontal">
-                        <ComboBox
-                                x:Name="systemBoardCboBox"
-                                Width="100"
-                                Height="25"
-                                Margin="0,0"
-                                SelectedItem="{Binding ComPort, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                SelectionChanged="systemBoardCboBox_SelectionChanged" />
-                        <Rectangle  x:Name="systemBoardStatus" Width="30" Height="25" Fill="Yellow" />
-                        <Button
-                                Padding="5 0"
-                                Height="25"
-                                Cursor="Hand"   
+        <Style x:Key="FieldLabel" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{StaticResource Muted}" />
+            <Setter Property="Margin" Value="0,0,0,4" />
+        </Style>
 
-                                Click="ConnectBtn_Click"
-                                Content="Connect" />
+        <!--  Ô nhập (vuông góc)  -->
+        <Style x:Key="Input" TargetType="TextBox">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Padding" Value="8,0" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="#C9D1DB" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="0">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter TargetName="bd" Property="BorderBrush" Value="{StaticResource Accent}" />
+                                <Setter TargetName="bd" Property="BorderThickness" Value="1.5" />
+                            </Trigger>
+                            <Trigger Property="IsReadOnly" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#F4F6F8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="NumInput" TargetType="TextBox" BasedOn="{StaticResource Input}">
+            <Setter Property="Width" Value="90" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
 
-                        <Button 
-                                Width="25"  
-                                Height="25" 
-                                Margin="5 0"  
-                                HorizontalAlignment="Left" 
-                                Cursor="Hand"    
-                                Click="RefreshComPortBtn_Click" 
-                                Background="Transparent" 
-                                BorderBrush="Transparent" >
-                            <fa:IconImage Foreground="Orange" Icon="Refresh" />
+        <!--  Nút chính (nền tối) và nút icon (trong suốt)  -->
+        <Style x:Key="PrimaryBtn" TargetType="Button">
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Padding" Value="14,0" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="Background" Value="#E1E5EA" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="0" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#D2D8DF" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#C0C8D1" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="IconBtn" TargetType="Button">
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#EEF3F8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
-                        </Button>
+    <Grid Background="{StaticResource PageBg}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <StackPanel Margin="28,22,28,22" MaxWidth="780" HorizontalAlignment="Left">
 
-                    </StackPanel>
+                <TextBlock Text="Settings" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Ink}" />
+                <TextBlock Text="System controller, log folder, retest and pin-replacement settings. Press SAVE SETTING to write setting.json." Style="{StaticResource CardHint}" Margin="0,2,0,16" />
 
+                <!--  System Controller  -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="Microchip" />
+                            <TextBlock Text="System Controller" Style="{StaticResource CardTitle}" />
+                        </StackPanel>
+                        <TextBlock Text="COM port of the control board. Green = connected, red = failed, yellow = not tried yet." Style="{StaticResource CardHint}" />
 
-                </StackPanel>
-
-
-                <StackPanel Orientation="Vertical">
-
-                    <Label Content="Log Directory"  FontWeight="Bold" FontSize="20"/>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox
-                                    Height="25"
-                                    Width="400"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <StackPanel>
+                                <TextBlock Text="COM port" Style="{StaticResource FieldLabel}" />
+                                <ComboBox
+                                    x:Name="systemBoardCboBox"
+                                    Width="140"
+                                    Height="32"
+                                    FontSize="13"
                                     VerticalContentAlignment="Center"
-                                    BorderBrush="Black"
-                                    IsReadOnly="True"
-                                    Text="{Binding LogDirectory, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                        <Button
-                                    Height="25"
-                                    Width="25"
-                                    Margin="5,0,0,0"
-                                    Background="Transparent"
-                                    BorderBrush="Transparent"
-                                    Cursor="Hand"   
-                                    Click="ChangeLogDirectoryBtn_Click">
+                                    SelectedItem="{Binding ComPort, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                    SelectionChanged="systemBoardCboBox_SelectionChanged" />
+                            </StackPanel>
 
+                            <Button Style="{StaticResource IconBtn}" Margin="6,18,0,0" Click="RefreshComPortBtn_Click" ToolTip="Refresh COM port list">
+                                <fa:IconImage Width="16" Height="16" Foreground="{StaticResource Orange}" Icon="Refresh" />
+                            </Button>
 
-                            <fa:IconImage Foreground="Orange" Icon="Folder" />
+                            <!--  Đèn trạng thái: code-behind đổi Fill (CheckCommunication)  -->
+                            <Rectangle x:Name="systemBoardStatus" Width="14" Height="14" RadiusX="7" RadiusY="7" Fill="Yellow" Margin="18,18,8,0" VerticalAlignment="Center" ToolTip="Connection status" />
 
-
-                        </Button>
-                    </StackPanel>
-
-                </StackPanel>
-
-                <StackPanel Orientation="Vertical">
-                    <Label Content="Retest Managment"  FontWeight="Bold" FontSize="20"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-                        <StackPanel HorizontalAlignment="Left" Margin="0 0"   >
-                            <Label HorizontalContentAlignment="Left" Padding="0 2">Retest Times</Label>
-                            <TextBox
-                                Height="25"
-                                Width="50"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                IsReadOnly="False"
-                                HorizontalContentAlignment="Center"
-
-                                BorderBrush="Black"
-                                Text="{Binding RetestTimes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Left"  Margin="10 0">
-                            <Label HorizontalContentAlignment="Left" Padding="0 2">Wait Before Retest (ms)</Label>
-                            <TextBox
-                            Height="25"
-                            Width="50"
-                                HorizontalContentAlignment="Center"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            BorderBrush="Black"
-Text="{Binding WaitRetest, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Left" Margin="0 0"  >
-                            <Label HorizontalContentAlignment="Left" Padding="0 2">Delay Between UP/DOWN (ms)</Label>
-                            <TextBox
-                            Height="25"
-                            Width="50"
-                                HorizontalContentAlignment="Center"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            BorderBrush="Black"
-Text="{Binding DelayUPDOWN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            <Button Style="{StaticResource PrimaryBtn}" Margin="0,18,0,0" Click="ConnectBtn_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Width="14" Height="14" Margin="0,0,8,0" Foreground="{StaticResource Ink}" Icon="Plug" />
+                                    <TextBlock Text="Connect" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
                         </StackPanel>
                     </StackPanel>
+                </Border>
 
-                </StackPanel>
-                
-                <StackPanel Orientation="Vertical">
-                    <Label Content="Pin Replacement"  FontWeight="Bold" FontSize="20"/>
+                <!--  Log Directory  -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="FolderOpen" />
+                            <TextBlock Text="Log Directory" Style="{StaticResource CardTitle}" />
+                        </StackPanel>
+                        <TextBlock Text="Folder where test logs are written." Style="{StaticResource CardHint}" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" Style="{StaticResource Input}" IsReadOnly="True" Text="{Binding LogDirectory, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            <Button Grid.Column="1" Style="{StaticResource PrimaryBtn}" Margin="8,0,0,0" Click="ChangeLogDirectoryBtn_Click" ToolTip="Choose log folder">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Width="14" Height="14" Margin="0,0,8,0" Foreground="{StaticResource Ink}" Icon="Folder" />
+                                    <TextBlock Text="Browse" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!--  Retest Management  -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="RotateRight" />
+                            <TextBlock Text="Retest Management" Style="{StaticResource CardTitle}" />
+                        </StackPanel>
+                        <TextBlock Text="When a test fails, retest up to N times before reporting NG." Style="{StaticResource CardHint}" />
+
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Margin="0,0,24,0">
+                                <TextBlock Text="Retest times" Style="{StaticResource FieldLabel}" />
+                                <TextBox Style="{StaticResource NumInput}" Text="{Binding RetestTimes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel Margin="0,0,24,0">
+                                <TextBlock Text="Wait before retest (ms)" Style="{StaticResource FieldLabel}" />
+                                <TextBox Style="{StaticResource NumInput}" Width="120" Text="{Binding WaitRetest, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="Delay between UP / DOWN (ms)" Style="{StaticResource FieldLabel}" />
+                                <TextBox Style="{StaticResource NumInput}" Width="120" Text="{Binding DelayUPDOWN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!--  Pin Replacement  -->
+                <Border Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="Screwdriver" />
+                            <TextBlock Text="Pin Replacement" Style="{StaticResource CardTitle}" />
+                        </StackPanel>
+                        <TextBlock Text="Counts test cycles; a warning is shown when Current reaches Max set." Style="{StaticResource CardHint}" />
+
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Margin="0,0,24,0">
+                                <TextBlock Text="Current" Style="{StaticResource FieldLabel}" />
+                                <TextBox Style="{StaticResource NumInput}" IsReadOnly="True" Text="{Binding CurNum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Text="Max set" Style="{StaticResource FieldLabel}" />
+                                <TextBox Style="{StaticResource NumInput}" Text="{Binding MaxNum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!--  Lưu  -->
+                <Button Style="{StaticResource PrimaryBtn}" Height="38" Padding="18,0" HorizontalAlignment="Left" Margin="0,4,0,0" Click="SaveBtn_Click">
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel HorizontalAlignment="Left">
-                            <Label>Current</Label>
-                            <TextBox
-                                Height="25"
-                                Width="50"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                VerticalContentAlignment="Center"
-                                IsReadOnly="True"
-                                                                HorizontalContentAlignment="Center"
-
-                                BorderBrush="Black"
-                                Text="{Binding CurNum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                        </StackPanel>
-                        <StackPanel HorizontalAlignment="Left" Margin="10 0">
-                            <Label>Max Set</Label>
-                            <TextBox
-                            Height="25"
-                            Width="50"
-                                HorizontalContentAlignment="Center"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            VerticalContentAlignment="Center"
-                            BorderBrush="Black"
-Text="{Binding MaxNum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                        </StackPanel>
+                        <fa:IconImage Width="16" Height="16" Margin="0,0,10,0" Foreground="{StaticResource Orange}" Icon="FloppyDisk" />
+                        <TextBlock Text="SAVE SETTING" FontSize="14" VerticalAlignment="Center" />
                     </StackPanel>
-                   
-                </StackPanel>
+                </Button>
 
             </StackPanel>
-
-            <Button
-                Cursor="Hand"
-                Padding="5"
-                     
-                     Margin="0 20"
-                HorizontalAlignment="Left"
-                     Background="Transparent"
-                     BorderBrush="Transparent"
-                Click="SaveBtn_Click">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Foreground="Orange" Icon="Save" />
-                    <Label FontSize="15">SAVE SETTING</Label>
-                </StackPanel>
-
-
-            </Button>
-        </StackPanel>
-
-
-
+        </ScrollViewer>
     </Grid>
 </Page>

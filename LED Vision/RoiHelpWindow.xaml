@@ -1,0 +1,63 @@
+﻿<Window x:Class="LEDVision.RoiHelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LEDVision"
+        mc:Ignorable="d"
+        Title="ROI Help"
+        Width="900" Height="900" MinWidth="600" MinHeight="500"
+        WindowStartupLocation="CenterOwner"
+        FontFamily="Segoe UI, Leelawadee UI, Tahoma"
+        Background="White">
+
+    <Window.Resources>
+        <Style x:Key="LangBtn" TargetType="Button">
+            <Setter Property="Width" Value="52" />
+            <Setter Property="Height" Value="28" />
+            <Setter Property="Margin" Value="4,0,0,0" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Background" Value="#EEF1F5" />
+            <Setter Property="Foreground" Value="#323F4E" />
+            <Setter Property="BorderBrush" Value="#C9D1DB" />
+        </Style>
+        <Style x:Key="LangBtnActive" TargetType="Button" BasedOn="{StaticResource LangBtn}">
+            <Setter Property="Background" Value="#323F4E" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="#323F4E" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Tiêu đề + chọn ngôn ngữ  -->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="titleText" Grid.Column="0" FontSize="20" FontWeight="Bold" Foreground="#323F4E" VerticalAlignment="Center" Text="ROI editing guide" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button x:Name="btnEn" Content="EN" Style="{StaticResource LangBtnActive}" Click="LangEn_Click" />
+                <Button x:Name="btnTh" Content="ไทย" Style="{StaticResource LangBtn}" Click="LangTh_Click" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Nội dung hướng dẫn (dựng bằng code theo ngôn ngữ đã chọn)  -->
+        <Border Grid.Row="1" BorderBrush="#DDE3EA" BorderThickness="1" CornerRadius="4" Background="#FAFBFC">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="12,8">
+                <StackPanel x:Name="contentPanel" />
+            </ScrollViewer>
+        </Border>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button x:Name="btnClose" Content="Close" Width="90" Height="28" Click="Close_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -176,6 +176,24 @@ namespace LEDVision.Model
             }
         }
 
+        // Đường dẫn file model mở / lưu gần nhất → tự mở lại khi khởi động chương trình
+        private string lastModelPath = "";
+        public string LastModelPath
+        {
+            get
+            {
+                return lastModelPath;
+            }
+            set
+            {
+                if (lastModelPath != value)
+                {
+                    lastModelPath = value ?? "";
+                    NotifyPropertyChanged(nameof(LastModelPath));
+                }
+            }
+        }
+
         // Persist (chống nhấp nháy kết quả): giữ qua N khung hình liên tiếp mới đổi PASS/NG.
         private bool persistEnabled = false;
         public bool PersistEnabled

@@ -117,34 +117,32 @@ namespace LEDVision.Camera
             }
         }
 
-        // Chọn đúng camera: ưu tiên Logitech, tránh camera ảo (OBS/Virtual). Mặc định index 0.
-        private int FindCameraIndex()
+        // Camera đang được mở (VideoCapture + DirectShow helper đã sẵn sàng)
+        public event EventHandler CameraOpened;
+
+        // Thời điểm nhận khung hình hợp lệ gần nhất (để biết camera còn sống hay đã rớt)
+        public DateTime LastFrameTime { get; private set; } = DateTime.MinValue;
+
+        public bool IsCameraOpen
         {
-            try
+            get
             {
-                var devices = DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice);
-                if (devices != null && devices.Length > 0)
-                {
-                    for (int i = 0; i < devices.Length; i++)
-                    {
-                        var name = devices[i].Name ?? "";
-                        if (name.IndexOf("Logitech", StringComparison.OrdinalIgnoreCase) >= 0)
-                            return i;
-                    }
-                    for (int i = 0; i < devices.Length; i++)
-                    {
-                        var name = devices[i].Name ?? "";
-                        if (name.IndexOf("OBS", StringComparison.OrdinalIgnoreCase) < 0 &&
-                            name.IndexOf("Virtual", StringComparison.OrdinalIgnoreCase) < 0)
-                            return i;
-                    }
-                }
+                try { return _videoCapture != null && _videoCapture.IsOpened(); }
+                catch (Exception) { return false; }
             }
-            catch (Exception)
-            {
-            }
-            return 0;
         }
+
+        // Truy cập trực tiếp thuộc tính camera qua DirectShow (đọc dải giá trị thật, set Pan/Tilt ổn định)
+        public CameraControlHelper Control = new CameraControlHelper();
+
+        // Đang đồng bộ giá trị TỪ camera vào cameraSettingValues → UI không được đẩy ngược lại camera
+        public bool IsSyncingFromCamera { get; private set; }
+
+        private int _cameraIndex = 0;
+
+        // true sau khi VideoCapture + helper mở xong (OnCameraOpened). Trước đó KHÔNG được đụng _videoCapture
+        // từ UI thread (luồng camera đang khởi tạo nó → treo). Thông số sẽ được OnCameraOpened áp sau.
+        private volatile bool _cameraReady = false;
 
         public async Task StartCamera()
         {
@@ -155,10 +153,30 @@ namespace LEDVision.Camera
             {
                 try
                 {
-                    _videoCapture = new VideoCapture(FindCameraIndex(), VideoCaptureAPIs.DSHOW);
+                    _cameraReady = false;
+                    _cameraIndex = CameraControlHelper.FindCameraIndex();
+                    _videoCapture = new VideoCapture(_cameraIndex, VideoCaptureAPIs.DSHOW);
                     try
                     {
                         _videoCapture.BufferSize = 1;
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    // Mở helper + áp thông số hiện tại (mặc định hoặc của model đã nạp) lên camera.
+                    // Làm trên UI thread để mọi truy cập COM sau này (slider, lưu model) cùng một apartment.
+                    try
+                    {
+                        var dispatcher = Application.Current?.Dispatcher;
+                        if (dispatcher != null)
+                        {
+                            await dispatcher.InvokeAsync(new Action(OnCameraOpened));
+                        }
+                        else
+                        {
+                            OnCameraOpened();
+                        }
                     }
                     catch (Exception)
                     {
@@ -175,6 +193,7 @@ namespace LEDVision.Camera
                                 //Cv2.Invert(frame, frame);
 
                                 LastMatFrame = frame.Clone();
+                                LastFrameTime = DateTime.Now;
                                 var bi = frame.ToBitmapSource();
                                 bi.Freeze();
                                 LastFrame = bi;
@@ -186,6 +205,7 @@ namespace LEDVision.Camera
                     }
 
                     _videoCapture?.Dispose();
+                    Control.Close();
                 }
                 catch (Exception ex)
                 {
@@ -200,306 +220,262 @@ namespace LEDVision.Camera
             }
         }
 
-        // Đọc thông số hiện tại từ camera vào bộ thông số dùng chung
-        public void ReadCameraSettingValues()
+        // Đóng hẳn camera hiện tại rồi mở lại (nút Reconnect Camera ở thanh bottom).
+        public async Task RestartCamera()
+        {
+            _cameraReady = false;
+            try
+            {
+                _cancellationTokenSource?.Cancel();
+            }
+            catch (Exception)
+            {
+            }
+
+            if (_previewTask != null)
+            {
+                try
+                {
+                    await _previewTask; // vòng lặp thoát trong ~250 ms và tự Dispose VideoCapture
+                }
+                catch (Exception)
+                {
+                }
+            }
+
+            try
+            {
+                _videoCapture?.Dispose();
+            }
+            catch (Exception)
+            {
+            }
+            _videoCapture = null;
+            Control.Close();
+            _previewTask = null;
+
+            await StartCamera();
+        }
+
+        private void OnCameraOpened()
         {
             try
             {
-                cameraSettingValues.Exposure = (int)_videoCapture.Exposure;
+                Control.Open(_cameraIndex);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
+            _cameraReady = true;
+            // Camera vừa mở: đưa nó về đúng bộ thông số app đang giữ (mặc định / model đã nạp)
+            SetParammeter(cameraSettingValues);
+            CameraOpened?.Invoke(this, EventArgs.Empty);
+        }
+
+        // Mở hộp thoại thuộc tính của driver (Logitech "Properties": Video Proc Amp / Camera Control).
+        // Hàm chặn (modal) cho tới khi đóng hộp thoại; sau đó đọc lại toàn bộ giá trị từ camera.
+        public bool ShowDriverDialog()
+        {
+            if (!_cameraReady || _videoCapture == null) return false;
             try
             {
-                cameraSettingValues.Brightness = (int)_videoCapture.Brightness;
+                _videoCapture.Set(VideoCaptureProperties.Settings, 1);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+                return false;
             }
+            ReadFromCamera();
+            return true;
+        }
+
+        // Đọc thông số ĐANG DÙNG THẬT của camera vào cameraSettingValues (kể cả khi người dùng chỉnh
+        // ở hộp thoại driver / phần mềm Logitech). Gọi trước khi lưu model để file luôn khớp với camera.
+        public bool ReadFromCamera()
+        {
+            if (!Control.IsOpen)
+            {
+                return ReadCameraSettingValues();
+            }
+
+            IsSyncingFromCamera = true;
             try
             {
-                cameraSettingValues.Contrast = (int)_videoCapture.Contrast;
-            }
-            catch (Exception ex)
-            {
+                int v;
+                CameraControlFlags cf;
+                VideoProcAmpFlags pf;
 
-            }
-            try
-            {
-                cameraSettingValues.Saturation = (int)_videoCapture.Saturation;
-            }
-            catch (Exception ex)
-            {
-            }
-            try
-            {
-                cameraSettingValues.Hue = (int)_videoCapture.Hue;
-            }
-            catch (Exception ex)
-            {
+                if (Control.GetCameraControl(CameraControlProperty.Exposure, out v, out cf))
+                {
+                    cameraSettingValues.Exposure = v;
+                    cameraSettingValues.AutoExposure = (cf & CameraControlFlags.Auto) == CameraControlFlags.Auto;
+                }
+                if (Control.GetCameraControl(CameraControlProperty.Focus, out v, out cf))
+                {
+                    cameraSettingValues.Focus = v;
+                    cameraSettingValues.AutoFocus = (cf & CameraControlFlags.Auto) == CameraControlFlags.Auto;
+                }
+                if (Control.GetCameraControl(CameraControlProperty.Zoom, out v, out cf)) cameraSettingValues.Zoom = v;
+                if (Control.GetCameraControl(CameraControlProperty.Pan, out v, out cf)) cameraSettingValues.Pan = v;
+                if (Control.GetCameraControl(CameraControlProperty.Tilt, out v, out cf)) cameraSettingValues.Tilt = v;
 
+                if (Control.GetProcAmp(VideoProcAmpProperty.Brightness, out v, out pf)) cameraSettingValues.Brightness = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.Contrast, out v, out pf)) cameraSettingValues.Contrast = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.Saturation, out v, out pf)) cameraSettingValues.Saturation = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.Hue, out v, out pf)) cameraSettingValues.Hue = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.Sharpness, out v, out pf)) cameraSettingValues.Sharpness = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.Gamma, out v, out pf)) cameraSettingValues.Gamma = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.BacklightCompensation, out v, out pf)) cameraSettingValues.BacklightComp = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.Gain, out v, out pf)) cameraSettingValues.Gain = v;
+                if (Control.GetProcAmp(VideoProcAmpProperty.WhiteBalance, out v, out pf))
+                {
+                    cameraSettingValues.WhiteBalanceBlueU = v;
+                    cameraSettingValues.AutoWhiteBalance = (pf & VideoProcAmpFlags.Auto) == VideoProcAmpFlags.Auto;
+                }
+                return true;
             }
-            try
+            catch (Exception)
             {
-                cameraSettingValues.WhiteBalanceBlueU = (int)_videoCapture.WhiteBalanceBlueU;
+                return false;
             }
-            catch (Exception ex)
+            finally
             {
-
-            }
-            try
-            {
-                cameraSettingValues.Sharpness = (int)_videoCapture.Sharpness;
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.Focus = (int)_videoCapture.Focus;
-
-            }
-            catch (Exception ex)
-            {
-            }
-            try
-            {
-                cameraSettingValues.Zoom = (int)_videoCapture.Zoom;
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.Gain = (int)_videoCapture.Gain;
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.Gamma = (int)_videoCapture.Get(VideoCaptureProperties.Gamma);
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.BacklightComp = (int)_videoCapture.Get(VideoCaptureProperties.BackLight);
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.Pan = (int)_videoCapture.Get(VideoCaptureProperties.Pan);
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.Tilt = (int)_videoCapture.Get(VideoCaptureProperties.Tilt);
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.AutoExposure = _videoCapture.Get(VideoCaptureProperties.AutoExposure) != 0;
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.AutoWhiteBalance = _videoCapture.Get(VideoCaptureProperties.AutoWB) != 0;
-            }
-            catch (Exception ex)
-            {
-
-            }
-            try
-            {
-                cameraSettingValues.AutoFocus = _videoCapture.Get(VideoCaptureProperties.AutoFocus) != 0;
-            }
-            catch (Exception ex)
-            {
-
+                IsSyncingFromCamera = false;
             }
         }
-               
-        public bool SetParammeter(CameraSettingValues NewCameraSetting)
+
+        // Đọc thông số qua OpenCV (dự phòng khi không mở được DirectShow helper)
+        public bool ReadCameraSettingValues()
         {
-            if (NewCameraSetting != null)
+            if (!_cameraReady || _videoCapture == null) return false;
+            IsSyncingFromCamera = true;
+            try
             {
-                try
-                {
-                    _videoCapture.Exposure = NewCameraSetting.Exposure;
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    _videoCapture.Brightness = NewCameraSetting.Brightness;
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Contrast = NewCameraSetting.Contrast;
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    _videoCapture.Saturation = NewCameraSetting.Saturation;
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Hue = NewCameraSetting.Hue;
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.WhiteBalanceBlueU = NewCameraSetting.WhiteBalanceBlueU;
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Sharpness = NewCameraSetting.Sharpness;
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    _videoCapture.Focus = NewCameraSetting.Focus;
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Zoom = NewCameraSetting.Zoom;
-                }
-                catch (Exception ex)
-                {
-
-                }
-                try
-                {
-                    _videoCapture.Gain = NewCameraSetting.Gain;
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.Gamma, NewCameraSetting.Gamma);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.BackLight, NewCameraSetting.BacklightComp);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.Pan, NewCameraSetting.Pan);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.Tilt, NewCameraSetting.Tilt);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.AutoExposure, NewCameraSetting.AutoExposure ? 1 : 0);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.AutoWB, NewCameraSetting.AutoWhiteBalance ? 1 : 0);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-                try
-                {
-                    _videoCapture.Set(VideoCaptureProperties.AutoFocus, NewCameraSetting.AutoFocus ? 1 : 0);
-                }
-                catch (Exception ex)
-                {
-
-                }
-
-
+                try { cameraSettingValues.Exposure = (int)_videoCapture.Exposure; } catch (Exception) { }
+                try { cameraSettingValues.Brightness = (int)_videoCapture.Brightness; } catch (Exception) { }
+                try { cameraSettingValues.Contrast = (int)_videoCapture.Contrast; } catch (Exception) { }
+                try { cameraSettingValues.Saturation = (int)_videoCapture.Saturation; } catch (Exception) { }
+                try { cameraSettingValues.Hue = (int)_videoCapture.Hue; } catch (Exception) { }
+                try { cameraSettingValues.WhiteBalanceBlueU = (int)_videoCapture.WhiteBalanceBlueU; } catch (Exception) { }
+                try { cameraSettingValues.Sharpness = (int)_videoCapture.Sharpness; } catch (Exception) { }
+                try { cameraSettingValues.Focus = (int)_videoCapture.Focus; } catch (Exception) { }
+                try { cameraSettingValues.Zoom = (int)_videoCapture.Zoom; } catch (Exception) { }
+                try { cameraSettingValues.Gain = (int)_videoCapture.Gain; } catch (Exception) { }
+                try { cameraSettingValues.Gamma = (int)_videoCapture.Get(VideoCaptureProperties.Gamma); } catch (Exception) { }
+                try { cameraSettingValues.BacklightComp = (int)_videoCapture.Get(VideoCaptureProperties.BackLight); } catch (Exception) { }
+                try { cameraSettingValues.Pan = (int)_videoCapture.Get(VideoCaptureProperties.Pan); } catch (Exception) { }
+                try { cameraSettingValues.Tilt = (int)_videoCapture.Get(VideoCaptureProperties.Tilt); } catch (Exception) { }
+                try { cameraSettingValues.AutoExposure = _videoCapture.Get(VideoCaptureProperties.AutoExposure) != 0; } catch (Exception) { }
+                try { cameraSettingValues.AutoWhiteBalance = _videoCapture.Get(VideoCaptureProperties.AutoWB) != 0; } catch (Exception) { }
+                try { cameraSettingValues.AutoFocus = _videoCapture.Get(VideoCaptureProperties.AutoFocus) != 0; } catch (Exception) { }
+                return true;
             }
+            finally
+            {
+                IsSyncingFromCamera = false;
+            }
+        }
+
+        // Ghi MỘT thông số vừa đổi (kéo slider / tick Auto) lên camera thay vì ghi cả bộ:
+        // mỗi lệnh Set là một USB control transfer, ghi cả 14 thông số mỗi lần kéo slider làm UI khựng.
+        public bool SetSingle(string propertyName, CameraSettingValues s)
+        {
+            if (s == null) return false;
+            if (!_cameraReady) return false;
+            if (string.IsNullOrEmpty(propertyName) || !Control.IsOpen) return SetParammeter(s);
+
+            switch (propertyName)
+            {
+                case nameof(CameraSettingValues.Exposure):
+                case nameof(CameraSettingValues.AutoExposure):
+                    return Control.SetCameraControl(CameraControlProperty.Exposure, s.Exposure, s.AutoExposure);
+                case nameof(CameraSettingValues.Focus):
+                case nameof(CameraSettingValues.AutoFocus):
+                    return Control.SetCameraControl(CameraControlProperty.Focus, s.Focus, s.AutoFocus);
+                case nameof(CameraSettingValues.Zoom):
+                    return Control.SetCameraControl(CameraControlProperty.Zoom, s.Zoom);
+                case nameof(CameraSettingValues.Pan):
+                    return Control.SetCameraControl(CameraControlProperty.Pan, s.Pan);
+                case nameof(CameraSettingValues.Tilt):
+                    return Control.SetCameraControl(CameraControlProperty.Tilt, s.Tilt);
+                case nameof(CameraSettingValues.Brightness):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Brightness, s.Brightness);
+                case nameof(CameraSettingValues.Contrast):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Contrast, s.Contrast);
+                case nameof(CameraSettingValues.Saturation):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Saturation, s.Saturation);
+                case nameof(CameraSettingValues.Hue):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Hue, s.Hue);
+                case nameof(CameraSettingValues.Sharpness):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Sharpness, s.Sharpness);
+                case nameof(CameraSettingValues.Gamma):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Gamma, s.Gamma);
+                case nameof(CameraSettingValues.BacklightComp):
+                    return Control.SetProcAmp(VideoProcAmpProperty.BacklightCompensation, s.BacklightComp);
+                case nameof(CameraSettingValues.Gain):
+                    return Control.SetProcAmp(VideoProcAmpProperty.Gain, s.Gain);
+                case nameof(CameraSettingValues.WhiteBalanceBlueU):
+                case nameof(CameraSettingValues.AutoWhiteBalance):
+                    return Control.SetProcAmp(VideoProcAmpProperty.WhiteBalance, s.WhiteBalanceBlueU, s.AutoWhiteBalance);
+                default:
+                    return false;
+            }
+        }
+
+        // Ghi toàn bộ bộ thông số lên camera. Ưu tiên DirectShow (có cờ Manual/Auto, tự kẹp vào dải hợp lệ),
+        // dự phòng OpenCV khi helper chưa mở.
+        public bool SetParammeter(CameraSettingValues s)
+        {
+            if (s == null) return false;
+
+            if (Control.IsOpen)
+            {
+                // Nhóm Camera Control: đặt Auto/Manual đúng theo checkbox
+                Control.SetCameraControl(CameraControlProperty.Exposure, s.Exposure, s.AutoExposure);
+                Control.SetCameraControl(CameraControlProperty.Focus, s.Focus, s.AutoFocus);
+                Control.SetCameraControl(CameraControlProperty.Zoom, s.Zoom);
+                // Pan/Tilt: ảnh trong app đã xoay 90° nên "ngang/dọc" trên UI được map ở VisionPage.xaml
+                Control.SetCameraControl(CameraControlProperty.Pan, s.Pan);
+                Control.SetCameraControl(CameraControlProperty.Tilt, s.Tilt);
+
+                // Nhóm Video Proc Amp
+                Control.SetProcAmp(VideoProcAmpProperty.Brightness, s.Brightness);
+                Control.SetProcAmp(VideoProcAmpProperty.Contrast, s.Contrast);
+                Control.SetProcAmp(VideoProcAmpProperty.Saturation, s.Saturation);
+                Control.SetProcAmp(VideoProcAmpProperty.Hue, s.Hue);
+                Control.SetProcAmp(VideoProcAmpProperty.Sharpness, s.Sharpness);
+                Control.SetProcAmp(VideoProcAmpProperty.Gamma, s.Gamma);
+                Control.SetProcAmp(VideoProcAmpProperty.BacklightCompensation, s.BacklightComp);
+                Control.SetProcAmp(VideoProcAmpProperty.Gain, s.Gain);
+                Control.SetProcAmp(VideoProcAmpProperty.WhiteBalance, s.WhiteBalanceBlueU, s.AutoWhiteBalance);
+                return true;
+            }
+
+            if (!_cameraReady || _videoCapture == null) return false;
+
+            try { _videoCapture.Exposure = s.Exposure; } catch (Exception) { }
+            try { _videoCapture.Brightness = s.Brightness; } catch (Exception) { }
+            try { _videoCapture.Contrast = s.Contrast; } catch (Exception) { }
+            try { _videoCapture.Saturation = s.Saturation; } catch (Exception) { }
+            try { _videoCapture.Hue = s.Hue; } catch (Exception) { }
+            try { _videoCapture.WhiteBalanceBlueU = s.WhiteBalanceBlueU; } catch (Exception) { }
+            try { _videoCapture.Sharpness = s.Sharpness; } catch (Exception) { }
+            try { _videoCapture.Focus = s.Focus; } catch (Exception) { }
+            try { _videoCapture.Zoom = s.Zoom; } catch (Exception) { }
+            try { _videoCapture.Gain = s.Gain; } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.Gamma, s.Gamma); } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.BackLight, s.BacklightComp); } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.Pan, s.Pan); } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.Tilt, s.Tilt); } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.AutoExposure, s.AutoExposure ? 1 : 0); } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.AutoWB, s.AutoWhiteBalance ? 1 : 0); } catch (Exception) { }
+            try { _videoCapture.Set(VideoCaptureProperties.AutoFocus, s.AutoFocus ? 1 : 0); } catch (Exception) { }
             return true;
         }
 
     }
 
+    // Giá trị mặc định = bộ thông số Logitech BRIO đã tinh chỉnh (Video Proc Amp + Camera Control, tất cả Auto = off)
     public class CameraSettingValues : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -509,7 +485,7 @@ namespace LEDVision.Camera
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private int brightness = 111;
+        private int brightness = 156;
 
         public int Brightness
         {
@@ -525,7 +501,7 @@ namespace LEDVision.Camera
             }
         }
 
-        private int contrast = 51;
+        private int contrast = 125;
 
         public int Contrast
         {
@@ -541,7 +517,7 @@ namespace LEDVision.Camera
             }
         }
 
-        private int saturation = 255;
+        private int saturation = 179;
 
         public int Saturation
         {
@@ -589,7 +565,7 @@ namespace LEDVision.Camera
             }
         }
 
-        private int whiteBalanceBlueU = 2990;
+        private int whiteBalanceBlueU = 7500;
 
         public int WhiteBalanceBlueU
         {
@@ -670,7 +646,7 @@ namespace LEDVision.Camera
             }
         }
 
-        private int exposure = -8;
+        private int exposure = -10;
 
         public int Exposure
         {
@@ -686,7 +662,7 @@ namespace LEDVision.Camera
             }
         }
 
-        private int pan = 0;
+        private int pan = -8;
 
         public int Pan
         {
@@ -702,7 +678,7 @@ namespace LEDVision.Camera
             }
         }
 
-        private int tilt = 0;
+        private int tilt = 10;
 
         public int Tilt
         {

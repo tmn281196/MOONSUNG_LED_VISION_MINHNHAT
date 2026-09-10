@@ -218,6 +218,8 @@ namespace LEDVision
             InitializeComponent();
             HistogramAnalyzing();
             BindCameraSettings();
+            CameraSetting.Instance.CameraOpened += (s, e) => Dispatcher.BeginInvoke(new Action(ApplyCameraRanges));
+            this.PreviewKeyDown += VisionPage_PreviewKeyDown;
 
             this.mainWindow = mainWindow;
             obtainFrameTimer.Elapsed += ObtainFrameTimer_Elapsed;
@@ -295,7 +297,26 @@ namespace LEDVision
             surfaceSized = true;
         }
 
+        private int frameTickBusy = 0;
+
+        // Bỏ qua tick nếu tick trước chưa chạy xong: tránh dồn nhiều Dispatcher.Invoke làm UI bị đơ (nhất là lúc chuyển trang)
         private void ObtainFrameTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            if (System.Threading.Interlocked.CompareExchange(ref frameTickBusy, 1, 0) != 0) return;
+            try
+            {
+                ObtainFrameTick();
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                System.Threading.Interlocked.Exchange(ref frameTickBusy, 0);
+            }
+        }
+
+        private void ObtainFrameTick()
         {
             if (CameraSetting.Instance.LastMatFrame != null)
             {
@@ -330,6 +351,20 @@ namespace LEDVision
 
         }
 
+        // Phím tắt ROI (Ctrl+C/V/D, Delete, mũi tên) chạy ở mọi chỗ trên trang, trừ khi đang gõ / chỉnh một ô nhập
+        private void VisionPage_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            var focused = Keyboard.FocusedElement;
+            if (focused is System.Windows.Controls.Primitives.TextBoxBase
+                || focused is System.Windows.Controls.ComboBox
+                || focused is System.Windows.Controls.Slider
+                || focused is System.Windows.Controls.PasswordBox)
+            {
+                return;
+            }
+            builder?.HandleShortcut(e);
+        }
+
         private CameraSettingValues boundCameraValues;
 
         // Bind danh sách thông số camera (Expander) vào bộ dùng chung; kéo slider là áp lên camera ngay.
@@ -341,11 +376,92 @@ namespace LEDVision
             boundCameraValues = CameraSetting.Instance.cameraSettingValues;
             cameraSettingsPanel.DataContext = boundCameraValues;
             boundCameraValues.PropertyChanged += CameraValues_PropertyChanged;
+            ApplyCameraRanges();
         }
 
         private void CameraValues_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            CameraSetting.Instance.SetParammeter(boundCameraValues);
+            // Giá trị đang được đọc TỪ camera vào → không đẩy ngược lại camera
+            if (CameraSetting.Instance.IsSyncingFromCamera) return;
+            CameraSetting.Instance.SetSingle(e.PropertyName, boundCameraValues);
+        }
+
+        // Đặt Min/Max/Step của từng slider theo dải giá trị THẬT đọc từ driver camera
+        // (mỗi camera khác nhau: BRIO có White Balance tới 7500, Pan/Tilt chỉ ±10...). Không đọc được thì giữ giá trị trong XAML.
+        private void ApplyCameraRanges()
+        {
+            var ctl = CameraSetting.Instance.Control;
+            if (ctl == null || !ctl.IsOpen) return;
+
+            SetSliderRange(sldExposure, ctl.GetRange(DirectShowLib.CameraControlProperty.Exposure));
+            SetSliderRange(sldFocus, ctl.GetRange(DirectShowLib.CameraControlProperty.Focus));
+            SetSliderRange(sldZoom, ctl.GetRange(DirectShowLib.CameraControlProperty.Zoom));
+            // Ảnh đã xoay 90°: slider ngang = Tilt, slider dọc = Pan
+            SetSliderRange(sldShiftH, ctl.GetRange(DirectShowLib.CameraControlProperty.Tilt));
+            SetSliderRange(sldShiftV, ctl.GetRange(DirectShowLib.CameraControlProperty.Pan));
+
+            SetSliderRange(sldBrightness, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Brightness));
+            SetSliderRange(sldContrast, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Contrast));
+            SetSliderRange(sldSaturation, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Saturation));
+            SetSliderRange(sldHue, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Hue));
+            SetSliderRange(sldGamma, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Gamma));
+            SetSliderRange(sldSharpness, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Sharpness));
+            SetSliderRange(sldBacklight, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.BacklightCompensation));
+            SetSliderRange(sldWhiteBalance, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.WhiteBalance));
+            SetSliderRange(sldGain, ctl.GetRange(DirectShowLib.VideoProcAmpProperty.Gain));
+        }
+
+        private static void SetSliderRange(Slider slider, CameraPropertyRange range)
+        {
+            if (slider == null) return;
+            if (range == null)
+            {
+                // Camera không hỗ trợ thông số này (BRIO: Hue, Gamma bị mờ trong hộp thoại driver)
+                slider.IsEnabled = false;
+                slider.ToolTip = "Not supported by this camera";
+                return;
+            }
+            slider.IsEnabled = true;
+            slider.Minimum = range.Min;
+            slider.Maximum = range.Max;
+            slider.TickFrequency = range.Step > 0 ? range.Step : 1;
+            slider.IsSnapToTickEnabled = true;
+            string baseTip = slider.Tag as string;
+            slider.ToolTip = (baseTip != null ? baseTip + " " : "") + "Range " + range.Min + " ~ " + range.Max + (range.Step > 1 ? " (step " + range.Step + ")" : "");
+        }
+
+        // Đọc lại thông số ĐANG DÙNG của camera lên slider (khi chỉnh bằng phần mềm Logitech / hộp thoại driver)
+        private void SyncCamera_Click(object sender, RoutedEventArgs e)
+        {
+            if (!CameraSetting.Instance.ReadFromCamera())
+            {
+                System.Windows.MessageBox.Show("Camera is not ready.", "Camera", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        // Mở hộp thoại thuộc tính của driver (Logitech Properties). Đóng xong tự đọc lại giá trị.
+        private void DriverDialog_Click(object sender, RoutedEventArgs e)
+        {
+            if (!CameraSetting.Instance.ShowDriverDialog())
+            {
+                System.Windows.MessageBox.Show("Cannot open the camera driver dialog.", "Camera", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        // Nút "?": hướng dẫn thao tác ROI (EN / TH)
+        private void RoiHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new RoiHelpWindow("roi");
+            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
+            win.Show();
+        }
+
+        // Nút "?" cạnh HSV Range: lý thuyết màu HSV + cách app tách màu (EN / TH)
+        private void HsvHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new RoiHelpWindow("hsv");
+            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
+            win.Show();
         }
 
         // Lấy lại thông số từ file model đã nạp/lưu gần nhất
@@ -386,27 +502,108 @@ namespace LEDVision
             translateTransform.X = 0;
             translateTransform.Y = 0;
         }
+        // Save: ghi thẳng vào file model đang mở (không hỏi). Chưa có file thì hỏi như Save As.
         public void SaveModelBtn_Click(object sender, RoutedEventArgs e)
         {
+            SaveModel(false);
+        }
 
-            ProgramModel.CameraSettingValues = CameraSetting.Instance.cameraSettingValues;
+        // Save As: luôn hỏi chọn file
+        public void SaveModelAsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveModel(true);
+        }
 
-            Microsoft.Win32.SaveFileDialog openFile = new Microsoft.Win32.SaveFileDialog();
-            if (openFile.ShowDialog() == true)
+        // JSON của model hiện tại (đúng định dạng sẽ ghi ra file) → dùng để biết model đã bị sửa hay chưa
+        public string GetModelJson()
+        {
+            try
             {
-                try
-                {
-                    Utility.SaveModel(ProgramModel, openFile.FileName, openFile.SafeFileName);
-
-                    CameraSetting.Instance.loadedCameraSettingValues = CameraSetting.Instance.cameraSettingValues.Clone();
-
-                    mainWindow.autoPage.ProgramModel = ProgramModel;
-                }
-                catch (Exception)
-                {
-                }
+                var m = ProgramModel;
+                if (m == null) return "";
+                m.CameraSettingValues = CameraSetting.Instance.cameraSettingValues;
+                return System.Text.Json.JsonSerializer.Serialize(m, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+            }
+            catch (Exception)
+            {
+                return "";
             }
         }
+
+        private void SaveModel(bool saveAs)
+        {
+            // 1) Lấy giá trị ĐANG DÙNG THẬT của camera (người dùng có thể đã chỉnh ở hộp thoại driver / Logitech)
+            CameraSetting.Instance.ReadFromCamera();
+            var camValues = CameraSetting.Instance.cameraSettingValues;
+
+            // 2) Gắn bộ thông số camera vào model sẽ lưu (và các bản model khác đang giữ trong app)
+            ProgramModel.CameraSettingValues = camValues;
+            if (programModel != null) programModel.CameraSettingValues = camValues;
+            if (mainWindow != null && mainWindow.programModel != null) mainWindow.programModel.CameraSettingValues = camValues;
+
+            // 3) Chọn đường dẫn: Save → file đang mở; Save As / chưa có file → hộp thoại
+            string path = mainWindow?.CurrentModelPath;
+            if (saveAs || string.IsNullOrEmpty(path))
+            {
+                Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog()
+                {
+                    DefaultExt = ".json",
+                    Filter = "Vision Model File (*.json)|*.json",
+                    Title = saveAs ? "Save model as" : "Save model",
+                };
+                if (!string.IsNullOrEmpty(path))
+                {
+                    try
+                    {
+                        dlg.InitialDirectory = System.IO.Path.GetDirectoryName(path);
+                        dlg.FileName = System.IO.Path.GetFileName(path);
+                    }
+                    catch (Exception) { }
+                }
+                if (dlg.ShowDialog() != true) return;
+                path = dlg.FileName;
+            }
+
+            bool ok = false;
+            try
+            {
+                ok = Utility.SaveModel(ProgramModel, path, System.IO.Path.GetFileName(path));
+            }
+            catch (Exception)
+            {
+                ok = false;
+            }
+
+            if (!ok)
+            {
+                System.Windows.MessageBox.Show("Failed to save model file!\n" + path, "Save model", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            CameraSetting.Instance.loadedCameraSettingValues = camValues.Clone();
+            // AutoPage / VisionTester phải nhận BẢN CLONE: các Ellipse ROI của model này đang nằm trên canvas
+            // của VisionBuilder, add lại lên canvas thứ hai sẽ ném "already the logical child of another element".
+            if (mainWindow != null && mainWindow.autoPage != null)
+            {
+                var autoModel = ProgramModel.Clone();
+                autoModel.CameraSettingValues = camValues;
+                mainWindow.autoPage.ProgramModel = autoModel;
+                if (mainWindow.settingPage != null) mainWindow.settingPage.ProgramModel = autoModel;
+                mainWindow.programModel = autoModel;
+            }
+
+            // Cập nhật tên model vừa lưu lên thanh tiêu đề + AutoPage + ghi nhớ đường dẫn
+            string modelName = System.IO.Path.GetFileNameWithoutExtension(path);
+            if (mainWindow != null)
+            {
+                mainWindow.SetModelName(modelName);
+                if (mainWindow.autoPage != null) mainWindow.autoPage.ModelName = modelName;
+                mainWindow.RememberLastModel(path);
+                mainWindow.MarkModelSaved();
+                mainWindow.FlashSaved();
+            }
+        }
+
         private void ColorChanged()
         {
             bool segmentChecked = segmentCheckBox.IsChecked.Value;
@@ -624,11 +821,19 @@ namespace LEDVision
 
                 var scale = originalImage.Width / this.cameraViewer.Width;
 
+                // 3 bộ số liệu / 3 đường đồ thị:
+                //   vòng đứt  / tím  = ROI ĐANG chọn
+                //   vòng liền / xanh = các ROI CHƯA chọn của nhóm
+                //   "All"     / cam  = tất cả ROI của nhóm
+                var allRois = new List<(Point center, double radius)>();
                 if (this.ProgramModel.Vision.SelectedGroupLED != null)
                 {
                     foreach (var led in this.ProgramModel.Vision.SelectedGroupLED.Colection)
                     {
-                        rois.Add((new Point(led.RoiPoint.X * scale, led.RoiPoint.Y * scale), led.RoiRadius * scale));
+                        var item = (new Point(led.RoiPoint.X * scale, led.RoiPoint.Y * scale), led.RoiRadius * scale);
+                        allRois.Add(item);
+                        if (ReferenceEquals(led, builder.selectedLed)) continue;
+                        rois.Add(item);
                     }
                 }
 
@@ -660,13 +865,35 @@ namespace LEDVision
                 fullROISat.Text =   $"{sRange.min:000} ~ {sRange.max:000}";
                 fullROIValue.Text = $"{vRange.min:000} ~ {vRange.max:000}";
 
-                HueChart.Series.Clear();
-                SatChart.Series.Clear();
-                ValueChart.Series.Clear();
+                // Series được tạo MỘT LẦN (EnsureHistSeries); mỗi tick chỉ đổi dữ liệu → đồ thị không chớp
+                EnsureHistSeries();
+                UpdateSeriesValues(hUnselSeries, hHist);
+                UpdateSeriesValues(sUnselSeries, sHist);
+                UpdateSeriesValues(vUnselSeries, vHist);
 
-                HueChart.Series.Add(new LineSeries { Values = MatToList(hHist), PointGeometry = null   });
-                SatChart.Series.Add(new LineSeries { Values = MatToList(sHist), PointGeometry = null   });
-                ValueChart.Series.Add(new LineSeries { Values = MatToList(vHist), PointGeometry = null });
+                // ----- All: tất cả ROI của nhóm (màu cam) -----
+                {
+                    Mat maskAll = new Mat(hsv.Rows, hsv.Cols, MatType.CV_8UC1, Scalar.All(0));
+                    foreach (var roi in allRois)
+                    {
+                        Cv2.Circle(maskAll, (int)roi.center.X, (int)roi.center.Y, (int)roi.radius, Scalar.All(255), -1);
+                    }
+                    var hHistAll = new Mat();
+                    var sHistAll = new Mat();
+                    var vHistAll = new Mat();
+                    Cv2.CalcHist(new[] { channels[0] }, new[] { 0 }, maskAll, hHistAll, 1, new[] { 180 }, new[] { new Rangef(0, 180) });
+                    Cv2.CalcHist(new[] { channels[1] }, new[] { 0 }, maskAll, sHistAll, 1, new[] { 256 }, new[] { new Rangef(0, 256) });
+                    Cv2.CalcHist(new[] { channels[2] }, new[] { 0 }, maskAll, vHistAll, 1, new[] { 256 }, new[] { new Rangef(0, 256) });
+
+                    var hRangeAll = GetHistogramRange(hHistAll, 179, 179f);
+                    var sRangeAll = GetHistogramRange(sHistAll, 255, 255f);
+                    var vRangeAll = GetHistogramRange(vHistAll, 255, 255f);
+                    allROIHue.Text = $"{hRangeAll.min:000} ~ {hRangeAll.max:000}";
+                    allROISat.Text = $"{sRangeAll.min:000} ~ {sRangeAll.max:000}";
+                    allROIValue.Text = $"{vRangeAll.min:000} ~ {vRangeAll.max:000}";
+
+                    // All chỉ hiện số liệu min ~ max, không vẽ lên đồ thị
+                }
 
                 if (builder.selectedLed != null)
                 {
@@ -699,11 +926,18 @@ namespace LEDVision
 
 
 
-                    HueChart.Series.Add(new LineSeries { Values = MatToList(hHist_), PointGeometry = null, Stroke = new SolidColorBrush(Colors.Purple) });
-                    SatChart.Series.Add(new LineSeries { Values = MatToList(sHist_), PointGeometry = null, Stroke = new SolidColorBrush(Colors.Purple) });
-                    ValueChart.Series.Add(new LineSeries { Values = MatToList(vHist_), PointGeometry = null, Stroke = new SolidColorBrush(Colors.Purple) });
-                   
-
+                    UpdateSeriesValues(hSelSeries, hHist_);
+                    UpdateSeriesValues(sSelSeries, sHist_);
+                    UpdateSeriesValues(vSelSeries, vHist_);
+                    hSelSeries.Visibility = Visibility.Visible;
+                    sSelSeries.Visibility = Visibility.Visible;
+                    vSelSeries.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    hSelSeries.Visibility = Visibility.Collapsed;
+                    sSelSeries.Visibility = Visibility.Collapsed;
+                    vSelSeries.Visibility = Visibility.Collapsed;
                 }
 
 
@@ -718,6 +952,62 @@ namespace LEDVision
             }
 
 
+        }
+
+        // 6 series cố định của 3 đồ thị H/S/V: Unselected (xanh dương), Selected (cam). All chỉ hiện số, không vẽ.
+        private LineSeries hUnselSeries, sUnselSeries, vUnselSeries;
+        private LineSeries hSelSeries, sSelSeries, vSelSeries;
+        private bool histSeriesReady = false;
+
+        private static LineSeries MakeSeries(System.Windows.Media.Brush stroke, int bins, string title)
+        {
+            var values = new ChartValues<double>();
+            for (int i = 0; i < bins; i++) values.Add(0);
+            return new LineSeries
+            {
+                Title = title,
+                Values = values,
+                PointGeometry = null,
+                Stroke = stroke,
+                Fill = Brushes.Transparent,
+                LineSmoothness = 0,
+                StrokeThickness = 1.5,
+            };
+        }
+
+        private void EnsureHistSeries()
+        {
+            if (histSeriesReady) return;
+            var blue = new SolidColorBrush(Color.FromRgb(0x33, 0x9A, 0xF0));   // Unselected
+            var orange = new SolidColorBrush(Color.FromRgb(0xF3, 0x9C, 0x12)); // Selected
+
+            hUnselSeries = MakeSeries(blue, 180, "Unselected");
+            sUnselSeries = MakeSeries(blue, 256, "Unselected");
+            vUnselSeries = MakeSeries(blue, 256, "Unselected");
+            hSelSeries = MakeSeries(orange, 180, "Selected");
+            sSelSeries = MakeSeries(orange, 256, "Selected");
+            vSelSeries = MakeSeries(orange, 256, "Selected");
+
+            HueChart.Series.Clear();
+            SatChart.Series.Clear();
+            ValueChart.Series.Clear();
+            HueChart.Series.Add(hUnselSeries); HueChart.Series.Add(hSelSeries);
+            SatChart.Series.Add(sUnselSeries); SatChart.Series.Add(sSelSeries);
+            ValueChart.Series.Add(vUnselSeries); ValueChart.Series.Add(vSelSeries);
+            histSeriesReady = true;
+        }
+
+        // Ghi giá trị histogram vào ChartValues có sẵn (không tạo series / collection mới → không chớp)
+        private static void UpdateSeriesValues(LineSeries series, Mat hist)
+        {
+            var values = series.Values as ChartValues<double>;
+            if (values == null) return;
+            int n = Math.Min(values.Count, hist.Rows);
+            for (int i = 0; i < n; i++)
+            {
+                double v = hist.Get<float>(i);
+                if (values[i] != v) values[i] = v;
+            }
         }
 
         private ChartValues<double> MatToList(Mat hist)

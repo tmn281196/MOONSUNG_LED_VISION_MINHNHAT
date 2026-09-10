@@ -3,36 +3,36 @@
     "FourLED": {
       "Colection": [
         {
-          "RoiRadius": 32,
+          "RoiRadius": 9,
           "ResultFinal": 1,
           "RoiPoint": {
-            "X": 520.74999999999989,
-            "Y": 145.55428571428567
+            "X": 448.74999999999989,
+            "Y": 196.55428571428567
           }
         },
         {
-          "RoiRadius": 32,
+          "RoiRadius": 9,
           "ResultFinal": 1,
           "RoiPoint": {
-            "X": 121.74999999999989,
-            "Y": 730.5542857142857
+            "X": 337.74999999999989,
+            "Y": 209.55428571428567
           }
         },
         {
-          "RoiRadius": 32,
+          "RoiRadius": 9,
           "ResultFinal": 1,
           "RoiPoint": {
-            "X": 201.74999999999989,
-            "Y": 499.5542857142857
+            "X": 396.74999999999989,
+            "Y": 331.5542857142857
           }
         }
       ],
       "ContourArea": 0,
-      "RoiRadius": 32,
+      "RoiRadius": 9,
       "HSV": {
         "HUE": {
-          "Max": 112,
-          "Min": 105
+          "Max": 179,
+          "Min": 0
         },
         "SAT": {
           "Max": 255,

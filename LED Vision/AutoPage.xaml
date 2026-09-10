@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:LEDVision"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vt="clr-namespace:LEDVision.Camera"
+    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
     Title="AutoPage">
 
     <Grid>
@@ -19,7 +20,7 @@
         <StackPanel Orientation="Vertical">
             <!--  Khung chứa CỐ ĐỊNH 680x906 (giữ đúng chỗ trên UI). Canvas căn giữa ở ĐÚNG kích thước tỉ lệ
                   ảnh thô (EnsureSurfaceSized scale tới khi chạm 2 cạnh) — KHÔNG scale thêm → không méo.  -->
-            <Grid Width="680" Height="906">
+            <Grid Width="680" Height="906" Background="Black" Margin="12,12,12,0">
                 <Canvas
                     x:Name="mainCanvas"
                     Width="680"
@@ -41,17 +42,13 @@
         <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
 
             <!--  Banner trạng thái/kết quả: vùng CỐ ĐỊNH trên cùng, chỉ 1 cái hiện → không đè lên số bên dưới  -->
-            <Grid Height="170" Margin="0,0,0,16">
-                <Label x:Name="ngPopup" HorizontalAlignment="Center" Width="520" Height="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Red" Content="NG" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
-                <Label x:Name="testingPopup" HorizontalAlignment="Center" Width="520" Height="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Yellow" Content="Testing" FontSize="80" FontWeight="Bold" Foreground="Black" Visibility="Collapsed" />
-                <Label x:Name="readyPopup" HorizontalAlignment="Center" Width="520" Height="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Orange" Content="Ready" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
-                <Label x:Name="passPopup" HorizontalAlignment="Center" Width="520" Height="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Green" Content="PASS" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
+            <Grid Height="240" Margin="0,0,0,16">
+                <Label x:Name="ngPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Red" Content="NG" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
+                <Label x:Name="testingPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Yellow" Content="TESTING" FontSize="80" FontWeight="Bold" Foreground="Black" Visibility="Collapsed" />
+                <Label x:Name="readyPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Orange" Content="READY" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
+                <Label x:Name="passPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#06C755" Content="PASS" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
             </Grid>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,30">
-                <Label Content="Model: " FontSize="22" FontWeight="Bold" />
-                <Label Content="{Binding ModelName}" FontSize="22" FontWeight="Bold" />
-            </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -59,8 +56,8 @@
                     <TextBlock HorizontalAlignment="Center" FontSize="34" Text="Total" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="48,0">
-                    <TextBlock x:Name="passCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Foreground="Green" Text="{Binding PassCnt}" />
-                    <TextBlock HorizontalAlignment="Center" FontSize="34" Foreground="Green" Text="Pass" />
+                    <TextBlock x:Name="passCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Foreground="#06C755" Text="{Binding PassCnt}" />
+                    <TextBlock HorizontalAlignment="Center" FontSize="34" Foreground="#06C755" Text="Pass" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock x:Name="failCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Foreground="Red" Text="{Binding FailCnt}" />
@@ -77,8 +74,40 @@
             </StackPanel>
 
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
-            <Button Content="TEST FORCE" Click="TestForce_Click" Width="190" Height="46" FontSize="18" FontWeight="Bold" Margin="0,30,0,0" Cursor="Hand"
-                    ToolTip="Buộc chạy test khi không có tín hiệu trigger gửi tới" />
+            <Button Click="TestForce_Click" Width="220" Height="52" Margin="0,30,0,0" Cursor="Hand" Focusable="False"
+                    ToolTip="Buộc chạy test khi không có tín hiệu trigger gửi tới">
+                <Button.Style>
+                    <!--  Nút phẳng xám, chữ + icon tối, rê chuột đậm hơn một chút  -->
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#E1E5EA" />
+                        <Setter Property="Foreground" Value="#323F4E" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="bd" Background="{TemplateBinding Background}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <fa:IconImage Width="20" Height="20" Margin="0,0,12,0" Foreground="#323F4E" Icon="CirclePlay" />
+                                            <TextBlock Text="TEST FORCE" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="bd" Property="Background" Value="#D2D8DF" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="bd" Property="Background" Value="#C0C8D1" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.4" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
 
         </StackPanel>
        

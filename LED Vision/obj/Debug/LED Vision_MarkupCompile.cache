@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\obj\Debug\
+D:\MINHNHAT_TNG\MINHNHAT_PROJECT\MOONSUNG_LED_VISION_MINHNHAT\LED Vision\obj\Debug\
 LED_Vision
 none
 false
 DEBUG;TRACE
-D:\1ABC\TNG\#LATEST\Vision\LEDColorInspection\Program\LED Vision\App.xaml
-8-487797457
-4336980063
-23-1557634244
-681087369031
-AutoPage.xaml;Camera\VisionBuilder.xaml;Camera\VisionTester.xaml;MainWindow.xaml;SettingPage.xaml;VisionPage.xaml;HistogramAnalyzing.xaml;CameraSettingWindow.xaml;
+D:\MINHNHAT_TNG\MINHNHAT_PROJECT\MOONSUNG_LED_VISION_MINHNHAT\LED Vision\App.xaml
+101514590056
+4541523866
+26-188417944
+681626548660
+AutoPage.xaml;Camera\VisionBuilder.xaml;Camera\VisionTester.xaml;MainWindow.xaml;SettingPage.xaml;VisionPage.xaml;HistogramAnalyzing.xaml;CameraSettingWindow.xaml;AboutWindow.xaml;RoiHelpWindow.xaml;
 
 False
 

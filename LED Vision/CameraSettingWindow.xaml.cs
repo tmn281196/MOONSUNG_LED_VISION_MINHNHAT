@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows;
 using LEDVision.Camera;
@@ -26,7 +26,8 @@ namespace LEDVision
 
         private void Values_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            CameraSetting.Instance.SetParammeter(values);
+            if (CameraSetting.Instance.IsSyncingFromCamera) return;
+            CameraSetting.Instance.SetSingle(e.PropertyName, values);
         }
 
         // Lấy lại thông số từ file model đã nạp/lưu gần nhất (binding + camera tự cập nhật)

@@ -27,6 +27,12 @@ namespace LEDVision
         public static byte Suffix = 0x56;
 
 
+        // Chỉ true khi CheckCommunication mở cổng thành công; về false khi ghi lỗi (rớt USB...).
+        // Mọi lệnh gửi đều kiểm tra cờ này → cổng chưa mở / đã rớt thì KHÔNG gửi, không chờ timeout, không đơ UI.
+        public bool IsConnected { get; private set; } = false;
+
+        private const int PortTimeoutMs = 500;
+
         public DeviceControl()
         {
             port = new SerialPort()
@@ -35,7 +41,9 @@ namespace LEDVision
                 DataBits = 8,
                 Parity = Parity.None,
                 StopBits = StopBits.One,
-                ReceivedBytesThreshold = 1
+                ReceivedBytesThreshold = 1,
+                WriteTimeout = PortTimeoutMs,
+                ReadTimeout = PortTimeoutMs
             };
         }
 
@@ -147,6 +155,7 @@ namespace LEDVision
                     }
                 }
 
+                IsConnected = false;
                 port = new SerialPort()
                 {
                     PortName = comPort,
@@ -154,20 +163,21 @@ namespace LEDVision
                     DataBits = 8,
                     Parity = Parity.None,
                     StopBits = StopBits.One,
-                    ReceivedBytesThreshold = 1
+                    ReceivedBytesThreshold = 1,
+                    WriteTimeout = PortTimeoutMs,   // mặc định là vô hạn → Write có thể treo UI khi thiết bị rớt
+                    ReadTimeout = PortTimeoutMs
                 };
 
                 try
                 {
                     port.Open();
-                    MessageBox.Show("Device Connected!");
-                    statusLamp.Fill = (Brush)new BrushConverter().ConvertFromString("#2baf2b");
+                    IsConnected = true;
+                    statusLamp.Fill = (Brush)new BrushConverter().ConvertFromString("#06C755");
                     port.DataReceived -= Port_DataReceived;
                     port.DataReceived += Port_DataReceived;
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Device Cannot be Connected!");
                     statusLamp.Fill = System.Windows.Media.Brushes.Red;
 
                 }
@@ -234,18 +244,18 @@ namespace LEDVision
 
         public void SendBytes(byte[] buf)
         {
-            if (port == null) { return; }
+            // Cổng chưa mở (hoặc đã rớt) → không gửi
+            if (!IsConnected || port == null || !port.IsOpen) { return; }
 
             try
             {
-                if (port.IsOpen)
-                {
-                    port.Write(buf, 0, buf.Length);
-                }
+                port.Write(buf, 0, buf.Length);
             }
             catch (Exception)
             {
-
+                // Ghi lỗi / timeout: coi như mất kết nối, đóng cổng để các lần sau không gửi nữa
+                IsConnected = false;
+                try { port.Close(); } catch (Exception) { }
             }
 
         }
@@ -300,16 +310,14 @@ namespace LEDVision
 
         public void SendControl()
         {
+            if (!IsConnected || port == null || !port.IsOpen) return;
             var data = IOtoData();
-            if (port.IsOpen)
-            {
-                SendBytes(GetFrame(data));
-            }
+            SendBytes(GetFrame(data));
         }
 
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            if (port.IsOpen)
+            if (IsConnected && port != null && port.IsOpen)
             {
                 List<byte> frame = new List<byte>();
                 Task.Delay(50).Wait();

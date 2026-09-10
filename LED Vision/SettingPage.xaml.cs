@@ -172,6 +172,7 @@ namespace LEDVision
         {
             Device.comPort = SettingModel.SettingVal.ComPort;
             Device.CheckCommunication(systemBoardStatus);
+            mainWindow?.UpdateConnectionStatus();
         }
     }
 }

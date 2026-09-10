@@ -1,0 +1,1046 @@
+{
+  "Vision": {
+    "FourLED": {
+      "Colection": [
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 404.34082094376203,
+            "Y": 550.51415643180349
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 445.65174531350982,
+            "Y": 551.27886231415641
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 402.35762766645109,
+            "Y": 591.27886231415687
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 445.2399806076275,
+            "Y": 593.27886231415687
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 43.122333548804022,
+            "Y": 552.25365223012284
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 88.122333548804036,
+            "Y": 549.39650937297995
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 43.912249515190581,
+            "Y": 374.51415643180354
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 88.794602456367031,
+            "Y": 374.27886231415647
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 43.500484809308247,
+            "Y": 414.27886231415641
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 89.382837750484683,
+            "Y": 414.27886231415641
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 223.62653522947625,
+            "Y": 551.22844214608915
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 268.50888817065265,
+            "Y": 549.99314802844208
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 224.2147705235939,
+            "Y": 592.99314802844253
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 270.09712346477033,
+            "Y": 592.99314802844253
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 42.408047834518328,
+            "Y": 592.9679379444085
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 88.122333548804036,
+            "Y": 592.25365223012284
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 228.76939237233341,
+            "Y": 375.51415643180349
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 269.65174531350982,
+            "Y": 376.27886231415641
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 224.35762766645109,
+            "Y": 416.27886231415687
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 270.2399806076275,
+            "Y": 416.27886231415687
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 403.76939237233341,
+            "Y": 376.51415643180349
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 446.65174531350982,
+            "Y": 377.27886231415641
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 402.35762766645109,
+            "Y": 417.27886231415687
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 447.2399806076275,
+            "Y": 417.27886231415687
+          }
+        }
+      ],
+      "ContourArea": 42,
+      "RoiRadius": 7,
+      "HSV": {
+        "HUE": {
+          "Max": 112,
+          "Min": 99
+        },
+        "SAT": {
+          "Max": 255,
+          "Min": 241
+        },
+        "VAL": {
+          "Max": 247,
+          "Min": 226
+        }
+      },
+      "MaintainState": true
+    },
+    "SevenSEG": {
+      "Colection": [
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 224.80648273295304,
+            "Y": 285.39850737497795
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 271.23505416152449,
+            "Y": 285.39850737497795
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 208.3779113043816,
+            "Y": 300.39850737497795
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 225.52076844723877,
+            "Y": 318.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 205.66362559009588,
+            "Y": 334.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 224.09219701866732,
+            "Y": 351.82707880354934
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 241.94933987581018,
+            "Y": 333.96993594640651
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 241.94933987581018,
+            "Y": 303.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 254.09219701866732,
+            "Y": 303.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 256.23505416152443,
+            "Y": 333.96993594640645
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 247.66362559009588,
+            "Y": 349.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 271.23505416152449,
+            "Y": 352.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 287.66362559009588,
+            "Y": 334.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 270.52076844723871,
+            "Y": 318.96993594640651
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 289.09219701866732,
+            "Y": 302.96993594640651
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 401.07632400279414,
+            "Y": 463.3350153114859
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 446.9493398758101,
+            "Y": 461.11279308926362
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 385.20330812977829,
+            "Y": 479.44612642259699
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 401.23505416152437,
+            "Y": 493.96993594640639
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 381.37791130438143,
+            "Y": 510.25565023212073
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 399.80648273295293,
+            "Y": 527.54136451783529
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 417.66362559009576,
+            "Y": 509.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 417.66362559009576,
+            "Y": 478.96993594640639
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 429.80648273295287,
+            "Y": 478.96993594640639
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 431.9493398758101,
+            "Y": 509.68422166069206
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 423.37791130438148,
+            "Y": 525.25565023212107
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 446.9493398758101,
+            "Y": 528.2556502321213
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 463.37791130438143,
+            "Y": 510.39850737497784
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 446.23505416152437,
+            "Y": 494.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 464.80648273295287,
+            "Y": 478.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 42.663625590095961,
+            "Y": 282.06517404164458
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 89.092197018667392,
+            "Y": 283.39850737497795
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 25.568387494857873,
+            "Y": 297.06517404164458
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 43.377911304381684,
+            "Y": 313.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 23.520768447238822,
+            "Y": 329.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 41.949339875810253,
+            "Y": 346.82707880354934
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 59.806482732953114,
+            "Y": 328.96993594640651
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 59.806482732953114,
+            "Y": 298.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 71.949339875810253,
+            "Y": 298.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 74.092197018667392,
+            "Y": 328.96993594640645
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 65.520768447238808,
+            "Y": 344.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 89.092197018667392,
+            "Y": 347.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 107.85410178057215,
+            "Y": 330.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 90.044577971048326,
+            "Y": 316.63660261307319
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 106.94933987581022,
+            "Y": 297.96993594640651
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 403.3779113043816,
+            "Y": 287.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 449.80648273295304,
+            "Y": 287.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 386.94933987581015,
+            "Y": 299.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 404.09219701866732,
+            "Y": 317.54136451783501
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 384.23505416152443,
+            "Y": 333.82707880354934
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 402.66362559009588,
+            "Y": 351.11279308926356
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 420.52076844723877,
+            "Y": 333.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 420.52076844723877,
+            "Y": 302.54136451783501
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 432.66362559009588,
+            "Y": 302.54136451783501
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 434.80648273295304,
+            "Y": 333.25565023212067
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 426.23505416152443,
+            "Y": 348.82707880354934
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 449.80648273295304,
+            "Y": 351.82707880354934
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 465.52076844723865,
+            "Y": 336.3985073749779
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 449.09219701866732,
+            "Y": 318.25565023212079
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 464.9493398758101,
+            "Y": 303.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 41.66362559009589,
+            "Y": 461.11279308926362
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 90.175530352000649,
+            "Y": 463.19612642259699
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 26.035054161524442,
+            "Y": 478.51279308926371
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 42.377911304381612,
+            "Y": 493.96993594640639
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 22.520768447238723,
+            "Y": 510.25565023212073
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 42.549339875810162,
+            "Y": 525.54136451783506
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 58.806482732953057,
+            "Y": 509.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 59.6398160662864,
+            "Y": 478.96993594640639
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 71.78267320914351,
+            "Y": 478.55326927973977
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 73.092197018667335,
+            "Y": 509.68422166069206
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 64.937435113905408,
+            "Y": 522.75565023212084
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 92.125530352000666,
+            "Y": 525.00565023212107
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 107.78743511390539,
+            "Y": 511.2318407083111
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 91.127911304381612,
+            "Y": 493.01755499402555
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 105.94933987581015,
+            "Y": 478.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 223.37791130438151,
+            "Y": 462.54136451783501
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 269.80648273295299,
+            "Y": 462.54136451783501
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 206.94933987581007,
+            "Y": 477.54136451783501
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 224.09219701866724,
+            "Y": 495.39850737497773
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 207.39294889836646,
+            "Y": 506.94737955542894
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 222.66362559009579,
+            "Y": 528.96993594640639
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 240.52076844723865,
+            "Y": 511.1127930892635
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 240.52076844723865,
+            "Y": 480.39850737497778
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 252.66362559009576,
+            "Y": 477.2406126381357
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 254.80648273295299,
+            "Y": 511.1127930892635
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 246.23505416152432,
+            "Y": 526.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 269.80648273295299,
+            "Y": 529.6842216606924
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 286.79060971707986,
+            "Y": 510.16041213688254
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 269.09219701866726,
+            "Y": 496.1127930892635
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 287.66362559009576,
+            "Y": 480.11279308926356
+          }
+        }
+      ],
+      "ContourArea": 0,
+      "RoiRadius": 7,
+      "HSV": {
+        "HUE": {
+          "Max": 179,
+          "Min": 0
+        },
+        "SAT": {
+          "Max": 255,
+          "Min": 0
+        },
+        "VAL": {
+          "Max": 255,
+          "Min": 0
+        }
+      },
+      "MaintainState": true
+    },
+    "DecimalPoint": {
+      "Colection": [
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 66.949339875810224,
+            "Y": 346.11279308926368
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 249.09219701866732,
+            "Y": 349.68422166069223
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 426.9493398758101,
+            "Y": 350.39850737497795
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 425.52076844723865,
+            "Y": 524.68422166069217
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 248.3779113043816,
+            "Y": 523.25565023212084
+          }
+        },
+        {
+          "RoiRadius": 7,
+          "ResultFinal": 0,
+          "RoiPoint": {
+            "X": 66.949339875810224,
+            "Y": 522.54136451783506
+          }
+        }
+      ],
+      "ContourArea": 40,
+      "RoiRadius": 7,
+      "HSV": {
+        "HUE": {
+          "Max": 113,
+          "Min": 98
+        },
+        "SAT": {
+          "Max": 255,
+          "Min": 245
+        },
+        "VAL": {
+          "Max": 255,
+          "Min": 227
+        }
+      },
+      "MaintainState": true
+    }
+  },
+  "CameraSettingValues": {
+    "Brightness": 143,
+    "Contrast": 51,
+    "Saturation": 100,
+    "Hue": 0,
+    "Sharpness": 7,
+    "WhiteBalanceBlueU": 2990,
+    "BacklightComp": 0,
+    "Gain": 0,
+    "Zoom": 129,
+    "Focus": 20,
+    "Exposure": -8,
+    "Pan": 0,
+    "Tilt": 0,
+    "Gamma": 100,
+    "AutoExposure": false,
+    "AutoWhiteBalance": false,
+    "AutoFocus": false
+  }
+}

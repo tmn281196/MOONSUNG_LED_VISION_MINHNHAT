@@ -404,7 +404,26 @@ namespace LEDVision
             surfaceSized = true;
         }
 
+        private int frameTickBusy = 0;
+
+        // Bỏ qua tick nếu tick trước chưa chạy xong: tránh dồn nhiều Dispatcher.Invoke làm UI bị đơ (nhất là lúc chuyển trang)
         private void ObtainFrameTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            if (System.Threading.Interlocked.CompareExchange(ref frameTickBusy, 1, 0) != 0) return;
+            try
+            {
+                ObtainFrameTick();
+            }
+            catch (Exception)
+            {
+            }
+            finally
+            {
+                System.Threading.Interlocked.Exchange(ref frameTickBusy, 0);
+            }
+        }
+
+        private void ObtainFrameTick()
         {
             Dispatcher.Invoke(new Action(() =>
             {

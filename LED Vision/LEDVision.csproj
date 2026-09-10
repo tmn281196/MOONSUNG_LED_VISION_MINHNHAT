@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>Images\app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azure.Core, Version=1.38.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
@@ -273,6 +273,7 @@
       <DependentUpon>AutoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Camera\CameraSetting.cs" />
+    <Compile Include="Camera\CameraControlHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -293,6 +294,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AboutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="AboutWindow.xaml.cs">
+      <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="RoiHelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="RoiHelpWindow.xaml.cs">
+      <DependentUpon>RoiHelpWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CameraSettingWindow.xaml.cs">
       <DependentUpon>CameraSettingWindow.xaml</DependentUpon>
     </Compile>
@@ -329,6 +344,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Moonsung Icon.png" />
+    <Resource Include="Images\app.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\TNG Logo.png" />
