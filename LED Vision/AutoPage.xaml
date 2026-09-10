@@ -56,15 +56,15 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock x:Name="totalCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding TotalCnt}" />
-                    <TextBlock HorizontalAlignment="Center" FontSize="34" Text="Total" />
+                    <TextBlock HorizontalAlignment="Center" FontSize="34" Text="TOTAL" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="48,0">
-                    <TextBlock x:Name="passCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Foreground="#06C755" Text="{Binding PassCnt}" />
-                    <TextBlock HorizontalAlignment="Center" FontSize="34" Foreground="#06C755" Text="Pass" />
+                    <TextBlock x:Name="passCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding PassCnt}" />
+                    <TextBlock HorizontalAlignment="Center" FontSize="34" Text="PASS" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                    <TextBlock x:Name="failCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Foreground="Red" Text="{Binding FailCnt}" />
-                    <TextBlock HorizontalAlignment="Center" FontSize="34" Foreground="Red" Text="Fail" />
+                    <TextBlock x:Name="failCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding FailCnt}" />
+                    <TextBlock HorizontalAlignment="Center" FontSize="34" Text="FAIL" />
                 </StackPanel>
             </StackPanel>
 
