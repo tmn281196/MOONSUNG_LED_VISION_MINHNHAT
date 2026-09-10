@@ -155,7 +155,9 @@ namespace LEDVision
                                 device.CylinderDown = true;
                                 device.SendControl();
 
-                                await Task.Delay(500);
+                                // Chờ cảm biến DOWN báo đã xuống hẳn (tối đa 3 s) thay vì chờ cố định 500 ms
+                                device.WaitForDown(3000);
+                                await Task.Delay(200);
                                 device.Power = true;
                                 device.SendControl();
                                 //mainWindow.programModel.Vision.SevenSEG.MaintainState = true;

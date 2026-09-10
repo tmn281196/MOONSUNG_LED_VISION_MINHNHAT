@@ -68,7 +68,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <!--  Đèn trạng thái xi lanh (từ cảm biến reed trên board): DOWN xanh lá, UP xanh dương, MOVING vàng, gạch ngang khi chưa nối COM  -->
+            <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
                 <TextBlock Text="CYLINDER" FontSize="16" Foreground="#6B7A8C" VerticalAlignment="Center" />
                 <Ellipse x:Name="cylinderDot" Width="14" Height="14" Fill="Gray" Margin="10,0,6,0" VerticalAlignment="Center" />

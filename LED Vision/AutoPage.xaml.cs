@@ -280,8 +280,9 @@ namespace LEDVision
 
             }));
 
-            // Wait for down
-            Task.Delay(1000).Wait();
+            // Chờ cảm biến DOWN xác nhận xi lanh đã xuống hẳn (tối đa 3 s), thêm 200 ms cho hết rung
+            VisionTest.Device.WaitForDown(3000);
+            Task.Delay(200).Wait();
 
             VisionTest.Device.TriggerTest = false;
             VisionTest.Device.Power = true;
@@ -506,15 +507,11 @@ namespace LEDVision
                 state = "DOWN";
                 brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55));
             }
-            else if (dev.SS_UP)
-            {
-                state = "UP";
-                brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x00, 0x7A, 0xCC));
-            }
             else
             {
-                state = "MOVING";
-                brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE0, 0xA8, 0x00));
+                // Chỉ có một cảm biến (dưới): không phát hiện = xi lanh đang ở trên
+                state = "UP";
+                brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x00, 0x7A, 0xCC));
             }
             if (state == lastCylinderState) return;
             lastCylinderState = state;

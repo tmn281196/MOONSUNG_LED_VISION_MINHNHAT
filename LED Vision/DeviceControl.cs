@@ -160,6 +160,20 @@ namespace LEDVision
             if (statusLamp != null) statusLamp.Fill = System.Windows.Media.Brushes.Yellow;
         }
 
+        // Chờ cảm biến DOWN báo xi lanh đã xuống hẳn (thay cho chờ cố định). Trả về false nếu quá timeout.
+        // Cổng chưa mở thì không có gì để chờ → trả về true ngay để chuỗi test vẫn chạy được khi thử tay.
+        public bool WaitForDown(int timeoutMs)
+        {
+            if (!IsConnected) return true;
+            var start = DateTime.Now;
+            while ((DateTime.Now - start).TotalMilliseconds < timeoutMs)
+            {
+                if (SS_DOWN) return true;
+                System.Threading.Thread.Sleep(20);
+            }
+            return SS_DOWN;
+        }
+
         public void CheckCommunication(Rectangle statusLamp)
         {
             if (port != null)
