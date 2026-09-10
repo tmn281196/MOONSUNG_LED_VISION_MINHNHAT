@@ -176,6 +176,35 @@ namespace LEDVision.Model
             }
         }
 
+        // Bộ đếm thống kê PASS / FAIL, lưu vào setting.json mỗi khi thay đổi, khởi động lại vẫn giữ
+        private int passCount = 0;
+        public int PassCount
+        {
+            get { return passCount; }
+            set
+            {
+                if (passCount != value)
+                {
+                    passCount = value;
+                    NotifyPropertyChanged(nameof(PassCount));
+                }
+            }
+        }
+
+        private int failCount = 0;
+        public int FailCount
+        {
+            get { return failCount; }
+            set
+            {
+                if (failCount != value)
+                {
+                    failCount = value;
+                    NotifyPropertyChanged(nameof(FailCount));
+                }
+            }
+        }
+
         // Đường dẫn file model mở / lưu gần nhất → tự mở lại khi khởi động chương trình
         private string lastModelPath = "";
         public string LastModelPath

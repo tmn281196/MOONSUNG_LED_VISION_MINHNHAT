@@ -1,0 +1,16 @@
+{
+  "SettingVal": {
+    "RetestTimes": 2,
+    "WaitRetest": 3000,
+    "DelayUPDOWN": 2000,
+    "MaxNum": 40000,
+    "ShouldWarning": false,
+    "CurNum": 193,
+    "ComPort": "COM4",
+    "LogDirectory": "C:\\Users\\PC\\Desktop\\LOGS",
+    "LastModelPath": "C:\\Users\\PC\\Desktop\\LED_VISION_MODELS\\NEWMODEL.json",
+    "PersistEnabled": true,
+    "PersistMs": 1000,
+    "PersistFrames": 10
+  }
+}

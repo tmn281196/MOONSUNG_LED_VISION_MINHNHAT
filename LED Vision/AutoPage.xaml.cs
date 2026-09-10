@@ -59,6 +59,7 @@ namespace LEDVision
                     settingModel = value;
 
                     visionTester.SettingModel = settingModel;
+                    LoadCounters();
                 }
             }
         }
@@ -128,9 +129,10 @@ namespace LEDVision
             {
                 if (passCnt != value)
                 {
-                    passCnt += 1;
+                    passCnt = value;
                     NotifyPropertyChanged(nameof(PassCnt));
                     NotifyPropertyChanged(nameof(TotalCnt));
+                    SaveCounters();
                 }
             }
         }
@@ -147,11 +149,45 @@ namespace LEDVision
             {
                 if (failCnt != value)
                 {
-                    failCnt += 1;
+                    failCnt = value;
                     NotifyPropertyChanged(nameof(FailCnt));
                     NotifyPropertyChanged(nameof(TotalCnt));
+                    SaveCounters();
                 }
             }
+        }
+
+        // ---- Lưu / nạp bộ đếm vào setting.json ----
+        private bool loadingCounters = false;
+
+        private void SaveCounters()
+        {
+            if (loadingCounters || settingModel == null || settingModel.SettingVal == null) return;
+            settingModel.SettingVal.PassCount = passCnt;
+            settingModel.SettingVal.FailCount = failCnt;
+            try { SettingPage?.SaveSettingModel(); } catch (Exception) { }
+        }
+
+        private void LoadCounters()
+        {
+            if (settingModel == null || settingModel.SettingVal == null) return;
+            loadingCounters = true;
+            try
+            {
+                PassCnt = settingModel.SettingVal.PassCount;
+                FailCnt = settingModel.SettingVal.FailCount;
+            }
+            finally
+            {
+                loadingCounters = false;
+            }
+        }
+
+        // Nút CLEAR: xóa thống kê TOTAL / PASS / FAIL (lưu luôn xuống disk)
+        private void ClearCounters_Click(object sender, RoutedEventArgs e)
+        {
+            PassCnt = 0;
+            FailCnt = 0;
         }
 
         private string modelName;
