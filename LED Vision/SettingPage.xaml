@@ -224,8 +224,12 @@
                                 <TextBox Style="{StaticResource NumInput}" Text="{Binding RetestTimes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Margin="0,0,24,0">
-                                <TextBlock Text="Wait before retest (ms)" Style="{StaticResource FieldLabel}" />
-                                <TextBox Style="{StaticResource NumInput}" Width="120" Text="{Binding WaitRetest, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                                <TextBlock Text="Before power ON (ms)" Style="{StaticResource FieldLabel}" ToolTip="After the down sensor reports the cylinder is down, wait this long before switching the LED power on (lets vibration settle)" />
+                                <TextBox Style="{StaticResource NumInput}" Width="110" Text="{Binding DelayBeforePowerMs, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel Margin="0,0,24,0">
+                                <TextBlock Text="After power ON (ms)" Style="{StaticResource FieldLabel}" ToolTip="After the LED power is switched on, wait this long before the camera starts checking (lets the LEDs light up fully). Used at the first test and at every retest" />
+                                <TextBox Style="{StaticResource NumInput}" Width="110" Text="{Binding WaitRetest, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Margin="0,0,24,0">
                                 <TextBlock Text="Delay between UP / DOWN (ms)" Style="{StaticResource FieldLabel}" />

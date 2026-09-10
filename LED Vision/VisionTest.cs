@@ -181,7 +181,7 @@ namespace LEDVision
                                     device.CylinderDown = true;
                                     device.SendControl();
                                     device.WaitForDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
-                                    cancelled = CancelRequested || !await DelayUnlessCancelled(200);
+                                    cancelled = CancelRequested || !await DelayUnlessCancelled(mainWindow.settingModel.SettingVal.DelayBeforePowerMs);   // "Before power ON"
                                 }
                                 if (!cancelled)
                                 {

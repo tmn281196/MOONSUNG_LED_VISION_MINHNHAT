@@ -176,6 +176,21 @@ namespace LEDVision.Model
             }
         }
 
+        // Chờ sau khi cảm biến báo xi lanh đã xuống và trước khi bật nguồn LED (cho hết rung), ms
+        private int delayBeforePowerMs = 200;
+        public int DelayBeforePowerMs
+        {
+            get { return delayBeforePowerMs; }
+            set
+            {
+                if (delayBeforePowerMs != value)
+                {
+                    delayBeforePowerMs = value;
+                    NotifyPropertyChanged(nameof(DelayBeforePowerMs));
+                }
+            }
+        }
+
         // Thời gian tối đa chờ cảm biến xi lanh (xuống hẳn / rời đáy) trước khi đi tiếp, ms
         private int sensorTimeoutMs = 3000;
         public int SensorTimeoutMs
