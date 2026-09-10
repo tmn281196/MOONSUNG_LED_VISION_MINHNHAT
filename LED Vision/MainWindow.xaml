@@ -241,13 +241,11 @@
                 </Button>
             </StackPanel>
 
-            <Label
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Content="LED COLOR INSPECTION"
-                FontSize="30"
-                Foreground="White"
-                IsHitTestVisible="False" />
+            <!--  Tiêu đề + số phiên bản (không bắt chuột để không che các nút bên dưới)  -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
+                <TextBlock Text="LED COLOR INSPECTION" FontSize="30" Foreground="White" VerticalAlignment="Center" />
+                <TextBlock Text="v2.0" FontSize="14" Foreground="#80C4E9" VerticalAlignment="Bottom" Margin="10,0,0,7" />
+            </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0">
                 <TextBlock x:Name="savedText" Text="Saved" FontSize="13" Foreground="#06C755" VerticalAlignment="Center" Margin="0,0,10,0" Visibility="Collapsed" />
