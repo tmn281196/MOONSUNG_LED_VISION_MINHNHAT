@@ -579,15 +579,18 @@ namespace LEDVision
                     Filter = "Vision Model File (*.json)|*.json",
                     Title = saveAs ? "Save model as" : "Save model",
                 };
-                if (!string.IsNullOrEmpty(path))
+                // Mở sẵn thư mục của model đang mở; chưa mở model nào thì dùng thư mục model gần nhất trong setting.json
+                try
                 {
-                    try
+                    string seed = !string.IsNullOrEmpty(path) ? path : mainWindow?.settingModel?.SettingVal?.LastModelPath;
+                    if (!string.IsNullOrEmpty(seed))
                     {
-                        dlg.InitialDirectory = System.IO.Path.GetDirectoryName(path);
-                        dlg.FileName = System.IO.Path.GetFileName(path);
+                        string dir = System.IO.Path.GetDirectoryName(seed);
+                        if (!string.IsNullOrEmpty(dir) && System.IO.Directory.Exists(dir)) dlg.InitialDirectory = dir;
+                        if (!string.IsNullOrEmpty(path)) dlg.FileName = System.IO.Path.GetFileName(path);
                     }
-                    catch (Exception) { }
                 }
+                catch (Exception) { }
                 if (dlg.ShowDialog() != true) return;
                 path = dlg.FileName;
             }
