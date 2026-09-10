@@ -329,6 +329,28 @@ namespace LEDVision
             SendBytes(GetFrame(data));
         }
 
+        // Gửi "chặt" cho thao tác chủ động (nút Power / Up / Down): cổng chưa mở hoặc ghi lỗi, kể cả timeout,
+        // đều coi là mất kết nối. Trả về true nếu gửi được.
+        public bool SendControlStrict()
+        {
+            if (!IsConnected || port == null || !port.IsOpen)
+            {
+                IsConnected = false;
+                return false;
+            }
+            bool prev = TreatTimeoutAsDisconnect;
+            TreatTimeoutAsDisconnect = true;
+            try
+            {
+                SendBytes(GetFrame(IOtoData()));
+            }
+            finally
+            {
+                TreatTimeoutAsDisconnect = prev;
+            }
+            return IsConnected;
+        }
+
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             if (IsConnected && port != null && port.IsOpen)

@@ -822,10 +822,17 @@ namespace LEDVision
             ProgramModel.Vision.SelectedGroupLED.MaintainState = true;
         }
 
+        // Gửi chặt + cập nhật icon COM trên thanh top ngay (không chờ timer 1 s)
+        private void SendControlStrict()
+        {
+            VisionTest.Device.SendControlStrict();
+            try { mainWindow?.UpdateConnectionStatus(); } catch (Exception) { }
+        }
+
         public void POWER_Btn_Click(object sender, RoutedEventArgs e)
         {
             VisionTest.Device.Power = !VisionTest.Device.Power;
-            VisionTest.Device.SendControl();
+            SendControlStrict();
 
             if (ProgramModel.Vision.SelectedGroupLED != null)
             {
@@ -1241,13 +1248,13 @@ namespace LEDVision
         {
             VisionTest.Device.CylinderDown = true;
             VisionTest.Device.CylinderUp = false;
-            VisionTest.Device.SendControl();
+            SendControlStrict();
 
             await Task.Delay(1000);
 
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = false;
-            VisionTest.Device.SendControl();
+            SendControlStrict();
 
 
             if (ProgramModel.Vision.SelectedGroupLED != null)
@@ -1261,7 +1268,7 @@ namespace LEDVision
         {
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = true;
-            VisionTest.Device.SendControl();
+            SendControlStrict();
 
 
             await Task.Delay(1000);
@@ -1269,7 +1276,7 @@ namespace LEDVision
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = false;
 
-            VisionTest.Device.SendControl();
+            SendControlStrict();
 
             if (ProgramModel.Vision.SelectedGroupLED != null)
             {
