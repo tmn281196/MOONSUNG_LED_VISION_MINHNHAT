@@ -443,6 +443,7 @@ namespace LEDVision
 
             bool comOk = device != null && device.IsConnected;
             reconnectComIcon.Foreground = comOk ? ConnectedBrush : DisconnectedBrush;
+            reconnectComBtn.ToolTip = comOk ? "Disconnect COM" : "Connect COM (port chosen in Setting page)";
             try { settingPage?.RefreshConnectButton(); } catch (Exception) { }
         }
 
@@ -478,13 +479,21 @@ namespace LEDVision
         }
 
         // Thanh bottom: đóng và mở lại cổng COM đã chọn ở trang Setting (đèn trạng thái ở cả 2 nơi cùng đổi màu)
+        // Nút chip trên thanh top: toggle. Đang kết nối → ngắt; chưa kết nối → mở cổng đã chọn ở trang Setting.
         private void ReconnectCom_Click(object sender, RoutedEventArgs e)
         {
-            string port = settingModel?.SettingVal?.ComPort;
-            if (!string.IsNullOrEmpty(port))
+            if (device != null && device.IsConnected)
             {
-                device.comPort = port;
-                device.CheckCommunication(settingPage.systemBoardStatus);
+                device.Disconnect(settingPage.systemBoardStatus);
+            }
+            else
+            {
+                string port = settingModel?.SettingVal?.ComPort;
+                if (!string.IsNullOrEmpty(port))
+                {
+                    device.comPort = port;
+                    device.CheckCommunication(settingPage.systemBoardStatus);
+                }
             }
             UpdateConnectionStatus();
         }

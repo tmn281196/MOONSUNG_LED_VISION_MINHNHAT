@@ -253,7 +253,7 @@
                 <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Reconnect camera">
                     <fa:IconImage x:Name="reconnectCameraIcon" Width="30" Height="30" Foreground="#80C4E9" Icon="Video" />
                 </Button>
-                <Button x:Name="reconnectComBtn" Style="{StaticResource NavBtn}" Click="ReconnectCom_Click" ToolTip="Reconnect COM (port chosen in Setting page)">
+                <Button x:Name="reconnectComBtn" Style="{StaticResource NavBtn}" Click="ReconnectCom_Click" ToolTip="Connect COM (port chosen in Setting page)">
                     <fa:IconImage x:Name="reconnectComIcon" Width="28" Height="28" Foreground="#80C4E9" Icon="Microchip" />
                 </Button>
                 <Button x:Name="infoBtn" Style="{StaticResource NavBtn}" Click="InfoBtn_Click" ToolTip="About">
