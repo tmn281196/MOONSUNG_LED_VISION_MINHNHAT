@@ -415,7 +415,7 @@ namespace LEDVision
         // Hiện tên model đang mở / vừa lưu ở thanh tiêu đề (bên trái 2 nút Open / Save)
         public void SetModelName(string name)
         {
-            modelNameText.Text = string.IsNullOrEmpty(name) ? "No model" : name;
+            modelNameText.Text = string.IsNullOrEmpty(name) ? "NO MODEL" : name.ToUpperInvariant();
         }
 
         // Nút Info cuối sidebar: popup 2 logo + phiên bản
