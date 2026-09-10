@@ -32,8 +32,7 @@ namespace LEDVision
             singleInstanceMutex = new System.Threading.Mutex(true, SingleInstanceMutexName, out createdNew);
             if (!createdNew)
             {
-                MessageBox.Show("LED COLOR INSPECTION is already running." + Environment.NewLine + "Only one instance can run at a time.",
-                                "LED COLOR INSPECTION", MessageBoxButton.OK, MessageBoxImage.Warning);
+                ShowAlreadyRunningDialog(5);
                 BringExistingInstanceToFront();
                 Shutdown();
                 return;
@@ -61,6 +60,85 @@ namespace LEDVision
             //    MessageBox.Show("This Program Cannot be Copied!!!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             //    App.Current.Shutdown();
             //}
+        }
+
+        // Hộp thoại "đang chạy rồi": tự đóng sau N giây, bấm OK đóng sớm
+        private static void ShowAlreadyRunningDialog(int seconds)
+        {
+            try
+            {
+                var ink = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
+                var muted = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x6B, 0x7A, 0x8C));
+
+                var win = new Window
+                {
+                    Title = "LED COLOR INSPECTION",
+                    Width = 460,
+                    Height = 190,
+                    ResizeMode = ResizeMode.NoResize,
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                    WindowStyle = WindowStyle.ToolWindow,
+                    Topmost = true,
+                    Background = System.Windows.Media.Brushes.White,
+                    FontFamily = new System.Windows.Media.FontFamily("Segoe UI"),
+                };
+
+                var root = new System.Windows.Controls.StackPanel { Margin = new Thickness(24, 20, 24, 16) };
+                root.Children.Add(new System.Windows.Controls.TextBlock
+                {
+                    Text = "LED COLOR INSPECTION is already running.",
+                    FontSize = 16,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = ink,
+                });
+                root.Children.Add(new System.Windows.Controls.TextBlock
+                {
+                    Text = "Only one instance can run at a time.",
+                    FontSize = 13,
+                    Foreground = ink,
+                    Margin = new Thickness(0, 4, 0, 0),
+                });
+                var countdown = new System.Windows.Controls.TextBlock
+                {
+                    FontSize = 12,
+                    Foreground = muted,
+                    Margin = new Thickness(0, 10, 0, 0),
+                };
+                root.Children.Add(countdown);
+
+                var ok = new System.Windows.Controls.Button
+                {
+                    Content = "OK",
+                    Width = 90,
+                    Height = 28,
+                    HorizontalAlignment = HorizontalAlignment.Right,
+                    Margin = new Thickness(0, 10, 0, 0),
+                };
+                ok.Click += (s2, a) => win.Close();
+                root.Children.Add(ok);
+                win.Content = root;
+
+                int left = seconds;
+                countdown.Text = "This window closes in " + left + " s";
+                var timer = new System.Windows.Threading.DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
+                timer.Tick += (s2, a) =>
+                {
+                    left--;
+                    if (left <= 0)
+                    {
+                        timer.Stop();
+                        win.Close();
+                        return;
+                    }
+                    countdown.Text = "This window closes in " + left + " s";
+                };
+                win.Closed += (s2, a) => timer.Stop();
+                timer.Start();
+                win.ShowDialog();
+            }
+            catch (Exception)
+            {
+            }
         }
 
         // Tìm cửa sổ chính của instance đang chạy (cùng tên exe) và đưa lên trước
