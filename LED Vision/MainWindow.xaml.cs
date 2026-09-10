@@ -86,8 +86,14 @@ namespace LEDVision
 
         }
 
+        // Thời điểm test vừa về Ready: cạnh reed tới trong 1,5 s sau đó là dư âm của xi lanh do app điều khiển → bỏ qua
+        public DateTime LastReadyTime = DateTime.MinValue;
+        private const int TriggerGuardMs = 1500;
+
         private void OnStartRequest(object sender, EventArgs e)
         {
+            if (device.IgnoreTrigger) return;
+            if ((DateTime.Now - LastReadyTime).TotalMilliseconds < TriggerGuardMs) return;
             if (visionTest.CurrentTestState == TestState.Ready && visionTest.currentPage == "Auto")
             {
                 device.TriggerTest = true;

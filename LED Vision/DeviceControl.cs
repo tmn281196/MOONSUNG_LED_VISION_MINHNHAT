@@ -22,6 +22,10 @@ namespace LEDVision
 
         public bool TriggerTest = false;
 
+        // Bỏ qua tín hiệu reed switch (start / cancel) trong lúc app tự điều khiển xi lanh (retry, kết thúc test).
+        // Xi lanh lên xuống do app điều khiển cũng tạo cạnh reed y như người vận hành, phải chặn.
+        public volatile bool IgnoreTrigger = false;
+
         public static byte Prefix1 = 0x44;
         public static byte Prefix2 = 0x45;
         public static byte Suffix = 0x56;

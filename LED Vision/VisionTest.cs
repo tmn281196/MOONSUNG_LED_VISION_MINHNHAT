@@ -127,10 +127,9 @@ namespace LEDVision
                                 PostTestNG = false;
                                 FailCount = 0;
 
-
-                                //mainWindow.programModel.Vision.SevenSEG.MaintainState = false;
-                                //mainWindow.programModel.Vision.FourLED.MaintainState = false;
-                                //mainWindow.programModel.Vision.DecimalPoint.MaintainState = false;
+                                // Retry: app tự điều khiển xi lanh → chặn reed switch suốt chu kỳ này
+                                device.IgnoreTrigger = true;
+                                device.TriggerTest = false;
 
                                 device.Power = false;
                                 device.CylinderDown = false;
@@ -149,7 +148,8 @@ namespace LEDVision
                                 //mainWindow.programModel.Vision.DecimalPoint.MaintainState = true;
                                 await Task.Delay((int)mainWindow.settingModel.SettingVal.WaitRetest);
 
-
+                                device.TriggerTest = false;
+                                device.IgnoreTrigger = false;
 
                                 break;
 

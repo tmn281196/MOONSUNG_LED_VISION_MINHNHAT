@@ -82,6 +82,7 @@ namespace LEDVision
             }
         }
         private MainWindow mainWindow;
+        public MainWindow MainWindowRef { get { return mainWindow; } }
 
         public SettingPage(MainWindow mainWindow)
         {

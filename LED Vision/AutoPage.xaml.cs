@@ -353,8 +353,10 @@ namespace LEDVision
             VisionTest.PostTestNG = false;
   
 
-            // Switch to Ready Stage
+            // Switch to Ready Stage: xóa trigger còn sót + mở cửa sổ chặn 1,5 s (cạnh reed tới trễ sau khi xi lanh về)
+            VisionTest.Device.IgnoreTrigger = false;
             VisionTest.Device.TriggerTest = false;
+            if (SettingPage != null && SettingPage.MainWindowRef != null) SettingPage.MainWindowRef.LastReadyTime = DateTime.Now;
             VisionTest.CurrentTestState = TestState.Ready;
             if (VisionTest.Device != null) VisionTest.Device.TreatTimeoutAsDisconnect = false;
 
