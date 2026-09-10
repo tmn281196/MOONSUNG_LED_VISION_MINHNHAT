@@ -50,6 +50,9 @@
             </Grid>
 
 
+            <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
+            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,28">
+            <StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <TextBlock x:Name="totalCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding TotalCnt}" />
@@ -108,6 +111,8 @@
                     </Style>
                 </Button.Style>
             </Button>
+            </StackPanel>
+            </Border>
 
         </StackPanel>
        
