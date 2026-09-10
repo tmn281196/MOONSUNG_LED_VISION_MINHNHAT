@@ -222,9 +222,13 @@
                                 <TextBlock Text="Wait before retest (ms)" Style="{StaticResource FieldLabel}" />
                                 <TextBox Style="{StaticResource NumInput}" Width="120" Text="{Binding WaitRetest, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
-                            <StackPanel>
+                            <StackPanel Margin="0,0,24,0">
                                 <TextBlock Text="Delay between UP / DOWN (ms)" Style="{StaticResource FieldLabel}" />
                                 <TextBox Style="{StaticResource NumInput}" Width="120" Text="{Binding DelayUPDOWN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                            </StackPanel>
+                            <StackPanel ToolTip="Thời gian tối đa chờ cảm biến xi lanh báo xuống hẳn / rời đáy trước khi đi tiếp">
+                                <TextBlock Text="Sensor timeout (ms)" Style="{StaticResource FieldLabel}" />
+                                <TextBox Style="{StaticResource NumInput}" Width="100" Text="{Binding SensorTimeoutMs, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>

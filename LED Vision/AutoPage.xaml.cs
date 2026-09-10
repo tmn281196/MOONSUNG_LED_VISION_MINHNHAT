@@ -281,7 +281,7 @@ namespace LEDVision
             }));
 
             // Chờ cảm biến DOWN xác nhận xi lanh đã xuống hẳn (tối đa 3 s), thêm 200 ms cho hết rung
-            VisionTest.Device.WaitForDown(3000);
+            VisionTest.Device.WaitForDown(settingModel?.SettingVal?.SensorTimeoutMs ?? 3000);
             Task.Delay(200).Wait();
 
             VisionTest.Device.TriggerTest = false;

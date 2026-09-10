@@ -176,6 +176,21 @@ namespace LEDVision.Model
             }
         }
 
+        // Thời gian tối đa chờ cảm biến xi lanh (xuống hẳn / rời đáy) trước khi đi tiếp, ms
+        private int sensorTimeoutMs = 3000;
+        public int SensorTimeoutMs
+        {
+            get { return sensorTimeoutMs; }
+            set
+            {
+                if (sensorTimeoutMs != value)
+                {
+                    sensorTimeoutMs = value;
+                    NotifyPropertyChanged(nameof(SensorTimeoutMs));
+                }
+            }
+        }
+
         // Bộ đếm thống kê PASS / FAIL, lưu vào setting.json mỗi khi thay đổi, khởi động lại vẫn giữ
         private int passCount = 0;
         public int PassCount

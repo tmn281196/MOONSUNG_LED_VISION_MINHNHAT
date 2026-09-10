@@ -152,14 +152,14 @@ namespace LEDVision
                                 device.SendControl();
                                 // Lên: chờ cảm biến DOWN nhả (tối đa 3 s) = đã rời vị trí dưới, rồi chờ thêm
                                 // Delay Between UP/DOWN cho phần hành trình còn lại (không có cảm biến trên)
-                                device.WaitForLeaveDown(3000);
+                                device.WaitForLeaveDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
                                 await Task.Delay((int)mainWindow.settingModel.SettingVal.DelayUPDOWN);
                                 device.CylinderUp = false;
                                 device.CylinderDown = true;
                                 device.SendControl();
 
                                 // Chờ cảm biến DOWN báo đã xuống hẳn (tối đa 3 s) thay vì chờ cố định 500 ms
-                                device.WaitForDown(3000);
+                                device.WaitForDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
                                 await Task.Delay(200);
                                 device.Power = true;
                                 device.SendControl();
