@@ -32,6 +32,8 @@ namespace LEDVision
             singleInstanceMutex = new System.Threading.Mutex(true, SingleInstanceMutexName, out createdNew);
             if (!createdNew)
             {
+                MessageBox.Show("LED COLOR INSPECTION is already running." + Environment.NewLine + "Only one instance can run at a time.",
+                                "LED COLOR INSPECTION", MessageBoxButton.OK, MessageBoxImage.Warning);
                 BringExistingInstanceToFront();
                 Shutdown();
                 return;
