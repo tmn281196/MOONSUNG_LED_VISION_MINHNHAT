@@ -147,19 +147,11 @@ namespace LEDVision
 
         private void ChangeLogDirectoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            var folderBrowserDialog = new FolderBrowserDialog()
+            // Hộp thoại chọn thư mục kiểu mới của Windows (to, có thanh địa chỉ, tìm kiếm) thay cho FolderBrowserDialog cũ
+            string logDir = FolderPicker.Show(System.Windows.Window.GetWindow(this), "Choose Log Folder", SettingModel?.SettingVal?.LogDirectory);
+            if (!string.IsNullOrEmpty(logDir))
             {
-                Description = "Choose Log Folder",
-                ShowNewFolderButton = true,
-            };
-
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                string logDir = folderBrowserDialog.SelectedPath;
-                if (logDir != null)
-                {
-                    SettingModel.SettingVal.LogDirectory = logDir;
-                }
+                SettingModel.SettingVal.LogDirectory = logDir;
             }
         }
 

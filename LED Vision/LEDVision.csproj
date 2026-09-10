@@ -274,6 +274,7 @@
     </Compile>
     <Compile Include="Camera\CameraSetting.cs" />
     <Compile Include="Camera\CameraControlHelper.cs" />
+    <Compile Include="FolderPicker.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
