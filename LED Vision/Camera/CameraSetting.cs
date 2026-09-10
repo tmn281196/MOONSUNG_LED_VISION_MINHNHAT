@@ -97,6 +97,43 @@ namespace LEDVision.Camera
         public void StopCamera()
         {
             _isCameraRunning = false;
+            _ = StopCameraAsync();
+        }
+
+        // Dừng hẳn camera: hủy vòng lặp, Dispose VideoCapture, đóng helper DirectShow
+        public async Task StopCameraAsync()
+        {
+            _cameraReady = false;
+            try
+            {
+                _cancellationTokenSource?.Cancel();
+            }
+            catch (Exception)
+            {
+            }
+
+            if (_previewTask != null)
+            {
+                try
+                {
+                    await _previewTask; // vòng lặp thoát trong ~250 ms và tự Dispose VideoCapture
+                }
+                catch (Exception)
+                {
+                }
+            }
+
+            try
+            {
+                _videoCapture?.Dispose();
+            }
+            catch (Exception)
+            {
+            }
+            _videoCapture = null;
+            Control.Close();
+            _previewTask = null;
+            LastFrameTime = DateTime.MinValue;
         }
 
         public CameraSetting()
@@ -223,37 +260,7 @@ namespace LEDVision.Camera
         // Đóng hẳn camera hiện tại rồi mở lại (nút Reconnect Camera ở thanh bottom).
         public async Task RestartCamera()
         {
-            _cameraReady = false;
-            try
-            {
-                _cancellationTokenSource?.Cancel();
-            }
-            catch (Exception)
-            {
-            }
-
-            if (_previewTask != null)
-            {
-                try
-                {
-                    await _previewTask; // vòng lặp thoát trong ~250 ms và tự Dispose VideoCapture
-                }
-                catch (Exception)
-                {
-                }
-            }
-
-            try
-            {
-                _videoCapture?.Dispose();
-            }
-            catch (Exception)
-            {
-            }
-            _videoCapture = null;
-            Control.Close();
-            _previewTask = null;
-
+            await StopCameraAsync();
             await StartCamera();
         }
 

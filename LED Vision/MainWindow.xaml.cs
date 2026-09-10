@@ -440,6 +440,7 @@ namespace LEDVision
             bool camOk = CameraSetting.Instance.IsCameraOpen
                          && (DateTime.Now - CameraSetting.Instance.LastFrameTime).TotalSeconds < 3;
             reconnectCameraIcon.Foreground = camOk ? ConnectedBrush : DisconnectedBrush;
+            reconnectCameraBtn.ToolTip = camOk ? "Stop camera" : "Start camera";
 
             bool comOk = device != null && device.IsConnected;
             reconnectComIcon.Foreground = comOk ? ConnectedBrush : DisconnectedBrush;
@@ -461,12 +462,20 @@ namespace LEDVision
         }
 
         // Thanh bottom: đóng và mở lại camera (rớt USB, đổi cổng...). Thông số camera hiện tại được áp lại sau khi mở.
+        // Nút camera trên thanh top: toggle. Đang mở → dừng camera; đang tắt → mở lại.
         private async void ReconnectCamera_Click(object sender, RoutedEventArgs e)
         {
             reconnectCameraBtn.IsEnabled = false;
             try
             {
-                await CameraSetting.Instance.RestartCamera();
+                if (CameraSetting.Instance.IsCameraOpen)
+                {
+                    await CameraSetting.Instance.StopCameraAsync();
+                }
+                else
+                {
+                    await CameraSetting.Instance.RestartCamera();
+                }
             }
             catch (Exception)
             {

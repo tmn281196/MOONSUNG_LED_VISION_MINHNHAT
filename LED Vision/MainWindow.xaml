@@ -250,7 +250,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0">
                 <!--  Kết nối lại camera / COM (icon xanh lá = đang kết nối) + About  -->
-                <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Reconnect camera">
+                <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Start camera">
                     <fa:IconImage x:Name="reconnectCameraIcon" Width="30" Height="30" Foreground="#80C4E9" Icon="Video" />
                 </Button>
                 <Button x:Name="reconnectComBtn" Style="{StaticResource NavBtn}" Click="ReconnectCom_Click" ToolTip="Connect COM (port chosen in Setting page)">
