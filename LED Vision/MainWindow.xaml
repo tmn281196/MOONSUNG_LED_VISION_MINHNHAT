@@ -125,7 +125,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="8*" />
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0" />
         </Grid.RowDefinitions>
 
         <!--  Thanh tiêu đề: chữ giữa, nút Open / Save model ở góc phải  -->
@@ -249,6 +249,17 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                <!--  Kết nối lại camera / COM (icon xanh lá = đang kết nối) + About  -->
+                <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Reconnect camera">
+                    <fa:IconImage x:Name="reconnectCameraIcon" Width="30" Height="30" Foreground="#80C4E9" Icon="Video" />
+                </Button>
+                <Button x:Name="reconnectComBtn" Style="{StaticResource NavBtn}" Click="ReconnectCom_Click" ToolTip="Reconnect COM (port chosen in Setting page)">
+                    <fa:IconImage x:Name="reconnectComIcon" Width="28" Height="28" Foreground="#80C4E9" Icon="Microchip" />
+                </Button>
+                <Button x:Name="infoBtn" Style="{StaticResource NavBtn}" Click="InfoBtn_Click" ToolTip="About">
+                    <fa:IconImage Width="28" Height="28" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" Icon="CircleInfo" />
+                </Button>
+                <Rectangle Width="1" Height="32" Fill="#4A5A6E" Margin="6,0" VerticalAlignment="Center" />
                 <TextBlock x:Name="savedText" Text="Saved" FontSize="13" Foreground="#06C755" VerticalAlignment="Center" Margin="0,0,10,0" Visibility="Collapsed" />
                 <!--  Nút cửa sổ  -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="12,0,0,0">
@@ -278,58 +289,5 @@
             Grid.Column="1"
             Visibility="Collapsed" />
 
-        <!--  Thanh bottom: kết nối lại camera / cổng COM khi bị rớt (trái), nút Info popup 2 logo (phải)  -->
-        <DockPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Background="#323F4E" LastChildFill="False">
-            <Button
-                x:Name="infoBtn"
-                DockPanel.Dock="Right"
-                Width="30"
-                Height="26"
-                Margin="0"
-                VerticalAlignment="Center"
-                Background="Transparent"
-                BorderThickness="0"
-                Cursor="Hand"
-                Click="InfoBtn_Click"
-                ToolTip="About">
-                <fa:IconImage
-                    Width="18"
-                    Height="18"
-                    Foreground="#80C4E9"
-                    Icon="CircleInfo" />
-            </Button>
-
-        <StackPanel
-            DockPanel.Dock="Right"
-            Background="#323F4E"
-            Orientation="Horizontal">
-            <StackPanel.Resources>
-                <Style x:Key="BottomBtn" TargetType="Button">
-                    <Setter Property="Height" Value="26" />
-                    <Setter Property="Margin" Value="0" />
-                    <Setter Property="Padding" Value="10,0" />
-                    <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="Background" Value="#3E4C5E" />
-                    <Setter Property="Foreground" Value="White" />
-                    <Setter Property="BorderBrush" Value="#80C4E9" />
-                    <Setter Property="Cursor" Value="Hand" />
-                </Style>
-            </StackPanel.Resources>
-
-            <Button x:Name="reconnectCameraBtn" Style="{StaticResource BottomBtn}" Click="ReconnectCamera_Click" ToolTip="Đóng và mở lại camera (khi camera bị rớt / đổi cổng USB)">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Width="16" Height="16" Margin="0,0,6,0" Foreground="#80C4E9" Icon="Video" />
-                    <TextBlock x:Name="reconnectCameraText" Text="Reconnect Camera" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-
-            <Button x:Name="reconnectComBtn" Style="{StaticResource BottomBtn}" Click="ReconnectCom_Click" ToolTip="Đóng và mở lại cổng COM của bộ điều khiển (cổng chọn ở trang Setting)">
-                <StackPanel Orientation="Horizontal">
-                    <fa:IconImage Width="16" Height="16" Margin="0,0,6,0" Foreground="#80C4E9" Icon="Plug" />
-                    <TextBlock x:Name="reconnectComText" Text="Reconnect COM" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-        </StackPanel>
-        </DockPanel>
     </Grid>
 </Window>

@@ -399,17 +399,17 @@ namespace LEDVision
         };
 
         private static readonly System.Windows.Media.Brush ConnectedBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55)); // xanh LINE
-        private static readonly System.Windows.Media.Brush DisconnectedBrush = System.Windows.Media.Brushes.White;
+        private static readonly System.Windows.Media.Brush DisconnectedBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x80, 0xC4, 0xE9)); // cùng màu icon khác
 
         // Camera: mở được và còn nhận khung hình trong 3 s gần nhất. COM: cổng đã mở thành công và chưa lỗi ghi.
         public void UpdateConnectionStatus()
         {
             bool camOk = CameraSetting.Instance.IsCameraOpen
                          && (DateTime.Now - CameraSetting.Instance.LastFrameTime).TotalSeconds < 3;
-            reconnectCameraText.Foreground = camOk ? ConnectedBrush : DisconnectedBrush;
+            reconnectCameraIcon.Foreground = camOk ? ConnectedBrush : DisconnectedBrush;
 
             bool comOk = device != null && device.IsConnected;
-            reconnectComText.Foreground = comOk ? ConnectedBrush : DisconnectedBrush;
+            reconnectComIcon.Foreground = comOk ? ConnectedBrush : DisconnectedBrush;
         }
 
         // Hiện tên model đang mở / vừa lưu ở thanh tiêu đề (bên trái 2 nút Open / Save)
@@ -429,7 +429,6 @@ namespace LEDVision
         private async void ReconnectCamera_Click(object sender, RoutedEventArgs e)
         {
             reconnectCameraBtn.IsEnabled = false;
-            reconnectCameraText.Text = "Reconnecting...";
             try
             {
                 await CameraSetting.Instance.RestartCamera();
@@ -439,7 +438,6 @@ namespace LEDVision
             }
             finally
             {
-                reconnectCameraText.Text = "Reconnect Camera";
                 reconnectCameraBtn.IsEnabled = true;
                 UpdateConnectionStatus();
             }
