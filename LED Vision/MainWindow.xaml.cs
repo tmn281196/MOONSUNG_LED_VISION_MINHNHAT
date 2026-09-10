@@ -100,20 +100,13 @@ namespace LEDVision
             }
         }
 
+        // Xi lanh rời vị trí dưới trong lúc đang test (không phải do app tự điều khiển) → hủy test đang chạy
         private void OnCancelRequest(object sender, EventArgs e)
         {
-            if (visionTest.CurrentTestState == TestState.Ready && visionTest.currentPage == "Auto")
+            if (device.IgnoreTrigger) return;
+            if (visionTest.CurrentTestState == TestState.Testing && visionTest.currentPage == "Auto")
             {
-                //device.Power = false;
-                //device.SendControl();
-
-                //Dispatcher.Invoke(new Action(() =>
-                //{
-                //    //autoPage.readyPopup.Visibility = Visibility.Visible;
-                //    autoPage.passPopup.Visibility = Visibility.Hidden;
-                //    autoPage.ngPopup.Visibility = Visibility.Hidden;
-
-                //}));
+                VisionTest.CancelRequested = true;
             }
         }
 

@@ -74,6 +74,12 @@ namespace LEDVision
 
         public event EventHandler TestFinishedEvent;
 
+        // Test bị hủy (xi lanh rời vị trí dưới giữa chừng): không tính PASS / FAIL
+        public event EventHandler TestCancelledEvent;
+
+        // Cờ hủy: MainWindow đặt khi nhận cạnh reed "rời vị trí dưới" lúc đang test; InspectAll thấy là thoát sớm
+        public static volatile bool CancelRequested = false;
+
         public event EventHandler TestStartedEvent;
 
         public event EventHandler CapturingAndCheckingEvent;
@@ -111,6 +117,15 @@ namespace LEDVision
                     case TestState.Testing:
 
                         CapturingAndCheckingEvent?.Invoke(null, null);
+
+                        if (CancelRequested)
+                        {
+                            CancelRequested = false;
+                            PostTestNG = false;
+                            FailCount = 0;
+                            TestCancelledEvent?.Invoke(null, null);
+                            break;
+                        }
 
                         PostTestNG = FailCount > 0;
 

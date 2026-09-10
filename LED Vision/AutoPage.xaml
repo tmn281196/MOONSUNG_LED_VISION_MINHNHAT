@@ -68,6 +68,13 @@
                 </StackPanel>
             </StackPanel>
 
+            <!--  Đèn trạng thái xi lanh (từ cảm biến reed trên board): DOWN xanh lá, UP xanh dương, MOVING vàng, gạch ngang khi chưa nối COM  -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
+                <TextBlock Text="CYLINDER" FontSize="16" Foreground="#6B7A8C" VerticalAlignment="Center" />
+                <Ellipse x:Name="cylinderDot" Width="14" Height="14" Fill="Gray" Margin="10,0,6,0" VerticalAlignment="Center" />
+                <TextBlock x:Name="cylinderText" Text="--" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" />
+            </StackPanel>
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Label Content="Used Pins" VerticalAlignment="Center" FontSize="24" />
                 <Label Content="{Binding SettingModel.SettingVal.CurNum}" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" />

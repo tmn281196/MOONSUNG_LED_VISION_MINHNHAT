@@ -279,6 +279,7 @@ namespace LEDVision.Camera
 
                 while (DateTime.Now - startTime < timeout)
                 {
+                    if (VisionTest.CancelRequested) break;   // hủy test → dừng lấy mẫu ngay
                     if (CameraSetting.Instance.LastMatFrame != null)
                     {
                         Mat frame = CameraSetting.Instance.LastMatFrame.Clone();

@@ -102,6 +102,7 @@ namespace LEDVision
                         visionTest.TestStartedEvent += VisionTest_TestStartedEvent;
                         visionTest.CapturingAndCheckingEvent += VisionTest_CapturingAndCheckingEvent;
                         visionTest.TestFinishedEvent += VisionTest_TestFinished;
+                        visionTest.TestCancelledEvent += VisionTest_TestCancelled;
 
                 }
             }
@@ -297,6 +298,30 @@ namespace LEDVision
             if (VisionTest.Device != null) VisionTest.Device.TreatTimeoutAsDisconnect = true;
         }
 
+        // Test bị hủy: tắt nguồn, thả xi lanh, hiện READY, KHÔNG tính PASS / FAIL, không tăng số lần dùng pin
+        private void VisionTest_TestCancelled(object sender, EventArgs e)
+        {
+            VisionTest.Device.Power = false;
+            VisionTest.Device.CylinderDown = false;
+            VisionTest.Device.CylinderUp = false;
+            VisionTest.Device.SendControl();
+
+            Dispatcher.Invoke(new Action(() =>
+            {
+                testingPopup.Visibility = Visibility.Collapsed;
+                passPopup.Visibility = Visibility.Collapsed;
+                ngPopup.Visibility = Visibility.Collapsed;
+                readyPopup.Visibility = Visibility.Visible;
+            }));
+
+            VisionTest.PostTestNG = false;
+            VisionTest.Device.IgnoreTrigger = false;
+            VisionTest.Device.TriggerTest = false;
+            if (SettingPage != null && SettingPage.MainWindowRef != null) SettingPage.MainWindowRef.LastReadyTime = DateTime.Now;
+            VisionTest.CurrentTestState = TestState.Ready;
+            if (VisionTest.Device != null) VisionTest.Device.TreatTimeoutAsDisconnect = false;
+        }
+
         private void VisionTest_TestFinished(object sender, EventArgs e)
         {
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
@@ -463,11 +488,46 @@ namespace LEDVision
             }
         }
 
+        private string lastCylinderState = null;
+
+        private void UpdateCylinderIndicator()
+        {
+            var dev = VisionTest?.Device;
+            if (dev == null || cylinderText == null) return;
+            string state;
+            System.Windows.Media.Brush brush;
+            if (!dev.IsConnected)
+            {
+                state = "--";
+                brush = System.Windows.Media.Brushes.Gray;
+            }
+            else if (dev.SS_DOWN)
+            {
+                state = "DOWN";
+                brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55));
+            }
+            else if (dev.SS_UP)
+            {
+                state = "UP";
+                brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0x00, 0x7A, 0xCC));
+            }
+            else
+            {
+                state = "MOVING";
+                brush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE0, 0xA8, 0x00));
+            }
+            if (state == lastCylinderState) return;
+            lastCylinderState = state;
+            cylinderText.Text = state;
+            cylinderDot.Fill = brush;
+        }
+
         private void ObtainFrameTick()
         {
             Dispatcher.Invoke(new Action(() =>
             {
                 EnsureSurfaceSized();
+                UpdateCylinderIndicator();
 
                 if (CameraSetting.Instance.LastFrame != null)
                 {
