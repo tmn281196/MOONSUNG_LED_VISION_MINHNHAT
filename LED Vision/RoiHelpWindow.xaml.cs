@@ -346,6 +346,10 @@ namespace LEDVision
             {
                 contentPanel.Children.Add(BuildHueBar());
             }
+            if (topic == "setting")
+            {
+                contentPanel.Children.Add(BuildTestTimeline(currentLang));
+            }
 
             foreach (var sec in t.Sections)
             {
@@ -375,6 +379,117 @@ namespace LEDVision
         }
 
         // Thanh màu Hue 0 → 179 (đỏ → vàng → lục → cyan → xanh → magenta → đỏ) kèm vạch số theo thang OpenCV
+        // ---- Timeline chuỗi test: mỗi ô là một bước, ô có viền đậm là bước có thể chỉnh ở trang Setting ----
+        private class Step
+        {
+            public string Label;      // tên bước
+            public string Sub;        // ô setting / nguồn thời gian
+            public Color Color;
+            public bool Adjustable;   // chỉnh được ở Setting → viền đậm
+            public Step(string label, string sub, Color color, bool adjustable) { Label = label; Sub = sub; Color = color; Adjustable = adjustable; }
+        }
+
+        private static UIElement BuildTestTimeline(string lang)
+        {
+            bool th = lang == "TH";
+            var cSensor = Color.FromRgb(0x80, 0xC4, 0xE9);   // chờ cảm biến
+            var cDelay = Color.FromRgb(0xE1, 0xE5, 0xEA);    // chờ theo setting
+            var cPower = Color.FromRgb(0xF5, 0xA6, 0x23);    // bật nguồn
+            var cCheck = Color.FromRgb(0x06, 0xC7, 0x55);    // camera kiểm tra
+            var cMove = Color.FromRgb(0x32, 0x3F, 0x4E);     // xi lanh chuyển động
+
+            var first = new[]
+            {
+                new Step(th ? "ทริกเกอร์" : "Trigger", th ? "เซ็นเซอร์ล่าง / START" : "down sensor / START", cSensor, false),
+                new Step(th ? "รอลงสุด" : "Wait fully down", "Sensor timeout", cSensor, true),
+                new Step(th ? "หน่วง" : "Delay", "Before power ON", cDelay, true),
+                new Step(th ? "จ่ายไฟ LED" : "LED power ON", "", cPower, false),
+                new Step(th ? "หน่วง" : "Delay", "After power ON", cDelay, true),
+                new Step(th ? "กล้องตรวจ 2 วิ" : "Camera check 2 s", "Persist", cCheck, true),
+                new Step(th ? "ผล" : "Result", th ? "PASS / NG → ทดสอบซ้ำ?" : "PASS / NG → retest?", cSensor, false),
+            };
+            var retry = new[]
+            {
+                new Step(th ? "ตัดไฟ + ยกขึ้น" : "Power OFF + UP", th ? "รอเซ็นเซอร์ปล่อย" : "wait sensor release", cMove, false),
+                new Step(th ? "หน่วง" : "Delay", "Delay between UP / DOWN", cDelay, true),
+                new Step(th ? "สั่งลง" : "DOWN", "Sensor timeout", cSensor, true),
+                new Step(th ? "หน่วง" : "Delay", "Before power ON", cDelay, true),
+                new Step(th ? "จ่ายไฟ LED" : "LED power ON", "", cPower, false),
+                new Step(th ? "หน่วง" : "Delay", "After power ON", cDelay, true),
+                new Step(th ? "กล้องตรวจ 2 วิ" : "Camera check 2 s", "Persist", cCheck, true),
+            };
+
+            var root = new StackPanel { Margin = new Thickness(0, 6, 0, 4) };
+            root.Children.Add(new TextBlock
+            {
+                Text = th ? "ลำดับการทดสอบ (กรอบเข้ม = ตั้งค่าได้ในหน้านี้)" : "Test sequence (bold border = adjustable on this page)",
+                FontSize = 12,
+                FontWeight = FontWeights.SemiBold,
+                Foreground = new SolidColorBrush(Color.FromRgb(0x32, 0x3F, 0x4E)),
+                Margin = new Thickness(0, 0, 0, 4),
+            });
+            root.Children.Add(BuildTimelineRow(th ? "ทดสอบครั้งแรก" : "First test", first));
+            root.Children.Add(BuildTimelineRow(th ? "ทดสอบซ้ำ (เมื่อ NG, สูงสุด Retest times ครั้ง)" : "Retest (when NG, up to Retest times)", retry));
+            root.Children.Add(new TextBlock
+            {
+                Text = th ? "EMERGENCY STOP หรือกระบอกสูบออกจากตำแหน่งล่างระหว่างทาง → ยกเลิกทันที ไม่นับผล"
+                          : "EMERGENCY STOP or the cylinder leaving the down position at any step → cancelled immediately, nothing counted",
+                FontSize = 11,
+                Foreground = new SolidColorBrush(Color.FromRgb(0x6B, 0x7A, 0x8C)),
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(0, 4, 0, 6),
+            });
+            return root;
+        }
+
+        private static UIElement BuildTimelineRow(string title, Step[] steps)
+        {
+            var row = new StackPanel { Margin = new Thickness(0, 4, 0, 0) };
+            row.Children.Add(new TextBlock
+            {
+                Text = title,
+                FontSize = 12,
+                Foreground = new SolidColorBrush(Color.FromRgb(0x6B, 0x7A, 0x8C)),
+                Margin = new Thickness(0, 0, 0, 2),
+            });
+            var grid = new Grid();
+            for (int i = 0; i < steps.Length; i++)
+            {
+                grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                if (i < steps.Length - 1) grid.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
+            }
+            var ink = new SolidColorBrush(Color.FromRgb(0x32, 0x3F, 0x4E));
+            for (int i = 0; i < steps.Length; i++)
+            {
+                var st = steps[i];
+                bool darkBg = st.Color == Color.FromRgb(0x32, 0x3F, 0x4E) || st.Color == Color.FromRgb(0x06, 0xC7, 0x55) || st.Color == Color.FromRgb(0xF5, 0xA6, 0x23);
+                var fg = darkBg ? Brushes.White : ink;
+                var box = new Border
+                {
+                    Background = new SolidColorBrush(st.Color),
+                    BorderBrush = ink,
+                    BorderThickness = new Thickness(st.Adjustable ? 2 : 0),
+                    Padding = new Thickness(4, 5, 4, 5),
+                    MinHeight = 48,
+                };
+                var inner = new StackPanel();
+                inner.Children.Add(new TextBlock { Text = st.Label, FontSize = 11, FontWeight = FontWeights.SemiBold, Foreground = fg, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center });
+                if (!string.IsNullOrEmpty(st.Sub))
+                    inner.Children.Add(new TextBlock { Text = st.Sub, FontSize = 10, Foreground = fg, Opacity = 0.9, TextWrapping = TextWrapping.Wrap, TextAlignment = TextAlignment.Center, Margin = new Thickness(0, 2, 0, 0) });
+                box.Child = inner;
+                Grid.SetColumn(box, i * 2);
+                grid.Children.Add(box);
+                if (i < steps.Length - 1)
+                {
+                    var arrow = new TextBlock { Text = "\u25B6", FontSize = 9, Foreground = ink, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(2, 0, 2, 0) };
+                    Grid.SetColumn(arrow, i * 2 + 1);
+                    grid.Children.Add(arrow);
+                }
+            }
+            row.Children.Add(grid);
+            return row;
+        }
+
         private static UIElement BuildHueBar()
         {
             var panel = new StackPanel { Margin = new Thickness(0, 6, 0, 4) };
