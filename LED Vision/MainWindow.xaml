@@ -156,7 +156,7 @@
                     Padding="0"
                     ToolTip="Vision Setting"
                     Click="ToggleBtn_Click">
-                    <!--  Mắt + bánh răng nhỏ góc dưới phải: trang Vision cũng là trang cài đặt ROI / camera  -->
+                    <!--  Camera + bánh răng nhỏ góc dưới phải: trang Vision là trang cài đặt ROI / camera  -->
                     <Grid Width="44" Height="40">
                         <fa:IconImage
                             Width="37"
@@ -164,7 +164,7 @@
                             HorizontalAlignment="Left"
                             VerticalAlignment="Top"
                             Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ToggleButton}}"
-                            Icon="Eye" />
+                            Icon="Camera" />
                         <Ellipse Width="21" Height="21" Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ToggleButton}}" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
                         <fa:IconImage
                             Width="16"
