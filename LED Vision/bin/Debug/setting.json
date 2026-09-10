@@ -8,7 +8,7 @@
     "CurNum": 151,
     "ComPort": "COM3",
     "LogDirectory": "E:\\TNG\\LEDVISION\\MODELS",
-    "LastModelPath": "D:\\MINHNHAT_TNG\\MINHNHAT_PROJECT\\MOONSUNG_LED_VISION_MINHNHAT\\Models\\MODEL.json",
+    "LastModelPath": "D:\\MINHNHAT_TNG\\MINHNHAT_PROJECT\\MOONSUNG_LED_VISION_MINHNHAT\\Models\\DEMO_MODEL.json",
     "PersistEnabled": true,
     "PersistMs": 500,
     "PersistFrames": 10
