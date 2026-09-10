@@ -165,8 +165,8 @@
             <Grid.ColumnDefinitions>
                 <!--  Hai cột ảnh cố định theo khung 680 px (không bao giờ bị xén), cột giữa lấy phần còn lại  -->
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Vertical" Grid.Column="0">
@@ -182,7 +182,7 @@
 
 
 
-            <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" MaxWidth="440" Margin="6,0">
 
 
@@ -534,8 +534,8 @@
 
             </StackPanel>
             </ScrollViewer>
-            <StackPanel Orientation="Vertical"  Grid.Column="2">
-                <Grid Width="680" Height="906" Background="Black" Margin="0,12,12,0">
+            <StackPanel Orientation="Vertical"  Grid.Column="1">
+                <Grid Width="680" Height="906" Background="Black" Margin="12,12,0,0">
                     <Image x:Name="adjustedImageViewer" Width="680" Height="906" Stretch="Uniform" />
                 </Grid>
             </StackPanel>
