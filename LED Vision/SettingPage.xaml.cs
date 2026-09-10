@@ -162,9 +162,30 @@ namespace LEDVision
 
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
         {
-            Device.comPort = SettingModel.SettingVal.ComPort;
-            Device.CheckCommunication(systemBoardStatus);
+            if (Device.IsConnected)
+            {
+                Device.Disconnect(systemBoardStatus);
+            }
+            else
+            {
+                Device.comPort = SettingModel.SettingVal.ComPort;
+                Device.CheckCommunication(systemBoardStatus);
+            }
+            RefreshConnectButton();
             mainWindow?.UpdateConnectionStatus();
+        }
+
+        // Chữ / icon nút theo trạng thái thật (MainWindow gọi mỗi giây, nên mất kết nối giữa chừng cũng đổi theo)
+        public void RefreshConnectButton()
+        {
+            if (connectBtnText == null || Device == null) return;
+            bool on = Device.IsConnected;
+            string text = on ? "Disconnect" : "Connect";
+            if (connectBtnText.Text != text)
+            {
+                connectBtnText.Text = text;
+                connectBtnIcon.Icon = on ? FontAwesome.Sharp.IconChar.PlugCircleXmark : FontAwesome.Sharp.IconChar.Plug;
+            }
         }
     }
 }

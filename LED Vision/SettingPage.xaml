@@ -168,10 +168,11 @@
                             <!--  Đèn trạng thái: code-behind đổi Fill (CheckCommunication)  -->
                             <Rectangle x:Name="systemBoardStatus" Width="14" Height="14" RadiusX="7" RadiusY="7" Fill="Yellow" Margin="18,18,8,0" VerticalAlignment="Center" ToolTip="Connection status" />
 
-                            <Button Style="{StaticResource PrimaryBtn}" Margin="0,18,0,0" Click="ConnectBtn_Click">
+                            <!--  Toggle: chưa kết nối → "Connect", đang kết nối → "Disconnect"  -->
+                            <Button x:Name="connectBtn" Style="{StaticResource PrimaryBtn}" Margin="0,18,0,0" Width="120" Click="ConnectBtn_Click">
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Width="14" Height="14" Margin="0,0,8,0" Foreground="{StaticResource Ink}" Icon="Plug" />
-                                    <TextBlock Text="Connect" VerticalAlignment="Center" />
+                                    <fa:IconImage x:Name="connectBtnIcon" Width="14" Height="14" Margin="0,0,8,0" Foreground="{StaticResource Ink}" Icon="Plug" />
+                                    <TextBlock x:Name="connectBtnText" Text="Connect" VerticalAlignment="Center" />
                                 </StackPanel>
                             </Button>
                         </StackPanel>

@@ -443,6 +443,7 @@ namespace LEDVision
 
             bool comOk = device != null && device.IsConnected;
             reconnectComIcon.Foreground = comOk ? ConnectedBrush : DisconnectedBrush;
+            try { settingPage?.RefreshConnectButton(); } catch (Exception) { }
         }
 
         // Hiện tên model đang mở / vừa lưu ở thanh tiêu đề (bên trái 2 nút Open / Save)

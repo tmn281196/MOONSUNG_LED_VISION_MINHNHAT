@@ -138,6 +138,24 @@ namespace LEDVision
             }
         }
 
+        // Ngắt kết nối chủ động (nút Disconnect ở trang Setting): đóng cổng, đèn về vàng
+        public void Disconnect(Rectangle statusLamp)
+        {
+            IsConnected = false;
+            try
+            {
+                if (port != null && port.IsOpen)
+                {
+                    port.DataReceived -= Port_DataReceived;
+                    port.Close();
+                }
+            }
+            catch (Exception)
+            {
+            }
+            if (statusLamp != null) statusLamp.Fill = System.Windows.Media.Brushes.Yellow;
+        }
+
         public void CheckCommunication(Rectangle statusLamp)
         {
             if (port != null)
