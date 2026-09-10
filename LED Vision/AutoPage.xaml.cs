@@ -245,6 +245,8 @@ namespace LEDVision
 
         private void VisionTest_TestStartedEvent(object sender, EventArgs e)
         {
+            testBusy = true;
+            VisionTest.CancelRequested = false;
 
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = false;
@@ -302,6 +304,7 @@ namespace LEDVision
         // Test bị hủy: tắt nguồn, thả xi lanh, hiện READY, KHÔNG tính PASS / FAIL, không tăng số lần dùng pin
         private void VisionTest_TestCancelled(object sender, EventArgs e)
         {
+            testBusy = false;
             VisionTest.Device.Power = false;
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = false;
@@ -325,6 +328,7 @@ namespace LEDVision
 
         private void VisionTest_TestFinished(object sender, EventArgs e)
         {
+            testBusy = false;
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -525,6 +529,7 @@ namespace LEDVision
             {
                 EnsureSurfaceSized();
                 UpdateCylinderIndicator();
+                UpdateStartButton();
 
                 if (CameraSetting.Instance.LastFrame != null)
                 {
@@ -549,9 +554,28 @@ namespace LEDVision
         }
 
         // Buộc chạy test thủ công khi không có tín hiệu trigger gửi tới
+        // true từ lúc test bắt đầu (chờ xi lanh, bật nguồn) tới khi kết thúc / hủy → nút hiện CANCEL
+        private volatile bool testBusy = false;
+
+        // START: chạy test bằng tay. Đang test: CANCEL → hủy theo cùng cơ chế với cảm biến rời đáy
         private void TestForce_Click(object sender, RoutedEventArgs e)
         {
-            VisionTest.startManual = true;
+            if (testBusy || VisionTest.CurrentTestState == TestState.Testing)
+            {
+                VisionTest.CancelRequested = true;
+            }
+            else
+            {
+                VisionTest.startManual = true;
+            }
+        }
+
+        private void UpdateStartButton()
+        {
+            if (startBtn == null) return;
+            bool busy = testBusy || VisionTest?.CurrentTestState == TestState.Testing;
+            string text = busy ? "CANCEL" : "START";
+            if (!Equals(startBtn.Content, text)) startBtn.Content = text;
         }
 
         private void ResetCurNum_Click(object sender, RoutedEventArgs e)

@@ -116,7 +116,10 @@ namespace LEDVision
 
                     case TestState.Testing:
 
-                        CapturingAndCheckingEvent?.Invoke(null, null);
+                        if (!CancelRequested)
+                        {
+                            CapturingAndCheckingEvent?.Invoke(null, null);
+                        }
 
                         if (CancelRequested)
                         {
