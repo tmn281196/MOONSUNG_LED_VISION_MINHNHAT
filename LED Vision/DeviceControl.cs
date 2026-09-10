@@ -251,9 +251,14 @@ namespace LEDVision
             {
                 port.Write(buf, 0, buf.Length);
             }
+            catch (TimeoutException)
+            {
+                // Board bận / chưa đọc kịp: bỏ qua gói này, KHÔNG coi là mất kết nối
+                // (trước đây đóng cổng luôn → icon COM tắt xanh mỗi khi chuyển trang)
+            }
             catch (Exception)
             {
-                // Ghi lỗi / timeout: coi như mất kết nối, đóng cổng để các lần sau không gửi nữa
+                // IOException / InvalidOperationException: cổng thật sự rớt (rút USB, cổng bị đóng) → mất kết nối
                 IsConnected = false;
                 try { port.Close(); } catch (Exception) { }
             }
