@@ -427,11 +427,11 @@
                             <!--  Tiêu đề cột (kèm chú giải)  -->
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="Set" Style="{StaticResource HsvHdr}" />
                             <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="ROI đang chọn (viền đứt trên ảnh)">
-                                <Ellipse Width="12" Height="12" Stroke="#007ACC" StrokeThickness="2" StrokeDashArray="1 1" Margin="0,0,4,0" />
+                                <Ellipse Width="12" Height="12" Stroke="#F5A623" StrokeThickness="2" StrokeDashArray="1 1" Margin="0,0,4,0" />
                                 <TextBlock Text="Selected" Style="{StaticResource HsvHdr}" />
                             </StackPanel>
                             <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="Các ROI chưa chọn trong nhóm">
-                                <Ellipse Width="12" Height="12" Stroke="#339af0" StrokeThickness="2" Margin="0,0,4,0" />
+                                <Ellipse Width="12" Height="12" Stroke="#007ACC" StrokeThickness="2" Margin="0,0,4,0" />
                                 <TextBlock Text="Unselected" Style="{StaticResource HsvHdr}" />
                             </StackPanel>
                             <TextBlock Grid.Row="0" Grid.Column="4" Text="All" Style="{StaticResource HsvHdr}" ToolTip="Tất cả ROI trong nhóm" />
@@ -443,8 +443,8 @@
                                 <TextBlock Text="~" Style="{StaticResource HsvTilde}" />
                                 <TextBox x:Name="HueMax" Style="{StaticResource HsvBox}" PreviewMouseLeftButtonDown="TextBlockColor_Click">179</TextBox>
                             </StackPanel>
-                            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="selectedROIHue" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
-                            <TextBlock Grid.Row="1" Grid.Column="3" x:Name="fullROIHue" Style="{StaticResource HsvVal}" Foreground="#339af0" />
+                            <TextBlock Grid.Row="1" Grid.Column="2" x:Name="selectedROIHue" Style="{StaticResource HsvVal}" Foreground="#F5A623" />
+                            <TextBlock Grid.Row="1" Grid.Column="3" x:Name="fullROIHue" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
                             <TextBlock Grid.Row="1" Grid.Column="4" x:Name="allROIHue" Style="{StaticResource HsvVal}" />
                             <!--  S  -->
                             <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource HsvBadge}"><TextBlock Text="S" Style="{StaticResource HsvBadgeText}" /></Border>
@@ -453,8 +453,8 @@
                                 <TextBlock Text="~" Style="{StaticResource HsvTilde}" />
                                 <TextBox x:Name="SatMax" Style="{StaticResource HsvBox}" PreviewMouseLeftButtonDown="TextBlockColor_Click">255</TextBox>
                             </StackPanel>
-                            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="selectedROISat" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
-                            <TextBlock Grid.Row="2" Grid.Column="3" x:Name="fullROISat" Style="{StaticResource HsvVal}" Foreground="#339af0" />
+                            <TextBlock Grid.Row="2" Grid.Column="2" x:Name="selectedROISat" Style="{StaticResource HsvVal}" Foreground="#F5A623" />
+                            <TextBlock Grid.Row="2" Grid.Column="3" x:Name="fullROISat" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
                             <TextBlock Grid.Row="2" Grid.Column="4" x:Name="allROISat" Style="{StaticResource HsvVal}" />
                             <!--  V  -->
                             <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource HsvBadge}"><TextBlock Text="V" Style="{StaticResource HsvBadgeText}" /></Border>
@@ -463,8 +463,8 @@
                                 <TextBlock Text="~" Style="{StaticResource HsvTilde}" />
                                 <TextBox x:Name="ValueMax" Style="{StaticResource HsvBox}" PreviewMouseLeftButtonDown="TextBlockColor_Click">255</TextBox>
                             </StackPanel>
-                            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="selectedROIValue" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
-                            <TextBlock Grid.Row="3" Grid.Column="3" x:Name="fullROIValue" Style="{StaticResource HsvVal}" Foreground="#339af0" />
+                            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="selectedROIValue" Style="{StaticResource HsvVal}" Foreground="#F5A623" />
+                            <TextBlock Grid.Row="3" Grid.Column="3" x:Name="fullROIValue" Style="{StaticResource HsvVal}" Foreground="#007ACC" />
                             <TextBlock Grid.Row="3" Grid.Column="4" x:Name="allROIValue" Style="{StaticResource HsvVal}" />
                             </Grid>
                         </Border>
