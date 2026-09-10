@@ -97,6 +97,20 @@ namespace LEDVision
             await Task.Run(TestStart);
         }
 
+        // Chờ ms nhưng thoát sớm khi có yêu cầu hủy. Trả về false nếu bị hủy.
+        private static async Task<bool> DelayUnlessCancelled(int ms)
+        {
+            int left = ms;
+            while (left > 0)
+            {
+                if (CancelRequested) return false;
+                int step = Math.Min(50, left);
+                await Task.Delay(step);
+                left -= step;
+            }
+            return !CancelRequested;
+        }
+
         private async Task TestStart()
         {
             while (true)
@@ -149,30 +163,48 @@ namespace LEDVision
                                 device.IgnoreTrigger = true;
                                 device.TriggerTest = false;
 
+                                // Mỗi bước đều kiểm tra cờ hủy (nút CANCEL): hủy là dừng ngay tại chỗ
+                                bool cancelled = false;
+
                                 device.Power = false;
                                 device.CylinderDown = false;
                                 device.CylinderUp = true;
                                 device.SendControl();
-                                // Lên: chờ cảm biến DOWN nhả (tối đa 3 s) = đã rời vị trí dưới, rồi chờ thêm
+                                // Lên: chờ cảm biến DOWN nhả = đã rời vị trí dưới, rồi chờ thêm
                                 // Delay Between UP/DOWN cho phần hành trình còn lại (không có cảm biến trên)
                                 device.WaitForLeaveDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
-                                await Task.Delay((int)mainWindow.settingModel.SettingVal.DelayUPDOWN);
-                                device.CylinderUp = false;
-                                device.CylinderDown = true;
-                                device.SendControl();
+                                cancelled = CancelRequested || !await DelayUnlessCancelled((int)mainWindow.settingModel.SettingVal.DelayUPDOWN);
 
-                                // Chờ cảm biến DOWN báo đã xuống hẳn (tối đa 3 s) thay vì chờ cố định 500 ms
-                                device.WaitForDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
-                                await Task.Delay(200);
-                                device.Power = true;
-                                device.SendControl();
-                                //mainWindow.programModel.Vision.SevenSEG.MaintainState = true;
-                                //mainWindow.programModel.Vision.FourLED.MaintainState = true;
-                                //mainWindow.programModel.Vision.DecimalPoint.MaintainState = true;
-                                await Task.Delay((int)mainWindow.settingModel.SettingVal.WaitRetest);
+                                if (!cancelled)
+                                {
+                                    device.CylinderUp = false;
+                                    device.CylinderDown = true;
+                                    device.SendControl();
+                                    device.WaitForDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
+                                    cancelled = CancelRequested || !await DelayUnlessCancelled(200);
+                                }
+                                if (!cancelled)
+                                {
+                                    device.Power = true;
+                                    device.SendControl();
+                                    cancelled = !await DelayUnlessCancelled((int)mainWindow.settingModel.SettingVal.WaitRetest);
+                                }
 
                                 device.TriggerTest = false;
                                 device.IgnoreTrigger = false;
+
+                                if (cancelled)
+                                {
+                                    // Dừng xi lanh tại chỗ, tắt nguồn, báo hủy (AutoPage hiện READY, không tính kết quả)
+                                    CancelRequested = false;
+                                    device.Power = false;
+                                    device.CylinderUp = false;
+                                    device.CylinderDown = false;
+                                    device.SendControl();
+                                    PostTestNG = false;
+                                    FailCount = 0;
+                                    TestCancelledEvent?.Invoke(null, null);
+                                }
 
                                 break;
 

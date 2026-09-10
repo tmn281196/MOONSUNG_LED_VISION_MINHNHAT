@@ -169,6 +169,7 @@ namespace LEDVision
             while ((DateTime.Now - start).TotalMilliseconds < timeoutMs)
             {
                 if (SS_DOWN) return true;
+                if (VisionTest.CancelRequested) return false;   // hủy → không chờ nữa
                 System.Threading.Thread.Sleep(20);
             }
             return SS_DOWN;
@@ -182,6 +183,7 @@ namespace LEDVision
             while ((DateTime.Now - start).TotalMilliseconds < timeoutMs)
             {
                 if (!SS_DOWN) return true;
+                if (VisionTest.CancelRequested) return false;   // hủy → không chờ nữa
                 System.Threading.Thread.Sleep(20);
             }
             return !SS_DOWN;
