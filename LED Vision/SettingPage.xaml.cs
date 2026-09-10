@@ -161,6 +161,14 @@ namespace LEDVision
             SettingModel.SettingVal.ComPort = (sender as System.Windows.Controls.ComboBox).SelectedItem.ToString();
         }
 
+        // Nút "?" cạnh tiêu đề: hướng dẫn các ô trong trang Setting (EN / TH)
+        private void SettingHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new RoiHelpWindow("setting");
+            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
+            win.Show();
+        }
+
         private void ConnectBtn_Click(object sender, RoutedEventArgs e)
         {
             if (Device.IsConnected)

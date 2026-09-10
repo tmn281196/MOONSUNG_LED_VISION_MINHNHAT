@@ -134,6 +134,73 @@ namespace LEDVision
                 }
             },
 
+            // ======================= SETTING =======================
+            {
+                "setting", new Dictionary<string, HelpText>
+                {
+                    {
+                        "EN", new HelpText
+                        {
+                            WindowTitle = "Settings Help",
+                            Heading = "Settings page guide",
+                            CloseLabel = "Close",
+                            Sections = new[]
+                            {
+                                new Section("1. System Controller",
+                                    "COM port : the serial port of the control board. Press the refresh icon after plugging the board in.",
+                                    "Connect / Disconnect : opens or closes the port. Green dot = connected, red = failed, yellow = not tried.",
+                                    "The chip icon on the top bar does the same thing and shows the live status (green = connected)."),
+                                new Section("2. Log Directory",
+                                    "Folder where an image of the camera view is saved every time a test ends NG (file name = date and time).",
+                                    "Browse opens the Windows folder picker."),
+                                new Section("3. Retest Management",
+                                    "Retest times : how many extra attempts are made when a test is NG. 0 = never retest. Example: 1 = at most 2 tests per product.",
+                                    "Wait before retest (ms) : pause after the LED power is switched on, before the camera starts checking (lets the LEDs light up fully). Also used at the first test.",
+                                    "Delay between UP / DOWN (ms) : during a retest the cylinder is raised then lowered again. After the down sensor releases, this is the extra time given for the cylinder to finish going up before it is sent down.",
+                                    "Sensor timeout (ms) : maximum time to wait for the down sensor to report the cylinder is fully down (at test start and after the retest lowering) or has left the bottom (retest raising). If it expires the sequence continues anyway; the board still refuses to power the LEDs unless the cylinder is down, so the result will be NG rather than unsafe. Typical value 2000 to 4000."),
+                                new Section("4. Pin Replacement",
+                                    "Current : number of test cycles done with the current pogo pins (read-only, increases after each finished test).",
+                                    "Max set : when Current reaches this number a warning appears, meaning the pins should be replaced.",
+                                    "After replacing the pins, reset Current on the Setting page."),
+                                new Section("5. Saving",
+                                    "Press SAVE SETTING to write everything above to setting.json. Unsaved values are lost when the app closes.",
+                                    "PASS / FAIL counters and the last opened model are saved automatically in the same file."),
+                            }
+                        }
+                    },
+                    {
+                        "TH", new HelpText
+                        {
+                            WindowTitle = "คู่มือ Settings",
+                            Heading = "คู่มือหน้า Settings",
+                            CloseLabel = "ปิด",
+                            Sections = new[]
+                            {
+                                new Section("1. System Controller",
+                                    "COM port : พอร์ตอนุกรมของบอร์ดควบคุม เสียบบอร์ดแล้วกดไอคอนรีเฟรชเพื่อค้นหาพอร์ต",
+                                    "Connect / Disconnect : เปิดหรือปิดพอร์ต จุดเขียว = เชื่อมต่อแล้ว, แดง = ล้มเหลว, เหลือง = ยังไม่ได้ลอง",
+                                    "ไอคอนชิปบนแถบด้านบนทำงานเหมือนกันและแสดงสถานะสด (เขียว = เชื่อมต่ออยู่)"),
+                                new Section("2. Log Directory",
+                                    "โฟลเดอร์ที่บันทึกภาพจากกล้องทุกครั้งที่ผลทดสอบเป็น NG (ชื่อไฟล์ = วันที่และเวลา)",
+                                    "ปุ่ม Browse เปิดหน้าต่างเลือกโฟลเดอร์ของ Windows"),
+                                new Section("3. Retest Management",
+                                    "Retest times : จำนวนครั้งที่ทดสอบซ้ำเพิ่มเมื่อผลเป็น NG 0 = ไม่ทดสอบซ้ำ ตัวอย่าง 1 = ทดสอบได้สูงสุด 2 ครั้งต่อชิ้นงาน",
+                                    "Wait before retest (ms) : เวลาหน่วงหลังจ่ายไฟ LED ก่อนกล้องเริ่มตรวจ (ให้ LED ติดเต็มที่) ใช้ตอนทดสอบครั้งแรกด้วย",
+                                    "Delay between UP / DOWN (ms) : ตอนทดสอบซ้ำ กระบอกสูบจะยกขึ้นแล้วลงใหม่ หลังเซ็นเซอร์ล่างปล่อยแล้ว นี่คือเวลาเพิ่มให้กระบอกสูบขึ้นจนสุดก่อนสั่งลง",
+                                    "Sensor timeout (ms) : เวลาสูงสุดที่รอเซ็นเซอร์ล่างรายงานว่ากระบอกสูบลงสุด (ตอนเริ่มทดสอบและหลังสั่งลงตอนทดสอบซ้ำ) หรือออกจากตำแหน่งล่าง (ตอนยกขึ้นตอนทดสอบซ้ำ) ถ้าหมดเวลาลำดับงานจะดำเนินต่อ บอร์ดจะยังไม่จ่ายไฟ LED ถ้ากระบอกสูบไม่ลง ผลจึงเป็น NG ไม่ใช่อันตราย ค่าที่ใช้ทั่วไป 2000 ถึง 4000"),
+                                new Section("4. Pin Replacement",
+                                    "Current : จำนวนรอบทดสอบที่ใช้กับพินสปริงชุดปัจจุบัน (อ่านอย่างเดียว เพิ่มทุกครั้งที่ทดสอบเสร็จ)",
+                                    "Max set : เมื่อ Current ถึงค่านี้จะมีคำเตือน หมายถึงควรเปลี่ยนพิน",
+                                    "หลังเปลี่ยนพินแล้วให้รีเซ็ต Current ในหน้า Setting"),
+                                new Section("5. การบันทึก",
+                                    "กด SAVE SETTING เพื่อบันทึกทุกค่าด้านบนลง setting.json ค่าที่ไม่ได้บันทึกจะหายเมื่อปิดโปรแกรม",
+                                    "ตัวนับ PASS / FAIL และโมเดลที่เปิดล่าสุดถูกบันทึกอัตโนมัติในไฟล์เดียวกัน"),
+                            }
+                        }
+                    },
+                }
+            },
+
             // ======================= HSV =======================
             {
                 "hsv", new Dictionary<string, HelpText>
