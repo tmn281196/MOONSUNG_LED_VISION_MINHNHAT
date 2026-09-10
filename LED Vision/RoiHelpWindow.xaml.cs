@@ -134,6 +134,81 @@ namespace LEDVision
                 }
             },
 
+            // ======================= AUTO =======================
+            {
+                "auto", new Dictionary<string, HelpText>
+                {
+                    {
+                        "EN", new HelpText
+                        {
+                            WindowTitle = "Auto Test Help",
+                            Heading = "Auto test page guide",
+                            CloseLabel = "Close",
+                            Sections = new[]
+                            {
+                                new Section("1. Starting a test",
+                                    "Normally the test starts by itself when the cylinder reaches the down position (down sensor on the control board).",
+                                    "START runs a test by hand, for example when no trigger is wired. The app must be on this page and a model must be open.",
+                                    "Signals arriving while a test is running, or within 1.5 s after it ends, are ignored so the cylinder movement of the app itself cannot retrigger."),
+                                new Section("2. EMERGENCY STOP",
+                                    "While a test runs, START turns into the red EMERGENCY STOP.",
+                                    "Press it at any step: the cylinder stops where it is, LED power is cut, the banner shows READY and nothing is counted.",
+                                    "The same happens automatically if the cylinder leaves the down position during a test."),
+                                new Section("3. Status banner",
+                                    "READY : waiting for a trigger.  TESTING : LEDs powered and the camera is checking.",
+                                    "PASS : every ROI matched its colour range in every sample.  NG : at least one ROI failed even after the retests.",
+                                    "On NG an image of the camera view is saved in the log folder (see Setting page)."),
+                                new Section("4. Counters",
+                                    "TOTAL / PASS / FAIL count finished tests; cancelled tests are not counted.",
+                                    "They are saved to disk on every change and restored when the app starts.",
+                                    "Hover over TOTAL to reveal the red CLEAR button, which resets all three."),
+                                new Section("5. CYLINDER and Used Pins",
+                                    "CYLINDER shows the down sensor: DOWN (green) = cylinder fully down, UP (blue) = not down, dash = COM not connected.",
+                                    "Used Pins counts test cycles on the current pogo pins. When it reaches Max set a warning appears; replace the pins and reset it on the Setting page."),
+                                new Section("6. Top bar icons",
+                                    "Camera icon : green = camera running; click to stop / start it.",
+                                    "Chip icon : green = control board connected; click to disconnect / connect.",
+                                    "The model name in the title is the model currently loaded; Save writes changes to it, Save As writes a new file."),
+                            }
+                        }
+                    },
+                    {
+                        "TH", new HelpText
+                        {
+                            WindowTitle = "คู่มือ Auto Test",
+                            Heading = "คู่มือหน้า Auto test",
+                            CloseLabel = "ปิด",
+                            Sections = new[]
+                            {
+                                new Section("1. การเริ่มทดสอบ",
+                                    "ปกติการทดสอบจะเริ่มเองเมื่อกระบอกสูบลงถึงตำแหน่งล่าง (เซ็นเซอร์ล่างบนบอร์ดควบคุม)",
+                                    "START ใช้เริ่มทดสอบด้วยมือ เช่น กรณีไม่ได้ต่อสัญญาณทริกเกอร์ ต้องอยู่ที่หน้านี้และเปิดโมเดลไว้แล้ว",
+                                    "สัญญาณที่มาระหว่างทดสอบ หรือภายใน 1.5 วินาทีหลังจบ จะถูกละเว้น เพื่อไม่ให้การเคลื่อนที่ของกระบอกสูบที่แอปสั่งเองไปทริกเกอร์ซ้ำ"),
+                                new Section("2. EMERGENCY STOP",
+                                    "ระหว่างทดสอบ ปุ่ม START จะกลายเป็น EMERGENCY STOP สีแดง",
+                                    "กดได้ทุกขั้นตอน: กระบอกสูบหยุดตรงที่อยู่ ตัดไฟ LED แถบสถานะแสดง READY และไม่นับผล",
+                                    "จะเกิดเหมือนกันโดยอัตโนมัติถ้ากระบอกสูบออกจากตำแหน่งล่างระหว่างทดสอบ"),
+                                new Section("3. แถบสถานะ",
+                                    "READY : รอทริกเกอร์  TESTING : จ่ายไฟ LED แล้วและกล้องกำลังตรวจ",
+                                    "PASS : ROI ทุกอันตรงช่วงสีในทุกตัวอย่าง  NG : มี ROI อย่างน้อยหนึ่งอันไม่ผ่านแม้ทดสอบซ้ำแล้ว",
+                                    "เมื่อ NG ภาพจากกล้องจะถูกบันทึกในโฟลเดอร์ log (ดูหน้า Setting)"),
+                                new Section("4. ตัวนับ",
+                                    "TOTAL / PASS / FAIL นับการทดสอบที่จบแล้ว การทดสอบที่ถูกยกเลิกไม่นับ",
+                                    "บันทึกลงดิสก์ทุกครั้งที่เปลี่ยนและโหลดกลับเมื่อเปิดแอป",
+                                    "เลื่อนเมาส์ไปที่ TOTAL จะเห็นปุ่ม CLEAR สีแดง ใช้รีเซ็ตทั้งสามค่า"),
+                                new Section("5. CYLINDER และ Used Pins",
+                                    "CYLINDER แสดงเซ็นเซอร์ล่าง: DOWN (เขียว) = กระบอกสูบลงสุด, UP (น้ำเงิน) = ไม่ได้อยู่ล่าง, ขีด = ยังไม่ต่อ COM",
+                                    "Used Pins นับรอบทดสอบของพินสปริงชุดปัจจุบัน เมื่อถึง Max set จะมีคำเตือน ให้เปลี่ยนพินแล้วรีเซ็ตในหน้า Setting"),
+                                new Section("6. ไอคอนบนแถบด้านบน",
+                                    "ไอคอนกล้อง : เขียว = กล้องทำงานอยู่ คลิกเพื่อหยุด / เริ่ม",
+                                    "ไอคอนชิป : เขียว = บอร์ดควบคุมเชื่อมต่ออยู่ คลิกเพื่อตัด / เชื่อมต่อ",
+                                    "ชื่อโมเดลในหัวเรื่องคือโมเดลที่โหลดอยู่ Save เขียนทับไฟล์นั้น Save As เขียนไฟล์ใหม่"),
+                            }
+                        }
+                    },
+                }
+            },
+
             // ======================= SETTING =======================
             {
                 "setting", new Dictionary<string, HelpText>
@@ -346,7 +421,7 @@ namespace LEDVision
             {
                 contentPanel.Children.Add(BuildHueBar());
             }
-            if (topic == "setting")
+            if (topic == "setting" || topic == "auto")
             {
                 contentPanel.Children.Add(BuildTestTimeline(currentLang));
             }

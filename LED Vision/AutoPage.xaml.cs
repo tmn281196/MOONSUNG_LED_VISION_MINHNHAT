@@ -557,6 +557,14 @@ namespace LEDVision
         // true từ lúc test bắt đầu (chờ xi lanh, bật nguồn) tới khi kết thúc / hủy → nút hiện CANCEL
         private volatile bool testBusy = false;
 
+        // Nút "?": hướng dẫn trang Auto (EN / TH) kèm timeline chuỗi test
+        private void AutoHelp_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new RoiHelpWindow("auto");
+            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
+            win.Show();
+        }
+
         // START: chạy test bằng tay. Đang test: CANCEL → hủy theo cùng cơ chế với cảm biến rời đáy
         private void TestForce_Click(object sender, RoutedEventArgs e)
         {
