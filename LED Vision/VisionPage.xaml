@@ -344,21 +344,18 @@
                     </StackPanel>
 
                     <TextBlock Text="ROI Size" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,4,0,2" />
-                        <StackPanel Margin="6,6,0,2">
-                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Label Content="Radius" />
-                                    <TextBlock Width="50" Margin="0,5,0,0"  Text="{Binding ElementName=radiusSlider, Path=Value}" />
-                                </StackPanel>
-                                <Slider Margin="10, 0, 0, 0" VerticalAlignment="Center" x:Name="radiusSlider" Style="{StaticResource FlatSlider}" Width="330" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="50" Minimum="5" TickFrequency="1" ValueChanged="cntRadiusSlider_ValueChanged"  />
+                        <!--  Hai slider căn giữa: nhãn + giá trị ở trên, slider rộng 330 ở dưới  -->
+                        <StackPanel HorizontalAlignment="Center" Width="330" Margin="0,6,0,2">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Radius" VerticalAlignment="Center" />
+                                <TextBlock Margin="8,0,0,0" FontWeight="SemiBold" VerticalAlignment="Center" Text="{Binding ElementName=radiusSlider, Path=Value}" />
                             </StackPanel>
-                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Area Threshold" />
-                                    <TextBlock Width="50" Margin="0,5,0,0" Text="{Binding ElementName=cntSizeSlider, Path=Value}" />
-                                </StackPanel>
-                                <Slider Margin="10, 0, 0, 0" VerticalAlignment="Center" x:Name="cntSizeSlider" Style="{StaticResource FlatSlider}" Width="330" HorizontalAlignment="Left" IsSnapToTickEnabled="True" Maximum="500" Minimum="0" TickFrequency="1" ValueChanged="cntSizeSlider_ValueChanged" />
+                            <Slider x:Name="radiusSlider" Style="{StaticResource FlatSlider}" Width="330" HorizontalAlignment="Center" IsSnapToTickEnabled="True" Maximum="50" Minimum="5" TickFrequency="1" ValueChanged="cntRadiusSlider_ValueChanged" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,8,0,0">
+                                <TextBlock Text="Area Threshold" VerticalAlignment="Center" />
+                                <TextBlock Margin="8,0,0,0" FontWeight="SemiBold" VerticalAlignment="Center" Text="{Binding ElementName=cntSizeSlider, Path=Value}" />
                             </StackPanel>
+                            <Slider x:Name="cntSizeSlider" Style="{StaticResource FlatSlider}" Width="330" HorizontalAlignment="Center" IsSnapToTickEnabled="True" Maximum="500" Minimum="0" TickFrequency="1" ValueChanged="cntSizeSlider_ValueChanged" />
                         </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,8,0,4">
