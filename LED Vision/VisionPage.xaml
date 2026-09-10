@@ -202,7 +202,7 @@
                 </StackPanel>
 
                 <!--  Tab: Camera Settings / Inspection Settings (chọn tab này thì ẩn tab kia)  -->
-                <TabControl x:Name="settingsTabs" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
+                <TabControl x:Name="settingsTabs" Height="740" VerticalContentAlignment="Top" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
                 <TabItem Header="Camera Settings" Style="{StaticResource FlatTabItem}">
                     <StackPanel x:Name="cameraSettingsPanel" Margin="6,6,6,2">
 
