@@ -106,9 +106,6 @@
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--  "?" : hướng dẫn trang Auto + timeline chuỗi test (EN / TH)  -->
-            <Button Click="AutoHelp_Click" Width="34" Height="44" Margin="0,30,8,0" Background="Transparent" BorderThickness="0" Cursor="Hand" Focusable="False" ToolTip="Help: how the auto test works (EN / TH)">
-                <fa:IconImage Width="20" Height="20" Foreground="#323F4E" Icon="CircleQuestion" />
-            </Button>
             <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="200" Height="44" Margin="0,30,0,0" Cursor="Hand" Focusable="False"
                     ToolTip="Start a test manually (no trigger needed). While a test runs this button becomes EMERGENCY STOP.">
                 <Button.Style>
@@ -143,7 +140,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--  Toggle mắt: bật = hiện TẤT CẢ ROI với kết quả lần kiểm tra gần nhất (xanh OK, đỏ NG, xám chưa kiểm tra); tắt = ẩn hết  -->
-            <ToggleButton x:Name="allRoiBtn" Width="200" Height="36" Margin="42,8,0,0" Cursor="Hand" Focusable="False" Click="AllRoi_Click"
+            <ToggleButton x:Name="allRoiBtn" Width="200" Height="36" Margin="0,8,0,0" Cursor="Hand" Focusable="False" Click="AllRoi_Click"
                           ToolTip="Show / hide all ROIs with their last result (green = OK, red = NG, grey = not checked)">
                 <ToggleButton.Style>
                     <Style TargetType="ToggleButton">
