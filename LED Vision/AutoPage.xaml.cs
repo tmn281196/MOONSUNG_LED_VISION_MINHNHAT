@@ -587,13 +587,6 @@ namespace LEDVision
             }
         }
 
-        private void AutoHelp_Click(object sender, RoutedEventArgs e)
-        {
-            var win = new RoiHelpWindow("auto");
-            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
-            win.Show();
-        }
-
         // START: chạy test bằng tay. Đang test: CANCEL → hủy theo cùng cơ chế với cảm biến rời đáy
         private void TestForce_Click(object sender, RoutedEventArgs e)
         {
