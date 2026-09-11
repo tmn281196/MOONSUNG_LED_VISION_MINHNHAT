@@ -225,9 +225,9 @@ namespace LEDVision
                             {
                                 new Section("1. What the sequence is",
                                     "The list of steps the Auto page runs at every test, from top to bottom, once the cylinder is down and the Before sequence delay has passed.",
-                                    "Every step reports PASS or FAIL. One FAIL makes the whole test NG (then the retest rules of the Setting page apply).",
+                                    "Every step reports PASS or FAIL. The first FAIL stops the sequence right there and the test is NG (then the retest rules of the Setting page apply); the remaining steps are not run.",
                                     "The list is part of the model: press Save on the top bar after editing, otherwise the Auto page keeps running the last saved list.",
-                                    "At the end of a test (PASS, NG or EMERGENCY STOP) the app switches the LED power and all relays OFF by itself."),
+                                    "On PASS the app switches the LED power and all relays OFF and raises the jig. On NG everything stays as it was at the failing step (power, relays, jig down, ROIs shown) so the fault can be seen; power and relays are switched off again right before the next test. EMERGENCY STOP switches everything off."),
                                 new Section("2. Commands",
                                     "POWER  ON / OFF : the product 220 V relay. Timeout (optional) = wait this many ms after switching. The IO Box only allows ON while the cylinder is down.",
                                     "RELAY  ON / OFF : one of the five general-purpose relays. Target = relay number 1 to 5; leave Target empty to switch all five. Timeout (optional) = wait this many ms after switching.",
@@ -266,9 +266,9 @@ namespace LEDVision
                             {
                                 new Section("1. ลำดับการทดสอบคืออะไร",
                                     "รายการ step ที่หน้า Auto จะรันทุกครั้งที่ทดสอบ จากบนลงล่าง หลังกระบอกลงสุดและครบเวลา Before sequence",
-                                    "ทุก step จะรายงาน PASS หรือ FAIL มี FAIL เพียงหนึ่ง = การทดสอบทั้งรอบเป็น NG (จากนั้นใช้กฎทดสอบซ้ำในหน้า Setting)",
+                                    "ทุก step จะรายงาน PASS หรือ FAIL เจอ FAIL ตัวแรกลำดับจะหยุดตรงนั้นทันทีและการทดสอบเป็น NG (จากนั้นใช้กฎทดสอบซ้ำในหน้า Setting) step ที่เหลือจะไม่ถูกรัน",
                                     "รายการนี้เป็นส่วนหนึ่งของโมเดล แก้แล้วต้องกด Save บนแถบด้านบน ไม่เช่นนั้นหน้า Auto จะยังรันรายการที่บันทึกไว้ล่าสุด",
-                                    "เมื่อจบการทดสอบ (PASS, NG หรือ EMERGENCY STOP) แอปจะปิดไฟ LED และรีเลย์ทั้งหมดให้เอง"),
+                                    "เมื่อ PASS แอปจะปิดไฟ LED กับรีเลย์ทั้งหมดและยกจิ๊กขึ้น เมื่อ NG ทุกอย่างคงสถานะ ณ step ที่ล้มเหลว (ไฟ รีเลย์ จิ๊กอยู่ล่าง ROI แสดงอยู่) เพื่อให้เห็นจุดเสีย ไฟและรีเลย์จะถูกปิดอีกครั้งก่อนเริ่มทดสอบครั้งถัดไป EMERGENCY STOP ปิดทุกอย่าง"),
                                 new Section("2. คำสั่ง",
                                     "POWER  ON / OFF : รีเลย์ไฟ 220 V ของชิ้นงาน Timeout (ไม่บังคับ) = รอกี่ ms หลังสั่ง IO Box ยอมให้ ON เฉพาะตอนกระบอกอยู่ล่างเท่านั้น",
                                     "RELAY  ON / OFF : รีเลย์อเนกประสงค์ 1 ใน 5 ตัว Target = หมายเลขรีเลย์ 1 ถึง 5 เว้นว่าง = สั่งทั้ง 5 ตัว Timeout (ไม่บังคับ) = รอกี่ ms หลังสั่ง",
