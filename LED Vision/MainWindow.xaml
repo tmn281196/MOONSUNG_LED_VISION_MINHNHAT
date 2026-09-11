@@ -265,22 +265,22 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0">
                 <!--  Kết nối lại camera / COM (icon xanh lá = đang kết nối) + About  -->
-                <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Start camera">
+                <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Start camera" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                     <fa:IconImage x:Name="reconnectCameraIcon" Width="30" Height="30" Foreground="#80C4E9" Icon="Video" />
                 </Button>
-                <Button x:Name="reconnectComBtn" Style="{StaticResource NavBtn}" Click="ReconnectCom_Click" ToolTip="Connect COM (port chosen in Setting page)">
+                <Button x:Name="reconnectComBtn" Style="{StaticResource NavBtn}" Click="ReconnectCom_Click" ToolTip="Connect COM (port chosen in Setting page)" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                     <fa:IconImage x:Name="reconnectComIcon" Width="28" Height="28" Foreground="#80C4E9" Icon="Microchip" />
                 </Button>
-                <Button x:Name="infoBtn" Style="{StaticResource NavBtn}" Click="InfoBtn_Click" ToolTip="About">
+                <Button x:Name="infoBtn" Style="{StaticResource NavBtn}" Click="InfoBtn_Click" ToolTip="About" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                     <fa:IconImage Width="28" Height="28" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" Icon="CircleInfo" />
                 </Button>
                 <Rectangle Width="1" Height="32" Fill="#4A5A6E" Margin="6,0" VerticalAlignment="Center" />
                 <!--  Nút cửa sổ  -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="12,0,0,0">
-                    <Button Style="{StaticResource WinBtn}" Click="MinimizeBtn_Click" ToolTip="Minimize">
+                    <Button Style="{StaticResource WinBtn}" Click="MinimizeBtn_Click" ToolTip="Minimize" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                         <fa:IconImage Width="18" Height="18" Foreground="White" Icon="WindowMinimize" />
                     </Button>
-                    <Button Style="{StaticResource WinCloseBtn}" Click="CloseBtn_Click" ToolTip="Close">
+                    <Button Style="{StaticResource WinCloseBtn}" Click="CloseBtn_Click" ToolTip="Close" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                         <fa:IconImage Width="20" Height="20" Foreground="White" Icon="Xmark" />
                     </Button>
                 </StackPanel>
