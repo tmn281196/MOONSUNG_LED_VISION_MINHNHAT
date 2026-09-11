@@ -425,7 +425,7 @@
                                 </Style>
                             </DataGrid.Resources>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="96" />
+                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="78" />
                                 <DataGridTextColumn Header="Radius" Binding="{Binding Radius, UpdateSourceTrigger=PropertyChanged}" Width="48" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
                                 <DataGridTextColumn Header="Area" Binding="{Binding Area, UpdateSourceTrigger=PropertyChanged}" Width="42" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
                                 <DataGridTextColumn Header="Ch" Binding="{Binding Ch, Mode=OneWay}" Width="28" IsReadOnly="True" ElementStyle="{StaticResource ChText}" />
