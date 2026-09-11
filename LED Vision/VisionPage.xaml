@@ -624,7 +624,7 @@
                 </TabItem>
                 </TabControl>
                 <!--  Công cụ: Reset Zoom, Help, Persist (bôi chọn cụm ROI = kéo chuột trái, không cần nút riêng)  -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Margin="0,0,8,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Margin="0,0,2,0">
                     <Button Width="30" Height="32" Margin="0" Background="Transparent" BorderThickness="0" Click="ResetZoomBtn_Click" Cursor="Hand" ToolTip="Reset Zoom">
                         <fa:IconImage Foreground="#323F4E" Icon="MagnifyingGlassMinus" Width="20" />
                     </Button>
