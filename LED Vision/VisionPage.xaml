@@ -183,7 +183,7 @@
 
 
             <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxWidth="520" Margin="6,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxWidth="536" Margin="6,0">
 
 
 
@@ -240,7 +240,9 @@
                 </StackPanel>
 
                 <!--  Tab: Camera Settings / Inspection Settings (chọn tab này thì ẩn tab kia)  -->
-                <TabControl x:Name="settingsTabs" Height="880" VerticalContentAlignment="Top" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
+                <!--  Tab + thanh công cụ nằm cùng hàng với tab header (phủ lên góc phải)  -->
+                <Grid>
+                <TabControl x:Name="settingsTabs" Height="900" VerticalContentAlignment="Top" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
                 <TabItem Header="Camera Settings" Style="{StaticResource FlatTabItem}">
                     <StackPanel x:Name="cameraSettingsPanel" Margin="6,6,6,2">
 
@@ -353,18 +355,6 @@
                 <TabItem Header="Inspection Settings" Style="{StaticResource FlatTabItem}">
                     <StackPanel Margin="6,0,0,0">
 
-                    <!--  Công cụ: Reset Zoom, Help, Persist (bôi chọn cụm ROI = kéo chuột trái, không cần nút riêng)  -->
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,4,0,6">
-                        <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="ResetZoomBtn_Click" Cursor="Hand" ToolTip="Reset Zoom">
-                            <fa:IconImage Foreground="#323F4E" Icon="MagnifyingGlassMinus" Width="20" />
-                        </Button>
-                        <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="RoiHelp_Click" Cursor="Hand" ToolTip="Help: how to draw / move / copy / paste ROI (EN / TH)">
-                            <fa:IconImage Foreground="#323F4E" Icon="CircleQuestion" Width="20" />
-                        </Button>
-                        <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="A pixel counts as lit only after staying lit for this time (filters flicker / noise). In ms; converted to frames per page." />
-                        <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="6,0,0,0" LostFocus="PersistFrames_Changed" />
-                        <TextBlock Text="ms" VerticalAlignment="Center" Margin="3,0,0,0" FontSize="11" />
-                    </StackPanel>
 
                     <!--  Group LED: danh sách động (thêm / đổi tên / xóa). Không chọn group = khóa ảnh.  -->
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
@@ -375,7 +365,7 @@
                                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                                   SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="23" VerticalScrollBarVisibility="Auto"
                                   SelectionChanged="GroupGrid_SelectionChanged" BeginningEdit="GroupGrid_BeginningEdit" CellEditEnding="GroupGrid_CellEditEnding"
-                                  ToolTip="One group = 3 rows (H / S / V). Click a row to select the group: every ROI you draw goes into it. Group name and Min / Max are edited in the cells (double-click). Selected / Unselected / All = measured min ~ max of the selected group.">
+                                  ToolTip="One group = 3 rows (H / S / V). Click a row to select the group: every ROI you draw goes into it. Group name, Radius, Area and Min / Max are edited in the cells (double-click). Selected / Unselected / All = measured min ~ max of the selected group.">
                             <DataGrid.ColumnHeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Background" Value="#F4F6F8" />
@@ -435,14 +425,15 @@
                                 </Style>
                             </DataGrid.Resources>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="84" />
-                                <DataGridTextColumn Header="ROI" Binding="{Binding RoiCount, Mode=OneWay}" Width="36" IsReadOnly="True" ElementStyle="{StaticResource CenterText}" />
-                                <DataGridTextColumn Header="Ch" Binding="{Binding Ch, Mode=OneWay}" Width="30" IsReadOnly="True" ElementStyle="{StaticResource ChText}" />
-                                <DataGridTextColumn Header="Min" Binding="{Binding Min, UpdateSourceTrigger=PropertyChanged}" Width="46" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
-                                <DataGridTextColumn Header="Max" Binding="{Binding Max, UpdateSourceTrigger=PropertyChanged}" Width="46" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
-                                <DataGridTextColumn Header="Selected" Binding="{Binding Selected, Mode=OneWay}" Width="80" IsReadOnly="True" ElementStyle="{StaticResource SelText}" />
-                                <DataGridTextColumn Header="Unselected" Binding="{Binding Unselected, Mode=OneWay}" Width="80" IsReadOnly="True" ElementStyle="{StaticResource UnselText}" />
-                                <DataGridTextColumn Header="All" Binding="{Binding All, Mode=OneWay}" Width="80" IsReadOnly="True" ElementStyle="{StaticResource CenterText}" />
+                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="96" />
+                                <DataGridTextColumn Header="Radius" Binding="{Binding Radius, UpdateSourceTrigger=PropertyChanged}" Width="48" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
+                                <DataGridTextColumn Header="Area" Binding="{Binding Area, UpdateSourceTrigger=PropertyChanged}" Width="42" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
+                                <DataGridTextColumn Header="Ch" Binding="{Binding Ch, Mode=OneWay}" Width="28" IsReadOnly="True" ElementStyle="{StaticResource ChText}" />
+                                <DataGridTextColumn Header="Min" Binding="{Binding Min, UpdateSourceTrigger=PropertyChanged}" Width="42" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
+                                <DataGridTextColumn Header="Max" Binding="{Binding Max, UpdateSourceTrigger=PropertyChanged}" Width="42" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
+                                <DataGridTextColumn Header="Selected" Binding="{Binding Selected, Mode=OneWay}" Width="72" IsReadOnly="True" ElementStyle="{StaticResource SelText}" />
+                                <DataGridTextColumn Header="Unselected" Binding="{Binding Unselected, Mode=OneWay}" Width="72" IsReadOnly="True" ElementStyle="{StaticResource UnselText}" />
+                                <DataGridTextColumn Header="All" Binding="{Binding All, Mode=OneWay}" Width="72" IsReadOnly="True" ElementStyle="{StaticResource CenterText}" />
                             </DataGrid.Columns>
                         </DataGrid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6,0,0">
@@ -479,9 +470,9 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <TextBlock Text="ROI Size" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,4,0,2" />
-                        <!--  Hai slider căn giữa: nhãn + giá trị ở trên, slider rộng 330 ở dưới  -->
-                        <StackPanel HorizontalAlignment="Center" Width="330" Margin="0,6,0,2">
+                    <!--  Radius / Area giờ sửa trong bảng group; slider giữ lại (ẩn) vì code cũ vẫn đọc / ghi qua chúng  -->
+                    <TextBlock Text="ROI Size" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,4,0,2" Visibility="Collapsed" />
+                        <StackPanel HorizontalAlignment="Center" Width="330" Margin="0,6,0,2" Visibility="Collapsed">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <TextBlock Text="Radius" VerticalAlignment="Center" />
                                 <TextBlock Margin="8,0,0,0" FontWeight="SemiBold" VerticalAlignment="Center" Text="{Binding ElementName=radiusSlider, Path=Value}" />
@@ -606,37 +597,45 @@
                         </Border>
 
                         <!--  Đồ thị H/S/V chung chỗ với HSV: click tab để xem  -->
-                        <TabControl Margin="0,8,0,2" HorizontalAlignment="Stretch" Height="215" Style="{StaticResource FlatTabControl}">
-                            <TabItem Style="{StaticResource FlatTabItem}" Padding="22,4" Header="H" FontSize="16" FontWeight="Bold">
-                                <lvc:CartesianChart Name="HueChart" Height="165" DisableAnimations="True" MouseDown="Chart_MouseDown">
-                                    <!--  Tooltip: nền tối, chữ trắng (mặc định chữ trắng trên nền trắng → không đọc được)  -->
+                        <!--  Ba đồ thị H / S / V hiện cùng lúc (không còn tab). Tooltip nền tối chữ trắng.  -->
+                        <StackPanel Margin="0,6,0,2">
+                            <TextBlock Text="H" FontSize="13" FontWeight="Bold" Foreground="#323F4E" Margin="4,0,0,0" />
+                            <lvc:CartesianChart Name="HueChart" Height="140" DisableAnimations="True" MouseDown="Chart_MouseDown">
                                     <lvc:CartesianChart.DataTooltip>
                                         <lvc:DefaultTooltip Background="#323F4E" Foreground="White" BorderThickness="0" CornerRadius="0" SelectionMode="SharedXValues" ShowTitle="True" ShowSeries="True" />
                                     </lvc:CartesianChart.DataTooltip>
-                                </lvc:CartesianChart>
-                            </TabItem>
-                            <TabItem Style="{StaticResource FlatTabItem}" Padding="22,4" Header="S" FontSize="16" FontWeight="Bold">
-                                <lvc:CartesianChart Name="SatChart" Height="165" DisableAnimations="True" MouseDown="Chart_MouseDown">
-                                    <!--  Tooltip: nền tối, chữ trắng (mặc định chữ trắng trên nền trắng → không đọc được)  -->
+                            </lvc:CartesianChart>
+                            <TextBlock Text="S" FontSize="13" FontWeight="Bold" Foreground="#323F4E" Margin="4,4,0,0" />
+                            <lvc:CartesianChart Name="SatChart" Height="140" DisableAnimations="True" MouseDown="Chart_MouseDown">
                                     <lvc:CartesianChart.DataTooltip>
                                         <lvc:DefaultTooltip Background="#323F4E" Foreground="White" BorderThickness="0" CornerRadius="0" SelectionMode="SharedXValues" ShowTitle="True" ShowSeries="True" />
                                     </lvc:CartesianChart.DataTooltip>
-                                </lvc:CartesianChart>
-                            </TabItem>
-                            <TabItem Style="{StaticResource FlatTabItem}" Padding="22,4" Header="V" FontSize="16" FontWeight="Bold">
-                                <lvc:CartesianChart Name="ValueChart" Height="165" DisableAnimations="True" MouseDown="Chart_MouseDown">
-                                    <!--  Tooltip: nền tối, chữ trắng (mặc định chữ trắng trên nền trắng → không đọc được)  -->
+                            </lvc:CartesianChart>
+                            <TextBlock Text="V" FontSize="13" FontWeight="Bold" Foreground="#323F4E" Margin="4,4,0,0" />
+                            <lvc:CartesianChart Name="ValueChart" Height="140" DisableAnimations="True" MouseDown="Chart_MouseDown">
                                     <lvc:CartesianChart.DataTooltip>
                                         <lvc:DefaultTooltip Background="#323F4E" Foreground="White" BorderThickness="0" CornerRadius="0" SelectionMode="SharedXValues" ShowTitle="True" ShowSeries="True" />
                                     </lvc:CartesianChart.DataTooltip>
-                                </lvc:CartesianChart>
-                            </TabItem>
-                        </TabControl>
+                            </lvc:CartesianChart>
+                        </StackPanel>
                     </StackPanel>
 
                     </StackPanel>
                 </TabItem>
                 </TabControl>
+                <!--  Công cụ: Reset Zoom, Help, Persist (bôi chọn cụm ROI = kéo chuột trái, không cần nút riêng)  -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Margin="0,0,8,0">
+                    <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="ResetZoomBtn_Click" Cursor="Hand" ToolTip="Reset Zoom">
+                        <fa:IconImage Foreground="#323F4E" Icon="MagnifyingGlassMinus" Width="20" />
+                    </Button>
+                    <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="RoiHelp_Click" Cursor="Hand" ToolTip="Help: how to draw / move / copy / paste ROI (EN / TH)">
+                        <fa:IconImage Foreground="#323F4E" Icon="CircleQuestion" Width="20" />
+                    </Button>
+                    <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="A pixel counts as lit only after staying lit for this time (filters flicker / noise). In ms; converted to frames per page." />
+                    <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="6,0,0,0" LostFocus="PersistFrames_Changed" />
+                    <TextBlock Text="ms" VerticalAlignment="Center" Margin="3,0,0,0" FontSize="11" />
+                </StackPanel>
+                </Grid>
 
                     <StackPanel  Margin="0 0"  Orientation="Vertical" Visibility="Collapsed" >
                         <Label FontWeight="Bold" Content="HSV Mean" />

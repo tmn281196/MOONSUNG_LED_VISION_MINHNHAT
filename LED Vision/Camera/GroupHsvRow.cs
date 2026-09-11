@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -34,6 +34,43 @@ namespace LEDVision.Camera
             Raise(nameof(RoiCount));
             Raise(nameof(Min));
             Raise(nameof(Max));
+            Raise(nameof(Radius));
+            Raise(nameof(Area));
+        }
+
+        // Bán kính ROI / ngưỡng diện tích của group: chỉ hiện + sửa ở dòng H. Sửa xong áp cho mọi ROI của group.
+        public string Radius
+        {
+            get { return IsFirst ? Group.RoiRadius.ToString() : ""; }
+            set
+            {
+                int r;
+                if (!int.TryParse((value ?? "").Trim(), out r)) { Raise(); return; }
+                if (r < 5) r = 5;
+                if (r > 50) r = 50;
+                Group.RoiRadius = r;
+                foreach (var led in Group.Colection)
+                {
+                    led.RoiRadius = r;
+                    led.ResultFinal = SingleLED.RESULT.UNKNOWN;
+                }
+                Raise();
+            }
+        }
+
+        public string Area
+        {
+            get { return IsFirst ? ((int)Group.ContourArea).ToString() : ""; }
+            set
+            {
+                int a;
+                if (!int.TryParse((value ?? "").Trim(), out a)) { Raise(); return; }
+                if (a < 0) a = 0;
+                if (a > 500) a = 500;
+                Group.ContourArea = a;
+                foreach (var led in Group.Colection) led.ResultFinal = SingleLED.RESULT.UNKNOWN;
+                Raise();
+            }
         }
 
         // HSV của group có thể bị thay cả object (Clone) → luôn lấy lại theo kênh

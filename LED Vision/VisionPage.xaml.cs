@@ -802,8 +802,9 @@ namespace LEDVision
                 }
                 else
                 {
-                    // Min / Max: HSV của group đã đổi → ô Set ẩn + bộ đếm persist + kết quả ROI
+                    // Min / Max / Radius / Area đã ghi vào group → ô Set + slider ẩn + bộ đếm persist + kết quả ROI
                     g.NotifyHsvChanged();
+                    ResetPersistCounters();
                     if (g == ProgramModel.Vision.SelectedGroupLED) UpdateSettings("");
                     foreach (var item in g.Colection) item.ResultFinal = SingleLED.RESULT.UNKNOWN;
                 }
