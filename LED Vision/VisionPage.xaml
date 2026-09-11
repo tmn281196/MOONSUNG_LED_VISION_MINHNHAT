@@ -242,7 +242,7 @@
                 </StackPanel>
 
                 <!--  Tab: Camera Settings / Inspection Settings (chọn tab này thì ẩn tab kia)  -->
-                <TabControl x:Name="settingsTabs" Height="740" VerticalContentAlignment="Top" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
+                <TabControl x:Name="settingsTabs" Height="880" VerticalContentAlignment="Top" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
                 <TabItem Header="Camera Settings" Style="{StaticResource FlatTabItem}">
                     <StackPanel x:Name="cameraSettingsPanel" Margin="6,6,6,2">
 
@@ -376,7 +376,7 @@
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
                         <TextBlock Text="LED Group" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
                         <!--  Bảng group: bấm dòng = chọn group để vẽ / chỉnh; sửa ô Name = đổi tên (step VISION CHECK đổi theo)  -->
-                        <DataGrid x:Name="groupGrid" Width="330" MaxHeight="150" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                        <DataGrid x:Name="groupGrid" Width="330" MaxHeight="124" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
                                   HorizontalGridLinesBrush="#E6EBF0" RowBackground="White" AlternatingRowBackground="#F7F9FB" BorderBrush="#DDE3EA" BorderThickness="1"
                                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                                   SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="24" VerticalScrollBarVisibility="Auto"

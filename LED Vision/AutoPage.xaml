@@ -12,7 +12,9 @@
     <Grid>
 
 
+        <!--  3 cột: camera | thống kê + START | bảng step  -->
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
@@ -75,6 +77,7 @@
                         </Button>
                     </Grid>
                 </StackPanel>
+
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="48,0">
                     <TextBlock x:Name="passCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding PassCnt}" />
                     <TextBlock HorizontalAlignment="Center" FontSize="34" Text="PASS" />
@@ -141,68 +144,69 @@
             </StackPanel>
             </Border>
 
-            <!--  Chuỗi step của model: Value / Result cập nhật theo từng bước khi test  -->
-            <Border Width="520" Background="White" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" MaxHeight="300">
-                <DataGrid x:Name="stepsGrid" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
-                          HorizontalGridLinesBrush="#E6EBF0" RowBackground="White" AlternatingRowBackground="#F7F9FB" BorderThickness="0"
-                          CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
-                          SelectionMode="Single" FontSize="13" RowHeight="26" Focusable="False" IsHitTestVisible="False"
-                          ToolTip="Test sequence of the model (edit on the Sequence page, then Save)">
-                    <DataGrid.ColumnHeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="Background" Value="#F4F6F8" />
-                            <Setter Property="Foreground" Value="#323F4E" />
-                            <Setter Property="FontWeight" Value="SemiBold" />
-                            <Setter Property="Padding" Value="6,4" />
-                            <Setter Property="BorderThickness" Value="0,0,0,1" />
-                            <Setter Property="BorderBrush" Value="#DDE3EA" />
-                        </Style>
-                    </DataGrid.ColumnHeaderStyle>
-                    <DataGrid.CellStyle>
-                        <Style TargetType="DataGridCell">
-                            <Setter Property="BorderThickness" Value="0" />
-                            <Setter Property="Padding" Value="6,0" />
-                            <Setter Property="VerticalContentAlignment" Value="Center" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Skip}" Value="True">
-                                    <Setter Property="Foreground" Value="#9AA5B1" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </DataGrid.CellStyle>
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="No" Binding="{Binding No}" Width="36" />
-                        <DataGridTextColumn Header="Step" Binding="{Binding Label}" Width="*" />
-                        <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="110" />
-                        <DataGridTemplateColumn Header="Result" Width="64">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Result}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <TextBlock.Style>
-                                            <Style TargetType="TextBlock">
-                                                <Setter Property="Foreground" Value="#6B7A8C" />
-                                                <Style.Triggers>
-                                                    <DataTrigger Binding="{Binding Result}" Value="PASS"><Setter Property="Foreground" Value="#06C755" /></DataTrigger>
-                                                    <DataTrigger Binding="{Binding Result}" Value="FAIL"><Setter Property="Foreground" Value="#E5484D" /></DataTrigger>
-                                                    <DataTrigger Binding="{Binding Result}" Value="RUN"><Setter Property="Foreground" Value="#E0A800" /></DataTrigger>
-                                                </Style.Triggers>
-                                            </Style>
-                                        </TextBlock.Style>
-                                    </TextBlock>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Takt" Binding="{Binding Takt}" Width="52" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Border>
 
         </StackPanel>
 
 
 
 
-        <StackPanel  Grid.Row="1" Grid.ColumnSpan="2"
+        <!--  Cột 3: chuỗi step của model: Value / Result cập nhật theo từng bước khi test  -->
+        <Border Grid.Column="2" Background="White" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,24,24,24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <DataGrid x:Name="stepsGrid" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                      HorizontalGridLinesBrush="#E6EBF0" RowBackground="White" AlternatingRowBackground="#F7F9FB" BorderThickness="0"
+                      CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
+                      SelectionMode="Single" FontSize="13" RowHeight="26" Focusable="False" IsHitTestVisible="False"
+                      ToolTip="Test sequence of the model (edit on the Sequence page, then Save)">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#F4F6F8" />
+                        <Setter Property="Foreground" Value="#323F4E" />
+                        <Setter Property="FontWeight" Value="SemiBold" />
+                        <Setter Property="Padding" Value="6,4" />
+                        <Setter Property="BorderThickness" Value="0,0,0,1" />
+                        <Setter Property="BorderBrush" Value="#DDE3EA" />
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Padding" Value="6,0" />
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Skip}" Value="True">
+                                <Setter Property="Foreground" Value="#9AA5B1" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="No" Binding="{Binding No}" Width="36" />
+                    <DataGridTextColumn Header="Step" Binding="{Binding Label}" Width="*" />
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="110" />
+                    <DataGridTemplateColumn Header="Result" Width="64">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Result}" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="#6B7A8C" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Result}" Value="PASS"><Setter Property="Foreground" Value="#06C755" /></DataTrigger>
+                                                <DataTrigger Binding="{Binding Result}" Value="FAIL"><Setter Property="Foreground" Value="#E5484D" /></DataTrigger>
+                                                <DataTrigger Binding="{Binding Result}" Value="RUN"><Setter Property="Foreground" Value="#E0A800" /></DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Takt" Binding="{Binding Takt}" Width="52" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <StackPanel  Grid.Row="1" Grid.ColumnSpan="3"
 >
 
 
