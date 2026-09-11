@@ -9,6 +9,19 @@ namespace LEDVision.Camera
 {
     public class GroupLED
     {
+        // Tên group (người dùng đặt). Step VISION CHECK gọi group theo tên này.
+        private string name = "";
+        public string Name
+        {
+            get { return name ?? ""; }
+            set { name = value ?? ""; }
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
         private ObservableCollection<SingleLED> colection = new ObservableCollection<SingleLED>();
 
         public ObservableCollection<SingleLED> Colection

@@ -372,15 +372,47 @@
                         <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#6B7A8C" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Persist counters are still accumulating; the result is not stable yet" />
                     </StackPanel>
 
-                    <!--  Group Name  -->
+                    <!--  Group LED: danh sách động (thêm / đổi tên / xóa). Không chọn group = khóa ảnh.  -->
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
-                        <TextBlock Text="Group Name" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
-                        <WrapPanel HorizontalAlignment="Center">
-                            <CheckBox x:Name="ledCheckBox" VerticalContentAlignment="Center" Content="4-LED" Checked="CheckBox_Checked" Margin="4" />
-                            <CheckBox x:Name="decimalPointCheckBox" VerticalContentAlignment="Center" Content="Decimal Point" Checked="CheckBox_Checked" Margin="4" />
-                            <CheckBox x:Name="segmentCheckBox" VerticalContentAlignment="Center" Content="7-Segment" Checked="CheckBox_Checked" Margin="4" />
-                            <CheckBox x:Name="defaultCheckBox" VerticalContentAlignment="Center" Content="None" Checked="CheckBox_Checked" Margin="4" IsChecked="True" />
-                        </WrapPanel>
+                        <TextBlock Text="LED Group" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <ComboBox x:Name="groupCombo" Width="150" Height="28" VerticalContentAlignment="Center" DisplayMemberPath="Name"
+                                      SelectionChanged="GroupCombo_SelectionChanged" ToolTip="Group being edited. Every ROI you draw goes into this group; each group has its own HSV range, radius and area threshold" />
+                            <TextBox x:Name="groupNameBox" Width="130" Height="28" Margin="6,0,0,0" VerticalContentAlignment="Center" Padding="4,0"
+                                     ToolTip="Group name: type a new name then press Add, or edit the selected group's name and press Rename" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,0">
+                            <StackPanel.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="Height" Value="26" />
+                                    <Setter Property="Padding" Value="10,0" />
+                                    <Setter Property="Margin" Value="0,0,4,0" />
+                                    <Setter Property="Foreground" Value="#323F4E" />
+                                    <Setter Property="Background" Value="#E1E5EA" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                    <Setter Property="Cursor" Value="Hand" />
+                                    <Setter Property="Focusable" Value="False" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border x:Name="bd" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="bd" Property="Background" Value="#D2D8DF" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </StackPanel.Resources>
+                            <Button Content="Add" Click="GroupAdd_Click" ToolTip="Create a new group (name from the box, or Group N). HSV / radius / threshold are copied from the selected group" />
+                            <Button Content="Rename" Click="GroupRename_Click" ToolTip="Rename the selected group to the text in the box. VISION CHECK steps using the old name are updated" />
+                            <Button Content="Delete" Click="GroupDelete_Click" ToolTip="Delete the selected group and all its ROIs" />
+                            <Button Content="None" Click="GroupNone_Click" Margin="10,0,0,0" ToolTip="Select no group: the image is locked (no drawing / moving)" />
+                        </StackPanel>
                     </StackPanel>
 
                     <TextBlock Text="ROI Size" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,4,0,2" />
@@ -578,7 +610,7 @@
             </StackPanel>
         </Grid>
 
-        
+
 
     </Grid>
 </Page>

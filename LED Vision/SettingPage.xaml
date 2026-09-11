@@ -216,7 +216,7 @@
                             <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="RotateRight" />
                             <TextBlock Text="Retest Management" Style="{StaticResource CardTitle}" />
                         </StackPanel>
-                        <TextBlock Text="When a test fails, retest up to N times before reporting NG." Style="{StaticResource CardHint}" />
+                        <TextBlock Text="When a test fails, retest up to N times before reporting NG. The steps run at each test (power, relays, delays, camera checks) are defined on the Sequence page and saved in the model." Style="{StaticResource CardHint}" />
 
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Margin="0,0,24,0">
@@ -224,12 +224,8 @@
                                 <TextBox Style="{StaticResource NumInput}" Text="{Binding RetestTimes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Margin="0,0,24,0">
-                                <TextBlock Text="Before power ON (ms)" Style="{StaticResource FieldLabel}" ToolTip="After the down sensor reports the cylinder is down, wait this long before switching the LED power on (lets vibration settle)" />
+                                <TextBlock Text="Before sequence (ms)" Style="{StaticResource FieldLabel}" ToolTip="After the down sensor reports the cylinder is down, wait this long before the test sequence starts (lets vibration settle). Power ON and camera delays are steps of the sequence (Sequence page)" />
                                 <TextBox Style="{StaticResource NumInput}" Width="110" Text="{Binding DelayBeforePowerMs, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                            </StackPanel>
-                            <StackPanel Margin="0,0,24,0">
-                                <TextBlock Text="After power ON (ms)" Style="{StaticResource FieldLabel}" ToolTip="After the LED power is switched on, wait this long before the camera starts checking (lets the LEDs light up fully). Used at the first test and at every retest" />
-                                <TextBox Style="{StaticResource NumInput}" Width="110" Text="{Binding WaitRetest, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Margin="0,0,24,0">
                                 <TextBlock Text="Delay between UP / DOWN (ms)" Style="{StaticResource FieldLabel}" />

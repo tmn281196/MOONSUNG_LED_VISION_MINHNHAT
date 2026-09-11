@@ -30,6 +30,7 @@ namespace LEDVision
         public AutoPage autoPage;
         public SettingPage settingPage;
         public VisionPage visionPage;
+        public SequencePage sequencePage;
         public Model.Model programModel;
         public Model.SettingModel settingModel;
 
@@ -49,6 +50,7 @@ namespace LEDVision
 
             settingPage = new SettingPage(this);
             visionPage = new VisionPage(this);
+            sequencePage = new SequencePage(this);
             autoPage = new AutoPage();
             autoPage.SettingPage = settingPage;
 
@@ -59,11 +61,13 @@ namespace LEDVision
             autoPageHolder.Content = autoPage;
             settingPageHolder.Content = settingPage;
             visionPageHolder.Content = visionPage;
+            sequencePageHolder.Content = sequencePage;
             autoPageHolder.Visibility = Visibility.Visible;
             autoPageBtn.IsChecked = true;
 
             settingPage.ProgramModel = programModel;
             visionPage.ProgramModel = programModel;
+            sequencePage.ProgramModel = visionPage.ProgramModel;   // bản đang chỉnh (clone của VisionPage) → lưu cùng model
 
             settingPage.SettingModel = settingModel;
             visionPage.SettingModel = settingModel;
@@ -77,7 +81,7 @@ namespace LEDVision
 
             settingPage.Device = device;
             visionTest.Device = device;
-          
+
 
             autoPage.VisionTest.currentPage = "Auto";
 
@@ -117,10 +121,12 @@ namespace LEDVision
 
             autoPageBtn.IsChecked = false;
             visionPageBtn.IsChecked = false;
+            sequencePageBtn.IsChecked = false;
             settingPageBtn.IsChecked = false;
 
             autoPageHolder.Visibility = Visibility.Collapsed;
             visionPageHolder.Visibility = Visibility.Collapsed;
+            sequencePageHolder.Visibility = Visibility.Collapsed;
             settingPageHolder.Visibility = Visibility.Collapsed;
 
             autoPage.VisionTest.currentPage = "";
@@ -148,9 +154,15 @@ namespace LEDVision
                     visionPage.EnableObtainFrameTimer();
                     visionPageBtn.IsChecked = true;
 
-              
+
                     autoPage.VisionTest.currentPage = "Vision";
 
+                    break;
+
+                case "sequencePageBtn":
+                    sequencePageHolder.Visibility = Visibility.Visible;
+                    sequencePageBtn.IsChecked = true;
+                    sequencePage.RefreshGroupNames();
                     break;
 
                 case "settingPageBtn":
@@ -262,7 +274,7 @@ namespace LEDVision
             try
             {
                 device.comPort = settingModel.SettingVal.ComPort;
-         
+
             }
 
             catch (Exception)
@@ -325,13 +337,18 @@ namespace LEDVision
                 // Áp thông số camera của model LÊN camera ngay khi mở file (camera chưa mở thì OnCameraOpened sẽ áp sau)
                 CameraSetting.Instance.SetParammeter(CameraSetting.Instance.cameraSettingValues);
 
+                // Model cũ chưa có sequence → dựng chuỗi mặc định (POWER ON, DELAY, VISION CHECK từng group)
+                programModel.EnsureDefaultSteps();
+
                 settingPage.ProgramModel = programModel;
                 visionPage.ProgramModel = programModel;
+                sequencePage.ProgramModel = visionPage.ProgramModel;
                 autoPage.ProgramModel = programModel;
 
                 autoPage.ModelName = System.IO.Path.GetFileNameWithoutExtension(path);
                 SetModelName(autoPage.ModelName);
-                visionPage.defaultCheckBox.IsChecked = true;
+                visionPage.RefreshGroupList();
+                visionPage.SelectGroup(null);
 
                 autoPage.readyPopup.Visibility = Visibility.Visible;
 

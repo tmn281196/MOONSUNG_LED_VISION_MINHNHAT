@@ -26,7 +26,7 @@ namespace LEDVision
     /// <summary>
     /// Interaction logic for this.xaml
     /// </summary>
-    /// 
+    ///
     public class HueConverter : IValueConverter
     {
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -204,6 +204,10 @@ namespace LEDVision
                     programModel = value;
                     builder.ProgramModel = programModel.Clone();
                     BindCameraSettings();
+                    RefreshGroupList();
+                    SelectGroup(null);
+                    RefreshGroupList();
+                    SelectGroup(null);
                 }
             }
         }
@@ -637,11 +641,6 @@ namespace LEDVision
 
         private void ColorChanged()
         {
-            bool segmentChecked = segmentCheckBox.IsChecked.Value;
-            bool decimalPointChecked = decimalPointCheckBox.IsChecked.Value;
-            bool ledChecked = ledCheckBox.IsChecked.Value;
-
-          
         }
 
         private void ColorpickerMain_ColorChanged(object sender, MouseButtonEventArgs e)
@@ -655,7 +654,7 @@ namespace LEDVision
         }
         private void AdjustHSVTolerance(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            
+
         }
         private void cntSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -670,53 +669,106 @@ namespace LEDVision
                 }
             }
         }
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        // ====== Group LED động: combo chọn group + Add / Rename / Delete / None ======
+        private bool groupComboBusy = false;
+
+        // Nạp lại danh sách group vào combo (sau khi mở model / thêm / xóa / đổi tên), giữ group đang chọn nếu còn
+        public void RefreshGroupList()
         {
-            var chkBox = (System.Windows.Controls.CheckBox)sender;
-
-            switch (chkBox.Name)
+            if (groupCombo == null || ProgramModel == null) return;
+            groupComboBusy = true;
+            try
             {
-                case "ledCheckBox":
-
-                    defaultCheckBox.IsChecked = false;
-                    segmentCheckBox.IsChecked = false;
-                    decimalPointCheckBox.IsChecked = false;
-
-                    ProgramModel.Vision.SelectedGroupLED = ProgramModel.Vision.FourLED;
-                    builder.SelectedVisionObject = ProgramModel.Vision.FourLED;
-
-                    UpdateSettings("ledCheckBox");
-                    break;
-
-                case "segmentCheckBox":
-
-                    defaultCheckBox.IsChecked = false;
-                    ledCheckBox.IsChecked = false;
-                    decimalPointCheckBox.IsChecked = false;
-
-                    ProgramModel.Vision.SelectedGroupLED = ProgramModel.Vision.SevenSEG;
-                    builder.SelectedVisionObject = ProgramModel.Vision.SevenSEG;
-                    UpdateSettings("segmentCheckBox");
-                    break;
-                case "decimalPointCheckBox":
-                    defaultCheckBox.IsChecked = false;
-                    segmentCheckBox.IsChecked = false;
-                    ledCheckBox.IsChecked = false;
-                    ProgramModel.Vision.SelectedGroupLED = ProgramModel.Vision.DecimalPoint;
-                    builder.SelectedVisionObject = ProgramModel.Vision.DecimalPoint;
-                    UpdateSettings("decimalPointCheckBox");
-                    break;
-                default:
-
-                    segmentCheckBox.IsChecked = false;
-                    ledCheckBox.IsChecked = false;
-                    decimalPointCheckBox.IsChecked = false;
-                    ProgramModel.Vision.SelectedGroupLED = null;
-                    builder.SelectedVisionObject = null;
-
-                    break;
-
+                var cur = ProgramModel.Vision.SelectedGroupLED;
+                groupCombo.ItemsSource = null;
+                groupCombo.ItemsSource = ProgramModel.Vision.Groups;
+                groupCombo.SelectedItem = (cur != null && ProgramModel.Vision.Groups.Contains(cur)) ? cur : null;
             }
+            finally
+            {
+                groupComboBusy = false;
+            }
+            try { mainWindow?.sequencePage?.RefreshGroupNames(); } catch (Exception) { }
+        }
+
+        // Chọn group để vẽ / chỉnh (null = None: khóa ảnh)
+        public void SelectGroup(GroupLED g)
+        {
+            if (ProgramModel == null) return;
+            if (g != null && !ProgramModel.Vision.Groups.Contains(g)) g = null;
+            ProgramModel.Vision.SelectedGroupLED = g;
+            builder.SelectedVisionObject = g;
+            if (groupCombo != null && !groupComboBusy)
+            {
+                groupComboBusy = true;
+                try { groupCombo.SelectedItem = g; } finally { groupComboBusy = false; }
+            }
+            if (groupNameBox != null) groupNameBox.Text = g != null ? g.Name : "";
+            UpdateSettings("");
+        }
+
+        private void GroupCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (groupComboBusy) return;
+            SelectGroup(groupCombo.SelectedItem as GroupLED);
+        }
+
+        private void GroupAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProgramModel == null) return;
+            string name = groupNameBox != null ? groupNameBox.Text : "";
+            // Tên trong ô đang là tên group đã có → coi như chưa nhập, tự đặt tên mới
+            if (ProgramModel.Vision.FindGroup(name) != null) name = "";
+            var g = ProgramModel.Vision.AddGroup(name);
+            // Kế thừa HSV / bán kính / ngưỡng của group đang chọn cho đỡ chỉnh lại
+            var cur = ProgramModel.Vision.SelectedGroupLED;
+            if (cur != null)
+            {
+                g.RoiRadius = cur.RoiRadius;
+                g.ContourArea = cur.ContourArea;
+                g.HSV = cur.HSV.Clone();
+            }
+            RefreshGroupList();
+            SelectGroup(g);
+        }
+
+        private void GroupRename_Click(object sender, RoutedEventArgs e)
+        {
+            var g = ProgramModel?.Vision.SelectedGroupLED;
+            if (g == null || groupNameBox == null) return;
+            string name = groupNameBox.Text.Trim();
+            if (name.Length == 0) return;
+            var other = ProgramModel.Vision.FindGroup(name);
+            if (other != null && other != g)
+            {
+                System.Windows.MessageBox.Show("A group with this name already exists.", "Rename group", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            string old = g.Name;
+            g.Name = name;
+            // Step VISION CHECK đang trỏ tới tên cũ → đổi theo
+            foreach (var st in ProgramModel.TestSteps)
+                if (string.Equals(st.Target, old, StringComparison.OrdinalIgnoreCase) && Model.StepCmd.Canonical(st.Cmd) == Model.StepCmd.Vision) st.Target = name;
+            RefreshGroupList();
+            SelectGroup(g);
+        }
+
+        private void GroupDelete_Click(object sender, RoutedEventArgs e)
+        {
+            var g = ProgramModel?.Vision.SelectedGroupLED;
+            if (g == null) return;
+            string msg = "Delete group \"" + g.Name + "\"" + (g.Colection.Count > 0 ? " and its " + g.Colection.Count + " ROI(s)?" : "?");
+            if (System.Windows.MessageBox.Show(msg, "Delete group", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
+            builder.SelectedVisionObject = g;
+            builder.ClearSelectedGroup();
+            ProgramModel.Vision.Groups.Remove(g);
+            RefreshGroupList();
+            SelectGroup(null);
+        }
+
+        private void GroupNone_Click(object sender, RoutedEventArgs e)
+        {
+            SelectGroup(null);
         }
 
         private void UpdateSettings(string checkBoxName)
@@ -805,7 +857,7 @@ namespace LEDVision
         }
 
 
-  
+
 
 
 
@@ -1168,24 +1220,11 @@ namespace LEDVision
             double valueMean = Math.Floor((valueMax + valueMin) / 2);
             double valueTolerance = Math.Ceiling((valueMax - valueMin) / 2);
 
-            GroupLED groupLED = null;
-            if (this.segmentCheckBox.IsChecked.Value)
-            {
-                groupLED = this.ProgramModel.Vision.SevenSEG;
-
-            }
-            if (this.ledCheckBox.IsChecked.Value)
-            {
-                groupLED = this.ProgramModel.Vision.FourLED;
-            }
-            if (this.decimalPointCheckBox.IsChecked.Value)
-            {
-                groupLED = this.ProgramModel.Vision.DecimalPoint;
-            }
+            GroupLED groupLED = this.ProgramModel.Vision.SelectedGroupLED;
 
             if (groupLED != null)
             {
-     
+
 
                 groupLED.HSV.HUE.Max = hueMax;
                 groupLED.HSV.HUE.Min = hueMin;

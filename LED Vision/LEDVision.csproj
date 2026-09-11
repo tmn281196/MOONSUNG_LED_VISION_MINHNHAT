@@ -238,6 +238,11 @@
     <Compile Include="DeviceControl.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Setting.cs" />
+    <Compile Include="Model\TestStep.cs" />
+    <Compile Include="SequenceRunner.cs" />
+    <Compile Include="SequencePage.xaml.cs">
+      <DependentUpon>SequencePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
@@ -280,6 +285,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SequencePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

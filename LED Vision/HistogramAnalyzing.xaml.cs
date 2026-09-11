@@ -259,20 +259,7 @@ namespace LEDVision
             double valueMean = Math.Floor((valueMax + valueMin) / 2);
             double valueTolerance = Math.Ceiling((valueMax - valueMin) / 2);
 
-            GroupLED groupLED = null;
-            if (visionPage.segmentCheckBox.IsChecked.Value)
-            {
-                groupLED = visionPage.ProgramModel.Vision.SevenSEG;
-
-            }
-            if (visionPage.ledCheckBox.IsChecked.Value)
-            {
-                groupLED = visionPage.ProgramModel.Vision.FourLED;
-            }
-            if (visionPage.decimalPointCheckBox.IsChecked.Value)
-            {
-                groupLED = visionPage.ProgramModel.Vision.DecimalPoint;
-            }
+            GroupLED groupLED = visionPage.ProgramModel.Vision.SelectedGroupLED;
 
             if (groupLED != null)
             {

@@ -177,6 +177,21 @@
                     </Grid>
                 </ToggleButton>
                 <ToggleButton
+                    x:Name="sequencePageBtn"
+                    Style="{StaticResource NavToggle}"
+                    Width="56"
+                    Height="56"
+                    Margin="0"
+                    Padding="0"
+                    ToolTip="Test Sequence (steps run at each test)"
+                    Click="ToggleBtn_Click">
+                    <fa:IconImage
+                        Width="36"
+                        Height="36"
+                        Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ToggleButton}}"
+                        Icon="ListCheck" />
+                </ToggleButton>
+                <ToggleButton
                     x:Name="settingPageBtn"
                     Style="{StaticResource NavToggle}"
                     Width="56"
@@ -279,6 +294,11 @@
             Visibility="Collapsed" />
         <Frame
             x:Name="visionPageHolder"
+            Grid.Row="1"
+            Grid.Column="1"
+            Visibility="Collapsed" />
+        <Frame
+            x:Name="sequencePageHolder"
             Grid.Row="1"
             Grid.Column="1"
             Visibility="Collapsed" />

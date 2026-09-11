@@ -153,7 +153,7 @@ namespace LEDVision
                             retest++;
 
                             if (retest <= mainWindow.settingModel.SettingVal.RetestTimes)
-                            {                       
+                            {
 
 
                                 PostTestNG = false;
@@ -183,12 +183,7 @@ namespace LEDVision
                                     device.WaitForDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
                                     cancelled = CancelRequested || !await DelayUnlessCancelled(mainWindow.settingModel.SettingVal.DelayBeforePowerMs);   // "Before power ON"
                                 }
-                                if (!cancelled)
-                                {
-                                    device.Power = true;
-                                    device.SendControl();
-                                    cancelled = !await DelayUnlessCancelled((int)mainWindow.settingModel.SettingVal.WaitRetest);
-                                }
+                                // Bật nguồn + chờ + kiểm tra do chuỗi step của model làm (state Testing → CapturingAndCheckingEvent)
 
                                 device.TriggerTest = false;
                                 device.IgnoreTrigger = false;

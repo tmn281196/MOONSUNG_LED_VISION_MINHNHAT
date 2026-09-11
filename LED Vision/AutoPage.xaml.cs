@@ -80,6 +80,7 @@ namespace LEDVision
                     programModel = value;
 
                     visionTester.ProgramModel = programModel;
+                    try { stepsGrid.ItemsSource = programModel != null ? programModel.TestSteps : null; } catch (Exception) { }
                 }
             }
         }
@@ -97,7 +98,7 @@ namespace LEDVision
             {
                 if (visionTest != value)
                 {
-        
+
                         visionTest = value;
                         visionTest.TestStartedEvent += VisionTest_TestStartedEvent;
                         visionTest.CapturingAndCheckingEvent += VisionTest_CapturingAndCheckingEvent;
@@ -221,26 +222,24 @@ namespace LEDVision
             obtainFrameTimer.Start();
         }
 
+        // Chạy chuỗi step của model (POWER / RELAY / DELAY / VISION CHECK). Một step FAIL = lượt test NG.
         private void VisionTest_CapturingAndCheckingEvent(object sender, EventArgs e)
         {
-            if (CameraSetting.Instance.LastMatFrame != null)
+            var model = visionTester.ProgramModel;
+            if (model == null) return;
+            var steps = model.TestSteps;
+            if (steps == null || steps.Count == 0)
             {
-                Dispatcher.Invoke(new Action(() =>
-                {                
-
-                    var results = visionTester.ProgramModel.Vision.InspectAll();
-
-
-                    if (!(results.Item1.All(item => item) && results.Item2.All(item => item) && results.Item3.All(item => item)))
-                    {
-                        VisionTest.FailCount += 1;
-                        Console.WriteLine("fail");
-
-                    }
-
-                }));
+                VisionTest.FailCount += 1;   // không có step nào → NG (model chưa có sequence)
+                return;
             }
-
+            Model.TestStepList.ClearResults(steps);
+            bool pass = SequenceRunner.Run(steps, VisionTest.Device, model.Vision, Dispatcher);
+            if (!pass && !VisionTest.CancelRequested)
+            {
+                VisionTest.FailCount += 1;
+                Console.WriteLine("fail");
+            }
         }
 
         private void VisionTest_TestStartedEvent(object sender, EventArgs e)
@@ -261,24 +260,11 @@ namespace LEDVision
                 ngPopup.Visibility = Visibility.Collapsed;
                 testingPopup.Visibility = Visibility.Visible;
 
-                foreach (var led in visionTester.ProgramModel.Vision.FourLED.Colection)
+                foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
                 {
                     led.Roi.Stroke = Brushes.White;
-
-                    //cntsize too
                 }
-                foreach (var led in visionTester.ProgramModel.Vision.SevenSEG.Colection)
-                {
-                    led.Roi.Stroke = Brushes.White;
-                    //cntsize too
-                }
-                foreach (var led in visionTester.ProgramModel.Vision.DecimalPoint.Colection)
-                {
-                    led.Roi.Stroke = Brushes.White;
-                    //cntsize too
-                }
-
-              
+                Model.TestStepList.ClearResults(visionTester.ProgramModel.TestSteps);
 
             }));
 
@@ -287,13 +273,8 @@ namespace LEDVision
             Task.Delay(settingModel?.SettingVal?.DelayBeforePowerMs ?? 200).Wait();   // "Before power ON"
 
             VisionTest.Device.TriggerTest = false;
-            VisionTest.Device.Power = true;
-            VisionTest.Device.SendControl();
 
-            Task.Delay((int)settingModel.SettingVal.WaitRetest).Wait();
-
-         
-
+            // Bật nguồn / chờ / kiểm tra camera do chuỗi step của model quyết định (trang Sequence)
 
             // Switch to Testing Stage
             VisionTest.FailCount = 0;
@@ -309,6 +290,7 @@ namespace LEDVision
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = false;
             VisionTest.Device.SendControl();
+            try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
 
             Dispatcher.Invoke(new Action(() =>
             {
@@ -345,7 +327,7 @@ namespace LEDVision
                     // Only capture when NG
                     CaptureCanvasArea(path);
 
-                    // Showing NG banner 
+                    // Showing NG banner
                     testingPopup.Visibility = Visibility.Collapsed;
                     passPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Visible;
@@ -359,7 +341,7 @@ namespace LEDVision
                 PassCnt += 1;
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    // Showing PASS banner 
+                    // Showing PASS banner
                     testingPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Collapsed;
 
@@ -375,13 +357,13 @@ namespace LEDVision
 
                 Task.Delay(1000).Wait();
 
-     
+
 
 
             }
 
             VisionTest.PostTestNG = false;
-  
+            try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
 
             // Switch to Ready Stage: xóa trigger còn sót + mở cửa sổ chặn 1,5 s (cạnh reed tới trễ sau khi xi lanh về)
             VisionTest.Device.IgnoreTrigger = false;
@@ -397,7 +379,7 @@ namespace LEDVision
             VisionTest.Device.SendControl();
 
             SettingPage.IncreaseTimes();
-        
+
         }
 
         private void CaptureCanvasArea(string filePath)

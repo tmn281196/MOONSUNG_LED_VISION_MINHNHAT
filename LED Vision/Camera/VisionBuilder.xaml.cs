@@ -38,17 +38,7 @@ namespace LEDVision.Camera
                 {
                     programModel = value;
                     mainCanvas.Children.Clear();
-                    foreach (var led in ProgramModel.Vision.DecimalPoint.Colection)
-                    {
-                        led.SetParentCanvas(mainCanvas);
-                        mainCanvas.Children.Add(led.Roi);
-                    }
-                    foreach (var led in ProgramModel.Vision.SevenSEG.Colection)
-                    {
-                        led.SetParentCanvas(mainCanvas);
-                        mainCanvas.Children.Add(led.Roi);
-                    }
-                    foreach (var led in ProgramModel.Vision.FourLED.Colection)
+                    foreach (var led in ProgramModel.Vision.AllLeds())
                     {
                         led.SetParentCanvas(mainCanvas);
                         mainCanvas.Children.Add(led.Roi);
@@ -355,9 +345,7 @@ namespace LEDVision.Camera
             // ----- Xóa -----
             if (e.Key == Key.Delete && ctrl && shift)
             {
-                ClearGroup(ProgramModel.Vision.FourLED);
-                ClearGroup(ProgramModel.Vision.SevenSEG);
-                ClearGroup(ProgramModel.Vision.DecimalPoint);
+                foreach (var g in ProgramModel.Vision.Groups.ToList()) ClearGroup(g);
                 e.Handled = true;
                 Keyboard.Focus(mainCanvas);
                 return;
@@ -433,13 +421,20 @@ namespace LEDVision.Camera
             group.Colection.Clear();
         }
 
+        // Xóa mọi ROI của group đang chọn (VisionPage gọi trước khi xóa group)
+        public void ClearSelectedGroup()
+        {
+            if (SelectedVisionObject == null) return;
+            ClearGroup(SelectedVisionObject);
+            selectedLed = null;
+            if (selectedLeds != null) selectedLeds.Clear();
+        }
+
         // Xóa 1 ROI đang chọn
         private void DeleteSingle()
         {
             if (selectedLed == null) return;
-            ProgramModel.Vision.FourLED.Colection.Remove(selectedLed);
-            ProgramModel.Vision.SevenSEG.Colection.Remove(selectedLed);
-            ProgramModel.Vision.DecimalPoint.Colection.Remove(selectedLed);
+            foreach (var g in ProgramModel.Vision.Groups) g.Colection.Remove(selectedLed);
             mainCanvas.Children.Remove(selectedLed.Roi);
             selectedLed = null;
         }
@@ -451,9 +446,7 @@ namespace LEDVision.Camera
             foreach (var led in selectedLeds)
             {
                 mainCanvas.Children.Remove(led.Roi);
-                ProgramModel.Vision.FourLED.Colection.Remove(led);
-                ProgramModel.Vision.SevenSEG.Colection.Remove(led);
-                ProgramModel.Vision.DecimalPoint.Colection.Remove(led);
+                foreach (var g in ProgramModel.Vision.Groups) g.Colection.Remove(led);
             }
             selectedLeds.Clear();
         }

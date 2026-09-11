@@ -54,17 +54,7 @@ namespace LEDVision.Camera
                 {
                     programModel = value;
                     mainCanvas.Children.Clear();
-                    foreach (var led in ProgramModel.Vision.FourLED.Colection)
-                    {
-                        led.SetParentCanvas(mainCanvas);
-                        mainCanvas.Children.Add(led.Roi);
-                    }
-                    foreach (var led in ProgramModel.Vision.DecimalPoint.Colection)
-                    {
-                        led.SetParentCanvas(mainCanvas);
-                        mainCanvas.Children.Add(led.Roi);
-                    }
-                    foreach (var led in ProgramModel.Vision.SevenSEG.Colection)
+                    foreach (var led in ProgramModel.Vision.AllLeds())
                     {
                         led.SetParentCanvas(mainCanvas);
                         mainCanvas.Children.Add(led.Roi);

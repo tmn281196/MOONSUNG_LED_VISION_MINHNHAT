@@ -52,9 +52,10 @@ namespace LEDVision
                             Sections = new[]
                             {
                                 new Section("1. Choose a group",
-                                    "In Inspection Settings → Group Name, tick 4-LED, Decimal Point or 7-Segment.",
-                                    "Every ROI you draw goes into the ticked group.",
-                                    "Tick None to lock the image (no drawing / moving)."),
+                                    "In Inspection Settings → LED Group, pick a group in the drop-down. Groups are free: add as many as you need (Add), rename (Rename) or remove them (Delete).",
+                                    "Every ROI you draw goes into the selected group. Each group has its own HSV range, ROI radius and area threshold.",
+                                    "A VISION CHECK step on the Sequence page checks one group by its name.",
+                                    "Press None to lock the image (no drawing / moving)."),
                                 new Section("2. Add an ROI",
                                     "RIGHT-click on the camera image.",
                                     "A circular ROI is created there with the current Radius (ROI Size slider).",
@@ -96,9 +97,10 @@ namespace LEDVision
                             Sections = new[]
                             {
                                 new Section("1. เลือกกลุ่ม",
-                                    "ที่แท็บ Inspection Settings → Group Name ให้ติ๊ก 4-LED, Decimal Point หรือ 7-Segment",
-                                    "ROI ทุกอันที่วาดจะถูกเพิ่มเข้ากลุ่มที่ติ๊กไว้",
-                                    "ติ๊ก None เพื่อล็อกภาพ (วาด / ย้ายไม่ได้)"),
+                                    "ที่แท็บ Inspection Settings → LED Group เลือกกลุ่มจากช่องเลือก กลุ่มเพิ่มได้ไม่จำกัด (Add) เปลี่ยนชื่อได้ (Rename) หรือลบได้ (Delete)",
+                                    "ROI ทุกอันที่วาดจะถูกเพิ่มเข้ากลุ่มที่เลือกอยู่ แต่ละกลุ่มมีช่วง HSV รัศมี ROI และ Area Threshold ของตัวเอง",
+                                    "step VISION CHECK ในหน้า Sequence จะตรวจกลุ่มตามชื่อ",
+                                    "กด None เพื่อล็อกภาพ (วาด / ย้ายไม่ได้)"),
                                 new Section("2. เพิ่ม ROI",
                                     "คลิกขวาที่ภาพจากกล้อง",
                                     "จะสร้าง ROI วงกลมที่จุดนั้นด้วยขนาดรัศมีปัจจุบัน (แถบเลื่อน Radius ในส่วน ROI Size)",
@@ -209,6 +211,91 @@ namespace LEDVision
                 }
             },
 
+            // ======================= SEQUENCE =======================
+            {
+                "sequence", new Dictionary<string, HelpText>
+                {
+                    {
+                        "EN", new HelpText
+                        {
+                            WindowTitle = "Test Sequence Help",
+                            Heading = "Test sequence guide",
+                            CloseLabel = "Close",
+                            Sections = new[]
+                            {
+                                new Section("1. What the sequence is",
+                                    "The list of steps the Auto page runs at every test, from top to bottom, once the cylinder is down and the Before sequence delay has passed.",
+                                    "Every step reports PASS or FAIL. One FAIL makes the whole test NG (then the retest rules of the Setting page apply).",
+                                    "The list is part of the model: press Save on the top bar after editing, otherwise the Auto page keeps running the last saved list.",
+                                    "At the end of a test (PASS, NG or EMERGENCY STOP) the app switches the LED power and all relays OFF by itself."),
+                                new Section("2. Commands",
+                                    "POWER  ON / OFF : the product 220 V relay. Timeout (optional) = wait this many ms after switching. The IO Box only allows ON while the cylinder is down.",
+                                    "RELAY  ON / OFF : one of the five general-purpose relays. Target = relay number 1 to 5; leave Target empty to switch all five. Timeout (optional) = wait this many ms after switching.",
+                                    "DELAY : wait. Spec = time in ms (e.g. 1000).",
+                                    "VISION CHECK : the camera checks one LED group. Target = group name (Vision page → LED Group). Timeout = sampling time in ms (default 2000, one sample every 100 ms). PASS only if every ROI of the group is lit with the right colour in every scored sample; Persist warm-up samples are not scored."),
+                                new Section("3. Columns",
+                                    "No : order of execution. CMD / Sub CMD : the command and ON / OFF.",
+                                    "Target : relay number (RELAY) or group name (VISION CHECK).",
+                                    "Spec : DELAY time in ms.  Timeout : sampling time (VISION CHECK) or wait after switching (POWER / RELAY).",
+                                    "Comment : free text, shown on the Auto page.  Skip : ticked steps are not executed (result shows a dash)."),
+                                new Section("4. Editing",
+                                    "Fill the fields on the right and press ADD STEP: the step is inserted after the selected row (at the end if none is selected).",
+                                    "Select a row to load it into the fields, change them, then press UPDATE STEP.",
+                                    "You can also type directly in a cell of the table.",
+                                    "Move Up / Down / First / Last reorder the selected step; Duplicate copies it; Delete removes it; Delete All clears the list.",
+                                    "Default replaces the list with POWER ON → DELAY 1000 → VISION CHECK for every group of the model."),
+                                new Section("5. Typical sequence",
+                                    "1) POWER ON, Timeout 1000  (or POWER ON then DELAY 1000)",
+                                    "2) VISION CHECK  Target = 7-Segment, Timeout 2000",
+                                    "3) VISION CHECK  Target = 4-LED, Timeout 2000",
+                                    "4) RELAY ON  Target = 1, Timeout 500   → e.g. press a button on the product",
+                                    "5) VISION CHECK  Target = Decimal Point, Timeout 2000",
+                                    "Power and relays are switched off automatically when the test ends, so an OFF step at the end is optional."),
+                            }
+                        }
+                    },
+                    {
+                        "TH", new HelpText
+                        {
+                            WindowTitle = "คู่มือลำดับการทดสอบ",
+                            Heading = "หน้า Sequence",
+                            CloseLabel = "ปิด",
+                            Sections = new[]
+                            {
+                                new Section("1. ลำดับการทดสอบคืออะไร",
+                                    "รายการ step ที่หน้า Auto จะรันทุกครั้งที่ทดสอบ จากบนลงล่าง หลังกระบอกลงสุดและครบเวลา Before sequence",
+                                    "ทุก step จะรายงาน PASS หรือ FAIL มี FAIL เพียงหนึ่ง = การทดสอบทั้งรอบเป็น NG (จากนั้นใช้กฎทดสอบซ้ำในหน้า Setting)",
+                                    "รายการนี้เป็นส่วนหนึ่งของโมเดล แก้แล้วต้องกด Save บนแถบด้านบน ไม่เช่นนั้นหน้า Auto จะยังรันรายการที่บันทึกไว้ล่าสุด",
+                                    "เมื่อจบการทดสอบ (PASS, NG หรือ EMERGENCY STOP) แอปจะปิดไฟ LED และรีเลย์ทั้งหมดให้เอง"),
+                                new Section("2. คำสั่ง",
+                                    "POWER  ON / OFF : รีเลย์ไฟ 220 V ของชิ้นงาน Timeout (ไม่บังคับ) = รอกี่ ms หลังสั่ง IO Box ยอมให้ ON เฉพาะตอนกระบอกอยู่ล่างเท่านั้น",
+                                    "RELAY  ON / OFF : รีเลย์อเนกประสงค์ 1 ใน 5 ตัว Target = หมายเลขรีเลย์ 1 ถึง 5 เว้นว่าง = สั่งทั้ง 5 ตัว Timeout (ไม่บังคับ) = รอกี่ ms หลังสั่ง",
+                                    "DELAY : รอ Spec = เวลาเป็น ms (เช่น 1000)",
+                                    "VISION CHECK : กล้องตรวจกลุ่ม LED หนึ่งกลุ่ม Target = ชื่อกลุ่ม (หน้า Vision → LED Group) Timeout = เวลาเก็บตัวอย่างเป็น ms (ค่าเริ่มต้น 2000 เก็บทุก 100 ms) PASS ก็ต่อเมื่อ ROI ทุกอันของกลุ่มติดถูกสีในทุกตัวอย่างที่ให้คะแนน ตัวอย่างช่วงอุ่นเครื่องของ Persist ไม่ถูกให้คะแนน"),
+                                new Section("3. คอลัมน์",
+                                    "No : ลำดับการรัน CMD / Sub CMD : คำสั่งและ ON / OFF",
+                                    "Target : หมายเลขรีเลย์ (RELAY) หรือชื่อกลุ่ม (VISION CHECK)",
+                                    "Spec : เวลา DELAY เป็น ms  Timeout : เวลาเก็บตัวอย่าง (VISION CHECK) หรือเวลารอหลังสั่ง (POWER / RELAY)",
+                                    "Comment : ข้อความอิสระ แสดงในหน้า Auto  Skip : step ที่ติ๊กจะไม่ถูกรัน (ผลแสดงเป็นขีด)"),
+                                new Section("4. การแก้ไข",
+                                    "กรอกช่องด้านขวาแล้วกด ADD STEP: step จะถูกแทรกต่อจากแถวที่เลือก (ต่อท้ายถ้าไม่ได้เลือก)",
+                                    "เลือกแถวเพื่อโหลดค่าเข้าช่อง แก้ไข แล้วกด UPDATE STEP",
+                                    "พิมพ์แก้ในช่องของตารางโดยตรงก็ได้",
+                                    "Move Up / Down / First / Last ย้ายลำดับ step ที่เลือก Duplicate คัดลอก Delete ลบ Delete All ล้างทั้งรายการ",
+                                    "Default แทนที่รายการด้วย POWER ON → DELAY 1000 → VISION CHECK ของทุกกลุ่มในโมเดล"),
+                                new Section("5. ตัวอย่างลำดับทั่วไป",
+                                    "1) POWER ON, Timeout 1000  (หรือ POWER ON แล้ว DELAY 1000)",
+                                    "2) VISION CHECK  Target = 7-Segment, Timeout 2000",
+                                    "3) VISION CHECK  Target = 4-LED, Timeout 2000",
+                                    "4) RELAY ON  Target = 1, Timeout 500   → เช่น กดปุ่มบนชิ้นงาน",
+                                    "5) VISION CHECK  Target = Decimal Point, Timeout 2000",
+                                    "ไฟและรีเลย์จะถูกปิดอัตโนมัติเมื่อจบการทดสอบ จึงไม่จำเป็นต้องมี step OFF ท้ายรายการ"),
+                            }
+                        }
+                    },
+                }
+            },
+
             // ======================= SETTING =======================
             {
                 "setting", new Dictionary<string, HelpText>
@@ -230,8 +317,8 @@ namespace LEDVision
                                     "Browse opens the Windows folder picker."),
                                 new Section("3. Retest Management",
                                     "Retest times : how many extra attempts are made when a test is NG. 0 = never retest. Example: 1 = at most 2 tests per product.",
-                                    "Before power ON (ms) : after the down sensor reports the cylinder is down, wait this long before switching the LED power on (lets vibration settle). Used at the first test and at every retest.",
-                                    "After power ON (ms) : after the LED power is switched on, wait this long before the camera starts checking (lets the LEDs light up fully). Used at the first test and at every retest.",
+                                    "Before sequence (ms) : after the down sensor reports the cylinder is down, wait this long before the test sequence starts (lets vibration settle). Used at the first test and at every retest.",
+                                    "The sequence itself (LED power on, delays, relays, camera checks) is defined on the Sequence page and saved in the model.",
                                     "Delay between UP / DOWN (ms) : during a retest the cylinder is raised then lowered again. After the down sensor releases, this is the extra time given for the cylinder to finish going up before it is sent down.",
                                     "Sensor timeout (ms) : maximum time to wait for the down sensor to report the cylinder is fully down (at test start and after the retest lowering) or has left the bottom (retest raising). If it expires the sequence continues anyway; the board still refuses to power the LEDs unless the cylinder is down, so the result will be NG rather than unsafe. Typical value 2000 to 4000."),
                                 new Section("4. Pin Replacement",
@@ -261,8 +348,8 @@ namespace LEDVision
                                     "ปุ่ม Browse เปิดหน้าต่างเลือกโฟลเดอร์ของ Windows"),
                                 new Section("3. Retest Management",
                                     "Retest times : จำนวนครั้งที่ทดสอบซ้ำเพิ่มเมื่อผลเป็น NG 0 = ไม่ทดสอบซ้ำ ตัวอย่าง 1 = ทดสอบได้สูงสุด 2 ครั้งต่อชิ้นงาน",
-                                    "Before power ON (ms) : หลังเซ็นเซอร์ล่างรายงานว่ากระบอกสูบลงแล้ว รอเท่านี้ก่อนจ่ายไฟ LED (ให้แรงสั่นสงบ) ใช้ทั้งตอนทดสอบครั้งแรกและทุกครั้งที่ทดสอบซ้ำ",
-                                    "After power ON (ms) : หลังจ่ายไฟ LED แล้ว รอเท่านี้ก่อนกล้องเริ่มตรวจ (ให้ LED ติดเต็มที่) ใช้ทั้งตอนทดสอบครั้งแรกและทุกครั้งที่ทดสอบซ้ำ",
+                                    "Before sequence (ms) : หลังเซ็นเซอร์ล่างรายงานว่ากระบอกลงสุดแล้ว รอเท่านี้ก่อนเริ่มลำดับการทดสอบ (ให้แรงสั่นสงบ) ใช้ทั้งตอนทดสอบครั้งแรกและทุกครั้งที่ทดสอบซ้ำ",
+                                    "ตัวลำดับการทดสอบเอง (จ่ายไฟ LED, หน่วงเวลา, รีเลย์, กล้องตรวจ) กำหนดในหน้า Sequence และบันทึกในโมเดล",
                                     "Delay between UP / DOWN (ms) : ตอนทดสอบซ้ำ กระบอกสูบจะยกขึ้นแล้วลงใหม่ หลังเซ็นเซอร์ล่างปล่อยแล้ว นี่คือเวลาเพิ่มให้กระบอกสูบขึ้นจนสุดก่อนสั่งลง",
                                     "Sensor timeout (ms) : เวลาสูงสุดที่รอเซ็นเซอร์ล่างรายงานว่ากระบอกสูบลงสุด (ตอนเริ่มทดสอบและหลังสั่งลงตอนทดสอบซ้ำ) หรือออกจากตำแหน่งล่าง (ตอนยกขึ้นตอนทดสอบซ้ำ) ถ้าหมดเวลาลำดับงานจะดำเนินต่อ บอร์ดจะยังไม่จ่ายไฟ LED ถ้ากระบอกสูบไม่ลง ผลจึงเป็น NG ไม่ใช่อันตราย ค่าที่ใช้ทั่วไป 2000 ถึง 4000"),
                                 new Section("4. Pin Replacement",
@@ -421,7 +508,7 @@ namespace LEDVision
             {
                 contentPanel.Children.Add(BuildHueBar());
             }
-            if (topic == "setting" || topic == "auto")
+            if (topic == "setting" || topic == "auto" || topic == "sequence")
             {
                 contentPanel.Children.Add(BuildTestTimeline(currentLang));
             }
@@ -477,10 +564,8 @@ namespace LEDVision
             {
                 new Step(th ? "ทริกเกอร์" : "Trigger", th ? "เซ็นเซอร์ล่าง / START" : "down sensor / START", cSensor, false),
                 new Step(th ? "รอลงสุด" : "Wait fully down", "Sensor timeout", cSensor, true),
-                new Step(th ? "หน่วง" : "Delay", "Before power ON", cDelay, true),
-                new Step(th ? "จ่ายไฟ LED" : "LED power ON", "", cPower, false),
-                new Step(th ? "หน่วง" : "Delay", "After power ON", cDelay, true),
-                new Step(th ? "กล้องตรวจ 2 วิ" : "Camera check 2 s", "Persist", cCheck, true),
+                new Step(th ? "หน่วง" : "Delay", "Before sequence", cDelay, true),
+                new Step(th ? "รันลำดับ" : "Run sequence", th ? "POWER / RELAY / DELAY / VISION CHECK (หน้า Sequence)" : "POWER / RELAY / DELAY / VISION CHECK (Sequence page)", cCheck, true),
                 new Step(th ? "ผล" : "Result", th ? "PASS / NG → ทดสอบซ้ำ?" : "PASS / NG → retest?", cSensor, false),
             };
             var retry = new[]
@@ -488,10 +573,8 @@ namespace LEDVision
                 new Step(th ? "ตัดไฟ + ยกขึ้น" : "Power OFF + UP", th ? "รอเซ็นเซอร์ปล่อย" : "wait sensor release", cMove, false),
                 new Step(th ? "หน่วง" : "Delay", "Delay between UP / DOWN", cDelay, true),
                 new Step(th ? "สั่งลง" : "DOWN", "Sensor timeout", cSensor, true),
-                new Step(th ? "หน่วง" : "Delay", "Before power ON", cDelay, true),
-                new Step(th ? "จ่ายไฟ LED" : "LED power ON", "", cPower, false),
-                new Step(th ? "หน่วง" : "Delay", "After power ON", cDelay, true),
-                new Step(th ? "กล้องตรวจ 2 วิ" : "Camera check 2 s", "Persist", cCheck, true),
+                new Step(th ? "หน่วง" : "Delay", "Before sequence", cDelay, true),
+                new Step(th ? "รันลำดับ" : "Run sequence", th ? "ลำดับเดียวกับครั้งแรก" : "same steps as the first test", cCheck, true),
             };
 
             var root = new StackPanel { Margin = new Thickness(0, 6, 0, 4) };
