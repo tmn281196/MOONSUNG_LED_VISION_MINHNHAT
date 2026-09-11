@@ -560,7 +560,6 @@ namespace LEDVision
         // true từ lúc test bắt đầu (chờ xi lanh, bật nguồn) tới khi kết thúc / hủy → nút hiện CANCEL
         private volatile bool testBusy = false;
 
-        // Nút "?": hướng dẫn trang Auto (EN / TH) kèm timeline chuỗi test
         // Toggle mắt: bật = hiện mọi ROI với kết quả gần nhất (xanh OK / đỏ NG / xám chưa kiểm tra); tắt = ẩn hết
         private static readonly System.Windows.Media.Brush UncheckedRoiBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x9A, 0xA5, 0xB1));
 
