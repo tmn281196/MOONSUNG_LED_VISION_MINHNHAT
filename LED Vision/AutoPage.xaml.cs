@@ -318,16 +318,7 @@ namespace LEDVision
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            // Kết thúc: hiện lại mọi ROI đã được kiểm tra (xanh / đỏ theo kết quả), ROI chưa kiểm tra vẫn ẩn
-            Dispatcher.Invoke(new Action(() =>
-            {
-                foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
-                {
-                    bool checkedLed = led.ResultFinal != SingleLED.RESULT.UNKNOWN;
-                    led.Roi.Visibility = checkedLed ? Visibility.Visible : Visibility.Collapsed;
-                    if (checkedLed) led.Roi.Stroke = led.ResultFinal == SingleLED.RESULT.OK ? SingleLED.PassBrush : Brushes.Red;
-                }
-            }));
+            // Kết thúc: giữ nguyên màn hình ROI của step VISION CHECK cuối cùng đã chạy (không hiện lại các group khác)
 
             if (VisionTest.PostTestNG)
             {
