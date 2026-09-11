@@ -370,7 +370,7 @@
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
                         <TextBlock Text="LED Groups / HSV Range" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
                         <!--  Bảng group: bấm dòng = chọn group để vẽ / chỉnh; sửa ô Name = đổi tên (step VISION CHECK đổi theo)  -->
-                        <DataGrid x:Name="groupGrid" HorizontalAlignment="Center" MaxHeight="270" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                        <DataGrid x:Name="groupGrid" HorizontalAlignment="Center" Height="236" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
                                   HorizontalGridLinesBrush="#EEF1F4" RowBackground="White" BorderBrush="#DDE3EA" BorderThickness="1"
                                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                                   SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="23" VerticalScrollBarVisibility="Auto"
