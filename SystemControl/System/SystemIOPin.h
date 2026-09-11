@@ -13,12 +13,14 @@
 #define RELAY5 36
 const uint8_t RELAY_PINS[5] = { RELAY1, RELAY2, RELAY3, RELAY4, RELAY5 };
 
-// ---- 4-byte key/value protocol: [cmd][key][value][FRAME_END] in both directions ----
+// ---- 5-byte key/value protocol: [cmd][key][value][chk][FRAME_END] in both directions ----
+//      chk = cmd XOR key XOR value. A frame with a wrong chk or a wrong terminator is dropped.
+#define FRAME_LEN 5
 #define FRAME_END 0x11
 #define CMD_SET 0x52    // PC -> board: set one output   key = output 0..7, value = 0/1. Board echoes the frame.
 #define CMD_GET 0x49    // PC -> board: read inputs      key = 0 all / 1 UP / 2 DOWN. Board answers one frame per input.
 #define CMD_RESET 0xD5  // PC -> board: every output OFF. Board echoes.
-                        // board -> PC event: [CMD_GET][2][downLevel][FRAME_END] every time the DOWN sensor changes.
+                        // board -> PC event: [CMD_GET][2][downLevel][chk][FRAME_END] every time the DOWN sensor changes.
 
 #define KEY_POWER 0
 #define KEY_UP 1
@@ -30,9 +32,13 @@ const uint8_t RELAY_PINS[5] = { RELAY1, RELAY2, RELAY3, RELAY4, RELAY5 };
 
 uint8_t LastStartState = false;
 
+uint8_t FrameChecksum(uint8_t cmd, uint8_t key, uint8_t value) {
+  return cmd ^ key ^ value;
+}
+
 void SendFrame(uint8_t cmd, uint8_t key, uint8_t value) {
-  uint8_t f[4] = { cmd, key, value, FRAME_END };
-  Serial.write(f, 4);
+  uint8_t f[FRAME_LEN] = { cmd, key, value, FrameChecksum(cmd, key, value), FRAME_END };
+  Serial.write(f, FRAME_LEN);
 }
 
 void SetSystemIOPinMode() {

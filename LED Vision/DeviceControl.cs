@@ -26,7 +26,8 @@ namespace LEDVision
         // Xi lanh lên xuống do app điều khiển cũng tạo cạnh reed y như người vận hành, phải chặn.
         public volatile bool IgnoreTrigger = false;
 
-        // Khung 4 byte hai chiều: [cmd][key][value][FRAME_END]
+        // Khung 5 byte hai chiều: [cmd][key][value][chk][FRAME_END], chk = cmd XOR key XOR value
+        public const int FRAME_LEN = 5;
         public const byte FRAME_END = 0x11;
         public const byte CMD_SET = 0x52;    // PC → board: đặt một ngõ ra (key 0..7, value 0/1). Board echo lại.
         public const byte CMD_GET = 0x49;    // PC → board: đọc input (key 0 tất cả / 1 UP / 2 DOWN). Board → PC: sự kiện cảm biến.
@@ -95,9 +96,14 @@ namespace LEDVision
         public bool[] Relay = new bool[5];
         public const int OUT_POWER = 0, OUT_UP = 1, OUT_DOWN = 2, OUT_RELAY1 = 3;
 
+        public static byte FrameChecksum(byte cmd, byte key, byte value)
+        {
+            return (byte)(cmd ^ key ^ value);
+        }
+
         private static byte[] Frame(byte cmd, byte key, byte value)
         {
-            return new byte[] { cmd, key, value, FRAME_END };
+            return new byte[] { cmd, key, value, FrameChecksum(cmd, key, value), FRAME_END };
         }
 
         // Trạng thái Power / Up / Down đã gửi lần cuối → SendControl chỉ gửi ngõ nào vừa đổi
@@ -387,7 +393,7 @@ namespace LEDVision
             return IsConnected;
         }
 
-        // Bộ đệm nhận: khung 4 byte [cmd][key][value][0x11]. Byte lẻ (không kết thúc 0x11) bị bỏ từng byte để đồng bộ lại.
+        // Bộ đệm nhận: khung 5 byte [cmd][key][value][chk][0x11]. Khung sai chk hoặc sai byte kết thúc bị bỏ từng byte để đồng bộ lại.
         private readonly List<byte> rxBuf = new List<byte>();
 
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -407,15 +413,15 @@ namespace LEDVision
             }
 
             rxBuf.AddRange(bytes);
-            while (rxBuf.Count >= 4)
+            while (rxBuf.Count >= FRAME_LEN)
             {
-                if (rxBuf[3] != FRAME_END)
+                byte cmd = rxBuf[0], key = rxBuf[1], value = rxBuf[2];
+                if (rxBuf[4] != FRAME_END || rxBuf[3] != FrameChecksum(cmd, key, value))
                 {
-                    rxBuf.RemoveAt(0);   // lệch khung → bỏ 1 byte, thử lại
+                    rxBuf.RemoveAt(0);   // lệch khung / sai checksum → bỏ 1 byte, thử lại
                     continue;
                 }
-                byte cmd = rxBuf[0], key = rxBuf[1], value = rxBuf[2];
-                rxBuf.RemoveRange(0, 4);
+                rxBuf.RemoveRange(0, FRAME_LEN);
                 Console.WriteLine("IOBOX RX: " + cmd.ToString("X2") + " " + key.ToString("X2") + " " + value.ToString("X2"));
 
                 if (cmd == CMD_GET)

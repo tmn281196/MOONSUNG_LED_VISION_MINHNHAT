@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <title>LED COLOR INSPECTION — IO Box protocol</title>
 <style>
-  body { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; color: #2b2b2b; margin: 0; background: #f4f6f8; }
-  main { max-width: 980px; margin: 0 auto; padding: 28px 32px 60px; background: #fff; }
+  body { font-family: Segoe UI, Tahoma, Arial, sans-serif; font-size: 14px; color: #2b2b2b; margin: 0; background: #f4f6f8; }
+  main { max-width: 980px; margin: 0 auto; padding: 28px 32px 60px; background: #fff; position: relative; }
   h1 { font-size: 24px; color: #323F4E; margin: 0 0 4px; }
   h2 { font-size: 18px; color: #323F4E; border-bottom: 1px solid #dde3ea; padding-bottom: 4px; margin: 30px 0 12px; }
   h3 { font-size: 15px; color: #323F4E; margin: 20px 0 6px; }
@@ -21,127 +21,197 @@
   .frame div span { font-size: 11px; color: #6b7a8c; }
   .frame div.fixed { background: #e1e5ea; }
   .frame div.data { background: #e3f1fb; }
+  .frame div.chk { background: #fff3d6; }
   .note { background: #fff8e6; border-left: 4px solid #F5A623; padding: 8px 12px; margin: 10px 0; }
   .warn { background: #fdecec; border-left: 4px solid #E5484D; padding: 8px 12px; margin: 10px 0; }
-  .kv td:first-child { width: 160px; color: #6b7a8c; }
+  .kv td.en, .kv td.th { width: 160px; color: #6b7a8c; }
+  .lang { position: absolute; top: 24px; right: 32px; display: flex; gap: 0; }
+  .lang button { border: 1px solid #323F4E; background: #fff; color: #323F4E; padding: 5px 14px; cursor: pointer; font: inherit; }
+  .lang button.on { background: #323F4E; color: #fff; }
+  html[data-lang="en"] .th { display: none; }
+  html[data-lang="th"] .en { display: none; }
+  html[data-lang="th"] body { font-size: 15px; }
 </style>
 </head>
 <body>
 <main>
+<div class="lang"><button id="btnEn" onclick="setLang('en')">EN</button><button id="btnTh" onclick="setLang('th')">ไทย</button></div>
 <h1>LED COLOR INSPECTION — IO Box protocol</h1>
-<div class="sub">Serial protocol between the LED COLOR INSPECTION app (PC, <code>LED Vision/DeviceControl.cs</code>) and the IO Box firmware
+<div class="sub en">Serial protocol between the LED COLOR INSPECTION app (PC, <code>LED Vision/DeviceControl.cs</code>) and the IO Box firmware
 <code>SystemControl/System/System.ino</code> (Arduino Mega 2560). One test station: one 220 V power relay for the product,
 one pneumatic cylinder (UP / DOWN valves, one DOWN sensor) and five general-purpose relays.</div>
+<div class="sub th">โปรโตคอลอนุกรมระหว่างโปรแกรม LED COLOR INSPECTION (PC, <code>LED Vision/DeviceControl.cs</code>) กับเฟิร์มแวร์ IO Box
+<code>SystemControl/System/System.ino</code> (Arduino Mega 2560) สถานีทดสอบ 1 ชุด: รีเลย์ไฟ 220 V ของชิ้นงาน 1 ตัว,
+กระบอกลม 1 ตัว (วาล์ว UP / DOWN, เซ็นเซอร์ DOWN 1 ตัว) และรีเลย์อเนกประสงค์ 5 ตัว</div>
 
 <table class="kv">
-<tr><td>Board</td><td>Arduino Mega 2560</td></tr>
-<tr><td>Port</td><td>9600 8N1</td></tr>
-<tr><td>Frame</td><td><b>4 bytes, both directions</b>: <span class="hex">cmd key value 11</span></td></tr>
-<tr><td>Terminator</td><td><span class="hex">11</span> — a frame whose 4th byte is not 0x11 is dropped one byte at a time until the parser resyncs</td></tr>
-<tr><td>Checksum</td><td>none</td></tr>
+<tr><td class="en">Board</td><td class="th">บอร์ด</td><td>Arduino Mega 2560</td></tr>
+<tr><td class="en">Port</td><td class="th">พอร์ต</td><td>9600 8N1</td></tr>
+<tr><td class="en">Frame</td><td class="th">เฟรม</td><td><b class="en">5 bytes, both directions</b><b class="th">5 ไบต์ ทั้งสองทิศทาง</b>: <span class="hex">cmd key value chk 11</span></td></tr>
+<tr><td class="en">Checksum</td><td class="th">เช็คซัม</td><td><span class="hex">chk = cmd XOR key XOR value</span></td></tr>
+<tr><td class="en">Terminator</td><td class="th">ไบต์ปิดท้าย</td>
+    <td><span class="hex">11</span> <span class="en">— a frame whose checksum is wrong or whose 5th byte is not 0x11 is dropped one byte at a time until the parser resyncs</span>
+    <span class="th">— เฟรมที่เช็คซัมผิดหรือไบต์ที่ 5 ไม่ใช่ 0x11 จะถูกทิ้งทีละไบต์จนกว่าตัวแยกเฟรมจะซิงค์ใหม่ได้</span></td></tr>
 </table>
 
-<h2>§1 · Frame format</h2>
+<h2 class="en">§1 · Frame format</h2>
+<h2 class="th">§1 · รูปแบบเฟรม</h2>
 <div class="frame">
-  <div class="data"><b>cmd</b><span>what</span></div>
-  <div class="data"><b>key</b><span>which one</span></div>
-  <div class="data"><b>value</b><span>state / level</span></div>
-  <div class="fixed"><b>11</b><span>terminator</span></div>
+  <div class="data"><b>cmd</b><span class="en">what</span><span class="th">ทำอะไร</span></div>
+  <div class="data"><b>key</b><span class="en">which one</span><span class="th">ตัวไหน</span></div>
+  <div class="data"><b>value</b><span class="en">state / level</span><span class="th">สถานะ / ระดับ</span></div>
+  <div class="chk"><b>chk</b><span>cmd ^ key ^ value</span></div>
+  <div class="fixed"><b>11</b><span class="en">terminator</span><span class="th">ไบต์ปิดท้าย</span></div>
 </div>
-<p>Every frame is a <b>key / value pair</b>: <code>cmd</code> says what kind of thing is being addressed, <code>key</code> which one, <code>value</code> its state.
+<p class="en">Every frame is a <b>key / value pair</b>: <code>cmd</code> says what kind of thing is being addressed, <code>key</code> which one, <code>value</code> its state.
+<code>chk</code> is the XOR of the three bytes before it; a receiver recomputes it and drops the frame if it differs.
 The board answers a command by echoing the same frame (SET, RESET) or by sending one frame per input (GET). Both sides use exactly the same layout,
-so a serial monitor shows the conversation as pairs of 4-byte lines.</p>
+so a serial monitor shows the conversation as pairs of 5-byte lines.</p>
+<p class="th">ทุกเฟรมคือ <b>คู่ key / value</b>: <code>cmd</code> บอกว่ากำลังจัดการกับอะไร, <code>key</code> บอกว่าตัวไหน, <code>value</code> คือสถานะของมัน
+<code>chk</code> คือค่า XOR ของ 3 ไบต์ก่อนหน้า ฝ่ายรับจะคำนวณใหม่แล้วทิ้งเฟรมถ้าค่าไม่ตรง
+บอร์ดตอบคำสั่งด้วยการส่งเฟรมเดิมกลับ (SET, RESET) หรือส่ง 1 เฟรมต่อ 1 อินพุต (GET) ทั้งสองฝั่งใช้รูปแบบเดียวกันทุกประการ
+ดังนั้นใน serial monitor จะเห็นการสนทนาเป็นคู่บรรทัด 5 ไบต์</p>
+<table>
+<tr><th class="en">Checksum example</th><th class="th">ตัวอย่างเช็คซัม</th><th>cmd</th><th>key</th><th>value</th><th>chk</th><th class="en">Frame</th><th class="th">เฟรม</th></tr>
+<tr><td class="en">Relay 1 ON</td><td class="th">รีเลย์ 1 ON</td><td>52</td><td>03</td><td>01</td><td>52 ^ 03 ^ 01 = <b>50</b></td><td><span class="hex">52 03 01 50 11</span></td></tr>
+<tr><td class="en">DOWN sensor = 1</td><td class="th">เซ็นเซอร์ DOWN = 1</td><td>49</td><td>02</td><td>01</td><td>49 ^ 02 ^ 01 = <b>4A</b></td><td><span class="hex">49 02 01 4A 11</span></td></tr>
+<tr><td>RESET</td><td>D5</td><td>00</td><td>00</td><td>D5 ^ 00 ^ 00 = <b>D5</b></td><td><span class="hex">D5 00 00 D5 11</span></td></tr>
+</table>
 
-<h2>§2 · Command table</h2>
+<h2 class="en">§2 · Command table</h2>
+<h2 class="th">§2 · ตารางคำสั่ง</h2>
 <table>
-<tr><th>Command</th><th>cmd</th><th>key</th><th>value</th><th>Reply</th></tr>
-<tr><td>SET one output</td><td>0x52</td><td>output 0..7 (§3)</td><td>0 off / 1 on</td><td>same frame echoed</td></tr>
-<tr><td>GET inputs</td><td>0x49</td><td>0 = all, 1 = UP sensor, 2 = DOWN sensor</td><td>0</td><td>one <span class="hex">49 key level 11</span> per input</td></tr>
-<tr><td>RESET outputs</td><td>0xD5</td><td>0</td><td>0</td><td><span class="hex">D5 00 00 11</span></td></tr>
-<tr><td colspan="5"><b>EVENT frame — board → PC, nobody asked</b></td></tr>
-<tr><td>DOWN sensor changed</td><td>0x49</td><td>2</td><td>0 not down / 1 fully down</td><td>—</td></tr>
+<tr><th class="en">Command</th><th class="th">คำสั่ง</th><th>cmd</th><th>key</th><th>value</th><th class="en">Reply</th><th class="th">การตอบกลับ</th></tr>
+<tr><td class="en">SET one output</td><td class="th">SET เอาต์พุต 1 ตัว</td><td>0x52</td><td class="en">output 0..7 (§3)</td><td class="th">เอาต์พุต 0..7 (§3)</td><td>0 off / 1 on</td><td class="en">same frame echoed</td><td class="th">ส่งเฟรมเดิมกลับ</td></tr>
+<tr><td class="en">GET inputs</td><td class="th">GET อินพุต</td><td>0x49</td><td class="en">0 = all, 1 = UP sensor, 2 = DOWN sensor</td><td class="th">0 = ทั้งหมด, 1 = เซ็นเซอร์ UP, 2 = เซ็นเซอร์ DOWN</td><td>0</td><td class="en">one <span class="hex">49 key level chk 11</span> per input</td><td class="th"><span class="hex">49 key level chk 11</span> 1 เฟรมต่อ 1 อินพุต</td></tr>
+<tr><td class="en">RESET outputs</td><td class="th">RESET เอาต์พุต</td><td>0xD5</td><td>0</td><td>0</td><td><span class="hex">D5 00 00 D5 11</span></td></tr>
+<tr><td colspan="5"><b class="en">EVENT frame — board → PC, nobody asked</b><b class="th">เฟรม EVENT — บอร์ด → PC ส่งเองโดยไม่มีใครถาม</b></td></tr>
+<tr><td class="en">DOWN sensor changed</td><td class="th">เซ็นเซอร์ DOWN เปลี่ยน</td><td>0x49</td><td>2</td><td class="en">0 not down / 1 fully down</td><td class="th">0 ไม่ได้อยู่ล่าง / 1 ลงสุดแล้ว</td><td>—</td></tr>
 </table>
-<p>Anything not in this table gets no reply and changes nothing.</p>
+<p class="en">Anything not in this table, and any frame with a wrong checksum, gets no reply and changes nothing.</p>
+<p class="th">สิ่งที่ไม่อยู่ในตารางนี้ และเฟรมที่เช็คซัมผิด จะไม่ได้รับการตอบกลับและไม่เปลี่ยนแปลงอะไร</p>
 
-<h2>§3 · SET — 0x52, one output per frame</h2>
-<p>A SET frame changes exactly one output; every other output keeps its state.</p>
+<h2 class="en">§3 · SET — 0x52, one output per frame</h2>
+<h2 class="th">§3 · SET — 0x52, 1 เฟรมต่อ 1 เอาต์พุต</h2>
+<p class="en">A SET frame changes exactly one output; every other output keeps its state.</p>
+<p class="th">เฟรม SET เปลี่ยนเอาต์พุตเพียงตัวเดียว เอาต์พุตตัวอื่นคงสถานะเดิม</p>
 <table>
-<tr><th>key</th><th>Output</th><th>Pin</th><th>Notes</th></tr>
-<tr><td>0</td><td>POWER (product 220 V relay)</td><td>24</td><td>interlocked: forced OFF while the DOWN sensor is not active (§5)</td></tr>
-<tr><td>1</td><td>UP_OUT (cylinder up valve)</td><td>22</td><td></td></tr>
-<tr><td>2</td><td>DOWN_OUT (cylinder down valve)</td><td>26</td><td></td></tr>
-<tr><td>3</td><td>RELAY 1</td><td>28</td><td>general purpose</td></tr>
-<tr><td>4</td><td>RELAY 2</td><td>30</td><td>general purpose</td></tr>
-<tr><td>5</td><td>RELAY 3</td><td>32</td><td>general purpose</td></tr>
-<tr><td>6</td><td>RELAY 4</td><td>34</td><td>general purpose</td></tr>
-<tr><td>7</td><td>RELAY 5</td><td>36</td><td>general purpose</td></tr>
+<tr><th>key</th><th class="en">Output</th><th class="th">เอาต์พุต</th><th>Pin</th><th class="en">Notes</th><th class="th">หมายเหตุ</th></tr>
+<tr><td>0</td><td class="en">POWER (product 220 V relay)</td><td class="th">POWER (รีเลย์ไฟ 220 V ของชิ้นงาน)</td><td>24</td><td class="en">interlocked: forced OFF while the DOWN sensor is not active (§5)</td><td class="th">มีอินเตอร์ล็อก: บังคับ OFF ขณะเซ็นเซอร์ DOWN ไม่ทำงาน (§5)</td></tr>
+<tr><td>1</td><td class="en">UP_OUT (cylinder up valve)</td><td class="th">UP_OUT (วาล์วยกกระบอกขึ้น)</td><td>22</td><td></td></tr>
+<tr><td>2</td><td class="en">DOWN_OUT (cylinder down valve)</td><td class="th">DOWN_OUT (วาล์วกดกระบอกลง)</td><td>26</td><td></td></tr>
+<tr><td>3</td><td>RELAY 1</td><td>28</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
+<tr><td>4</td><td>RELAY 2</td><td>30</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
+<tr><td>5</td><td>RELAY 3</td><td>32</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
+<tr><td>6</td><td>RELAY 4</td><td>34</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
+<tr><td>7</td><td>RELAY 5</td><td>36</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
 </table>
 <table>
-<tr><th>Action</th><th>TX</th><th>RX</th></tr>
-<tr><td>Relay 1 ON</td><td><span class="hex">52 03 01 11</span></td><td><span class="hex">52 03 01 11</span></td></tr>
-<tr><td>Relay 1 OFF</td><td><span class="hex">52 03 00 11</span></td><td><span class="hex">52 03 00 11</span></td></tr>
-<tr><td>Power ON</td><td><span class="hex">52 00 01 11</span></td><td><span class="hex">52 00 01 11</span> (the echo does not tell whether the interlock blocked it)</td></tr>
-<tr><td>Cylinder DOWN valve on</td><td><span class="hex">52 02 01 11</span></td><td><span class="hex">52 02 01 11</span></td></tr>
+<tr><th class="en">Action</th><th class="th">การกระทำ</th><th>TX</th><th>RX</th></tr>
+<tr><td class="en">Relay 1 ON</td><td class="th">รีเลย์ 1 ON</td><td><span class="hex">52 03 01 50 11</span></td><td><span class="hex">52 03 01 50 11</span></td></tr>
+<tr><td class="en">Relay 1 OFF</td><td class="th">รีเลย์ 1 OFF</td><td><span class="hex">52 03 00 51 11</span></td><td><span class="hex">52 03 00 51 11</span></td></tr>
+<tr><td class="en">Power ON</td><td class="th">Power ON</td><td><span class="hex">52 00 01 53 11</span></td><td><span class="hex">52 00 01 53 11</span> <span class="en">(the echo does not tell whether the interlock blocked it)</span><span class="th">(เฟรมตอบกลับไม่บอกว่าอินเตอร์ล็อกบล็อกหรือไม่)</span></td></tr>
+<tr><td class="en">Cylinder DOWN valve on</td><td class="th">เปิดวาล์ว DOWN ของกระบอก</td><td><span class="hex">52 02 01 51 11</span></td><td><span class="hex">52 02 01 51 11</span></td></tr>
 </table>
-<p>The app sends Power / Up / Down only when their state <b>changed</b> since the last send (all three after the port is opened),
+<p class="en">The app sends Power / Up / Down only when their state <b>changed</b> since the last send (all three after the port is opened),
 and one frame per relay button press.</p>
+<p class="th">โปรแกรมส่ง Power / Up / Down เฉพาะเมื่อสถานะ<b>เปลี่ยน</b>จากครั้งล่าสุด (ส่งครบทั้ง 3 ตัวหลังเปิดพอร์ต)
+และส่ง 1 เฟรมต่อการกดปุ่มรีเลย์ 1 ครั้ง</p>
 
-<h2>§4 · GET — 0x49, inputs</h2>
+<h2 class="en">§4 · GET — 0x49, inputs</h2>
+<h2 class="th">§4 · GET — 0x49, อินพุต</h2>
 <table>
-<tr><th>Action</th><th>TX</th><th>RX</th></tr>
-<tr><td>Read all inputs</td><td><span class="hex">49 00 00 11</span></td><td><span class="hex">49 01 u 11</span> then <span class="hex">49 02 d 11</span></td></tr>
-<tr><td>Read DOWN sensor only</td><td><span class="hex">49 02 00 11</span></td><td><span class="hex">49 02 d 11</span></td></tr>
+<tr><th class="en">Action</th><th class="th">การกระทำ</th><th>TX</th><th>RX</th></tr>
+<tr><td class="en">Read all inputs</td><td class="th">อ่านอินพุตทั้งหมด</td><td><span class="hex">49 00 00 49 11</span></td><td><span class="hex">49 01 u chk 11</span> <span class="en">then</span><span class="th">แล้วตามด้วย</span> <span class="hex">49 02 d chk 11</span></td></tr>
+<tr><td class="en">Read DOWN sensor only</td><td class="th">อ่านเฉพาะเซ็นเซอร์ DOWN</td><td><span class="hex">49 02 00 4B 11</span></td><td><span class="hex">49 02 00 4B 11</span> <span class="en">or</span><span class="th">หรือ</span> <span class="hex">49 02 01 4A 11</span></td></tr>
 </table>
 <table>
-<tr><th>key</th><th>Input</th><th>Pin</th><th>level</th></tr>
-<tr><td>1</td><td>UP sensor (reserved, not fitted)</td><td>3</td><td>raw pin level, INPUT_PULLUP</td></tr>
-<tr><td>2</td><td>DOWN sensor</td><td>2</td><td>raw pin level: <b>1 = cylinder fully down</b>, 0 = not down</td></tr>
+<tr><th>key</th><th class="en">Input</th><th class="th">อินพุต</th><th>Pin</th><th>level</th></tr>
+<tr><td>1</td><td class="en">UP sensor (reserved, not fitted)</td><td class="th">เซ็นเซอร์ UP (สำรองไว้ ยังไม่ติดตั้ง)</td><td>3</td><td class="en">raw pin level, INPUT_PULLUP</td><td class="th">ระดับขาแบบดิบ, INPUT_PULLUP</td></tr>
+<tr><td>2</td><td class="en">DOWN sensor</td><td class="th">เซ็นเซอร์ DOWN</td><td>2</td><td class="en">raw pin level: <b>1 = cylinder fully down</b>, 0 = not down</td><td class="th">ระดับขาแบบดิบ: <b>1 = กระบอกลงสุด</b>, 0 = ไม่ได้อยู่ล่าง</td></tr>
 </table>
-<p>The app sends a GET right after opening the port so it knows where the cylinder is. After that it relies on the event frame:
-the board sends <span class="hex">49 02 level 11</span> by itself every time the DOWN sensor changes, after a 50 ms debounce.
+<p class="en">The app sends a GET right after opening the port so it knows where the cylinder is. After that it relies on the event frame:
+the board sends <span class="hex">49 02 level chk 11</span> by itself every time the DOWN sensor changes, after a 50 ms debounce.
 A 0 → 1 change is the test trigger; a 1 → 0 change during a test cancels it.</p>
+<p class="th">โปรแกรมส่ง GET ทันทีหลังเปิดพอร์ตเพื่อให้รู้ว่ากระบอกอยู่ตำแหน่งไหน หลังจากนั้นจะอาศัยเฟรม event:
+บอร์ดส่ง <span class="hex">49 02 level chk 11</span> เองทุกครั้งที่เซ็นเซอร์ DOWN เปลี่ยน หลังหน่วง debounce 50 ms
+การเปลี่ยน 0 → 1 คือสัญญาณเริ่มทดสอบ ส่วนการเปลี่ยน 1 → 0 ระหว่างทดสอบจะยกเลิกการทดสอบ</p>
 
-<h2>§5 · Interlocks and power-on state</h2>
-<ul>
+<h2 class="en">§5 · Interlocks and power-on state</h2>
+<h2 class="th">§5 · อินเตอร์ล็อกและสถานะตอนเปิดเครื่อง</h2>
+<ul class="en">
   <li>At power-on every output (POWER, UP_OUT, DOWN_OUT, RELAY 1..5) is LOW.</li>
-  <li>POWER can only be switched ON while the DOWN sensor is active. A <span class="hex">52 00 01 11</span> arriving while the cylinder is not down is applied as OFF; the echo is still <span class="hex">52 00 01 11</span>.</li>
+  <li>POWER can only be switched ON while the DOWN sensor is active. A <span class="hex">52 00 01 53 11</span> arriving while the cylinder is not down is applied as OFF; the echo is still <span class="hex">52 00 01 53 11</span>.</li>
   <li>When the DOWN sensor <b>releases</b> the board cuts POWER by itself, before the PC even receives the event frame.</li>
   <li>The five relays have no interlock; they keep their state until commanded, RESET, or the board is reset.</li>
 </ul>
-<div class="warn">The board never times out an output. If the PC disconnects while POWER or a relay is ON, it stays ON. Send
-<span class="hex">D5 00 00 11</span> when your software starts and when it exits.</div>
+<ul class="th">
+  <li>ตอนเปิดเครื่อง เอาต์พุตทุกตัว (POWER, UP_OUT, DOWN_OUT, RELAY 1..5) เป็น LOW</li>
+  <li>POWER เปิด ON ได้เฉพาะขณะเซ็นเซอร์ DOWN ทำงาน ถ้า <span class="hex">52 00 01 53 11</span> มาถึงขณะกระบอกไม่ได้อยู่ล่าง จะถูกใช้เป็น OFF แต่เฟรมตอบกลับยังคงเป็น <span class="hex">52 00 01 53 11</span></li>
+  <li>เมื่อเซ็นเซอร์ DOWN <b>หลุด</b> บอร์ดจะตัด POWER เอง ก่อนที่ PC จะได้รับเฟรม event เสียอีก</li>
+  <li>รีเลย์ทั้ง 5 ตัวไม่มีอินเตอร์ล็อก คงสถานะไว้จนกว่าจะได้รับคำสั่ง, RESET หรือรีเซ็ตบอร์ด</li>
+</ul>
+<div class="warn en">The board never times out an output. If the PC disconnects while POWER or a relay is ON, it stays ON. Send
+<span class="hex">D5 00 00 D5 11</span> when your software starts and when it exits.</div>
+<div class="warn th">บอร์ดไม่มีการหมดเวลาของเอาต์พุต ถ้า PC หลุดการเชื่อมต่อขณะ POWER หรือรีเลย์เป็น ON มันจะค้าง ON ต่อไป ให้ส่ง
+<span class="hex">D5 00 00 D5 11</span> ตอนซอฟต์แวร์เริ่มทำงานและตอนปิดโปรแกรม</div>
 
-<h2>§6 · Pin map</h2>
+<h2 class="en">§6 · Pin map</h2>
+<h2 class="th">§6 · ผังขา</h2>
 <table>
-<tr><th>Dir</th><th>Pin</th><th>Signal</th></tr>
-<tr><td>Input</td><td>DIO 2</td><td>DOWN_IN — cylinder fully-down sensor (INPUT_PULLUP)</td></tr>
-<tr><td>Input</td><td>DIO 3</td><td>UP_IN — reserved (not fitted on the current jig)</td></tr>
-<tr><td>Output</td><td>DIO 22</td><td>UP_OUT — cylinder up valve</td></tr>
-<tr><td>Output</td><td>DIO 24</td><td>POWER — product 220 V relay</td></tr>
-<tr><td>Output</td><td>DIO 26</td><td>DOWN_OUT — cylinder down valve</td></tr>
-<tr><td>Output</td><td>DIO 28</td><td>RELAY 1</td></tr>
-<tr><td>Output</td><td>DIO 30</td><td>RELAY 2</td></tr>
-<tr><td>Output</td><td>DIO 32</td><td>RELAY 3</td></tr>
-<tr><td>Output</td><td>DIO 34</td><td>RELAY 4</td></tr>
-<tr><td>Output</td><td>DIO 36</td><td>RELAY 5</td></tr>
+<tr><th class="en">Dir</th><th class="th">ทิศทาง</th><th>Pin</th><th class="en">Signal</th><th class="th">สัญญาณ</th></tr>
+<tr><td class="en">Input</td><td class="th">อินพุต</td><td>DIO 2</td><td class="en">DOWN_IN — cylinder fully-down sensor (INPUT_PULLUP)</td><td class="th">DOWN_IN — เซ็นเซอร์กระบอกลงสุด (INPUT_PULLUP)</td></tr>
+<tr><td class="en">Input</td><td class="th">อินพุต</td><td>DIO 3</td><td class="en">UP_IN — reserved (not fitted on the current jig)</td><td class="th">UP_IN — สำรองไว้ (ยังไม่ติดตั้งบนจิ๊กปัจจุบัน)</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 22</td><td class="en">UP_OUT — cylinder up valve</td><td class="th">UP_OUT — วาล์วยกกระบอกขึ้น</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 24</td><td class="en">POWER — product 220 V relay</td><td class="th">POWER — รีเลย์ไฟ 220 V ของชิ้นงาน</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 26</td><td class="en">DOWN_OUT — cylinder down valve</td><td class="th">DOWN_OUT — วาล์วกดกระบอกลง</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 28</td><td>RELAY 1</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 30</td><td>RELAY 2</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 32</td><td>RELAY 3</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 34</td><td>RELAY 4</td></tr>
+<tr><td class="en">Output</td><td class="th">เอาต์พุต</td><td>DIO 36</td><td>RELAY 5</td></tr>
 </table>
-<div class="note">Relay modules with active-LOW inputs must be wired through the module's own transistor stage or the polarity inverted in
+<div class="note en">Relay modules with active-LOW inputs must be wired through the module's own transistor stage or the polarity inverted in
 <code>SetOutput()</code>; the firmware drives HIGH = ON.</div>
+<div class="note th">โมดูลรีเลย์ที่อินพุตเป็น active-LOW ต้องต่อผ่านภาคทรานซิสเตอร์ของโมดูลเอง หรือกลับขั้วใน
+<code>SetOutput()</code>; เฟิร์มแวร์ขับ HIGH = ON</div>
 
-<h2>§7 · How the app drives a test</h2>
-<ol>
-  <li>Event <span class="hex">49 02 01 11</span> (cylinder reached the bottom) or the START button → test starts. Events during a test, and for 1.5 s after it ends, are ignored.</li>
-  <li>Wait for DOWN sensor (Sensor timeout) → Before power ON delay → <span class="hex">52 00 01 11</span> → After power ON delay → camera check.</li>
-  <li>NG → retest: <span class="hex">52 00 00 11</span>, <span class="hex">52 01 01 11</span>, wait for the DOWN sensor to release, Delay between UP / DOWN,
-      <span class="hex">52 01 00 11</span>, <span class="hex">52 02 01 11</span>, wait for the DOWN sensor, Before power ON, <span class="hex">52 00 01 11</span>, After power ON, check again.</li>
+<h2 class="en">§7 · How the app drives a test</h2>
+<h2 class="th">§7 · โปรแกรมควบคุมการทดสอบอย่างไร</h2>
+<ol class="en">
+  <li>Event <span class="hex">49 02 01 4A 11</span> (cylinder reached the bottom) or the START button → test starts. Events during a test, and for 1.5 s after it ends, are ignored.</li>
+  <li>Wait for DOWN sensor (Sensor timeout) → Before power ON delay → <span class="hex">52 00 01 53 11</span> → After power ON delay → camera check.</li>
+  <li>NG → retest: <span class="hex">52 00 00 52 11</span>, <span class="hex">52 01 01 52 11</span>, wait for the DOWN sensor to release, Delay between UP / DOWN,
+      <span class="hex">52 01 00 53 11</span>, <span class="hex">52 02 01 51 11</span>, wait for the DOWN sensor, Before power ON, <span class="hex">52 00 01 53 11</span>, After power ON, check again.</li>
   <li>End or EMERGENCY STOP → POWER, UP_OUT and DOWN_OUT off (three SET frames).</li>
 </ol>
+<ol class="th">
+  <li>Event <span class="hex">49 02 01 4A 11</span> (กระบอกลงถึงล่างสุด) หรือปุ่ม START → เริ่มทดสอบ event ระหว่างทดสอบและภายใน 1.5 วินาทีหลังจบจะถูกละเว้น</li>
+  <li>รอเซ็นเซอร์ DOWN (Sensor timeout) → หน่วง Before power ON → <span class="hex">52 00 01 53 11</span> → หน่วง After power ON → ตรวจด้วยกล้อง</li>
+  <li>NG → ทดสอบซ้ำ: <span class="hex">52 00 00 52 11</span>, <span class="hex">52 01 01 52 11</span>, รอเซ็นเซอร์ DOWN หลุด, Delay between UP / DOWN,
+      <span class="hex">52 01 00 53 11</span>, <span class="hex">52 02 01 51 11</span>, รอเซ็นเซอร์ DOWN, Before power ON, <span class="hex">52 00 01 53 11</span>, After power ON, ตรวจอีกครั้ง</li>
+  <li>จบหรือ EMERGENCY STOP → ปิด POWER, UP_OUT และ DOWN_OUT (เฟรม SET 3 เฟรม)</li>
+</ol>
 
-<h2>§8 · Change history</h2>
+<h2 class="en">§8 · Change history</h2>
+<h2 class="th">§8 · ประวัติการเปลี่ยนแปลง</h2>
 <table>
-<tr><th>Date</th><th>Change</th></tr>
-<tr><td>2026-09-11</td><td>Protocol v2: 4-byte key/value frames replace the 10-byte prefixed frames (0x4F word, XOR checksum). Firmware and app updated together; old firmware and new app are not compatible.</td></tr>
+<tr><th class="en">Date</th><th class="th">วันที่</th><th class="en">Change</th><th class="th">การเปลี่ยนแปลง</th></tr>
+<tr><td>2026-09-11</td><td class="en">Protocol v2.1: 1-byte XOR checksum added before the terminator; frame is now 5 bytes. Firmware and app updated together.</td><td class="th">โปรโตคอล v2.1: เพิ่มเช็คซัม XOR 1 ไบต์ก่อนไบต์ปิดท้าย เฟรมเป็น 5 ไบต์ อัปเดตเฟิร์มแวร์และโปรแกรมพร้อมกัน</td></tr>
+<tr><td>2026-09-11</td><td class="en">Protocol v2: 4-byte key/value frames replace the 10-byte prefixed frames (0x4F word, XOR checksum). Old firmware and new app are not compatible.</td><td class="th">โปรโตคอล v2: เฟรม key/value 4 ไบต์แทนเฟรม 10 ไบต์แบบมี prefix (คำ 0x4F, เช็คซัม XOR) เฟิร์มแวร์เก่ากับโปรแกรมใหม่ใช้ร่วมกันไม่ได้</td></tr>
 </table>
 </main>
+<script>
+function setLang(l) {
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.lang = l;
+  document.getElementById('btnEn').className = l === 'en' ? 'on' : '';
+  document.getElementById('btnTh').className = l === 'th' ? 'on' : '';
+  try { localStorage.setItem('iobox-lang', l); } catch (e) {}
+}
+var saved = 'en';
+try { saved = localStorage.getItem('iobox-lang') || 'en'; } catch (e) {}
+setLang(saved);
+</script>
 </body>
 </html>
