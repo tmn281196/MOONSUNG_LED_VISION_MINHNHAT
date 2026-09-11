@@ -375,13 +375,46 @@
                     <!--  Group LED: danh sách động (thêm / đổi tên / xóa). Không chọn group = khóa ảnh.  -->
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
                         <TextBlock Text="LED Group" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <ComboBox x:Name="groupCombo" Width="150" Height="28" VerticalContentAlignment="Center" DisplayMemberPath="Name"
-                                      SelectionChanged="GroupCombo_SelectionChanged" ToolTip="Group being edited. Every ROI you draw goes into this group; each group has its own HSV range, radius and area threshold" />
-                            <TextBox x:Name="groupNameBox" Width="130" Height="28" Margin="6,0,0,0" VerticalContentAlignment="Center" Padding="4,0"
-                                     ToolTip="Group name: type a new name then press Add, or edit the selected group's name and press Rename" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,0">
+                        <!--  Bảng group: bấm dòng = chọn group để vẽ / chỉnh; sửa ô Name = đổi tên (step VISION CHECK đổi theo)  -->
+                        <DataGrid x:Name="groupGrid" Width="330" MaxHeight="150" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                                  HorizontalGridLinesBrush="#E6EBF0" RowBackground="White" AlternatingRowBackground="#F7F9FB" BorderBrush="#DDE3EA" BorderThickness="1"
+                                  CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
+                                  SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="24" VerticalScrollBarVisibility="Auto"
+                                  SelectionChanged="GroupGrid_SelectionChanged" BeginningEdit="GroupGrid_BeginningEdit" CellEditEnding="GroupGrid_CellEditEnding"
+                                  ToolTip="Click a row to select the group being edited: every ROI you draw goes into it. Double-click the Name cell to rename. Each group has its own HSV range, radius and area threshold.">
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Background" Value="#F4F6F8" />
+                                    <Setter Property="Foreground" Value="#323F4E" />
+                                    <Setter Property="FontWeight" Value="SemiBold" />
+                                    <Setter Property="Padding" Value="6,3" />
+                                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                    <Setter Property="BorderBrush" Value="#DDE3EA" />
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
+                            <DataGrid.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="BorderThickness" Value="0" />
+                                    <Setter Property="Padding" Value="6,0" />
+                                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#80C4E9" />
+                                            <Setter Property="Foreground" Value="#323F4E" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.CellStyle>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                                <DataGridTextColumn Header="ROI" Binding="{Binding Colection.Count, Mode=OneWay}" Width="46" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Radius" Binding="{Binding RoiRadius, Mode=OneWay}" Width="58" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Area" Binding="{Binding ContourArea, Mode=OneWay}" Width="52" IsReadOnly="True" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6,0,0">
                             <StackPanel.Resources>
                                 <Style TargetType="Button">
                                     <Setter Property="Height" Value="26" />
@@ -408,8 +441,7 @@
                                     </Setter>
                                 </Style>
                             </StackPanel.Resources>
-                            <Button Content="Add" Click="GroupAdd_Click" ToolTip="Create a new group (name from the box, or Group N). HSV / radius / threshold are copied from the selected group" />
-                            <Button Content="Rename" Click="GroupRename_Click" ToolTip="Rename the selected group to the text in the box. VISION CHECK steps using the old name are updated" />
+                            <Button Content="Add" Click="GroupAdd_Click" ToolTip="Create a new group (Group N, rename it in the Name cell). HSV / radius / threshold are copied from the selected group" />
                             <Button Content="Delete" Click="GroupDelete_Click" ToolTip="Delete the selected group and all its ROIs" />
                             <Button Content="None" Click="GroupNone_Click" Margin="10,0,0,0" ToolTip="Select no group: the image is locked (no drawing / moving)" />
                         </StackPanel>

@@ -1,20 +1,30 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LEDVision.Camera
 {
-    public class GroupLED
+    // Một group LED: tên, danh sách ROI, bán kính ROI, ngưỡng diện tích, dải HSV.
+    // INotifyPropertyChanged để bảng group ở trang Vision cập nhật theo slider / đổi tên.
+    public class GroupLED : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         // Tên group (người dùng đặt). Step VISION CHECK gọi group theo tên này.
         private string name = "";
         public string Name
         {
             get { return name ?? ""; }
-            set { name = value ?? ""; }
+            set { name = value ?? ""; OnPropertyChanged(); }
         }
 
         public override string ToString()
@@ -33,6 +43,7 @@ namespace LEDVision.Camera
             set
             {
                 colection = value;
+                OnPropertyChanged();
             }
         }
 
@@ -46,6 +57,7 @@ namespace LEDVision.Camera
             set
             {
                 contourArea = value;
+                OnPropertyChanged();
             }
         }
 
@@ -56,6 +68,7 @@ namespace LEDVision.Camera
             set
             {
                 roiRadius = value;
+                OnPropertyChanged();
             }
         }
 

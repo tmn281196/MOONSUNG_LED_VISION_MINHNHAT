@@ -669,24 +669,24 @@ namespace LEDVision
                 }
             }
         }
-        // ====== Group LED động: combo chọn group + Add / Rename / Delete / None ======
-        private bool groupComboBusy = false;
+        // ====== Group LED động: bảng group (chọn dòng = chọn group, sửa ô Name = đổi tên) + Add / Delete / None ======
+        private bool groupGridBusy = false;
 
-        // Nạp lại danh sách group vào combo (sau khi mở model / thêm / xóa / đổi tên), giữ group đang chọn nếu còn
+        // Nạp lại bảng group (sau khi mở model / thêm / xóa), giữ group đang chọn nếu còn
         public void RefreshGroupList()
         {
-            if (groupCombo == null || ProgramModel == null) return;
-            groupComboBusy = true;
+            if (groupGrid == null || ProgramModel == null) return;
+            groupGridBusy = true;
             try
             {
                 var cur = ProgramModel.Vision.SelectedGroupLED;
-                groupCombo.ItemsSource = null;
-                groupCombo.ItemsSource = ProgramModel.Vision.Groups;
-                groupCombo.SelectedItem = (cur != null && ProgramModel.Vision.Groups.Contains(cur)) ? cur : null;
+                if (!ReferenceEquals(groupGrid.ItemsSource, ProgramModel.Vision.Groups)) groupGrid.ItemsSource = ProgramModel.Vision.Groups;
+                groupGrid.Items.Refresh();
+                groupGrid.SelectedItem = (cur != null && ProgramModel.Vision.Groups.Contains(cur)) ? cur : null;
             }
             finally
             {
-                groupComboBusy = false;
+                groupGridBusy = false;
             }
             try { mainWindow?.sequencePage?.RefreshGroupNames(); } catch (Exception) { }
         }
@@ -698,28 +698,70 @@ namespace LEDVision
             if (g != null && !ProgramModel.Vision.Groups.Contains(g)) g = null;
             ProgramModel.Vision.SelectedGroupLED = g;
             builder.SelectedVisionObject = g;
-            if (groupCombo != null && !groupComboBusy)
+            if (groupGrid != null && !groupGridBusy)
             {
-                groupComboBusy = true;
-                try { groupCombo.SelectedItem = g; } finally { groupComboBusy = false; }
+                groupGridBusy = true;
+                try
+                {
+                    groupGrid.SelectedItem = g;
+                    if (g != null) groupGrid.ScrollIntoView(g);
+                }
+                finally { groupGridBusy = false; }
             }
-            if (groupNameBox != null) groupNameBox.Text = g != null ? g.Name : "";
             UpdateSettings("");
         }
 
-        private void GroupCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void GroupGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (groupComboBusy) return;
-            SelectGroup(groupCombo.SelectedItem as GroupLED);
+            if (groupGridBusy) return;
+            SelectGroup(groupGrid.SelectedItem as GroupLED);
+        }
+
+        // Đổi tên ngay trong ô Name: nhớ tên cũ lúc bắt đầu sửa, sửa xong thì cập nhật step VISION CHECK đang trỏ tới tên cũ
+        private string groupNameBeforeEdit = null;
+
+        private void GroupGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        {
+            var g = e.Row.Item as GroupLED;
+            groupNameBeforeEdit = g != null ? g.Name : null;
+        }
+
+        private void GroupGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            if (e.EditAction != DataGridEditAction.Commit) return;
+            var g = e.Row.Item as GroupLED;
+            string old = groupNameBeforeEdit;
+            groupNameBeforeEdit = null;
+            if (g == null || old == null) return;
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                string name = (g.Name ?? "").Trim();
+                if (name.Length == 0)
+                {
+                    g.Name = old;   // không cho tên rỗng
+                    return;
+                }
+                var other = ProgramModel.Vision.FindGroup(name);
+                if (other != null && other != g)
+                {
+                    System.Windows.MessageBox.Show("A group with this name already exists.", "Rename group", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    g.Name = old;
+                    return;
+                }
+                g.Name = name;
+                if (name != old)
+                {
+                    foreach (var st in ProgramModel.TestSteps)
+                        if (Model.StepCmd.Canonical(st.Cmd) == Model.StepCmd.Vision && string.Equals(st.Target, old, StringComparison.OrdinalIgnoreCase)) st.Target = name;
+                }
+                try { mainWindow?.sequencePage?.RefreshGroupNames(); } catch (Exception) { }
+            }));
         }
 
         private void GroupAdd_Click(object sender, RoutedEventArgs e)
         {
             if (ProgramModel == null) return;
-            string name = groupNameBox != null ? groupNameBox.Text : "";
-            // Tên trong ô đang là tên group đã có → coi như chưa nhập, tự đặt tên mới
-            if (ProgramModel.Vision.FindGroup(name) != null) name = "";
-            var g = ProgramModel.Vision.AddGroup(name);
+            var g = ProgramModel.Vision.AddGroup("");
             // Kế thừa HSV / bán kính / ngưỡng của group đang chọn cho đỡ chỉnh lại
             var cur = ProgramModel.Vision.SelectedGroupLED;
             if (cur != null)
@@ -730,27 +772,13 @@ namespace LEDVision
             }
             RefreshGroupList();
             SelectGroup(g);
-        }
-
-        private void GroupRename_Click(object sender, RoutedEventArgs e)
-        {
-            var g = ProgramModel?.Vision.SelectedGroupLED;
-            if (g == null || groupNameBox == null) return;
-            string name = groupNameBox.Text.Trim();
-            if (name.Length == 0) return;
-            var other = ProgramModel.Vision.FindGroup(name);
-            if (other != null && other != g)
+            // Mở luôn ô Name để đặt tên
+            try
             {
-                System.Windows.MessageBox.Show("A group with this name already exists.", "Rename group", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                groupGrid.CurrentCell = new DataGridCellInfo(g, groupGrid.Columns[0]);
+                groupGrid.BeginEdit();
             }
-            string old = g.Name;
-            g.Name = name;
-            // Step VISION CHECK đang trỏ tới tên cũ → đổi theo
-            foreach (var st in ProgramModel.TestSteps)
-                if (string.Equals(st.Target, old, StringComparison.OrdinalIgnoreCase) && Model.StepCmd.Canonical(st.Cmd) == Model.StepCmd.Vision) st.Target = name;
-            RefreshGroupList();
-            SelectGroup(g);
+            catch (Exception) { }
         }
 
         private void GroupDelete_Click(object sender, RoutedEventArgs e)
