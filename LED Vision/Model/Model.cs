@@ -71,17 +71,25 @@ namespace LEDVision.Model
             set { if (value != null) testSteps = value; }
         }
 
-        // Model chưa có step nào (file cũ / model mới) → dựng chuỗi mặc định giống cách chạy trước đây:
-        // POWER ON → DELAY 1000 → VISION CHECK từng group. Trả về true nếu có thêm.
+        // Model chưa có step nào (file cũ / model mới) → dựng chuỗi mặc định:
+        // POWER ON → DELAY 1000 → với mỗi group i: RELAY i ON → VISION CHECK group → RELAY i OFF
+        // (relay i cấp chung cho nhóm LED i của bảng LED quét; group thứ 6 trở đi không có relay).
+        // Trả về true nếu có thêm.
         public bool EnsureDefaultSteps()
         {
             if (testSteps.Count > 0) return false;
             testSteps.Add(new TestStep { Cmd = StepCmd.Power, Sub = "ON", Comment = "LED power on" });
             testSteps.Add(new TestStep { Cmd = StepCmd.Delay, Spec = "1000", Comment = "Wait for LEDs to light up" });
+            int relay = 1;
             foreach (var g in vision.Groups)
             {
+                bool hasRelay = relay <= 5;
+                if (hasRelay) testSteps.Add(new TestStep { Cmd = StepCmd.Relay, Sub = "ON", Target = relay.ToString(), Timeout = "300", Comment = "Select " + g.Name });
                 testSteps.Add(new TestStep { Cmd = StepCmd.Vision, Target = g.Name, Timeout = StepCmd.DefaultVisionMs.ToString(), Comment = "Check " + g.Name });
+                if (hasRelay) testSteps.Add(new TestStep { Cmd = StepCmd.Relay, Sub = "OFF", Target = relay.ToString(), Comment = "Release " + g.Name });
+                relay++;
             }
+            testSteps.Add(new TestStep { Cmd = StepCmd.Power, Sub = "OFF", Comment = "LED power off" });
             TestStepList.Renumber(testSteps);
             return true;
         }

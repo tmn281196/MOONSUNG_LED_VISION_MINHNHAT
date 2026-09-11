@@ -279,7 +279,7 @@
                             <Button Content="Move Last" Style="{StaticResource ActionBtn}" Click="MoveLast_Click" />
                             <Button Content="Delete" Style="{StaticResource ActionBtn}" Click="Delete_Click" />
                             <Button Content="Delete All" Style="{StaticResource ActionBtn}" Click="DeleteAll_Click" />
-                            <Button Content="Default" Style="{StaticResource ActionBtn}" Click="Default_Click" ToolTip="Replace the list with the default sequence: POWER ON, DELAY 1000, VISION CHECK for every group" />
+                            <Button Content="Default" Style="{StaticResource ActionBtn}" Click="Default_Click" ToolTip="Replace the list with the default sequence: POWER ON, DELAY 1000, then for every group: RELAY n ON, VISION CHECK, RELAY n OFF; POWER OFF at the end" />
                         </UniformGrid>
                     </StackPanel>
                 </ScrollViewer>

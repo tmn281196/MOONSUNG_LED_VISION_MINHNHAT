@@ -1,172 +1,177 @@
 {
   "Vision": {
-    "FourLED": {
-      "Colection": [
-        {
-          "RoiRadius": 7,
-          "ResultFinal": 1,
-          "RoiPoint": {
-            "X": 546.74999999999989,
-            "Y": 457.5542857142857
+    "Groups": [
+      {
+        "Name": "4-LED",
+        "Colection": [
+          {
+            "RoiRadius": 7,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 546.74999999999989,
+              "Y": 457.5542857142857
+            }
+          },
+          {
+            "RoiRadius": 7,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 314.74999999999989,
+              "Y": 293.5542857142857
+            }
+          },
+          {
+            "RoiRadius": 7,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 344.74999999999989,
+              "Y": 333.5542857142857
+            }
+          }
+        ],
+        "ContourArea": 0,
+        "RoiRadius": 7,
+        "HSV": {
+          "HUE": {
+            "Max": 179,
+            "Min": 0
+          },
+          "SAT": {
+            "Max": 255,
+            "Min": 0
+          },
+          "VAL": {
+            "Max": 255,
+            "Min": 0
           }
         },
-        {
-          "RoiRadius": 7,
-          "ResultFinal": 1,
-          "RoiPoint": {
-            "X": 314.74999999999989,
-            "Y": 293.5542857142857
-          }
-        },
-        {
-          "RoiRadius": 7,
-          "ResultFinal": 1,
-          "RoiPoint": {
-            "X": 344.74999999999989,
-            "Y": 333.5542857142857
-          }
-        }
-      ],
-      "ContourArea": 0,
-      "RoiRadius": 7,
-      "HSV": {
-        "HUE": {
-          "Max": 179,
-          "Min": 0
-        },
-        "SAT": {
-          "Max": 255,
-          "Min": 0
-        },
-        "VAL": {
-          "Max": 255,
-          "Min": 0
-        }
+        "MaintainState": true
       },
-      "MaintainState": true
-    },
-    "SevenSEG": {
-      "Colection": [
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 322.75,
-            "Y": 320.82352941176464
+      {
+        "Name": "7-Segment",
+        "Colection": [
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 322.75,
+              "Y": 320.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 364.75,
+              "Y": 357.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 417.75,
+              "Y": 354.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 388.75,
+              "Y": 267.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 365.75,
+              "Y": 277.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 418.75,
+              "Y": 406.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 1,
+            "RoiPoint": {
+              "X": 446.75,
+              "Y": 335.82352941176464
+            }
+          }
+        ],
+        "ContourArea": 0,
+        "RoiRadius": 8,
+        "HSV": {
+          "HUE": {
+            "Max": 179,
+            "Min": 0
+          },
+          "SAT": {
+            "Max": 255,
+            "Min": 0
+          },
+          "VAL": {
+            "Max": 255,
+            "Min": 0
           }
         },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 364.75,
-            "Y": 357.82352941176464
-          }
-        },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 417.75,
-            "Y": 354.82352941176464
-          }
-        },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 388.75,
-            "Y": 267.82352941176464
-          }
-        },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 365.75,
-            "Y": 277.82352941176464
-          }
-        },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 418.75,
-            "Y": 406.82352941176464
-          }
-        },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 446.75,
-            "Y": 335.82352941176464
-          }
-        }
-      ],
-      "ContourArea": 0,
-      "RoiRadius": 8,
-      "HSV": {
-        "HUE": {
-          "Max": 179,
-          "Min": 0
-        },
-        "SAT": {
-          "Max": 255,
-          "Min": 0
-        },
-        "VAL": {
-          "Max": 255,
-          "Min": 0
-        }
+        "MaintainState": true
       },
-      "MaintainState": true
-    },
-    "DecimalPoint": {
-      "Colection": [
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 417.75,
-            "Y": 284.57142857142856
+      {
+        "Name": "Decimal Point",
+        "Colection": [
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 417.75,
+              "Y": 284.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 395.75,
+              "Y": 231.57142857142853
+            }
+          },
+          {
+            "RoiRadius": 8,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 228.75,
+              "Y": 254.57142857142853
+            }
+          }
+        ],
+        "ContourArea": 0,
+        "RoiRadius": 8,
+        "HSV": {
+          "HUE": {
+            "Max": 179,
+            "Min": 0
+          },
+          "SAT": {
+            "Max": 255,
+            "Min": 0
+          },
+          "VAL": {
+            "Max": 255,
+            "Min": 0
           }
         },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 395.75,
-            "Y": 231.57142857142853
-          }
-        },
-        {
-          "RoiRadius": 8,
-          "ResultFinal": 0,
-          "RoiPoint": {
-            "X": 228.75,
-            "Y": 254.57142857142853
-          }
-        }
-      ],
-      "ContourArea": 0,
-      "RoiRadius": 8,
-      "HSV": {
-        "HUE": {
-          "Max": 179,
-          "Min": 0
-        },
-        "SAT": {
-          "Max": 255,
-          "Min": 0
-        },
-        "VAL": {
-          "Max": 255,
-          "Min": 0
-        }
-      },
-      "MaintainState": true
-    }
+        "MaintainState": true
+      }
+    ]
   },
   "CameraSettingValues": {
     "Brightness": 111,
@@ -186,5 +191,57 @@
     "AutoExposure": false,
     "AutoWhiteBalance": false,
     "AutoFocus": false
-  }
+  },
+  "TestSteps": [
+    {
+      "No": 1,
+      "Skip": false,
+      "Cmd": "POWER",
+      "Sub": "ON",
+      "Target": "",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "LED power on"
+    },
+    {
+      "No": 2,
+      "Skip": false,
+      "Cmd": "DELAY",
+      "Sub": "",
+      "Target": "",
+      "Spec": "1000",
+      "Timeout": "",
+      "Comment": "Wait for LEDs to light up"
+    },
+    {
+      "No": 3,
+      "Skip": false,
+      "Cmd": "VISION CHECK",
+      "Sub": "",
+      "Target": "4-LED",
+      "Spec": "",
+      "Timeout": "2000",
+      "Comment": "Check 4-LED"
+    },
+    {
+      "No": 4,
+      "Skip": false,
+      "Cmd": "VISION CHECK",
+      "Sub": "",
+      "Target": "7-Segment",
+      "Spec": "",
+      "Timeout": "2000",
+      "Comment": "Check 7-Segment"
+    },
+    {
+      "No": 5,
+      "Skip": false,
+      "Cmd": "VISION CHECK",
+      "Sub": "",
+      "Target": "Decimal Point",
+      "Spec": "",
+      "Timeout": "2000",
+      "Comment": "Check Decimal Point"
+    }
+  ]
 }
