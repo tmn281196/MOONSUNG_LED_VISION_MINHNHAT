@@ -224,7 +224,7 @@ namespace LEDVision
                             Sections = new[]
                             {
                                 new Section("1. What the sequence is",
-                                    "The list of steps the Auto page runs at every test, from top to bottom, once the cylinder is down and the Before sequence delay has passed.",
+                                    "The list of steps the Auto page runs at every test, from top to bottom, once the down sensor reports the cylinder is down. Put a DELAY step first if the jig needs time to settle.",
                                     "Every step reports PASS or FAIL. The first FAIL stops the sequence right there and the test is NG (then the retest rules of the Setting page apply); the remaining steps are not run.",
                                     "The list is part of the model: press Save on the top bar after editing, otherwise the Auto page keeps running the last saved list.",
                                     "On PASS the app switches the LED power and all relays OFF and raises the jig. On NG everything stays as it was at the failing step (power, relays, jig down, ROIs shown) so the fault can be seen; power and relays are switched off again right before the next test. EMERGENCY STOP switches everything off."),
@@ -265,7 +265,7 @@ namespace LEDVision
                             Sections = new[]
                             {
                                 new Section("1. ลำดับการทดสอบคืออะไร",
-                                    "รายการ step ที่หน้า Auto จะรันทุกครั้งที่ทดสอบ จากบนลงล่าง หลังกระบอกลงสุดและครบเวลา Before sequence",
+                                    "รายการ step ที่หน้า Auto จะรันทุกครั้งที่ทดสอบ จากบนลงล่าง หลังเซ็นเซอร์ล่างรายงานว่ากระบอกลงสุด ถ้าจิ๊กต้องการเวลาให้นิ่ง ให้ใส่ step DELAY ไว้เป็นอันแรก",
                                     "ทุก step จะรายงาน PASS หรือ FAIL เจอ FAIL ตัวแรกลำดับจะหยุดตรงนั้นทันทีและการทดสอบเป็น NG (จากนั้นใช้กฎทดสอบซ้ำในหน้า Setting) step ที่เหลือจะไม่ถูกรัน",
                                     "รายการนี้เป็นส่วนหนึ่งของโมเดล แก้แล้วต้องกด Save บนแถบด้านบน ไม่เช่นนั้นหน้า Auto จะยังรันรายการที่บันทึกไว้ล่าสุด",
                                     "เมื่อ PASS แอปจะปิดไฟ LED กับรีเลย์ทั้งหมดและยกจิ๊กขึ้น เมื่อ NG ทุกอย่างคงสถานะ ณ step ที่ล้มเหลว (ไฟ รีเลย์ จิ๊กอยู่ล่าง ROI แสดงอยู่) เพื่อให้เห็นจุดเสีย ไฟและรีเลย์จะถูกปิดอีกครั้งก่อนเริ่มทดสอบครั้งถัดไป EMERGENCY STOP ปิดทุกอย่าง"),
@@ -321,7 +321,6 @@ namespace LEDVision
                                     "Browse opens the Windows folder picker."),
                                 new Section("3. Retest Management",
                                     "Retest times : how many extra attempts are made when a test is NG. 0 = never retest. Example: 1 = at most 2 tests per product.",
-                                    "Before sequence (ms) : after the down sensor reports the cylinder is down, wait this long before the test sequence starts (lets vibration settle). Used at the first test and at every retest.",
                                     "The sequence itself (LED power on, delays, relays, camera checks) is defined on the Sequence page and saved in the model.",
                                     "Delay between UP / DOWN (ms) : during a retest the cylinder is raised then lowered again. After the down sensor releases, this is the extra time given for the cylinder to finish going up before it is sent down.",
                                     "Sensor timeout (ms) : maximum time to wait for the down sensor to report the cylinder is fully down (at test start and after the retest lowering) or has left the bottom (retest raising). If it expires the sequence continues anyway; the board still refuses to power the LEDs unless the cylinder is down, so the result will be NG rather than unsafe. Typical value 2000 to 4000."),
@@ -352,7 +351,6 @@ namespace LEDVision
                                     "ปุ่ม Browse เปิดหน้าต่างเลือกโฟลเดอร์ของ Windows"),
                                 new Section("3. Retest Management",
                                     "Retest times : จำนวนครั้งที่ทดสอบซ้ำเพิ่มเมื่อผลเป็น NG 0 = ไม่ทดสอบซ้ำ ตัวอย่าง 1 = ทดสอบได้สูงสุด 2 ครั้งต่อชิ้นงาน",
-                                    "Before sequence (ms) : หลังเซ็นเซอร์ล่างรายงานว่ากระบอกลงสุดแล้ว รอเท่านี้ก่อนเริ่มลำดับการทดสอบ (ให้แรงสั่นสงบ) ใช้ทั้งตอนทดสอบครั้งแรกและทุกครั้งที่ทดสอบซ้ำ",
                                     "ตัวลำดับการทดสอบเอง (จ่ายไฟ LED, หน่วงเวลา, รีเลย์, กล้องตรวจ) กำหนดในหน้า Sequence และบันทึกในโมเดล",
                                     "Delay between UP / DOWN (ms) : ตอนทดสอบซ้ำ กระบอกสูบจะยกขึ้นแล้วลงใหม่ หลังเซ็นเซอร์ล่างปล่อยแล้ว นี่คือเวลาเพิ่มให้กระบอกสูบขึ้นจนสุดก่อนสั่งลง",
                                     "Sensor timeout (ms) : เวลาสูงสุดที่รอเซ็นเซอร์ล่างรายงานว่ากระบอกสูบลงสุด (ตอนเริ่มทดสอบและหลังสั่งลงตอนทดสอบซ้ำ) หรือออกจากตำแหน่งล่าง (ตอนยกขึ้นตอนทดสอบซ้ำ) ถ้าหมดเวลาลำดับงานจะดำเนินต่อ บอร์ดจะยังไม่จ่ายไฟ LED ถ้ากระบอกสูบไม่ลง ผลจึงเป็น NG ไม่ใช่อันตราย ค่าที่ใช้ทั่วไป 2000 ถึง 4000"),
@@ -568,7 +566,6 @@ namespace LEDVision
             {
                 new Step(th ? "ทริกเกอร์" : "Trigger", th ? "เซ็นเซอร์ล่าง / START" : "down sensor / START", cSensor, false),
                 new Step(th ? "รอลงสุด" : "Wait fully down", "Sensor timeout", cSensor, true),
-                new Step(th ? "หน่วง" : "Delay", "Before sequence", cDelay, true),
                 new Step(th ? "รันลำดับ" : "Run sequence", th ? "POWER / RELAY / DELAY / VISION CHECK (หน้า Sequence)" : "POWER / RELAY / DELAY / VISION CHECK (Sequence page)", cCheck, true),
                 new Step(th ? "ผล" : "Result", th ? "PASS / NG → ทดสอบซ้ำ?" : "PASS / NG → retest?", cSensor, false),
             };
@@ -577,7 +574,6 @@ namespace LEDVision
                 new Step(th ? "ตัดไฟ + ยกขึ้น" : "Power OFF + UP", th ? "รอเซ็นเซอร์ปล่อย" : "wait sensor release", cMove, false),
                 new Step(th ? "หน่วง" : "Delay", "Delay between UP / DOWN", cDelay, true),
                 new Step(th ? "สั่งลง" : "DOWN", "Sensor timeout", cSensor, true),
-                new Step(th ? "หน่วง" : "Delay", "Before sequence", cDelay, true),
                 new Step(th ? "รันลำดับ" : "Run sequence", th ? "ลำดับเดียวกับครั้งแรก" : "same steps as the first test", cCheck, true),
             };
 

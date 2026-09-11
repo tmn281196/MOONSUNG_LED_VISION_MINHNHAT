@@ -274,7 +274,7 @@ namespace LEDVision
 
             // Chờ cảm biến DOWN xác nhận xi lanh đã xuống hẳn (tối đa 3 s), thêm 200 ms cho hết rung
             VisionTest.Device.WaitForDown(settingModel?.SettingVal?.SensorTimeoutMs ?? 3000);
-            Task.Delay(settingModel?.SettingVal?.DelayBeforePowerMs ?? 200).Wait();   // "Before power ON"
+            // Không còn khoảng chờ cố định trước chuỗi step: cần chờ thì thêm step DELAY đầu chuỗi (Sequence page)
 
             VisionTest.Device.TriggerTest = false;
 

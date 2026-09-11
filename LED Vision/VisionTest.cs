@@ -181,7 +181,7 @@ namespace LEDVision
                                     device.CylinderDown = true;
                                     device.SendControl();
                                     device.WaitForDown(mainWindow.settingModel.SettingVal.SensorTimeoutMs);
-                                    cancelled = CancelRequested || !await DelayUnlessCancelled(mainWindow.settingModel.SettingVal.DelayBeforePowerMs);   // "Before power ON"
+                                    cancelled = CancelRequested;   // chờ thêm (nếu cần) do step DELAY đầu chuỗi đảm nhiệm
                                 }
                                 // Bật nguồn + chờ + kiểm tra do chuỗi step của model làm (state Testing → CapturingAndCheckingEvent)
 

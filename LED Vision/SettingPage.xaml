@@ -224,10 +224,6 @@
                                 <TextBox Style="{StaticResource NumInput}" Text="{Binding RetestTimes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Margin="0,0,24,0">
-                                <TextBlock Text="Before sequence (ms)" Style="{StaticResource FieldLabel}" ToolTip="After the down sensor reports the cylinder is down, wait this long before the test sequence starts (lets vibration settle). Power ON and camera delays are steps of the sequence (Sequence page)" />
-                                <TextBox Style="{StaticResource NumInput}" Width="110" Text="{Binding DelayBeforePowerMs, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
-                            </StackPanel>
-                            <StackPanel Margin="0,0,24,0">
                                 <TextBlock Text="Delay between UP / DOWN (ms)" Style="{StaticResource FieldLabel}" />
                                 <TextBox Style="{StaticResource NumInput}" Width="120" Text="{Binding DelayUPDOWN, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
