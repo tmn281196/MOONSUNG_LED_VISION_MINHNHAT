@@ -201,6 +201,46 @@
                     </Button>
                 </StackPanel>
 
+                <!--  RELAY 1..5: bật / tắt từng relay trên board điều khiển (xanh = đang đóng)  -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-12,0,18">
+                    <StackPanel.Resources>
+                        <Style x:Key="RelayBtn" TargetType="ToggleButton">
+                            <Setter Property="Width" Value="52" />
+                            <Setter Property="Height" Value="30" />
+                            <Setter Property="Margin" Value="4,0" />
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                            <Setter Property="Foreground" Value="#323F4E" />
+                            <Setter Property="Background" Value="#E1E5EA" />
+                            <Setter Property="Cursor" Value="Hand" />
+                            <Setter Property="Focusable" Value="False" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border x:Name="bd" Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="bd" Property="Background" Value="#D2D8DF" />
+                                            </Trigger>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="bd" Property="Background" Value="#06C755" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </StackPanel.Resources>
+                    <ToggleButton x:Name="relayBtn1" Style="{StaticResource RelayBtn}" Content="RL1" Tag="0" Click="Relay_Click" ToolTip="Relay 1 on / off" />
+                    <ToggleButton x:Name="relayBtn2" Style="{StaticResource RelayBtn}" Content="RL2" Tag="1" Click="Relay_Click" ToolTip="Relay 2 on / off" />
+                    <ToggleButton x:Name="relayBtn3" Style="{StaticResource RelayBtn}" Content="RL3" Tag="2" Click="Relay_Click" ToolTip="Relay 3 on / off" />
+                    <ToggleButton x:Name="relayBtn4" Style="{StaticResource RelayBtn}" Content="RL4" Tag="3" Click="Relay_Click" ToolTip="Relay 4 on / off" />
+                    <ToggleButton x:Name="relayBtn5" Style="{StaticResource RelayBtn}" Content="RL5" Tag="4" Click="Relay_Click" ToolTip="Relay 5 on / off" />
+                </StackPanel>
+
                 <!--  Tab: Camera Settings / Inspection Settings (chọn tab này thì ẩn tab kia)  -->
                 <TabControl x:Name="settingsTabs" Height="740" VerticalContentAlignment="Top" Margin="0,0,0,8" SelectedIndex="1" Style="{StaticResource FlatTabControl}" Padding="0,4,0,0">
                 <TabItem Header="Camera Settings" Style="{StaticResource FlatTabItem}">

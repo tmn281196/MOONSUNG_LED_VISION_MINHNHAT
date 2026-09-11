@@ -832,6 +832,25 @@ namespace LEDVision
             try { mainWindow?.UpdateConnectionStatus(); } catch (Exception) { }
         }
 
+        // Nút RL1..RL5: đảo trạng thái relay tương ứng rồi gửi cả gói lệnh (gửi chặt như Power / Up / Down)
+        private void Relay_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as System.Windows.Controls.Primitives.ToggleButton;
+            if (btn == null || VisionTest?.Device == null) return;
+            int idx;
+            if (!int.TryParse(btn.Tag as string, out idx) || idx < 0 || idx >= VisionTest.Device.Relay.Length) return;
+
+            VisionTest.Device.Relay[idx] = btn.IsChecked == true;
+            SendControlStrict();
+
+            // Gửi không được (COM chưa nối / rớt) → trả nút về trạng thái cũ để không hiển thị sai
+            if (!VisionTest.Device.IsConnected)
+            {
+                VisionTest.Device.Relay[idx] = false;
+                btn.IsChecked = false;
+            }
+        }
+
         public void POWER_Btn_Click(object sender, RoutedEventArgs e)
         {
             VisionTest.Device.Power = !VisionTest.Device.Power;

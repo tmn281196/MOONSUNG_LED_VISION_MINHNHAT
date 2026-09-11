@@ -78,7 +78,7 @@ namespace LEDVision
             set
             {
                 device = value;
-                device.CheckCommunication(systemBoardStatus);
+                device.CheckCommunication(ioBoxStatus);
             }
         }
         private MainWindow mainWindow;
@@ -105,10 +105,10 @@ namespace LEDVision
         private void GetPortNames()
         {
             string[] ports = SerialPort.GetPortNames();
-            systemBoardCboBox.Items.Clear();
+            ioBoxCboBox.Items.Clear();
             foreach (var port in ports)
             {
-                systemBoardCboBox.Items.Add(port);
+                ioBoxCboBox.Items.Add(port);
             }
         }
 
@@ -156,7 +156,7 @@ namespace LEDVision
             }
         }
 
-        private void systemBoardCboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ioBoxCboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SettingModel.SettingVal.ComPort = (sender as System.Windows.Controls.ComboBox).SelectedItem.ToString();
         }
@@ -173,12 +173,12 @@ namespace LEDVision
         {
             if (Device.IsConnected)
             {
-                Device.Disconnect(systemBoardStatus);
+                Device.Disconnect(ioBoxStatus);
             }
             else
             {
                 Device.comPort = SettingModel.SettingVal.ComPort;
-                Device.CheckCommunication(systemBoardStatus);
+                Device.CheckCommunication(ioBoxStatus);
             }
             RefreshConnectButton();
             mainWindow?.UpdateConnectionStatus();

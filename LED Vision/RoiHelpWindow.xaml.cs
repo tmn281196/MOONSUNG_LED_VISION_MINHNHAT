@@ -147,7 +147,7 @@ namespace LEDVision
                             Sections = new[]
                             {
                                 new Section("1. Starting a test",
-                                    "Normally the test starts by itself when the cylinder reaches the down position (down sensor on the control board).",
+                                    "Normally the test starts by itself when the cylinder reaches the down position (down sensor on the IO Box).",
                                     "START runs a test by hand, for example when no trigger is wired. The app must be on this page and a model must be open.",
                                     "Signals arriving while a test is running, or within 1.5 s after it ends, are ignored so the cylinder movement of the app itself cannot retrigger."),
                                 new Section("2. EMERGENCY STOP",
@@ -167,7 +167,7 @@ namespace LEDVision
                                     "Used Pins counts test cycles on the current pogo pins. When it reaches Max set a warning appears; replace the pins and reset it on the Setting page."),
                                 new Section("6. Top bar icons",
                                     "Camera icon : green = camera running; click to stop / start it.",
-                                    "Chip icon : green = control board connected; click to disconnect / connect.",
+                                    "Chip icon : green = IO Box connected; click to disconnect / connect.",
                                     "The model name in the title is the model currently loaded; Save writes changes to it, Save As writes a new file."),
                             }
                         }
@@ -181,7 +181,7 @@ namespace LEDVision
                             Sections = new[]
                             {
                                 new Section("1. การเริ่มทดสอบ",
-                                    "ปกติการทดสอบจะเริ่มเองเมื่อกระบอกสูบลงถึงตำแหน่งล่าง (เซ็นเซอร์ล่างบนบอร์ดควบคุม)",
+                                    "ปกติการทดสอบจะเริ่มเองเมื่อกระบอกสูบลงถึงตำแหน่งล่าง (เซ็นเซอร์ล่างบนIO Box)",
                                     "START ใช้เริ่มทดสอบด้วยมือ เช่น กรณีไม่ได้ต่อสัญญาณทริกเกอร์ ต้องอยู่ที่หน้านี้และเปิดโมเดลไว้แล้ว",
                                     "สัญญาณที่มาระหว่างทดสอบ หรือภายใน 1.5 วินาทีหลังจบ จะถูกละเว้น เพื่อไม่ให้การเคลื่อนที่ของกระบอกสูบที่แอปสั่งเองไปทริกเกอร์ซ้ำ"),
                                 new Section("2. EMERGENCY STOP",
@@ -201,7 +201,7 @@ namespace LEDVision
                                     "Used Pins นับรอบทดสอบของพินสปริงชุดปัจจุบัน เมื่อถึง Max set จะมีคำเตือน ให้เปลี่ยนพินแล้วรีเซ็ตในหน้า Setting"),
                                 new Section("6. ไอคอนบนแถบด้านบน",
                                     "ไอคอนกล้อง : เขียว = กล้องทำงานอยู่ คลิกเพื่อหยุด / เริ่ม",
-                                    "ไอคอนชิป : เขียว = บอร์ดควบคุมเชื่อมต่ออยู่ คลิกเพื่อตัด / เชื่อมต่อ",
+                                    "ไอคอนชิป : เขียว = IO Boxเชื่อมต่ออยู่ คลิกเพื่อตัด / เชื่อมต่อ",
                                     "ชื่อโมเดลในหัวเรื่องคือโมเดลที่โหลดอยู่ Save เขียนทับไฟล์นั้น Save As เขียนไฟล์ใหม่"),
                             }
                         }
@@ -221,8 +221,8 @@ namespace LEDVision
                             CloseLabel = "Close",
                             Sections = new[]
                             {
-                                new Section("1. System Controller",
-                                    "COM port : the serial port of the control board. Press the refresh icon after plugging the board in.",
+                                new Section("1. IO Box",
+                                    "COM port : the serial port of the IO Box. Press the refresh icon after plugging the board in.",
                                     "Connect / Disconnect : opens or closes the port. Green dot = connected, red = failed, yellow = not tried.",
                                     "The chip icon on the top bar does the same thing and shows the live status (green = connected)."),
                                 new Section("2. Log Directory",
@@ -252,8 +252,8 @@ namespace LEDVision
                             CloseLabel = "ปิด",
                             Sections = new[]
                             {
-                                new Section("1. System Controller",
-                                    "COM port : พอร์ตอนุกรมของบอร์ดควบคุม เสียบบอร์ดแล้วกดไอคอนรีเฟรชเพื่อค้นหาพอร์ต",
+                                new Section("1. IO Box",
+                                    "COM port : พอร์ตอนุกรมของIO Box เสียบบอร์ดแล้วกดไอคอนรีเฟรชเพื่อค้นหาพอร์ต",
                                     "Connect / Disconnect : เปิดหรือปิดพอร์ต จุดเขียว = เชื่อมต่อแล้ว, แดง = ล้มเหลว, เหลือง = ยังไม่ได้ลอง",
                                     "ไอคอนชิปบนแถบด้านบนทำงานเหมือนกันและแสดงสถานะสด (เขียว = เชื่อมต่ออยู่)"),
                                 new Section("2. Log Directory",

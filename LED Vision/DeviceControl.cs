@@ -87,6 +87,9 @@ namespace LEDVision
             }
         }
 
+        // 5 relay đa dụng, đi trong cùng gói lệnh với Power / Up / Down (bit 3..7 của từ ngõ ra)
+        public bool[] Relay = new bool[5];
+
         private bool _Power;
 
         public bool Power
@@ -361,11 +364,11 @@ namespace LEDVision
                 Power,
                 CylinderUp,
                 CylinderDown,
-                false,
-                false,
-                false,
-                false,
-                false
+                Relay[0],
+                Relay[1],
+                Relay[2],
+                Relay[3],
+                Relay[4]
             };
 
             BitArray bits = new BitArray(OutPuts.ToArray());

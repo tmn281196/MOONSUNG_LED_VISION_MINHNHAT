@@ -492,7 +492,7 @@ namespace LEDVision
         {
             if (device != null && device.IsConnected)
             {
-                device.Disconnect(settingPage.systemBoardStatus);
+                device.Disconnect(settingPage.ioBoxStatus);
             }
             else
             {
@@ -500,7 +500,7 @@ namespace LEDVision
                 if (!string.IsNullOrEmpty(port))
                 {
                     device.comPort = port;
-                    device.CheckCommunication(settingPage.systemBoardStatus);
+                    device.CheckCommunication(settingPage.ioBoxStatus);
                 }
             }
             UpdateConnectionStatus();

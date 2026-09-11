@@ -1,10 +1,18 @@
-
+﻿
 #define DOWN_IN 2  // Fully DOWN detection
 #define UP_IN 3    // Fully UP detection
 
 #define UP_OUT 22    // Lift up control
 #define DOWN_OUT 26  // Lift down control
 #define POWER 24     // A site 220V power
+
+// 5 general-purpose relay outputs, controlled from the PC (output word bits 3..7)
+#define RELAY1 28
+#define RELAY2 30
+#define RELAY3 32
+#define RELAY4 34
+#define RELAY5 36
+const uint8_t RELAY_PINS[5] = { RELAY1, RELAY2, RELAY3, RELAY4, RELAY5 };
 
 void SetSystemIOPinMode() {
   Serial.begin(9600);
@@ -17,6 +25,11 @@ void SetSystemIOPinMode() {
       digitalWrite(POWER, LOW);
     digitalWrite(UP_OUT, LOW);
     digitalWrite(DOWN_OUT, LOW);
+
+  for (int i = 0; i < 5; i++) {
+    pinMode(RELAY_PINS[i], OUTPUT);
+    digitalWrite(RELAY_PINS[i], LOW);
+  }
 }
 
 uint8_t systemRespoenseInput[10] = { 0x44, 0x45, 0x06, 0x49, 0x00, 0xE8, 0x00, 0x00, 0x52, 0x56 };
@@ -82,4 +95,9 @@ void SetSystemOutput(uint8_t data[4]) {
 
   digitalWrite(UP_OUT, bitRead(data32, 1));
   digitalWrite(DOWN_OUT, bitRead(data32, 2));
+
+  // bits 3..7 = RELAY1..RELAY5
+  for (int i = 0; i < 5; i++) {
+    digitalWrite(RELAY_PINS[i], bitRead(data32, 3 + i));
+  }
 }

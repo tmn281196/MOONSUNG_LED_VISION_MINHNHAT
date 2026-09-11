@@ -144,26 +144,26 @@
                 </StackPanel>
                 <TextBlock Text="System controller, log folder, retest and pin-replacement settings. Press SAVE SETTING to write setting.json." Style="{StaticResource CardHint}" Margin="0,2,0,16" />
 
-                <!--  System Controller  -->
+                <!--  IO Box  -->
                 <Border Style="{StaticResource Card}">
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="Microchip" />
-                            <TextBlock Text="System Controller" Style="{StaticResource CardTitle}" />
+                            <TextBlock Text="IO Box" Style="{StaticResource CardTitle}" />
                         </StackPanel>
-                        <TextBlock Text="COM port of the control board. Green = connected, red = failed, yellow = not tried yet." Style="{StaticResource CardHint}" />
+                        <TextBlock Text="COM port of the IO Box. Green = connected, red = failed, yellow = not tried yet." Style="{StaticResource CardHint}" />
 
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                             <StackPanel>
                                 <TextBlock Text="COM port" Style="{StaticResource FieldLabel}" />
                                 <ComboBox
-                                    x:Name="systemBoardCboBox"
+                                    x:Name="ioBoxCboBox"
                                     Width="140"
                                     Height="32"
                                     FontSize="13"
                                     VerticalContentAlignment="Center"
                                     SelectedItem="{Binding ComPort, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                                    SelectionChanged="systemBoardCboBox_SelectionChanged" />
+                                    SelectionChanged="ioBoxCboBox_SelectionChanged" />
                             </StackPanel>
 
                             <Button Style="{StaticResource IconBtn}" Margin="6,18,0,0" Click="RefreshComPortBtn_Click" ToolTip="Refresh COM port list">
@@ -171,7 +171,7 @@
                             </Button>
 
                             <!--  Đèn trạng thái: code-behind đổi Fill (CheckCommunication)  -->
-                            <Rectangle x:Name="systemBoardStatus" Width="14" Height="14" RadiusX="7" RadiusY="7" Fill="Yellow" Margin="18,18,8,0" VerticalAlignment="Center" ToolTip="Connection status" />
+                            <Rectangle x:Name="ioBoxStatus" Width="14" Height="14" RadiusX="7" RadiusY="7" Fill="Yellow" Margin="18,18,8,0" VerticalAlignment="Center" ToolTip="Connection status" />
 
                             <!--  Toggle: chưa kết nối → "Connect", đang kết nối → "Disconnect"  -->
                             <Button x:Name="connectBtn" Style="{StaticResource PrimaryBtn}" Margin="0,18,0,0" Width="120" Click="ConnectBtn_Click">
