@@ -1,4 +1,4 @@
-using LEDVision.Camera;
+﻿using LEDVision.Camera;
 using LEDVision.Model;
 using System;
 using System.Collections.Generic;
@@ -142,8 +142,7 @@ namespace LEDVision
                         step.Value = "BAD SPEC";     // Spec phải là số ms
                         return false;
                     }
-                    step.Value = ms + "ms";
-                    return DelayUnlessCancelled(ms);
+                    return DelayWithProgress(step, ms);
                 }
 
                 case StepCmd.Vision:
@@ -184,6 +183,22 @@ namespace LEDVision
                     step.Value = "BAD CMD";
                     return false;
             }
+        }
+
+        // DELAY: chờ ms, cột Value đếm thời gian đã trôi (cập nhật mỗi 10 ms): "350 / 1000 ms". false = bị hủy.
+        private static bool DelayWithProgress(TestStep step, int ms)
+        {
+            var sw = Stopwatch.StartNew();
+            step.Value = "0 / " + ms + " ms";
+            while (sw.ElapsedMilliseconds < ms)
+            {
+                if (VisionTest.CancelRequested) return false;
+                Task.Delay(10).Wait();
+                long el = Math.Min(sw.ElapsedMilliseconds, ms);
+                step.Value = el + " / " + ms + " ms";
+            }
+            step.Value = ms + " / " + ms + " ms";
+            return !VisionTest.CancelRequested;
         }
 
         // Chờ ms, thoát sớm khi hủy. false = bị hủy.
