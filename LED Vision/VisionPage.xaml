@@ -624,7 +624,7 @@
                 </TabItem>
                 </TabControl>
                 <!--  Công cụ: Reset Zoom, Help, Persist (bôi chọn cụm ROI = kéo chuột trái, không cần nút riêng)  -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Margin="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Margin="0,0,6,0">
                     <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="2,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="A pixel counts as lit only after staying lit for this time (filters flicker / noise). In ms; converted to frames per page." />
                     <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="4,0,0,0" LostFocus="PersistFrames_Changed" />
                     <TextBlock Text="ms" VerticalAlignment="Center" Margin="2,0,0,0" FontSize="11" />
