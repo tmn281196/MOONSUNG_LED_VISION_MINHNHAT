@@ -40,8 +40,8 @@ namespace LEDVision
                 step.Value = "";
                 step.Result = RUN;
                 step.Takt = "";
-                // Chỉ hiện ROI của group đang kiểm tra; step không phải VISION CHECK → không hiện ROI nào
-                ShowOnly(vision, StepCmd.Canonical(step.Cmd) == StepCmd.Vision ? vision?.FindGroup(step.Target) : null, ui);
+                // Tới step VISION CHECK: xóa ROI đang hiện, chỉ hiện ROI của group này. Step khác giữ nguyên ROI đang hiện.
+                if (StepCmd.Canonical(step.Cmd) == StepCmd.Vision) ShowOnly(vision, vision?.FindGroup(step.Target), ui);
                 var sw = Stopwatch.StartNew();
                 bool ok;
                 try
