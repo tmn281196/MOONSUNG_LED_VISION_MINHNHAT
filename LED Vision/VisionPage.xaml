@@ -189,20 +189,8 @@
 
 
                 <!--  POWER / UP / DOWN: điều khiển thiết bị  -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6,0,22">
-                    <Button Width="64" Height="52" Margin="8,0" Background="Transparent" BorderThickness="0" Click="POWER_Btn_Click" Cursor="Hand" ToolTip="Power">
-                        <fa:IconImage Width="34" Foreground="#323F4E" Icon="PowerOff" />
-                    </Button>
-                    <Button Width="64" Height="52" Margin="8,0" Background="Transparent" BorderThickness="0" Click="UP_Btn_Click" Cursor="Hand" ToolTip="Cylinder Up">
-                        <fa:IconImage Width="34" Foreground="#323F4E" Icon="ArrowUp" />
-                    </Button>
-                    <Button Width="64" Height="52" Margin="8,0" Background="Transparent" BorderThickness="0" Click="DOWN_Btn_Click" Cursor="Hand" ToolTip="Cylinder Down">
-                        <fa:IconImage Width="34" Foreground="#323F4E" Icon="ArrowDown" />
-                    </Button>
-                </StackPanel>
-
-                <!--  RELAY 1..5: bật / tắt từng relay trên board điều khiển (xanh = đang đóng)  -->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-12,0,18">
+                <!--  POWER / UP / DOWN + RELAY 1..5 trên cùng một hàng (relay xanh = đang đóng)  -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6,0,18">
                     <StackPanel.Resources>
                         <Style x:Key="RelayBtn" TargetType="ToggleButton">
                             <Setter Property="Width" Value="52" />
@@ -234,6 +222,16 @@
                             </Setter>
                         </Style>
                     </StackPanel.Resources>
+                    <Button Width="40" Height="30" Margin="2,0" Background="Transparent" BorderThickness="0" Click="POWER_Btn_Click" Cursor="Hand" ToolTip="Power">
+                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="PowerOff" />
+                    </Button>
+                    <Button Width="40" Height="30" Margin="2,0" Background="Transparent" BorderThickness="0" Click="UP_Btn_Click" Cursor="Hand" ToolTip="Cylinder Up">
+                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="ArrowUp" />
+                    </Button>
+                    <Button Width="40" Height="30" Margin="2,0" Background="Transparent" BorderThickness="0" Click="DOWN_Btn_Click" Cursor="Hand" ToolTip="Cylinder Down">
+                        <fa:IconImage Width="22" Foreground="#323F4E" Icon="ArrowDown" />
+                    </Button>
+                    <Rectangle Width="1" Height="24" Fill="#DDE3EA" Margin="8,0" VerticalAlignment="Center" />
                     <ToggleButton x:Name="relayBtn1" Style="{StaticResource RelayBtn}" Content="RL1" Tag="0" Click="Relay_Click" ToolTip="Relay 1 on / off" />
                     <ToggleButton x:Name="relayBtn2" Style="{StaticResource RelayBtn}" Content="RL2" Tag="1" Click="Relay_Click" ToolTip="Relay 2 on / off" />
                     <ToggleButton x:Name="relayBtn3" Style="{StaticResource RelayBtn}" Content="RL3" Tag="2" Click="Relay_Click" ToolTip="Relay 3 on / off" />
@@ -366,14 +364,13 @@
                         <CheckBox x:Name="persistCheckBox" Content="Persist" Margin="14,0,0,0" VerticalAlignment="Center" VerticalContentAlignment="Center" Checked="Persist_Changed" Unchecked="Persist_Changed" ToolTip="A pixel counts as lit only after staying lit for this time (filters flicker / noise). In ms; converted to frames per page." />
                         <TextBox x:Name="persistFramesBox" Width="44" VerticalAlignment="Center" TextAlignment="Center" Text="500" Margin="6,0,0,0" LostFocus="PersistFrames_Changed" />
                         <TextBlock Text="ms" VerticalAlignment="Center" Margin="3,0,0,0" FontSize="11" />
-                        <TextBlock x:Name="persistSettlingText" Text="settling…" Foreground="#6B7A8C" FontSize="11" FontStyle="Italic" VerticalAlignment="Center" Margin="8,0,0,0" Visibility="Collapsed" ToolTip="Persist counters are still accumulating; the result is not stable yet" />
                     </StackPanel>
 
                     <!--  Group LED: danh sách động (thêm / đổi tên / xóa). Không chọn group = khóa ảnh.  -->
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
                         <TextBlock Text="LED Groups / HSV Range" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
                         <!--  Bảng group: bấm dòng = chọn group để vẽ / chỉnh; sửa ô Name = đổi tên (step VISION CHECK đổi theo)  -->
-                        <DataGrid x:Name="groupGrid" Width="500" MaxHeight="270" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                        <DataGrid x:Name="groupGrid" HorizontalAlignment="Center" MaxHeight="270" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
                                   HorizontalGridLinesBrush="#EEF1F4" RowBackground="White" BorderBrush="#DDE3EA" BorderThickness="1"
                                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
                                   SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="23" VerticalScrollBarVisibility="Auto"
@@ -438,7 +435,7 @@
                                 </Style>
                             </DataGrid.Resources>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="*" MinWidth="96" />
+                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="84" />
                                 <DataGridTextColumn Header="ROI" Binding="{Binding RoiCount, Mode=OneWay}" Width="36" IsReadOnly="True" ElementStyle="{StaticResource CenterText}" />
                                 <DataGridTextColumn Header="Ch" Binding="{Binding Ch, Mode=OneWay}" Width="30" IsReadOnly="True" ElementStyle="{StaticResource ChText}" />
                                 <DataGridTextColumn Header="Min" Binding="{Binding Min, UpdateSourceTrigger=PropertyChanged}" Width="46" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />

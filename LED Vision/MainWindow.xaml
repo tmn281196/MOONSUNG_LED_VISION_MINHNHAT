@@ -264,6 +264,9 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0">
+                <!--  Chỉ báo Persist đang gom khung (trang Vision đặt), hiện trước icon camera  -->
+                <TextBlock x:Name="settlingText" Text="SETTLING…" Foreground="#F5A623" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,14,0" Visibility="Collapsed"
+                           ToolTip="Persist counters are still accumulating after a parameter change; ROI results are not stable yet" />
                 <!--  Kết nối lại camera / COM (icon xanh lá = đang kết nối) + About  -->
                 <Button x:Name="reconnectCameraBtn" Style="{StaticResource NavBtn}" Click="ReconnectCamera_Click" ToolTip="Start camera" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                     <fa:IconImage x:Name="reconnectCameraIcon" Width="30" Height="30" Foreground="#80C4E9" Icon="Video" />

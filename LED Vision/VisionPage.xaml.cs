@@ -148,11 +148,8 @@ namespace LEDVision
             bool active = Camera.SingleLED.PersistEnabled && Camera.SingleLED.PersistFrames > 1;
             if (active && framesSinceReset < Camera.SingleLED.PersistFrames) framesSinceReset++;
             bool settling = active && framesSinceReset < Camera.SingleLED.PersistFrames;
-            if (persistSettlingText != null)
-            {
-                var v = settling ? Visibility.Visible : Visibility.Collapsed;
-                if (persistSettlingText.Visibility != v) persistSettlingText.Visibility = v;
-            }
+            // Chỉ báo "SETTLING" nằm ở thanh top (trước icon camera), MainWindow giữ
+            try { mainWindow?.SetSettling(settling); } catch (Exception) { }
         }
 
         private void Persist_Changed(object sender, RoutedEventArgs e)
