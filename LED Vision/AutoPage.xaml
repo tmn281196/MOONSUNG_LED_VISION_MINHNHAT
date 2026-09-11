@@ -106,6 +106,36 @@
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--  "?" : hướng dẫn trang Auto + timeline chuỗi test (EN / TH)  -->
+            <!--  Toggle mắt: bật = hiện TẤT CẢ ROI với kết quả lần kiểm tra gần nhất (xanh OK, đỏ NG, xám chưa kiểm tra); tắt = ẩn hết  -->
+            <ToggleButton x:Name="allRoiBtn" Width="44" Height="44" Margin="0,30,8,0" Cursor="Hand" Focusable="False" Click="AllRoi_Click"
+                          ToolTip="Show / hide all ROIs with their last result (green = OK, red = NG, grey = not checked)">
+                <ToggleButton.Style>
+                    <Style TargetType="ToggleButton">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Foreground" Value="#323F4E" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border x:Name="bd" Background="{TemplateBinding Background}">
+                                        <fa:IconImage x:Name="ic" Width="22" Height="22" Foreground="{TemplateBinding Foreground}" Icon="EyeSlash" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="bd" Property="Background" Value="#E1E5EA" />
+                                        </Trigger>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter TargetName="bd" Property="Background" Value="#323F4E" />
+                                            <Setter Property="Foreground" Value="White" />
+                                            <Setter TargetName="ic" Property="Icon" Value="Eye" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToggleButton.Style>
+            </ToggleButton>
             <Button Click="AutoHelp_Click" Width="34" Height="44" Margin="0,30,8,0" Background="Transparent" BorderThickness="0" Cursor="Hand" Focusable="False" ToolTip="Help: how the auto test works (EN / TH)">
                 <fa:IconImage Width="20" Height="20" Foreground="#323F4E" Icon="CircleQuestion" />
             </Button>

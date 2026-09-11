@@ -263,6 +263,7 @@ namespace LEDVision
                 testingPopup.Visibility = Visibility.Visible;
 
                 // Bắt đầu test: ẩn hết ROI; tới step VISION CHECK nào thì SequenceRunner chỉ hiện ROI của group đó
+                allRoiBtn.IsChecked = false;
                 foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
                 {
                     led.ResultFinal = SingleLED.RESULT.UNKNOWN;
@@ -551,6 +552,32 @@ namespace LEDVision
         private volatile bool testBusy = false;
 
         // Nút "?": hướng dẫn trang Auto (EN / TH) kèm timeline chuỗi test
+        // Toggle mắt: bật = hiện mọi ROI với kết quả gần nhất (xanh OK / đỏ NG / xám chưa kiểm tra); tắt = ẩn hết
+        private static readonly System.Windows.Media.Brush UncheckedRoiBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x9A, 0xA5, 0xB1));
+
+        private void AllRoi_Click(object sender, RoutedEventArgs e)
+        {
+            bool on = allRoiBtn.IsChecked == true;
+            var model = visionTester.ProgramModel;
+            if (model == null) return;
+            foreach (var led in model.Vision.AllLeds())
+            {
+                if (led.Roi == null) continue;
+                if (!on)
+                {
+                    led.Roi.Visibility = Visibility.Collapsed;
+                    continue;
+                }
+                led.Roi.Visibility = Visibility.Visible;
+                switch (led.ResultFinal)
+                {
+                    case SingleLED.RESULT.OK: led.Roi.Stroke = SingleLED.PassBrush; break;
+                    case SingleLED.RESULT.NG: led.Roi.Stroke = Brushes.Red; break;
+                    default: led.Roi.Stroke = UncheckedRoiBrush; break;
+                }
+            }
+        }
+
         private void AutoHelp_Click(object sender, RoutedEventArgs e)
         {
             var win = new RoiHelpWindow("auto");
