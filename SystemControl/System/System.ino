@@ -1,25 +1,24 @@
-﻿/*
+/*
   LED COLOR INSPECTION - IO Box firmware (Arduino Mega 2560).
 
   One test station: product 220 V power relay, one pneumatic cylinder (UP / DOWN valves,
   one DOWN sensor) and five general-purpose relays. Full protocol: ../LED_IOBOX_Protocol.html
 
   Wire protocol (must stay in sync with LED Vision/DeviceControl.cs):
-      TX  PC -> board : 10 bytes [44 45 06 cmd d0 d1 d2 d3 xor 56]   xor = XOR of bytes 0..7
-      RX  board -> PC : ack 6 bytes [44 45 4F 00 52 56]
-                        input 10 bytes [44 45 06 49 00 in 00 00 xor 56]
-                          in bit0 = UP sensor raw level, bit1 = DOWN sensor raw level (1 = fully down)
-      Baud 9600 8N1.
+      Every frame, both directions, is 4 bytes:  [cmd][key][value][0x11]
+      Baud 9600 8N1. A frame whose 4th byte is not 0x11 is dropped and the parser resyncs.
 
-  Commands (byte 3):
-      0x52  Set ONE output   d0 = index 0..7, d1 = 0 off / 1 on. One frame changes one output.
-                             0 POWER (interlocked: OFF unless DOWN sensor active), 1 UP_OUT, 2 DOWN_OUT,
-                             3..7 RELAY1..RELAY5
-      0x4F  Set ALL (legacy) d3 bit0 POWER, bit1 UP_OUT, bit2 DOWN_OUT. Does not touch the relays.
-      0x49 at byte 2         request input -> board answers with the input frame
+  PC -> board
+      0x52 SET    key = output 0..7, value = 0 off / 1 on. One frame changes one output.
+                  0 POWER (interlocked: OFF unless DOWN sensor active), 1 UP_OUT, 2 DOWN_OUT,
+                  3..7 RELAY1..RELAY5.            Reply: the same frame echoed.
+      0x49 GET    key = 0 all inputs / 1 UP / 2 DOWN. Reply: one [0x49][key][level][0x11] per input.
+      0xD5 RESET  every output OFF.               Reply: the same frame echoed.
 
-  Events (board -> PC, unsolicited): input frame every time the DOWN sensor changes (50 ms debounce).
-  Interlock: POWER is cut by the board itself the moment the DOWN sensor releases.
+  board -> PC, unsolicited
+      [0x49][2][level][0x11]  every time the DOWN sensor changes (50 ms debounce).
+      level = raw pin level of the INPUT_PULLUP sensor: 1 = cylinder fully down, 0 = not down.
+      The board also cuts POWER by itself the moment the DOWN sensor releases.
 
   Pin map:
       Input   DIO 2  DOWN_IN (INPUT_PULLUP)      DIO 3  UP_IN (reserved)
@@ -29,53 +28,46 @@
 
 #include "SystemIOPin.h"
 
-uint8_t responseBytes[] = { 0x44, 0x45, 0x53, 0x00, 0x52, 0x56 };
-
 void setup() {
-  Serial.begin(9600);
   SetSystemIOPinMode();
 }
 
 void loop() {
-  // collect system input and update
   CollectInput();
 }
 
-// runs whenever there's serial buffer
-// System control event
+// 4-byte frames: [cmd][key][value][FRAME_END]. Anything that does not end in FRAME_END is dropped one byte at a time.
+uint8_t rxBuf[4];
+uint8_t rxLen = 0;
+
 void serialEvent() {
-  uint8_t bytesData[20];
-  if (Serial.available()) {
-    delay(10);
-    uint8_t readdedbyte = Serial.read();
-    if (readdedbyte == 0x44) {
-      int index = 0;
-      bytesData[index] = readdedbyte;
-      while (Serial.available()) {
-        readdedbyte = Serial.read();
-        index++;
-        bytesData[index] = readdedbyte;
-        if (index >= 9) {
-          // check the command
-          if (bytesData[3] == 0x4F) {
-            // legacy: all outputs in one word
-            uint8_t bytes[4] = { bytesData[4], bytesData[5], bytesData[6], bytesData[7] };
-            SetSystemOutput(bytes);
-            Serial.write(systemRespoenseOutput, 6);
-          } else if (bytesData[3] == 0x52) {
-            // one output per frame: [index][state]
-            SetOutput(bytesData[4], bytesData[5]);
-            Serial.write(systemRespoenseOutput, 6);
-          }
-          break;
-        }
-        if (index == 2 && bytesData[2] == 0x49) {
-          ResponseInput();
-        }
-      }
+  while (Serial.available()) {
+    rxBuf[rxLen++] = Serial.read();
+    if (rxLen < 4) continue;
+    rxLen = 0;
+
+    if (rxBuf[3] != FRAME_END) {
+      // resync: shift left by one and keep collecting
+      rxBuf[0] = rxBuf[1]; rxBuf[1] = rxBuf[2]; rxBuf[2] = rxBuf[3];
+      rxLen = 3;
+      continue;
     }
-    while (Serial.available()) {
-      readdedbyte = Serial.read();
+
+    uint8_t cmd = rxBuf[0], key = rxBuf[1], value = rxBuf[2];
+    switch (cmd) {
+      case CMD_SET:
+        SetOutput(key, value);
+        SendFrame(CMD_SET, key, value);
+        break;
+      case CMD_GET:
+        ReportInputs(key);
+        break;
+      case CMD_RESET:
+        AllOutputsOff();
+        SendFrame(CMD_RESET, 0, 0);
+        break;
+      default:
+        break;  // unknown command: no reply
     }
   }
 }

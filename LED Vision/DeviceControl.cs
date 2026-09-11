@@ -26,9 +26,12 @@ namespace LEDVision
         // Xi lanh lên xuống do app điều khiển cũng tạo cạnh reed y như người vận hành, phải chặn.
         public volatile bool IgnoreTrigger = false;
 
-        public static byte Prefix1 = 0x44;
-        public static byte Prefix2 = 0x45;
-        public static byte Suffix = 0x56;
+        // Khung 4 byte hai chiều: [cmd][key][value][FRAME_END]
+        public const byte FRAME_END = 0x11;
+        public const byte CMD_SET = 0x52;    // PC → board: đặt một ngõ ra (key 0..7, value 0/1). Board echo lại.
+        public const byte CMD_GET = 0x49;    // PC → board: đọc input (key 0 tất cả / 1 UP / 2 DOWN). Board → PC: sự kiện cảm biến.
+        public const byte CMD_RESET = 0xD5;  // PC → board: tắt mọi ngõ ra. Board echo lại.
+        public const byte IN_UP = 1, IN_DOWN = 2;
 
 
         // Chỉ true khi CheckCommunication mở cổng thành công; về false khi ghi lỗi (rớt USB...).
@@ -90,8 +93,12 @@ namespace LEDVision
         // 5 relay đa dụng. Mọi ngõ ra (Power / Up / Down / RL1..5) đều gửi MỖI FRAME MỘT NGÕ RA bằng lệnh 0x52 [index][state]:
         //   0 = Power, 1 = Up, 2 = Down, 3..7 = RL1..RL5
         public bool[] Relay = new bool[5];
-        private const byte CMD_SET_OUTPUT = 0x52;
         public const int OUT_POWER = 0, OUT_UP = 1, OUT_DOWN = 2, OUT_RELAY1 = 3;
+
+        private static byte[] Frame(byte cmd, byte key, byte value)
+        {
+            return new byte[] { cmd, key, value, FRAME_END };
+        }
 
         // Trạng thái Power / Up / Down đã gửi lần cuối → SendControl chỉ gửi ngõ nào vừa đổi
         private readonly bool[] lastSent = new bool[3];
@@ -102,10 +109,24 @@ namespace LEDVision
         {
             if (index < 0 || index > 7) return false;
             if (!IsConnected || port == null || !port.IsOpen) return false;
-            // 5 byte dữ liệu như gói 0x4F để frame giữ đúng 10 byte firmware đang chờ
-            byte[] data = { CMD_SET_OUTPUT, (byte)index, (byte)(on ? 1 : 0), 0x00, 0x00 };
-            SendBytes(GetFrame(data));
+            SendBytes(Frame(CMD_SET, (byte)index, (byte)(on ? 1 : 0)));
             return IsConnected;
+        }
+
+        // Hỏi board trạng thái input hiện tại (board trả lời một frame cho mỗi input)
+        public void RequestInputs()
+        {
+            if (!IsConnected || port == null || !port.IsOpen) return;
+            SendBytes(Frame(CMD_GET, 0, 0));
+        }
+
+        // Tắt mọi ngõ ra trên board bằng một frame
+        public void ResetOutputs()
+        {
+            if (!IsConnected || port == null || !port.IsOpen) return;
+            SendBytes(Frame(CMD_RESET, 0, 0));
+            for (int i = 0; i < Relay.Length; i++) Relay[i] = false;
+            lastSentValid = false;
         }
 
         // Relay: mỗi relay một frame, gửi chặt (lỗi / timeout / cổng chưa mở = mất kết nối)
@@ -296,9 +317,11 @@ namespace LEDVision
                 {
                     port.Open();
                     IsConnected = true;
+                    rxBuf.Clear();
                     statusLamp.Fill = (Brush)new BrushConverter().ConvertFromString("#06C755");
                     port.DataReceived -= Port_DataReceived;
                     port.DataReceived += Port_DataReceived;
+                    RequestInputs();   // biết ngay xi lanh đang ở đâu
                 }
                 catch (Exception)
                 {
@@ -306,64 +329,6 @@ namespace LEDVision
 
                 }
             }
-        }
-
-
-        public void DataToIO(byte[] bytes)
-        {
-            if (bytes.Length != 4)
-            {
-                return;
-            }
-            UInt32 Data32Bit = BitConverter.ToUInt32(bytes, 0);
-
-            SS_UP = GetValue(Data32Bit, 8);
-            SS_DOWN = GetValue(Data32Bit, 9);
-        }
-
-        public bool GetValue(UInt32 data, int position)
-        {
-            return (data & (UInt32)(1 << position)) != 0;
-        }
-
-        public byte CalculateCheckSum(byte[] byteData) //Dis
-        {
-            Byte chkSumByte = 0x00;
-            for (int i = 0; i < byteData.Length; i++)
-                chkSumByte ^= byteData[i];
-            return chkSumByte;
-        }
-
-        public byte[] GetFrame(byte[] datas, bool IsNoSize = false)
-        {
-
-            if (datas == null) return null;
-
-            List<byte> dataToSend = datas.ToList();
-            if (!IsNoSize)
-            {
-                if (datas.Length > 1)
-                {
-                    dataToSend.Insert(0, (byte)(dataToSend.Count + 1));
-                }
-                else
-                {
-                    dataToSend.Add(0x00);
-                }
-            }
-            dataToSend.Insert(0, Prefix2);
-            dataToSend.Insert(0, Prefix1);
-            var checksum = CalculateCheckSum(dataToSend.ToArray());
-            dataToSend.Add(checksum);
-            dataToSend.Add(Suffix);
-
-            //dataToSend.Insert(2, (Byte)(dataToSend.Count - 3) );
-            foreach (var item in dataToSend)
-            {
-                Console.Write(item.ToString("X2") + " ");
-            }
-            Console.WriteLine(" ");
-            return dataToSend.ToArray();
         }
 
         public void SendBytes(byte[] buf)
@@ -394,54 +359,6 @@ namespace LEDVision
 
         }
 
-        public byte[] IOtoData()
-        {
-            byte[] bytes = new byte[5];
-            bytes[0] = 0x4F;
-            List<bool> OutPuts = new List<bool>
-            {
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-                false,
-
-                Power,
-                CylinderUp,
-                CylinderDown,
-                false,
-                false,
-                false,
-                false,
-                false
-            };
-
-            BitArray bits = new BitArray(OutPuts.ToArray());
-            bits.CopyTo(bytes, 1);
-            return bytes;
-        }
-
         public void SendControl()
         {
             if (!IsConnected || port == null || !port.IsOpen) return;
@@ -470,62 +387,44 @@ namespace LEDVision
             return IsConnected;
         }
 
+        // Bộ đệm nhận: khung 4 byte [cmd][key][value][0x11]. Byte lẻ (không kết thúc 0x11) bị bỏ từng byte để đồng bộ lại.
+        private readonly List<byte> rxBuf = new List<byte>();
+
         private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            if (IsConnected && port != null && port.IsOpen)
+            if (!IsConnected || port == null || !port.IsOpen) return;
+            byte[] bytes;
+            try
             {
-                List<byte> frame = new List<byte>();
-                Task.Delay(50).Wait();
-                int size = port.BytesToRead;
-                byte[] bytes = new byte[size];
-                try
+                int n = port.BytesToRead;
+                if (n <= 0) return;
+                bytes = new byte[n];
+                port.Read(bytes, 0, n);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            rxBuf.AddRange(bytes);
+            while (rxBuf.Count >= 4)
+            {
+                if (rxBuf[3] != FRAME_END)
                 {
-                    port.Read(bytes, 0, port.BytesToRead);
+                    rxBuf.RemoveAt(0);   // lệch khung → bỏ 1 byte, thử lại
+                    continue;
                 }
-                catch (Exception)
+                byte cmd = rxBuf[0], key = rxBuf[1], value = rxBuf[2];
+                rxBuf.RemoveRange(0, 4);
+                Console.WriteLine("IOBOX RX: " + cmd.ToString("X2") + " " + key.ToString("X2") + " " + value.ToString("X2"));
+
+                if (cmd == CMD_GET)
                 {
-                    return;
+                    // Trạng thái cảm biến (sự kiện hoặc trả lời GET). SS_DOWN setter tự phát start / cancel theo cạnh.
+                    if (key == IN_UP) SS_UP = value != 0;
+                    else if (key == IN_DOWN) SS_DOWN = value != 0;
                 }
-
-                if (bytes.Length < 7) return;
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    byte startByte = bytes[i];
-                    if (startByte == Prefix1)
-                    {
-                        var secondByte = bytes[i + 1];
-                        if (secondByte == Prefix2)
-                        {
-                            frame.Clear();
-                            frame.Add(startByte);
-                            frame.Add(secondByte);
-                            frame.Add(bytes[i + 2]);
-
-                            if ((int)bytes[i + 2] + 3 >= bytes.Length) return;
-
-                            for (int j = i + 3; j <= (int)bytes[i + 2] + 3; j++)
-                            {
-                                frame.Add(bytes[j]);
-                            }
-                            try
-                            {
-                                DataToIO(new byte[] { frame[4], frame[5], frame[6], frame[7] });
-                            }
-                            catch (Exception ex)
-                            {
-                            }
-
-                            Console.Write("SYS INPUT:");
-                            foreach (var item in frame)
-                            {
-                                Console.Write(item.ToString("X2") + " ");
-                            }
-                            Console.WriteLine(" ");
-                            return;
-
-                        }
-                    }
-                }
+                // CMD_SET / CMD_RESET echo: không cần xử lý
             }
         }
     }
