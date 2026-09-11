@@ -182,7 +182,9 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="No" Binding="{Binding No}" Width="36" />
                     <DataGridTextColumn Header="Step" Binding="{Binding Label}" Width="*" />
-                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="110" />
+                    <DataGridTextColumn Header="Spec" Binding="{Binding Spec}" Width="64" />
+                    <DataGridTextColumn Header="Timeout" Binding="{Binding Timeout}" Width="70" />
+                    <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="100" />
                     <DataGridTemplateColumn Header="Result" Width="64">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
