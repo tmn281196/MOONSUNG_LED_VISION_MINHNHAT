@@ -8,7 +8,7 @@
             "RoiRadius": 7,
             "ResultFinal": 1,
             "RoiPoint": {
-              "X": 546.74999999999989,
+              "X": 546.7499999999999,
               "Y": 457.5542857142857
             }
           },
@@ -16,7 +16,7 @@
             "RoiRadius": 7,
             "ResultFinal": 1,
             "RoiPoint": {
-              "X": 314.74999999999989,
+              "X": 314.7499999999999,
               "Y": 293.5542857142857
             }
           },
@@ -24,7 +24,7 @@
             "RoiRadius": 7,
             "ResultFinal": 1,
             "RoiPoint": {
-              "X": 344.74999999999989,
+              "X": 344.7499999999999,
               "Y": 333.5542857142857
             }
           }
@@ -216,6 +216,16 @@
     {
       "No": 3,
       "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "ON",
+      "Target": "1",
+      "Spec": "",
+      "Timeout": "300",
+      "Comment": "Select 4-LED"
+    },
+    {
+      "No": 4,
+      "Skip": false,
       "Cmd": "VISION CHECK",
       "Sub": "",
       "Target": "4-LED",
@@ -224,7 +234,27 @@
       "Comment": "Check 4-LED"
     },
     {
-      "No": 4,
+      "No": 5,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "OFF",
+      "Target": "1",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "Release 4-LED"
+    },
+    {
+      "No": 6,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "ON",
+      "Target": "2",
+      "Spec": "",
+      "Timeout": "300",
+      "Comment": "Select 7-Segment"
+    },
+    {
+      "No": 7,
       "Skip": false,
       "Cmd": "VISION CHECK",
       "Sub": "",
@@ -234,7 +264,27 @@
       "Comment": "Check 7-Segment"
     },
     {
-      "No": 5,
+      "No": 8,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "OFF",
+      "Target": "2",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "Release 7-Segment"
+    },
+    {
+      "No": 9,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "ON",
+      "Target": "3",
+      "Spec": "",
+      "Timeout": "300",
+      "Comment": "Select Decimal Point"
+    },
+    {
+      "No": 10,
       "Skip": false,
       "Cmd": "VISION CHECK",
       "Sub": "",
@@ -242,6 +292,26 @@
       "Spec": "",
       "Timeout": "2000",
       "Comment": "Check Decimal Point"
+    },
+    {
+      "No": 11,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "OFF",
+      "Target": "3",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "Release Decimal Point"
+    },
+    {
+      "No": 12,
+      "Skip": false,
+      "Cmd": "POWER",
+      "Sub": "OFF",
+      "Target": "",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "LED power off"
     }
   ]
 }
