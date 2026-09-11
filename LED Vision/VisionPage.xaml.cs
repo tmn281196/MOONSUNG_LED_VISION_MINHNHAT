@@ -206,8 +206,6 @@ namespace LEDVision
                     BindCameraSettings();
                     RefreshGroupList();
                     SelectGroup(null);
-                    RefreshGroupList();
-                    SelectGroup(null);
                 }
             }
         }
@@ -372,10 +370,12 @@ namespace LEDVision
 
 
 
-                    if (builder.selectedLed != null)
+                    // ROI đang chọn (lẻ hoặc cả cụm) vẽ nét đứt
+                    foreach (var sel in builder.SelectedLeds)
                     {
-                        builder.selectedLed.Roi.StrokeDashArray = new DoubleCollection() { 1, 1 };
+                        if (sel.Roi != null) sel.Roi.StrokeDashArray = new DoubleCollection() { 1, 1 };
                     }
+                    SyncHsvRowsMeasured();
 
 
                 }));
@@ -669,10 +669,11 @@ namespace LEDVision
                 }
             }
         }
-        // ====== Group LED động: bảng group (chọn dòng = chọn group, sửa ô Name = đổi tên) + Add / Delete / None ======
+        // ====== Group LED động: bảng group / HSV (mỗi group 3 dòng H / S / V) + Add / Duplicate / Delete / None ======
         private bool groupGridBusy = false;
+        private readonly System.Collections.ObjectModel.ObservableCollection<GroupHsvRow> hsvRows = new System.Collections.ObjectModel.ObservableCollection<GroupHsvRow>();
 
-        // Nạp lại bảng group (sau khi mở model / thêm / xóa), giữ group đang chọn nếu còn
+        // Dựng lại các dòng của bảng (sau khi mở model / thêm / xóa group), giữ group đang chọn nếu còn
         public void RefreshGroupList()
         {
             if (groupGrid == null || ProgramModel == null) return;
@@ -680,15 +681,27 @@ namespace LEDVision
             try
             {
                 var cur = ProgramModel.Vision.SelectedGroupLED;
-                if (!ReferenceEquals(groupGrid.ItemsSource, ProgramModel.Vision.Groups)) groupGrid.ItemsSource = ProgramModel.Vision.Groups;
-                groupGrid.Items.Refresh();
-                groupGrid.SelectedItem = (cur != null && ProgramModel.Vision.Groups.Contains(cur)) ? cur : null;
+                hsvRows.Clear();
+                foreach (var g in ProgramModel.Vision.Groups)
+                {
+                    hsvRows.Add(new GroupHsvRow(g, "H"));
+                    hsvRows.Add(new GroupHsvRow(g, "S"));
+                    hsvRows.Add(new GroupHsvRow(g, "V"));
+                }
+                if (!ReferenceEquals(groupGrid.ItemsSource, hsvRows)) groupGrid.ItemsSource = hsvRows;
+                groupGrid.SelectedItem = (cur != null && ProgramModel.Vision.Groups.Contains(cur)) ? FirstRowOf(cur) : null;
             }
             finally
             {
                 groupGridBusy = false;
             }
             try { mainWindow?.sequencePage?.RefreshGroupNames(); } catch (Exception) { }
+        }
+
+        private GroupHsvRow FirstRowOf(GroupLED g)
+        {
+            foreach (var r in hsvRows) if (r.Group == g && r.IsFirst) return r;
+            return null;
         }
 
         // Chọn group để vẽ / chỉnh (null = None: khóa ảnh)
@@ -703,58 +716,100 @@ namespace LEDVision
                 groupGridBusy = true;
                 try
                 {
-                    groupGrid.SelectedItem = g;
-                    if (g != null) groupGrid.ScrollIntoView(g);
+                    var curRow = groupGrid.SelectedItem as GroupHsvRow;
+                    if (g == null) groupGrid.SelectedItem = null;
+                    else if (curRow == null || curRow.Group != g)
+                    {
+                        var row = FirstRowOf(g);
+                        groupGrid.SelectedItem = row;
+                        if (row != null) groupGrid.ScrollIntoView(row);
+                    }
                 }
                 finally { groupGridBusy = false; }
             }
             UpdateSettings("");
+            SyncHsvRowsMeasured();
         }
 
         private void GroupGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (groupGridBusy) return;
-            SelectGroup(groupGrid.SelectedItem as GroupLED);
+            var row = groupGrid.SelectedItem as GroupHsvRow;
+            SelectGroup(row != null ? row.Group : null);
         }
 
-        // Đổi tên ngay trong ô Name: nhớ tên cũ lúc bắt đầu sửa, sửa xong thì cập nhật step VISION CHECK đang trỏ tới tên cũ
+        // Đổ số đo Selected / Unselected / All (đã tính trong UpdateHistogram vào các TextBlock ẩn) vào 3 dòng của group đang chọn
+        private void SyncHsvRowsMeasured()
+        {
+            var g = ProgramModel?.Vision.SelectedGroupLED;
+            foreach (var row in hsvRows)
+            {
+                if (g != null && row.Group == g)
+                {
+                    switch (row.Ch)
+                    {
+                        case "H": row.Selected = selectedROIHue.Text; row.Unselected = fullROIHue.Text; row.All = allROIHue.Text; break;
+                        case "S": row.Selected = selectedROISat.Text; row.Unselected = fullROISat.Text; row.All = allROISat.Text; break;
+                        default: row.Selected = selectedROIValue.Text; row.Unselected = fullROIValue.Text; row.All = allROIValue.Text; break;
+                    }
+                }
+                else
+                {
+                    row.Selected = ""; row.Unselected = ""; row.All = "";
+                }
+            }
+        }
+
+        // Sửa thẳng trong ô: tên group (kiểm tra trùng, đổi Target của step VISION CHECK) hoặc Min / Max (đổ lại ô Set ẩn, reset persist)
         private string groupNameBeforeEdit = null;
 
         private void GroupGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
         {
-            var g = e.Row.Item as GroupLED;
-            groupNameBeforeEdit = g != null ? g.Name : null;
+            var row = e.Row.Item as GroupHsvRow;
+            groupNameBeforeEdit = row != null ? row.Group.Name : null;
         }
 
         private void GroupGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
             if (e.EditAction != DataGridEditAction.Commit) return;
-            var g = e.Row.Item as GroupLED;
+            var row = e.Row.Item as GroupHsvRow;
             string old = groupNameBeforeEdit;
             groupNameBeforeEdit = null;
-            if (g == null || old == null) return;
+            if (row == null) return;
+            bool nameCol = e.Column != null && e.Column.DisplayIndex == 0;
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                string name = (g.Name ?? "").Trim();
-                if (name.Length == 0)
+                var g = row.Group;
+                if (nameCol && old != null)
                 {
-                    g.Name = old;   // không cho tên rỗng
-                    return;
+                    string name = (g.Name ?? "").Trim();
+                    if (name.Length == 0)
+                    {
+                        g.Name = old;   // không cho tên rỗng
+                        return;
+                    }
+                    var other = ProgramModel.Vision.FindGroup(name);
+                    if (other != null && other != g)
+                    {
+                        System.Windows.MessageBox.Show("A group with this name already exists.", "Rename group", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        g.Name = old;
+                        return;
+                    }
+                    g.Name = name;
+                    if (name != old)
+                    {
+                        foreach (var st in ProgramModel.TestSteps)
+                            if (Model.StepCmd.Canonical(st.Cmd) == Model.StepCmd.Vision && string.Equals(st.Target, old, StringComparison.OrdinalIgnoreCase)) st.Target = name;
+                    }
+                    try { mainWindow?.sequencePage?.RefreshGroupNames(); } catch (Exception) { }
                 }
-                var other = ProgramModel.Vision.FindGroup(name);
-                if (other != null && other != g)
+                else
                 {
-                    System.Windows.MessageBox.Show("A group with this name already exists.", "Rename group", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    g.Name = old;
-                    return;
+                    // Min / Max: HSV của group đã đổi → ô Set ẩn + bộ đếm persist + kết quả ROI
+                    g.NotifyHsvChanged();
+                    if (g == ProgramModel.Vision.SelectedGroupLED) UpdateSettings("");
+                    foreach (var item in g.Colection) item.ResultFinal = SingleLED.RESULT.UNKNOWN;
                 }
-                g.Name = name;
-                if (name != old)
-                {
-                    foreach (var st in ProgramModel.TestSteps)
-                        if (Model.StepCmd.Canonical(st.Cmd) == Model.StepCmd.Vision && string.Equals(st.Target, old, StringComparison.OrdinalIgnoreCase)) st.Target = name;
-                }
-                try { mainWindow?.sequencePage?.RefreshGroupNames(); } catch (Exception) { }
             }));
         }
 
@@ -772,13 +827,37 @@ namespace LEDVision
             }
             RefreshGroupList();
             SelectGroup(g);
-            // Mở luôn ô Name để đặt tên
+            // Mở luôn ô Group để đặt tên
             try
             {
-                groupGrid.CurrentCell = new DataGridCellInfo(g, groupGrid.Columns[0]);
-                groupGrid.BeginEdit();
+                var row = FirstRowOf(g);
+                if (row != null)
+                {
+                    groupGrid.CurrentCell = new DataGridCellInfo(row, groupGrid.Columns[0]);
+                    groupGrid.BeginEdit();
+                }
             }
             catch (Exception) { }
+        }
+
+        // Nhân đôi group đang chọn: ROI (lệch 20 px cho dễ thấy), HSV, bán kính, ngưỡng → group mới "<tên> copy"
+        private void GroupDuplicate_Click(object sender, RoutedEventArgs e)
+        {
+            var src = ProgramModel?.Vision.SelectedGroupLED;
+            if (src == null) return;
+            var g = ProgramModel.Vision.AddGroup(src.Name + " copy");
+            g.RoiRadius = src.RoiRadius;
+            g.ContourArea = src.ContourArea;
+            g.HSV = src.HSV.Clone();
+            foreach (var led in src.Colection)
+            {
+                var c = led.Clone();
+                c.RoiPoint = new System.Windows.Point(led.RoiPoint.X + 20, led.RoiPoint.Y + 20);
+                g.Colection.Add(c);
+            }
+            builder.AttachGroup(g);
+            RefreshGroupList();
+            SelectGroup(g);
         }
 
         private void GroupDelete_Click(object sender, RoutedEventArgs e)
@@ -840,41 +919,6 @@ namespace LEDVision
             }
         }
 
-        private bool isDraggingMultipleLeds = false;
-
-        public bool IsDraggingMultipleLeds
-        {
-            get
-            {
-                return isDraggingMultipleLeds;
-            }
-
-            set
-            {
-                isDraggingMultipleLeds = value;
-                builder.IsDraggingMultipleLeds = value;
-                if (value)
-                {
-                    GroupSelectionBtn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#323F4E"));
-                    GroupSelectionIcon.Foreground = Brushes.White;
-
-                }
-                else
-                {
-                    GroupSelectionBtn.Background = Brushes.White;
-                    GroupSelectionIcon.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#323F4E"));
-
-                }
-
-            }
-        }
-
-
-        private void GroupSelection_Click(object sender, RoutedEventArgs e)
-        {
-            IsDraggingMultipleLeds = !IsDraggingMultipleLeds;
-
-        }
 
 
 
@@ -966,13 +1010,14 @@ namespace LEDVision
                 //   vòng liền / xanh = các ROI CHƯA chọn của nhóm
                 //   "All"     / cam  = tất cả ROI của nhóm
                 var allRois = new List<(Point center, double radius)>();
+                var selectedSet = builder.SelectedLeds;   // ROI đang chọn: lẻ hoặc cả cụm bôi chọn
                 if (this.ProgramModel.Vision.SelectedGroupLED != null)
                 {
                     foreach (var led in this.ProgramModel.Vision.SelectedGroupLED.Colection)
                     {
                         var item = (new Point(led.RoiPoint.X * scale, led.RoiPoint.Y * scale), led.RoiRadius * scale);
                         allRois.Add(item);
-                        if (ReferenceEquals(led, builder.selectedLed)) continue;
+                        if (selectedSet.Contains(led)) continue;
                         rois.Add(item);
                     }
                 }
@@ -1035,15 +1080,17 @@ namespace LEDVision
                     // All chỉ hiện số liệu min ~ max, không vẽ lên đồ thị
                 }
 
-                if (builder.selectedLed != null)
+                if (selectedSet.Count > 0)
                 {
-
+                    // Selected = ROI đang chọn lẻ, hoặc cả cụm đang bôi chọn
                     Mat mask_ = new Mat(hsv.Rows, hsv.Cols, MatType.CV_8UC1, Scalar.All(0));
-
-                    var x = builder.selectedLed.RoiPoint.X * scale;
-                    var y = builder.selectedLed.RoiPoint.Y * scale;
-                    var r = builder.selectedLed.RoiRadius * scale;
-                    Cv2.Circle(mask_, (int)x, (int)y, (int)r, Scalar.All(255), -1);
+                    foreach (var sel in selectedSet)
+                    {
+                        var x = sel.RoiPoint.X * scale;
+                        var y = sel.RoiPoint.Y * scale;
+                        var r = sel.RoiRadius * scale;
+                        Cv2.Circle(mask_, (int)x, (int)y, (int)r, Scalar.All(255), -1);
+                    }
 
                     var hHist_ = new Mat();
                     var sHist_ = new Mat();
@@ -1260,6 +1307,7 @@ namespace LEDVision
                 groupLED.HSV.SAT.Min = satMin;
                 groupLED.HSV.VAL.Max = valueMax;
                 groupLED.HSV.VAL.Min = valueMin;
+                groupLED.NotifyHsvChanged();
             }
 
             this.colorpickerMain.Color.HSV_H = hueMean * 360 / 179;

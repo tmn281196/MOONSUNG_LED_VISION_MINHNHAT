@@ -116,7 +116,7 @@ namespace LEDVision
 
 
         }
-      
+
         private void UpdateHistogram()
         {
             rois.Clear();
@@ -161,7 +161,7 @@ namespace LEDVision
             });
 
 
-          
+
 
         }
 
@@ -266,6 +266,7 @@ namespace LEDVision
                 groupLED.HSV.HUE.Min = hueMin;
                 groupLED.HSV.SAT.Min = satMin;
                 groupLED.HSV.VAL.Min = valueMin;
+                groupLED.NotifyHsvChanged();
 
                 groupLED.HSV.HUE.Max = hueMax;
                 groupLED.HSV.SAT.Max = satMax;

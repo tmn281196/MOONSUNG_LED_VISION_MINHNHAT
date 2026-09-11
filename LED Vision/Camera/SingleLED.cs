@@ -166,9 +166,15 @@ namespace LEDVision.Camera
         // ROI vẫn đi theo; không phụ thuộc vào phần tử đang có focus bàn phím.
         private bool isDragging = false;
 
+        // ROI đang nằm trong cụm bôi chọn (VisionBuilder đặt) → bấm lên nó là kéo cả cụm, không kéo lẻ
+        [JsonIgnore]
+        public bool InCluster { get; set; } = false;
+
         public void Roi_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.ChangedButton != MouseButton.Left || mainCanvas == null) return;
+            // Ctrl+click = thêm / bớt ROI vào cụm; ROI trong cụm = kéo cả cụm → để canvas xử lý
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control || InCluster) return;
 
             isDragging = true;
             Roi.Cursor = Cursors.SizeAll;
@@ -370,7 +376,7 @@ namespace LEDVision.Camera
             {
                 if (Roi != null)
                 {
-             
+
                     // Check if we need to invoke (if not on UI thread)
                     if (Roi.Dispatcher.CheckAccess())
                         {
@@ -384,8 +390,8 @@ namespace LEDVision.Camera
                                 Roi.Stroke = result ? PassBrush : Brushes.Red;
                             });
                         }
-                 
-                  
+
+
 
                 }
                 return result ? "1" : "0";

@@ -183,7 +183,7 @@
 
 
             <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxWidth="440" Margin="6,0">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxWidth="520" Margin="6,0">
 
 
 
@@ -355,11 +355,8 @@
                 <TabItem Header="Inspection Settings" Style="{StaticResource FlatTabItem}">
                     <StackPanel Margin="6,0,0,0">
 
-                    <!--  Công cụ: Group Select, Reset Zoom, Persist  -->
+                    <!--  Công cụ: Reset Zoom, Help, Persist (bôi chọn cụm ROI = kéo chuột trái, không cần nút riêng)  -->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,4,0,6">
-                        <Button x:Name="GroupSelectionBtn" Width="36" Height="32" Margin="4,0" BorderThickness="0" Click="GroupSelection_Click" Cursor="Hand" ToolTip="Group Select">
-                            <fa:IconImage x:Name="GroupSelectionIcon" Foreground="#323F4E" Icon="ObjectGroup" Width="20" />
-                        </Button>
                         <Button Width="36" Height="32" Margin="4,0" Background="Transparent" BorderThickness="0" Click="ResetZoomBtn_Click" Cursor="Hand" ToolTip="Reset Zoom">
                             <fa:IconImage Foreground="#323F4E" Icon="MagnifyingGlassMinus" Width="20" />
                         </Button>
@@ -374,28 +371,41 @@
 
                     <!--  Group LED: danh sách động (thêm / đổi tên / xóa). Không chọn group = khóa ảnh.  -->
                     <StackPanel HorizontalAlignment="Center" Margin="0,4,0,8">
-                        <TextBlock Text="LED Group" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
+                        <TextBlock Text="LED Groups / HSV Range" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,4" />
                         <!--  Bảng group: bấm dòng = chọn group để vẽ / chỉnh; sửa ô Name = đổi tên (step VISION CHECK đổi theo)  -->
-                        <DataGrid x:Name="groupGrid" Width="330" MaxHeight="124" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
-                                  HorizontalGridLinesBrush="#E6EBF0" RowBackground="White" AlternatingRowBackground="#F7F9FB" BorderBrush="#DDE3EA" BorderThickness="1"
+                        <DataGrid x:Name="groupGrid" Width="500" MaxHeight="270" AutoGenerateColumns="False" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
+                                  HorizontalGridLinesBrush="#EEF1F4" RowBackground="White" BorderBrush="#DDE3EA" BorderThickness="1"
                                   CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
-                                  SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="24" VerticalScrollBarVisibility="Auto"
+                                  SelectionMode="Single" SelectionUnit="FullRow" FontSize="12" RowHeight="23" VerticalScrollBarVisibility="Auto"
                                   SelectionChanged="GroupGrid_SelectionChanged" BeginningEdit="GroupGrid_BeginningEdit" CellEditEnding="GroupGrid_CellEditEnding"
-                                  ToolTip="Click a row to select the group being edited: every ROI you draw goes into it. Double-click the Name cell to rename. Each group has its own HSV range, radius and area threshold.">
+                                  ToolTip="One group = 3 rows (H / S / V). Click a row to select the group: every ROI you draw goes into it. Group name and Min / Max are edited in the cells (double-click). Selected / Unselected / All = measured min ~ max of the selected group.">
                             <DataGrid.ColumnHeaderStyle>
                                 <Style TargetType="DataGridColumnHeader">
                                     <Setter Property="Background" Value="#F4F6F8" />
                                     <Setter Property="Foreground" Value="#323F4E" />
                                     <Setter Property="FontWeight" Value="SemiBold" />
-                                    <Setter Property="Padding" Value="6,3" />
+                                    <Setter Property="Padding" Value="5,3" />
                                     <Setter Property="BorderThickness" Value="0,0,0,1" />
                                     <Setter Property="BorderBrush" Value="#DDE3EA" />
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
                                 </Style>
                             </DataGrid.ColumnHeaderStyle>
+                            <DataGrid.RowStyle>
+                                <!--  Dòng H (đầu group) có vạch trên đậm để tách các group  -->
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="BorderBrush" Value="#C9D1DB" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsFirst}" Value="True">
+                                            <Setter Property="BorderThickness" Value="0,1,0,0" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
                             <DataGrid.CellStyle>
                                 <Style TargetType="DataGridCell">
                                     <Setter Property="BorderThickness" Value="0" />
-                                    <Setter Property="Padding" Value="6,0" />
+                                    <Setter Property="Padding" Value="4,0" />
                                     <Setter Property="VerticalContentAlignment" Value="Center" />
                                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
                                     <Style.Triggers>
@@ -407,11 +417,35 @@
                                     </Style.Triggers>
                                 </Style>
                             </DataGrid.CellStyle>
+                            <DataGrid.Resources>
+                                <Style x:Key="CenterText" TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center" />
+                                    <Setter Property="VerticalAlignment" Value="Center" />
+                                </Style>
+                                <Style x:Key="ChText" TargetType="TextBlock" BasedOn="{StaticResource CenterText}">
+                                    <Setter Property="FontWeight" Value="Bold" />
+                                </Style>
+                                <Style x:Key="SelText" TargetType="TextBlock" BasedOn="{StaticResource CenterText}">
+                                    <Setter Property="Foreground" Value="#F5A623" />
+                                </Style>
+                                <Style x:Key="UnselText" TargetType="TextBlock" BasedOn="{StaticResource CenterText}">
+                                    <Setter Property="Foreground" Value="#007ACC" />
+                                </Style>
+                                <Style x:Key="EditBox" TargetType="TextBox">
+                                    <Setter Property="TextAlignment" Value="Center" />
+                                    <Setter Property="Padding" Value="0" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                </Style>
+                            </DataGrid.Resources>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Name" Binding="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Width="*" />
-                                <DataGridTextColumn Header="ROI" Binding="{Binding Colection.Count, Mode=OneWay}" Width="46" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Radius" Binding="{Binding RoiRadius, Mode=OneWay}" Width="58" IsReadOnly="True" />
-                                <DataGridTextColumn Header="Area" Binding="{Binding ContourArea, Mode=OneWay}" Width="52" IsReadOnly="True" />
+                                <DataGridTextColumn Header="Group" Binding="{Binding GroupName, UpdateSourceTrigger=PropertyChanged}" Width="*" MinWidth="96" />
+                                <DataGridTextColumn Header="ROI" Binding="{Binding RoiCount, Mode=OneWay}" Width="36" IsReadOnly="True" ElementStyle="{StaticResource CenterText}" />
+                                <DataGridTextColumn Header="Ch" Binding="{Binding Ch, Mode=OneWay}" Width="30" IsReadOnly="True" ElementStyle="{StaticResource ChText}" />
+                                <DataGridTextColumn Header="Min" Binding="{Binding Min, UpdateSourceTrigger=PropertyChanged}" Width="46" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
+                                <DataGridTextColumn Header="Max" Binding="{Binding Max, UpdateSourceTrigger=PropertyChanged}" Width="46" ElementStyle="{StaticResource CenterText}" EditingElementStyle="{StaticResource EditBox}" />
+                                <DataGridTextColumn Header="Selected" Binding="{Binding Selected, Mode=OneWay}" Width="80" IsReadOnly="True" ElementStyle="{StaticResource SelText}" />
+                                <DataGridTextColumn Header="Unselected" Binding="{Binding Unselected, Mode=OneWay}" Width="80" IsReadOnly="True" ElementStyle="{StaticResource UnselText}" />
+                                <DataGridTextColumn Header="All" Binding="{Binding All, Mode=OneWay}" Width="80" IsReadOnly="True" ElementStyle="{StaticResource CenterText}" />
                             </DataGrid.Columns>
                         </DataGrid>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,6,0,0">
@@ -442,6 +476,7 @@
                                 </Style>
                             </StackPanel.Resources>
                             <Button Content="Add" Click="GroupAdd_Click" ToolTip="Create a new group (Group N, rename it in the Name cell). HSV / radius / threshold are copied from the selected group" />
+                            <Button Content="Duplicate" Click="GroupDuplicate_Click" ToolTip="Copy the selected group with all its ROIs (shifted a little), HSV range, radius and threshold into a new group" />
                             <Button Content="Delete" Click="GroupDelete_Click" ToolTip="Delete the selected group and all its ROIs" />
                             <Button Content="None" Click="GroupNone_Click" Margin="10,0,0,0" ToolTip="Select no group: the image is locked (no drawing / moving)" />
                         </StackPanel>
@@ -470,7 +505,7 @@
                     </StackPanel>
                     <StackPanel Margin="6 6">
                         <!--  Bảng HSV: hàng H / S / V; cột Set (nhập) | Selected (ROI đang chọn, cam) | Unselected (ROI chưa chọn, xanh) | All  -->
-                        <Border BorderBrush="#DDE3EA" BorderThickness="1" Background="White" Padding="6,4" Margin="0,0,0,4">
+                        <Border BorderBrush="#DDE3EA" BorderThickness="1" Background="White" Padding="6,4" Margin="0,0,0,4" Visibility="Collapsed">
                             <Grid>
                             <Grid.Resources>
                                 <Style x:Key="HsvHdr" TargetType="TextBlock">

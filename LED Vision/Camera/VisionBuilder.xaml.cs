@@ -103,32 +103,51 @@ namespace LEDVision.Camera
 
         public Rectangle rectangleSelection;
 
-        private bool isDraggingMultipleLeds = false;
-
-        public bool IsDraggingMultipleLeds
+        // Đang có cụm ROI được bôi chọn (khung chọn nét đứt) → phím tắt / xóa / copy tác động lên cả cụm
+        private bool HasCluster
         {
-            set
-            {
-                isDraggingMultipleLeds = value;
-                if (value)
-                {
-                    ProgramModel.Vision.DisableMouseEvent();
+            get { return selectedLeds != null && selectedLeds.Count > 0; }
+        }
 
-                }
-                else
-                {
-                    ProgramModel.Vision.EnableMouseEvent();
-
-                    mainCanvas.Children.Remove(rectangleSelection);
-
-                }
-
-            }
+        // Các ROI "đang chọn" cho VisionPage (nét đứt, bảng / đồ thị HSV "Selected"): cụm bôi chọn, không có cụm thì ROI đang chọn lẻ
+        public List<SingleLED> SelectedLeds
+        {
             get
             {
-                return isDraggingMultipleLeds;
+                if (HasCluster) return new List<SingleLED>(selectedLeds);
+                var one = new List<SingleLED>();
+                if (selectedLed != null) one.Add(selectedLed);
+                return one;
             }
+        }
 
+        // Bỏ cụm đang chọn (xóa khung chọn)
+        private void ClearCluster()
+        {
+            if (rectangleSelection != null) mainCanvas.Children.Remove(rectangleSelection);
+            rectangleSelection = null;
+            selectedLeds = new List<SingleLED>();
+            SyncClusterFlags();
+        }
+
+        // Đặt cụm đang chọn = danh sách này (vẽ khung bao quanh, đánh dấu InCluster cho từng ROI)
+        private void SetCluster(List<SingleLED> leds)
+        {
+            selectedLeds = leds ?? new List<SingleLED>();
+            if (selectedLeds.Count == 0)
+            {
+                ClearCluster();
+                return;
+            }
+            SetSelectionRectAround(selectedLeds);
+            SyncClusterFlags();
+        }
+
+        private void SyncClusterFlags()
+        {
+            if (ProgramModel == null) return;
+            foreach (var led in ProgramModel.Vision.AllLeds())
+                led.InCluster = selectedLeds != null && selectedLeds.Contains(led);
         }
 
         public VisionBuilder()
@@ -148,11 +167,12 @@ namespace LEDVision.Camera
             mainCanvas.Width = w;
             mainCanvas.Height = h;
         }
-        // ====== Chuột trên canvas ======
-        // Chuột PHẢI      : thêm ROI tại điểm bấm (chỉ chế độ đơn; Group Select không thêm ROI).
-        // Chuột TRÁI, đơn : chọn / kéo 1 ROI (kéo do handler của chính Ellipse xử lý); bấm chỗ trống chỉ lấy focus.
-        // Chuột TRÁI, Group Select: kéo ngoài khung chọn = vẽ khung chọn mới; kéo trong khung chọn = di chuyển cả cụm.
-        //                           Ở chế độ này KHÔNG kéo lẻ từng ROI (handler Ellipse bị tắt).
+        // ====== Chuột trên canvas (một chế độ duy nhất, không còn nút Group Select) ======
+        // Double-click TRÁI chỗ trống : thêm ROI tại điểm bấm.
+        // Kéo TRÁI trên 1 ROI         : di chuyển ROI đó (handler của chính Ellipse xử lý), bỏ cụm đang chọn.
+        // Kéo TRÁI chỗ trống          : bôi khung chọn → các ROI trong khung thành cụm đang chọn.
+        // Kéo TRÁI trong khung chọn   : di chuyển cả cụm (bấm lên ROI thuộc cụm cũng kéo cả cụm). Bấm chỗ trống không kéo → bỏ chọn cụm.
+        // Ctrl + click TRÁI lên ROI    : thêm / bớt ROI đó vào cụm đang chọn.
         private bool isMovingCluster = false;
         private bool isDrawingSelection = false;
 
@@ -174,7 +194,6 @@ namespace LEDVision.Camera
             led.SetParentCanvas(mainCanvas);
             SelectedVisionObject.Colection.Add(led);
             mainCanvas.Children.Add(led.Roi);
-            if (IsDraggingMultipleLeds) led.DisableMouseEvent();
             selectedLed = led;
             return led;
         }
@@ -206,64 +225,84 @@ namespace LEDVision.Camera
             if (SelectedVisionObject == null) return;
             Point p = e.GetPosition(mainCanvas);
 
-            // ----- Chuột phải: thêm ROI (chỉ ở chế độ đơn; Group Select chỉ để chọn / di chuyển cụm) -----
+            // ----- Chuột phải: không làm gì (trước đây là thêm ROI) -----
             if (e.ChangedButton == MouseButton.Right)
             {
-                if (!IsDraggingMultipleLeds)
-                {
-                    AddRoiAt(p);
-                }
                 e.Handled = true;
                 Keyboard.Focus(mainCanvas);
                 return;
             }
             if (e.ChangedButton != MouseButton.Left) return;
 
-            if (IsDraggingMultipleLeds)
+            var hit = SelectedVisionObject.Colection.FirstOrDefault(led => led.IsPointInsideEllipse(p, led.Roi));
+
+            // ----- Double-click trái lên chỗ trống: thêm ROI -----
+            if (e.ClickCount == 2)
             {
-                multiSelectStartPoint = p;
-                if (rectangleSelection != null && selectedLeds != null && selectedLeds.Count > 0 && IsPointInRect(rectangleSelection, p))
+                if (hit == null)
                 {
-                    // Bấm trong khung chọn → kéo cả cụm
-                    isMovingCluster = true;
+                    ClearCluster();
+                    AddRoiAt(p);
                 }
-                else
-                {
-                    // Bấm ngoài khung → bắt đầu vẽ khung chọn mới
-                    if (rectangleSelection != null) mainCanvas.Children.Remove(rectangleSelection);
-                    selectedLeds = new List<SingleLED>();
-                    rectangleSelection = new Rectangle()
-                    {
-                        Stroke = Brushes.White,
-                        StrokeDashArray = new DoubleCollection() { 2, 2 },
-                        StrokeThickness = 1,
-                        Width = 0,
-                        Height = 0,
-                    };
-                    Canvas.SetLeft(rectangleSelection, p.X);
-                    Canvas.SetTop(rectangleSelection, p.Y);
-                    mainCanvas.Children.Add(rectangleSelection);
-                    isDrawingSelection = true;
-                }
-                mainCanvas.CaptureMouse();
+                e.Handled = true;
                 Keyboard.Focus(mainCanvas);
+                return;
+            }
+
+            bool ctrl = (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control;
+
+            if (hit != null && ctrl)
+            {
+                // Ctrl+click lên ROI: thêm / bớt vào cụm
+                var list = selectedLeds != null ? new List<SingleLED>(selectedLeds) : new List<SingleLED>();
+                if (list.Contains(hit)) list.Remove(hit); else list.Add(hit);
+                SetCluster(list);
+                selectedLed = hit;
+                e.Handled = true;
+                Keyboard.Focus(mainCanvas);
+                return;
+            }
+
+            if (hit != null && !hit.InCluster)
+            {
+                // Bấm lên 1 ROI ngoài cụm: chọn nó, kéo do Roi_MouseDown/Move/Up của SingleLED xử lý. Cụm đang chọn bị bỏ.
+                startPoint = p;
+                selectedLed = hit;
+                ClearCluster();
+                return;
+            }
+
+            multiSelectStartPoint = p;
+            if (HasCluster && (hit != null || IsPointInRect(rectangleSelection, p)))
+            {
+                // Bấm trong khung chọn → kéo cả cụm
+                isMovingCluster = true;
             }
             else
             {
-                // Chế độ đơn: chỉ chọn. Kéo ROI do Roi_MouseDown/Move/Up của SingleLED xử lý (Ellipse phải giữ focus).
-                startPoint = p;
-                selectedLed = SelectedVisionObject.Colection.FirstOrDefault(led => led.IsPointInsideEllipse(p, led.Roi));
-                if (selectedLed == null)
+                // Bấm chỗ trống → bắt đầu bôi khung chọn mới
+                ClearCluster();
+                selectedLed = null;
+                rectangleSelection = new Rectangle()
                 {
-                    Keyboard.Focus(mainCanvas);
-                }
+                    Stroke = Brushes.White,
+                    StrokeDashArray = new DoubleCollection() { 2, 2 },
+                    StrokeThickness = 1,
+                    Width = 0,
+                    Height = 0,
+                };
+                Canvas.SetLeft(rectangleSelection, p.X);
+                Canvas.SetTop(rectangleSelection, p.Y);
+                mainCanvas.Children.Add(rectangleSelection);
+                isDrawingSelection = true;
             }
+            mainCanvas.CaptureMouse();
+            Keyboard.Focus(mainCanvas);
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (SelectedVisionObject == null) return;
-            if (!IsDraggingMultipleLeds) return; // chế độ đơn: kéo ROI do Ellipse tự xử lý
             if (e.LeftButton != MouseButtonState.Pressed || rectangleSelection == null) return;
 
             Point cur = e.GetPosition(mainCanvas);
@@ -299,16 +338,14 @@ namespace LEDVision.Camera
             if (SelectedVisionObject == null) return;
             if (e.ChangedButton != MouseButton.Left) return; // chuột phải đã xử lý ở MouseDown
 
-            if (IsDraggingMultipleLeds)
+            if (isDrawingSelection && rectangleSelection != null)
             {
-                if (isDrawingSelection && rectangleSelection != null)
-                {
-                    selectedLeds = SelectedVisionObject.Colection.Where(led => led.IsPointInsideRectangle(rectangleSelection)).ToList();
-                }
-                isDrawingSelection = false;
-                isMovingCluster = false;
-                mainCanvas.ReleaseMouseCapture();
+                // Bôi không trúng ROI nào (hoặc chỉ bấm) → không có cụm; có → co khung lại vừa cụm
+                SetCluster(SelectedVisionObject.Colection.Where(led => led.IsPointInsideRectangle(rectangleSelection)).ToList());
             }
+            isDrawingSelection = false;
+            isMovingCluster = false;
+            if (mainCanvas.IsMouseCaptured) mainCanvas.ReleaseMouseCapture();
             Keyboard.Focus(mainCanvas);
         }
 
@@ -380,8 +417,8 @@ namespace LEDVision.Camera
                 return;
             }
 
-            // ----- Di chuyển + xóa cái/cụm đang chọn (theo chế độ hiện tại) -----
-            if (IsDraggingMultipleLeds)
+            // ----- Di chuyển + xóa: đang có cụm bôi chọn → cả cụm, không thì ROI đang chọn -----
+            if (HasCluster)
             {
                 switch (e.Key)
                 {
@@ -419,6 +456,17 @@ namespace LEDVision.Camera
                 mainCanvas.Children.Remove(led.Roi);
             }
             group.Colection.Clear();
+        }
+
+        // Gắn mọi ROI của một group mới (Duplicate group) lên canvas
+        public void AttachGroup(GroupLED g)
+        {
+            if (g == null) return;
+            foreach (var led in g.Colection)
+            {
+                led.SetParentCanvas(mainCanvas);
+                if (!mainCanvas.Children.Contains(led.Roi)) mainCanvas.Children.Add(led.Roi);
+            }
         }
 
         // Xóa mọi ROI của group đang chọn (VisionPage gọi trước khi xóa group)
@@ -476,20 +524,17 @@ namespace LEDVision.Camera
         // Nhân bản tại chỗ (1 cái hoặc cả cụm), lệch 1 chút để dễ thấy
         private void DuplicateSelection()
         {
-            if (IsDraggingMultipleLeds)
+            if (HasCluster)
             {
-                if (selectedLeds == null || selectedLeds.Count == 0) return;
                 var clones = selectedLeds.Clone();
                 foreach (var led in clones)
                 {
                     led.RoiPoint = new Point(led.RoiPoint.X + 20, led.RoiPoint.Y + 20);
                     led.SetParentCanvas(mainCanvas);
                     mainCanvas.Children.Add(led.Roi);
-                    led.DisableMouseEvent();
                     if (SelectedVisionObject != null) SelectedVisionObject.Colection.Add(led);
                 }
-                selectedLeds = clones;           // cụm vừa nhân bản trở thành cụm đang chọn
-                SetSelectionRectAround(clones);
+                SetCluster(clones);              // cụm vừa nhân bản trở thành cụm đang chọn
             }
             else
             {
@@ -509,9 +554,8 @@ namespace LEDVision.Camera
         {
             copyBuffer = new List<SingleLED>();
             pasteCount = 0;
-            if (IsDraggingMultipleLeds)
+            if (HasCluster)
             {
-                if (selectedLeds == null) return;
                 copyBuffer = selectedLeds.Clone();
             }
             else
@@ -533,16 +577,12 @@ namespace LEDVision.Camera
                 led.RoiPoint = new Point(led.RoiPoint.X + off, led.RoiPoint.Y + off);
                 led.SetParentCanvas(mainCanvas);
                 mainCanvas.Children.Add(led.Roi);
-                if (IsDraggingMultipleLeds) led.DisableMouseEvent();
                 SelectedVisionObject.Colection.Add(led);
             }
-            // Bản dán trở thành cái đang chọn (không phải bản gốc)
+            // Bản dán trở thành cái đang chọn (không phải bản gốc); dán nhiều cái → thành cụm đang chọn
             selectedLed = pasted.LastOrDefault();
-            if (IsDraggingMultipleLeds)
-            {
-                selectedLeds = pasted;
-                SetSelectionRectAround(pasted);
-            }
+            if (pasted.Count > 1) SetCluster(pasted);
+            else ClearCluster();
         }
     }
 }

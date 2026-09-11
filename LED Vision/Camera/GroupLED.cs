@@ -79,7 +79,14 @@ namespace LEDVision.Camera
             set
             {
                 hsv = value;
+                OnPropertyChanged();
             }
+        }
+
+        // Gọi sau khi sửa HSV.HUE / SAT / VAL từ ô Set hoặc histogram → các ô H/S/V trong bảng group cập nhật
+        public void NotifyHsvChanged()
+        {
+            OnPropertyChanged(nameof(HSV));
         }
 
         private bool maintainState = true;

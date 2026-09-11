@@ -228,6 +228,7 @@
     <Compile Include="Camera\ColorComponent.cs" />
     <Compile Include="Camera\Vision.cs" />
     <Compile Include="Camera\GroupLED.cs" />
+    <Compile Include="Camera\GroupHsvRow.cs" />
     <Compile Include="Camera\SingleLED.cs" />
     <Compile Include="Camera\VisionBuilder.xaml.cs">
       <DependentUpon>VisionBuilder.xaml</DependentUpon>
