@@ -41,7 +41,7 @@
         </StackPanel>
 
         <!--  Cột phải gom chung: Model + Total/Pass/Fail + Used Pins xếp dọc, căn giữa  -->
-        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,24,0,0">
 
             <!--  Banner trạng thái/kết quả: vùng CỐ ĐỊNH trên cùng, chỉ 1 cái hiện → không đè lên số bên dưới  -->
             <Grid Height="240" Margin="0,0,0,16">
