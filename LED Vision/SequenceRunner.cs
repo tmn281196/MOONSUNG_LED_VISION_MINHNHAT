@@ -39,6 +39,8 @@ namespace LEDVision
                 step.Value = "";
                 step.Result = RUN;
                 step.Takt = "";
+                // Chỉ hiện ROI của group đang kiểm tra; step không phải VISION CHECK → không hiện ROI nào
+                ShowOnly(vision, StepCmd.Canonical(step.Cmd) == StepCmd.Vision ? vision?.FindGroup(step.Target) : null, ui);
                 var sw = Stopwatch.StartNew();
                 bool ok;
                 try
@@ -183,6 +185,30 @@ namespace LEDVision
                     step.Value = "BAD CMD";
                     return false;
             }
+        }
+
+        // Hiện đúng các ROI của một group (ẩn phần còn lại). Màu xanh / đỏ do CheckBlueArea đặt ngay từ mẫu đầu.
+        private static void ShowOnly(Vision vision, GroupLED group, Dispatcher ui)
+        {
+            if (vision == null) return;
+            Action act = () =>
+            {
+                foreach (var g in vision.Groups)
+                {
+                    bool show = g == group;
+                    foreach (var led in g.Colection)
+                    {
+                        if (led.Roi == null) continue;
+                        led.Roi.Visibility = show ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed;
+                        if (show) led.Roi.Stroke = System.Windows.Media.Brushes.White;   // chưa có mẫu nào
+                    }
+                }
+            };
+            try
+            {
+                if (ui != null && !ui.CheckAccess()) ui.Invoke(act); else act();
+            }
+            catch (Exception) { }
         }
 
         // DELAY: chờ ms, cột Value đếm thời gian đã trôi (cập nhật mỗi 10 ms): "350 / 1000 ms". false = bị hủy.

@@ -260,9 +260,11 @@ namespace LEDVision
                 ngPopup.Visibility = Visibility.Collapsed;
                 testingPopup.Visibility = Visibility.Visible;
 
+                // Bắt đầu test: ẩn hết ROI; tới step VISION CHECK nào thì SequenceRunner chỉ hiện ROI của group đó
                 foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
                 {
-                    led.Roi.Stroke = Brushes.White;
+                    led.ResultFinal = SingleLED.RESULT.UNKNOWN;
+                    led.Roi.Visibility = Visibility.Collapsed;
                 }
                 Model.TestStepList.ClearResults(visionTester.ProgramModel.TestSteps);
 
@@ -313,6 +315,17 @@ namespace LEDVision
             testBusy = false;
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            // Kết thúc: hiện lại mọi ROI đã được kiểm tra (xanh / đỏ theo kết quả), ROI chưa kiểm tra vẫn ẩn
+            Dispatcher.Invoke(new Action(() =>
+            {
+                foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
+                {
+                    bool checkedLed = led.ResultFinal != SingleLED.RESULT.UNKNOWN;
+                    led.Roi.Visibility = checkedLed ? Visibility.Visible : Visibility.Collapsed;
+                    if (checkedLed) led.Roi.Stroke = led.ResultFinal == SingleLED.RESULT.OK ? SingleLED.PassBrush : Brushes.Red;
+                }
+            }));
 
             if (VisionTest.PostTestNG)
             {
