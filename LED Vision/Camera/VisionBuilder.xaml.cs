@@ -220,18 +220,21 @@ namespace LEDVision.Camera
             mainCanvas.Children.Add(rectangleSelection);
         }
 
+        // Chuột phải trên ảnh → VisionPage đưa ảnh về tỉ lệ 1:1 (reset zoom / pan)
+        public event EventHandler ResetZoomRequested;
+
         private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (SelectedVisionObject == null) return;
-            Point p = e.GetPosition(mainCanvas);
-
-            // ----- Chuột phải: không làm gì (trước đây là thêm ROI) -----
+            // ----- Chuột phải: về tỉ lệ 1:1 (kể cả khi chưa chọn group) -----
             if (e.ChangedButton == MouseButton.Right)
             {
+                ResetZoomRequested?.Invoke(this, EventArgs.Empty);
                 e.Handled = true;
                 Keyboard.Focus(mainCanvas);
                 return;
             }
+            if (SelectedVisionObject == null) return;
+            Point p = e.GetPosition(mainCanvas);
             if (e.ChangedButton != MouseButton.Left) return;
 
             var hit = SelectedVisionObject.Colection.FirstOrDefault(led => led.IsPointInsideEllipse(p, led.Roi));

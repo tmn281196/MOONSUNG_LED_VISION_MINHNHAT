@@ -246,6 +246,7 @@ namespace LEDVision
             BindCameraSettings();
             CameraSetting.Instance.CameraOpened += (s, e) => Dispatcher.BeginInvoke(new Action(ApplyCameraRanges));
             this.PreviewKeyDown += VisionPage_PreviewKeyDown;
+            builder.ResetZoomRequested += (s2, e2) => ResetZoomBtn_Click(s2, null);
 
             this.mainWindow = mainWindow;
             obtainFrameTimer.Elapsed += ObtainFrameTimer_Elapsed;

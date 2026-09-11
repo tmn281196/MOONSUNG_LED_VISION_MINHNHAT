@@ -177,22 +177,6 @@
                         <Image x:Name="cameraViewer" Width="680" Height="906" Stretch="Uniform" RenderTransform="{StaticResource sharedTransform}" />
                         <vb:VisionBuilder  x:Name="builder"  Width="680" Height="906"  RenderTransform="{StaticResource sharedTransform}" />
                     </Canvas>
-                    <!--  Nút về tỉ lệ 1:1 (reset zoom / pan) ở góc phải trên khung camera  -->
-                    <Button Width="34" Height="34" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,8,0" Background="#80323F4E" BorderThickness="0"
-                            Click="ResetZoomBtn_Click" Cursor="Hand" Focusable="False" ToolTip="Reset zoom (back to 1:1)">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="0">
-                                    <fa:IconImage Width="18" Height="18" Foreground="White" Icon="Expand" />
-                                </Border>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="bd" Property="Background" Value="#C0323F4E" />
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
                 </Grid>
             </StackPanel>
 
