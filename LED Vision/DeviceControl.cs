@@ -87,8 +87,72 @@ namespace LEDVision
             }
         }
 
-        // 5 relay đa dụng, đi trong cùng gói lệnh với Power / Up / Down (bit 3..7 của từ ngõ ra)
+        // 5 relay đa dụng. Mọi ngõ ra (Power / Up / Down / RL1..5) đều gửi MỖI FRAME MỘT NGÕ RA bằng lệnh 0x52 [index][state]:
+        //   0 = Power, 1 = Up, 2 = Down, 3..7 = RL1..RL5
         public bool[] Relay = new bool[5];
+        private const byte CMD_SET_OUTPUT = 0x52;
+        public const int OUT_POWER = 0, OUT_UP = 1, OUT_DOWN = 2, OUT_RELAY1 = 3;
+
+        // Trạng thái Power / Up / Down đã gửi lần cuối → SendControl chỉ gửi ngõ nào vừa đổi
+        private readonly bool[] lastSent = new bool[3];
+        private bool lastSentValid = false;
+
+        // Gửi một ngõ ra. Trả về true nếu gửi được (cổng mở và không lỗi).
+        public bool SetOutput(int index, bool on)
+        {
+            if (index < 0 || index > 7) return false;
+            if (!IsConnected || port == null || !port.IsOpen) return false;
+            // 5 byte dữ liệu như gói 0x4F để frame giữ đúng 10 byte firmware đang chờ
+            byte[] data = { CMD_SET_OUTPUT, (byte)index, (byte)(on ? 1 : 0), 0x00, 0x00 };
+            SendBytes(GetFrame(data));
+            return IsConnected;
+        }
+
+        // Relay: mỗi relay một frame, gửi chặt (lỗi / timeout / cổng chưa mở = mất kết nối)
+        public bool SetRelay(int index, bool on)
+        {
+            if (index < 0 || index >= Relay.Length) return false;
+            Relay[index] = on;
+            if (!IsConnected || port == null || !port.IsOpen)
+            {
+                IsConnected = false;
+                return false;
+            }
+            bool prev = TreatTimeoutAsDisconnect;
+            TreatTimeoutAsDisconnect = true;
+            try
+            {
+                return SetOutput(OUT_RELAY1 + index, on);
+            }
+            finally
+            {
+                TreatTimeoutAsDisconnect = prev;
+            }
+        }
+
+        // Tắt cả 5 relay, mỗi cái một frame
+        public void AllRelaysOff()
+        {
+            for (int i = 0; i < Relay.Length; i++)
+            {
+                if (Relay[i]) SetRelay(i, false);
+            }
+        }
+
+        // Gửi Power / Up / Down: mỗi ngõ một frame, chỉ gửi ngõ nào khác lần gửi trước (lần đầu gửi cả 3)
+        private void SendChangedOutputs()
+        {
+            bool[] now = { Power, CylinderUp, CylinderDown };
+            for (int i = 0; i < 3; i++)
+            {
+                if (!lastSentValid || now[i] != lastSent[i])
+                {
+                    if (!SetOutput(i, now[i])) return;   // mất kết nối giữa chừng → lần sau gửi lại đủ
+                    lastSent[i] = now[i];
+                }
+            }
+            lastSentValid = true;
+        }
 
         private bool _Power;
 
@@ -149,6 +213,7 @@ namespace LEDVision
         public void Disconnect(Rectangle statusLamp)
         {
             IsConnected = false;
+            lastSentValid = false;
             try
             {
                 if (port != null && port.IsOpen)
@@ -226,6 +291,7 @@ namespace LEDVision
                     ReadTimeout = PortTimeoutMs
                 };
 
+                lastSentValid = false;
                 try
                 {
                     port.Open();
@@ -364,11 +430,11 @@ namespace LEDVision
                 Power,
                 CylinderUp,
                 CylinderDown,
-                Relay[0],
-                Relay[1],
-                Relay[2],
-                Relay[3],
-                Relay[4]
+                false,
+                false,
+                false,
+                false,
+                false
             };
 
             BitArray bits = new BitArray(OutPuts.ToArray());
@@ -379,8 +445,7 @@ namespace LEDVision
         public void SendControl()
         {
             if (!IsConnected || port == null || !port.IsOpen) return;
-            var data = IOtoData();
-            SendBytes(GetFrame(data));
+            SendChangedOutputs();
         }
 
         // Gửi "chặt" cho thao tác chủ động (nút Power / Up / Down): cổng chưa mở hoặc ghi lỗi, kể cả timeout,
@@ -396,7 +461,7 @@ namespace LEDVision
             TreatTimeoutAsDisconnect = true;
             try
             {
-                SendBytes(GetFrame(IOtoData()));
+                SendChangedOutputs();
             }
             finally
             {

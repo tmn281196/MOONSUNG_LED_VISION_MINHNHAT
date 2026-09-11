@@ -840,11 +840,11 @@ namespace LEDVision
             int idx;
             if (!int.TryParse(btn.Tag as string, out idx) || idx < 0 || idx >= VisionTest.Device.Relay.Length) return;
 
-            VisionTest.Device.Relay[idx] = btn.IsChecked == true;
-            SendControlStrict();
+            bool ok = VisionTest.Device.SetRelay(idx, btn.IsChecked == true);   // một frame cho đúng relay này
+            try { mainWindow?.UpdateConnectionStatus(); } catch (Exception) { }
 
             // Gửi không được (COM chưa nối / rớt) → trả nút về trạng thái cũ để không hiển thị sai
-            if (!VisionTest.Device.IsConnected)
+            if (!ok)
             {
                 VisionTest.Device.Relay[idx] = false;
                 btn.IsChecked = false;

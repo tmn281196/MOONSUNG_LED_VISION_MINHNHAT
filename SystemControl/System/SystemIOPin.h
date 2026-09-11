@@ -6,7 +6,7 @@
 #define DOWN_OUT 26  // Lift down control
 #define POWER 24     // A site 220V power
 
-// 5 general-purpose relay outputs, controlled from the PC (output word bits 3..7)
+// 5 general-purpose relay outputs, controlled from the PC one at a time (command 0x52, index 3..7)
 #define RELAY1 28
 #define RELAY2 30
 #define RELAY3 32
@@ -95,9 +95,22 @@ void SetSystemOutput(uint8_t data[4]) {
 
   digitalWrite(UP_OUT, bitRead(data32, 1));
   digitalWrite(DOWN_OUT, bitRead(data32, 2));
+}
 
-  // bits 3..7 = RELAY1..RELAY5
-  for (int i = 0; i < 5; i++) {
-    digitalWrite(RELAY_PINS[i], bitRead(data32, 3 + i));
+// Command 0x52: ONE output per frame. data[0] = output index, data[1] = 0 off / 1 on
+//   0 = POWER (only allowed while DOWN sensor is active, same interlock as 0x4F)
+//   1 = UP_OUT, 2 = DOWN_OUT, 3..7 = RELAY1..RELAY5
+void SetOutput(uint8_t index, uint8_t state) {
+  uint8_t level = state ? HIGH : LOW;
+  switch (index) {
+    case 0:
+      if (!digitalRead(DOWN_IN)) level = LOW;
+      digitalWrite(POWER, level);
+      break;
+    case 1: digitalWrite(UP_OUT, level); break;
+    case 2: digitalWrite(DOWN_OUT, level); break;
+    default:
+      if (index >= 3 && index < 8) digitalWrite(RELAY_PINS[index - 3], level);
+      break;
   }
 }

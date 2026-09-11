@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LED COLOR INSPECTION — IO Box protocol</title>
+<style>
+  body { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; color: #2b2b2b; margin: 0; background: #f4f6f8; }
+  main { max-width: 980px; margin: 0 auto; padding: 28px 32px 60px; background: #fff; }
+  h1 { font-size: 24px; color: #323F4E; margin: 0 0 4px; }
+  h2 { font-size: 18px; color: #323F4E; border-bottom: 1px solid #dde3ea; padding-bottom: 4px; margin: 30px 0 12px; }
+  h3 { font-size: 15px; color: #323F4E; margin: 20px 0 6px; }
+  .sub { color: #6b7a8c; margin-bottom: 18px; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0 14px; }
+  th, td { border: 1px solid #dde3ea; padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: #f4f6f8; font-weight: 600; }
+  code, .hex { font-family: Consolas, "Courier New", monospace; }
+  .hex { background: #f4f6f8; border: 1px solid #dde3ea; padding: 2px 6px; white-space: nowrap; }
+  .frame { display: flex; gap: 4px; flex-wrap: wrap; margin: 8px 0 12px; }
+  .frame div { border: 1px solid #323F4E; padding: 6px 8px; min-width: 64px; text-align: center; background: #fff; }
+  .frame div b { display: block; font-family: Consolas, monospace; font-size: 15px; }
+  .frame div span { font-size: 11px; color: #6b7a8c; }
+  .frame div.fixed { background: #e1e5ea; }
+  .frame div.data { background: #e3f1fb; }
+  .frame div.chk { background: #fff3d6; }
+  .note { background: #fff8e6; border-left: 4px solid #F5A623; padding: 8px 12px; margin: 10px 0; }
+  .warn { background: #fdecec; border-left: 4px solid #E5484D; padding: 8px 12px; margin: 10px 0; }
+  .kv td:first-child { width: 160px; color: #6b7a8c; }
+</style>
+</head>
+<body>
+<main>
+<h1>LED COLOR INSPECTION — IO Box protocol</h1>
+<div class="sub">Serial protocol between the LED COLOR INSPECTION app (PC, <code>LED Vision/DeviceControl.cs</code>) and the IO Box firmware
+<code>SystemControl/System/System.ino</code> (Arduino Mega 2560). One test station: one 220 V power relay for the product,
+one pneumatic cylinder (UP / DOWN outputs, one DOWN sensor) and five general-purpose relays.</div>
+
+<table class="kv">
+<tr><td>Board</td><td>Arduino Mega 2560</td></tr>
+<tr><td>Port</td><td>9600 8N1</td></tr>
+<tr><td>TX command</td><td>10 bytes, every command</td></tr>
+<tr><td>Reply (ack)</td><td>6 bytes</td></tr>
+<tr><td>Input frame</td><td>10 bytes, sent by the board on sensor change or on request</td></tr>
+<tr><td>Prefix / suffix</td><td><span class="hex">44 45</span> … <span class="hex">56</span> (ASCII "DE" … "V")</td></tr>
+<tr><td>Checksum</td><td>XOR of every byte from the first prefix byte up to the last data byte, placed just before the suffix</td></tr>
+</table>
+
+<h2>§1 · Frame format</h2>
+
+<h3>TX  PC → IO Box (10 bytes, every command)</h3>
+<div class="frame">
+  <div class="fixed"><b>44</b><span>prefix 1</span></div>
+  <div class="fixed"><b>45</b><span>prefix 2</span></div>
+  <div class="fixed"><b>06</b><span>size = 6</span></div>
+  <div class="data"><b>cmd</b><span>opcode</span></div>
+  <div class="data"><b>d0</b><span>data</span></div>
+  <div class="data"><b>d1</b><span>data</span></div>
+  <div class="data"><b>d2</b><span>data</span></div>
+  <div class="data"><b>d3</b><span>data</span></div>
+  <div class="chk"><b>xor</b><span>44 ^ 45 ^ 06 ^ cmd ^ d0..d3</span></div>
+  <div class="fixed"><b>56</b><span>suffix</span></div>
+</div>
+<p>The size byte is the number of bytes from <code>cmd</code> to <code>d3</code> plus one, always <span class="hex">06</span> for the commands below.
+The firmware starts parsing when it sees <span class="hex">44</span>, reads until it has 10 bytes, then dispatches on byte 3 (<code>cmd</code>).
+Bytes after the 10th are discarded. The firmware does <b>not</b> verify the checksum today; the PC always sends a correct one so a future
+firmware may enforce it.</p>
+
+<h3>RX  IO Box → PC, command ack (6 bytes)</h3>
+<div class="frame">
+  <div class="fixed"><b>44</b><span>prefix 1</span></div>
+  <div class="fixed"><b>45</b><span>prefix 2</span></div>
+  <div class="data"><b>4F</b><span>"output done"</span></div>
+  <div class="data"><b>00</b></div>
+  <div class="fixed"><b>52</b></div>
+  <div class="fixed"><b>56</b><span>suffix</span></div>
+</div>
+<p>Sent after every accepted output command (<span class="hex">4F</span> and <span class="hex">52</span>). Fixed content, no checksum. The PC does not wait for it.</p>
+
+<h3>RX  IO Box → PC, input frame (10 bytes)</h3>
+<div class="frame">
+  <div class="fixed"><b>44</b><span>prefix 1</span></div>
+  <div class="fixed"><b>45</b><span>prefix 2</span></div>
+  <div class="fixed"><b>06</b><span>size</span></div>
+  <div class="data"><b>49</b><span>"input"</span></div>
+  <div class="data"><b>00</b></div>
+  <div class="data"><b>in</b><span>sensor bits</span></div>
+  <div class="data"><b>00</b></div>
+  <div class="data"><b>00</b></div>
+  <div class="chk"><b>xor</b><span>bytes 0..7</span></div>
+  <div class="fixed"><b>56</b><span>suffix</span></div>
+</div>
+<table>
+<tr><th>Bit of <code>in</code></th><th>Meaning</th><th>Level</th></tr>
+<tr><td>bit 0</td><td>UP sensor (pin 3, input pull-up)</td><td>raw pin level, 1 = open / not detected</td></tr>
+<tr><td>bit 1</td><td>DOWN sensor (pin 2, input pull-up)</td><td>raw pin level: <b>1 = cylinder fully down</b>, 0 = not down</td></tr>
+</table>
+<p>The board sends this frame by itself every time the DOWN sensor changes (after a 50 ms debounce), and on request (§2).
+The PC reads only bits 0 and 1; other bits of <code>in</code> are undefined. Frames shorter than 7 bytes are dropped by the PC.</p>
+
+<h2>§2 · Command table</h2>
+<table>
+<tr><th>Command</th><th>cmd</th><th>d0</th><th>d1</th><th>d2</th><th>d3</th><th>Reply</th></tr>
+<tr><td>Set ONE output</td><td>0x52</td><td>output index 0..7</td><td>0 off / 1 on</td><td>0</td><td>0</td><td>6-byte ack</td></tr>
+<tr><td>Set ALL outputs (legacy)</td><td>0x4F</td><td>0</td><td>0</td><td>0</td><td>bit 0 POWER, bit 1 UP, bit 2 DOWN</td><td>6-byte ack</td></tr>
+<tr><td>Request input</td><td colspan="5">byte 2 of the frame = 0x49 (in place of the size byte); the rest is ignored</td><td>10-byte input frame</td></tr>
+<tr><td colspan="7"><b>EVENT frame — board → PC, nobody asked</b></td></tr>
+<tr><td>DOWN sensor changed</td><td colspan="5">sent by the board after a 50 ms debounce</td><td>10-byte input frame</td></tr>
+</table>
+<p>Anything not in this table gets no reply and changes nothing.</p>
+
+<h2>§3 · Command details</h2>
+
+<h3>Set ONE output — 0x52</h3>
+<p>The command the app uses for everything: <b>one frame changes exactly one output</b>, all other outputs keep their state.</p>
+<table>
+<tr><th>Index (d0)</th><th>Output</th><th>Pin</th><th>Notes</th></tr>
+<tr><td>0</td><td>POWER (product 220 V relay)</td><td>24</td><td>interlocked: forced OFF while the DOWN sensor is not active (see §4)</td></tr>
+<tr><td>1</td><td>UP_OUT (cylinder up)</td><td>22</td><td></td></tr>
+<tr><td>2</td><td>DOWN_OUT (cylinder down)</td><td>26</td><td></td></tr>
+<tr><td>3</td><td>RELAY 1</td><td>28</td><td>general purpose</td></tr>
+<tr><td>4</td><td>RELAY 2</td><td>30</td><td>general purpose</td></tr>
+<tr><td>5</td><td>RELAY 3</td><td>32</td><td>general purpose</td></tr>
+<tr><td>6</td><td>RELAY 4</td><td>34</td><td>general purpose</td></tr>
+<tr><td>7</td><td>RELAY 5</td><td>36</td><td>general purpose</td></tr>
+</table>
+<p>Examples (xor shown as computed):</p>
+<table>
+<tr><th>Action</th><th>TX</th><th>RX</th></tr>
+<tr><td>Relay 1 ON</td><td><span class="hex">44 45 06 52 03 01 00 00 57 56</span></td><td><span class="hex">44 45 4F 00 52 56</span></td></tr>
+<tr><td>Relay 1 OFF</td><td><span class="hex">44 45 06 52 03 00 00 00 56 56</span></td><td><span class="hex">44 45 4F 00 52 56</span></td></tr>
+<tr><td>Power ON</td><td><span class="hex">44 45 06 52 00 01 00 00 54 56</span></td><td><span class="hex">44 45 4F 00 52 56</span></td></tr>
+<tr><td>Cylinder DOWN on</td><td><span class="hex">44 45 06 52 02 01 00 00 56 56</span></td><td><span class="hex">44 45 4F 00 52 56</span></td></tr>
+</table>
+<p>The app sends Power / Up / Down with this command too, but only for outputs whose state <b>changed</b> since the last send
+(all three are sent after the port is opened). Relays are sent one frame per button press.</p>
+
+<h3>Set ALL outputs — 0x4F (legacy)</h3>
+<p>Kept for older PC software. <code>d3</code> carries the three cylinder-station bits; <code>d0..d2</code> are unused. This command does <b>not</b> touch the five relays.</p>
+<table>
+<tr><th>Action</th><th>TX</th></tr>
+<tr><td>Power ON, cylinder outputs off</td><td><span class="hex">44 45 06 4F 00 00 00 01 49 56</span></td></tr>
+<tr><td>All off</td><td><span class="hex">44 45 06 4F 00 00 00 00 48 56</span></td></tr>
+</table>
+
+<h3>Request input — 0x49</h3>
+<p>A frame whose byte 2 is <span class="hex">49</span> makes the board answer with the current input frame immediately. The app does not use it; the
+unsolicited event frame is enough.</p>
+
+<h2>§4 · Interlocks and power-on state</h2>
+<ul>
+  <li>At power-on every output (POWER, UP_OUT, DOWN_OUT, RELAY 1..5) is LOW.</li>
+  <li>POWER can only be switched ON while the DOWN sensor is active. A POWER ON command arriving while the cylinder is not down is turned into OFF.</li>
+  <li>When the DOWN sensor <b>releases</b> (cylinder leaves the bottom) the board cuts POWER by itself, before the PC even receives the event frame.</li>
+  <li>The five relays have no interlock; they keep their state until commanded or until the board is reset.</li>
+</ul>
+<div class="warn">The board never times out an output. If the PC disconnects while POWER or a relay is ON, it stays ON. The app sends
+all-off frames when a test ends or is cancelled; if you write your own host software, do the same.</div>
+
+<h2>§5 · Pin map</h2>
+<table>
+<tr><th>Dir</th><th>Pin</th><th>Signal</th></tr>
+<tr><td>Input</td><td>DIO 2</td><td>DOWN_IN — cylinder fully-down sensor (INPUT_PULLUP)</td></tr>
+<tr><td>Input</td><td>DIO 3</td><td>UP_IN — reserved (not fitted on the current jig)</td></tr>
+<tr><td>Output</td><td>DIO 22</td><td>UP_OUT — cylinder up valve</td></tr>
+<tr><td>Output</td><td>DIO 24</td><td>POWER — product 220 V relay</td></tr>
+<tr><td>Output</td><td>DIO 26</td><td>DOWN_OUT — cylinder down valve</td></tr>
+<tr><td>Output</td><td>DIO 28</td><td>RELAY 1</td></tr>
+<tr><td>Output</td><td>DIO 30</td><td>RELAY 2</td></tr>
+<tr><td>Output</td><td>DIO 32</td><td>RELAY 3</td></tr>
+<tr><td>Output</td><td>DIO 34</td><td>RELAY 4</td></tr>
+<tr><td>Output</td><td>DIO 36</td><td>RELAY 5</td></tr>
+</table>
+<div class="note">Relay modules with active-LOW inputs must be wired through the module's own transistor stage or the polarity inverted in
+<code>SetOutput()</code>; the firmware drives HIGH = ON.</div>
+
+<h2>§6 · How the app drives a test</h2>
+<ol>
+  <li>DOWN sensor event (bit 1 goes 0 → 1) or the START button → test starts. Events during a test, and for 1.5 s after it ends, are ignored.</li>
+  <li>Wait for DOWN sensor (Sensor timeout) → Before power ON delay → POWER ON (index 0) → After power ON delay → camera check.</li>
+  <li>NG → retest: POWER OFF, UP_OUT on, wait for the DOWN sensor to release, Delay between UP / DOWN, UP_OUT off, DOWN_OUT on,
+      wait for the DOWN sensor, Before power ON, POWER ON, After power ON, check again.</li>
+  <li>End or EMERGENCY STOP → POWER OFF, UP_OUT off, DOWN_OUT off.</li>
+</ol>
+</main>
+</body>
+</html>
