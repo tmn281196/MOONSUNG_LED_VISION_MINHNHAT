@@ -138,9 +138,6 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Settings" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Ink}" VerticalAlignment="Center" />
-                    <Button Style="{StaticResource IconBtn}" Margin="8,0,0,0" Click="SettingHelp_Click" ToolTip="Help: what each setting does (EN / TH)">
-                        <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Ink}" Icon="CircleQuestion" />
-                    </Button>
                 </StackPanel>
                 <TextBlock Text="System controller, log folder, retest and pin-replacement settings. Press SAVE SETTING to write setting.json." Style="{StaticResource CardHint}" Margin="0,2,0,16" />
 

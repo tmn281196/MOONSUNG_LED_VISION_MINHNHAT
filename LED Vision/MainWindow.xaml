@@ -277,6 +277,10 @@
                 <Button x:Name="infoBtn" Style="{StaticResource NavBtn}" Click="InfoBtn_Click" ToolTip="About" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
                     <fa:IconImage Width="28" Height="28" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" Icon="CircleInfo" />
                 </Button>
+                <!--  Help của trang đang mở (Auto / Vision ROI / Sequence / Setting), EN / TH  -->
+                <Button x:Name="helpBtn" Style="{StaticResource NavBtn}" Click="HelpBtn_Click" ToolTip="Help for the current page (EN / TH)" ToolTipService.Placement="Left" ToolTipService.VerticalOffset="14">
+                    <fa:IconImage Width="28" Height="28" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}" Icon="CircleQuestion" />
+                </Button>
                 <Rectangle Width="1" Height="32" Fill="#4A5A6E" Margin="6,0" VerticalAlignment="Center" />
                 <!--  Nút cửa sổ  -->
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="12,0,0,0">

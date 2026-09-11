@@ -479,6 +479,18 @@ namespace LEDVision
             modelNameText.Text = string.IsNullOrEmpty(name) ? "NO MODEL" : name.ToUpperInvariant();
         }
 
+        // Nút "?" thanh top: hướng dẫn của trang đang mở (Auto / ROI trang Vision / Sequence / Setting), EN / TH
+        private void HelpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string topic = "auto";
+            if (visionPageBtn.IsChecked == true) topic = "roi";
+            else if (sequencePageBtn.IsChecked == true) topic = "sequence";
+            else if (settingPageBtn.IsChecked == true) topic = "setting";
+            var win = new RoiHelpWindow(topic);
+            try { win.Owner = this; } catch (Exception) { }
+            win.Show();
+        }
+
         // Nút Info cuối sidebar: popup 2 logo + phiên bản
         private void InfoBtn_Click(object sender, RoutedEventArgs e)
         {
