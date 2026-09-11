@@ -247,10 +247,12 @@ namespace LEDVision
             testBusy = true;
             VisionTest.CancelRequested = false;
 
+            // Ngay trước test: tắt nguồn LED và mọi relay (lượt NG trước có thể còn để bật)
             VisionTest.Device.CylinderDown = false;
             VisionTest.Device.CylinderUp = false;
             VisionTest.Device.Power = false;
             VisionTest.Device.SendControl();
+            try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
 
             // Showing Testing banner
             Dispatcher.Invoke(new Action(() =>
@@ -375,12 +377,13 @@ namespace LEDVision
 
             }
 
+            // PASS: nguồn LED đã tắt ở trên, tắt nốt 5 relay. NG: GIỮ NGUYÊN nguồn / relay / xi lanh như lúc chuỗi step dừng
+            // (để người vận hành nhìn được trạng thái lỗi); chỉ EMERGENCY STOP hoặc lượt test kế tiếp mới tắt.
+            if (!VisionTest.PostTestNG)
+            {
+                try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
+            }
             VisionTest.PostTestNG = false;
-
-            // Kết thúc test (PASS hay NG): luôn tắt nguồn LED và cả 5 relay, dù chuỗi step có POWER OFF hay không
-            VisionTest.Device.Power = false;
-            VisionTest.Device.SendControl();
-            try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
 
             // Switch to Ready Stage: xóa trigger còn sót + mở cửa sổ chặn 1,5 s (cạnh reed tới trễ sau khi xi lanh về)
             VisionTest.Device.IgnoreTrigger = false;
