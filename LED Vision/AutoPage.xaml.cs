@@ -363,6 +363,10 @@ namespace LEDVision
             }
 
             VisionTest.PostTestNG = false;
+
+            // Kết thúc test (PASS hay NG): luôn tắt nguồn LED và cả 5 relay, dù chuỗi step có POWER OFF hay không
+            VisionTest.Device.Power = false;
+            VisionTest.Device.SendControl();
             try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
 
             // Switch to Ready Stage: xóa trigger còn sót + mở cửa sổ chặn 1,5 s (cạnh reed tới trễ sau khi xi lanh về)
