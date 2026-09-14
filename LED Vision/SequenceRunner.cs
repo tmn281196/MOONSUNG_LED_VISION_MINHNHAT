@@ -54,7 +54,7 @@ namespace LEDVision
                     ok = false;
                 }
                 sw.Stop();
-                step.Takt = (sw.ElapsedMilliseconds / 1000.0).ToString("0.00");
+                step.Takt = sw.ElapsedMilliseconds.ToString();   // ms
 
                 if (VisionTest.CancelRequested)
                 {

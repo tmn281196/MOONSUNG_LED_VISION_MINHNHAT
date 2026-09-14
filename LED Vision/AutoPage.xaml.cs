@@ -251,8 +251,30 @@ namespace LEDVision
             }
         }
 
+        // Takt tổng: mốc bắt đầu lượt test (retest không đặt lại), đóng băng khi có kết quả / hủy
+        private DateTime taktStart = DateTime.MinValue;
+        private bool taktRunning = false;
+
+        private void UpdateTakt()
+        {
+            if (taktText == null || !taktRunning) return;
+            taktText.Text = (DateTime.Now - taktStart).TotalSeconds.ToString("0.00") + " s";
+        }
+
+        private void StopTakt()
+        {
+            if (!taktRunning) return;
+            taktRunning = false;
+            Dispatcher.Invoke(new Action(() => taktText.Text = (DateTime.Now - taktStart).TotalSeconds.ToString("0.00") + " s"));
+        }
+
         private void VisionTest_TestStartedEvent(object sender, EventArgs e)
         {
+            if (!testBusy)
+            {
+                taktStart = DateTime.Now;   // lượt mới (TestStarted cũng được gọi lại ở mỗi retest → không reset)
+                taktRunning = true;
+            }
             testBusy = true;
             VisionTest.CancelRequested = false;
 
@@ -299,6 +321,7 @@ namespace LEDVision
         // Test bị hủy: tắt nguồn, thả xi lanh, hiện READY, KHÔNG tính PASS / FAIL, không tăng số lần dùng pin
         private void VisionTest_TestCancelled(object sender, EventArgs e)
         {
+            StopTakt();
             testBusy = false;
             VisionTest.Device.Power = false;
             VisionTest.Device.CylinderDown = false;
@@ -324,6 +347,7 @@ namespace LEDVision
 
         private void VisionTest_TestFinished(object sender, EventArgs e)
         {
+            StopTakt();
             testBusy = false;
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
@@ -533,6 +557,7 @@ namespace LEDVision
                 EnsureSurfaceSized();
                 UpdateCylinderIndicator();
                 UpdateStartButton();
+                UpdateTakt();
 
                 if (CameraSetting.Instance.LastFrame != null)
                 {

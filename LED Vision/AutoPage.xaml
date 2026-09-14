@@ -52,6 +52,13 @@
             </Grid>
 
 
+            <!--  Takt time tổng của lượt test (từ lúc bắt đầu tới lúc có kết quả), chạy sống khi đang test  -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-6,0,10">
+                <TextBlock Text="TAKT" FontSize="18" Foreground="#6B7A8C" VerticalAlignment="Center" />
+                <TextBlock x:Name="taktText" Text="0.00 s" FontSize="26" FontWeight="Bold" Foreground="#323F4E" Margin="12,0,0,0" VerticalAlignment="Center"
+                           ToolTip="Total test time: from the trigger to the result (includes retests)" />
+            </StackPanel>
+
             <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
             <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,28">
             <StackPanel>
@@ -235,7 +242,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTextColumn Header="Takt" Binding="{Binding Takt}" Width="52" />
+                    <DataGridTextColumn Header="Takt (ms)" Binding="{Binding Takt}" Width="70" />
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
