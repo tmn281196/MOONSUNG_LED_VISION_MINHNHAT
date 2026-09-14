@@ -59,7 +59,7 @@
             </Border>
 
             <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
-            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,28">
+            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,8">
             <StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
                 <!--  Cột TOTAL: rê chuột vào là nút CLEAR hiện đè lên chữ TOTAL  -->
@@ -95,10 +95,16 @@
             </StackPanel>
 
 
+            </StackPanel>
+            </Border>
+
+            <!--  Panel nút: START / EMERGENCY STOP + ALL ROI  -->
+            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,20,24,20">
+            <StackPanel>
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--  "?" : hướng dẫn trang Auto + timeline chuỗi test (EN / TH)  -->
-            <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="200" Height="44" Margin="0,30,0,0" Cursor="Hand" Focusable="False"
+            <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="300" Height="60" Margin="0" Cursor="Hand" Focusable="False"
                     ToolTip="Start a test manually (no trigger needed). While a test runs this button becomes EMERGENCY STOP.">
                 <Button.Style>
                     <!--  Nút phẳng xám, chữ + icon tối, rê chuột đậm hơn một chút  -->
@@ -110,7 +116,7 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
                                     <Border x:Name="bd" Background="{TemplateBinding Background}">
-                                        <TextBlock Text="{TemplateBinding Content}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+                                        <TextBlock Text="{TemplateBinding Content}" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
                                     </Border>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
@@ -132,7 +138,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--  Toggle mắt: bật = hiện TẤT CẢ ROI với kết quả lần kiểm tra gần nhất (xanh OK, đỏ NG, xám chưa kiểm tra); tắt = ẩn hết  -->
-            <ToggleButton x:Name="allRoiBtn" Width="200" Height="36" Margin="0,8,0,0" Cursor="Hand" Focusable="False" Click="AllRoi_Click"
+            <ToggleButton x:Name="allRoiBtn" Width="300" Height="46" Margin="0,10,0,0" Cursor="Hand" Focusable="False" Click="AllRoi_Click"
                           ToolTip="Show / hide all ROIs with their last result (green = OK, red = NG, grey = not checked)">
                 <ToggleButton.Style>
                     <Style TargetType="ToggleButton">
@@ -144,8 +150,8 @@
                                 <ControlTemplate TargetType="ToggleButton">
                                     <Border x:Name="bd" Background="{TemplateBinding Background}">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <fa:IconImage x:Name="ic" Width="20" Height="20" Foreground="{TemplateBinding Foreground}" Icon="EyeSlash" />
-                                            <TextBlock Text="ALL ROI" FontSize="14" FontWeight="Bold" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+                                            <fa:IconImage x:Name="ic" Width="22" Height="22" Foreground="{TemplateBinding Foreground}" Icon="EyeSlash" />
+                                            <TextBlock Text="ALL ROI" FontSize="16" FontWeight="Bold" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
                                         </StackPanel>
                                     </Border>
                                     <ControlTemplate.Triggers>
