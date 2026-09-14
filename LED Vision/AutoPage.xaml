@@ -45,7 +45,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -67,9 +66,9 @@
             </Border>
 
             <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
-            <Border Grid.Row="2" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,8">
-            <StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
+            <Border Grid.Row="2" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,20,24,20">
+            <StackPanel VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <!--  Cột TOTAL: rê chuột vào là nút CLEAR hiện đè lên chữ TOTAL  -->
                 <StackPanel x:Name="totalCol" Orientation="Vertical" HorizontalAlignment="Center" Background="Transparent">
                     <TextBlock x:Name="totalCount" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Text="{Binding TotalCnt}" />
@@ -107,7 +106,7 @@
             </Border>
 
             <!--  Panel nút: START / EMERGENCY STOP + RESULT (xem ảnh ghép của lượt test gần nhất)  -->
-            <Border Grid.Row="4" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,20,24,20">
+            <Border Grid.Row="3" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,20,24,20">
             <StackPanel>
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -181,7 +180,7 @@
             </Border>
 
             <!--  Panel dưới cùng: trạng thái xi lanh + số lần dùng pin  -->
-            <Border Grid.Row="5" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,18,24,18">
+            <Border Grid.Row="4" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,18,24,18">
             <StackPanel>
             <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
