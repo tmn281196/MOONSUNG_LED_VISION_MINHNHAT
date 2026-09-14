@@ -1,4 +1,4 @@
-using LEDVision.Camera;
+﻿using LEDVision.Camera;
 using LEDVision.Properties;
 using System;
 using System.Collections.Generic;
@@ -72,14 +72,13 @@ namespace LEDVision.Model
         }
 
         // Model chưa có step nào (file cũ / model mới) → dựng chuỗi mặc định:
-        // POWER ON → DELAY 1000 → với mỗi group i: RELAY i ON → VISION CHECK group → RELAY i OFF
+        // POWER ON → với mỗi group i: RELAY i ON → VISION CHECK group → RELAY i OFF
         // (relay i cấp chung cho nhóm LED i của bảng LED quét; group thứ 6 trở đi không có relay).
         // Trả về true nếu có thêm.
         public bool EnsureDefaultSteps()
         {
             if (testSteps.Count > 0) return false;
             testSteps.Add(new TestStep { Cmd = StepCmd.Power, Sub = "ON", Comment = "LED power on" });
-            testSteps.Add(new TestStep { Cmd = StepCmd.Delay, Spec = "1000", Comment = "Wait for LEDs to light up" });
             int relay = 1;
             foreach (var g in vision.Groups)
             {
