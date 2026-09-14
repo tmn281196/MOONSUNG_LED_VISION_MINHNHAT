@@ -20,7 +20,7 @@ namespace LEDVision
 
         // Trả về true = mọi step (không skip) PASS. Step FAIL → dừng ngay tại đó (các step sau không chạy, để trống).
         // Hủy giữa chừng → false.
-        public static bool Run(IList<TestStep> steps, DeviceControl device, Vision vision, Dispatcher ui)
+        public static bool Run(IList<TestStep> steps, DeviceControl device, Vision vision, Dispatcher ui, Action<TestStep> onVisionStepDone = null)
         {
             if (steps == null || steps.Count == 0) return false;
             bool allPass = true;
@@ -62,6 +62,11 @@ namespace LEDVision
                     return false;
                 }
                 step.Result = ok ? PASS : FAIL;
+                // VISION CHECK xong (ROI đã có màu kết quả) → AutoPage chụp khung camera để ghép ảnh log
+                if (onVisionStepDone != null && StepCmd.Canonical(step.Cmd) == StepCmd.Vision)
+                {
+                    try { onVisionStepDone(step); } catch (Exception) { }
+                }
                 if (!ok)
                 {
                     allPass = false;

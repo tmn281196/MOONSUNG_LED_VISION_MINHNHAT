@@ -243,7 +243,7 @@ namespace LEDVision
                 return;
             }
             Model.TestStepList.ClearResults(steps);
-            bool pass = SequenceRunner.Run(steps, VisionTest.Device, model.Vision, Dispatcher);
+            bool pass = SequenceRunner.Run(steps, VisionTest.Device, model.Vision, Dispatcher, CaptureVisionStep);
             if (!pass && !VisionTest.CancelRequested)
             {
                 VisionTest.FailCount += 1;
@@ -274,6 +274,7 @@ namespace LEDVision
             {
                 taktStart = DateTime.Now;   // lượt mới (TestStarted cũng được gọi lại ở mỗi retest → không reset)
                 taktRunning = true;
+                lock (logShots) logShots.Clear();
             }
             testBusy = true;
             VisionTest.CancelRequested = false;
@@ -364,8 +365,8 @@ namespace LEDVision
 
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    // Only capture when NG
-                    CaptureCanvasArea(path);
+                    // Only capture when NG: ghép các ảnh đã chụp ở từng step VISION CHECK; không có ảnh nào thì chụp màn hình như cũ
+                    if (!SaveLogImage(path)) CaptureCanvasArea(path);
 
                     // Showing NG banner
                     testingPopup.Visibility = Visibility.Collapsed;
@@ -425,6 +426,89 @@ namespace LEDVision
 
             SettingPage.IncreaseTimes();
 
+        }
+
+        // ====== Ảnh log: chụp khung camera (ảnh + ROI xanh / đỏ) sau mỗi step VISION CHECK, cuối lượt ghép thành một tấm ======
+        private readonly List<KeyValuePair<string, BitmapSource>> logShots = new List<KeyValuePair<string, BitmapSource>>();
+
+        // Gọi từ luồng nền của SequenceRunner ngay sau khi step VISION CHECK có kết quả
+        private void CaptureVisionStep(TestStep step)
+        {
+            string label = step.No + ". " + step.Label + "   " + step.Value + "   " + step.Result;
+            int retest = VisionTest != null ? VisionTest.retest : 0;
+            if (retest > 0) label += "   (retest " + retest + ")";
+            Dispatcher.Invoke(new Action(() =>
+            {
+                var img = RenderCameraCanvas();
+                if (img != null) lock (logShots) logShots.Add(new KeyValuePair<string, BitmapSource>(label, img));
+            }));
+        }
+
+        // Vẽ mainCanvas (ảnh camera + ROI) ra bitmap, không phụ thuộc màn hình / cửa sổ có bị che
+        private BitmapSource RenderCameraCanvas()
+        {
+            int w = (int)mainCanvas.ActualWidth, h = (int)mainCanvas.ActualHeight;
+            if (w <= 0 || h <= 0) return null;
+            var dv = new DrawingVisual();
+            using (var dc = dv.RenderOpen())
+            {
+                dc.DrawRectangle(Brushes.Black, null, new System.Windows.Rect(0, 0, w, h));
+                dc.DrawRectangle(new VisualBrush(mainCanvas), null, new System.Windows.Rect(0, 0, w, h));
+            }
+            var rtb = new RenderTargetBitmap(w, h, 96, 96, PixelFormats.Pbgra32);
+            rtb.Render(dv);
+            rtb.Freeze();
+            return rtb;
+        }
+
+        // Ghép các ảnh đã chụp thành một tấm (xếp ngang, tối đa 4 ảnh một hàng, mỗi ảnh có dải nhãn ở trên) rồi lưu JPG.
+        // Trả về false nếu chưa có ảnh nào (chuỗi step không có VISION CHECK, hoặc lỗi trước đó).
+        private bool SaveLogImage(string filePath)
+        {
+            List<KeyValuePair<string, BitmapSource>> shots;
+            lock (logShots) shots = new List<KeyValuePair<string, BitmapSource>>(logShots);
+            if (shots.Count == 0) return false;
+            try
+            {
+                const int perRow = 4, labelH = 40, gap = 6;
+                int tileW = shots[0].Value.PixelWidth, tileH = shots[0].Value.PixelHeight;
+                int cols = Math.Min(perRow, shots.Count);
+                int rows = (shots.Count + perRow - 1) / perRow;
+                int totalW = cols * tileW + (cols - 1) * gap;
+                int totalH = rows * (labelH + tileH) + (rows - 1) * gap;
+
+                var dv = new DrawingVisual();
+                using (var dc = dv.RenderOpen())
+                {
+                    dc.DrawRectangle(new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E)), null, new System.Windows.Rect(0, 0, totalW, totalH));
+                    var tf = new Typeface("Segoe UI");
+                    for (int i = 0; i < shots.Count; i++)
+                    {
+                        int x = (i % perRow) * (tileW + gap);
+                        int y = (i / perRow) * (labelH + tileH + gap);
+                        bool fail = shots[i].Key.EndsWith(SequenceRunner.FAIL) || shots[i].Key.Contains("   " + SequenceRunner.FAIL);
+                        var bar = new SolidColorBrush(fail ? System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D) : System.Windows.Media.Color.FromRgb(0x06, 0xC7, 0x55));
+                        dc.DrawRectangle(bar, null, new System.Windows.Rect(x, y, tileW, labelH));
+                        var ft = new FormattedText(shots[i].Key, System.Globalization.CultureInfo.InvariantCulture, System.Windows.FlowDirection.LeftToRight, tf, 20, Brushes.White, 96);
+                        ft.MaxTextWidth = tileW - 16;
+                        ft.MaxLineCount = 1;
+                        dc.DrawText(ft, new System.Windows.Point(x + 8, y + (labelH - ft.Height) / 2));
+                        dc.DrawImage(shots[i].Value, new System.Windows.Rect(x, y + labelH, tileW, tileH));
+                    }
+                }
+                var rtb = new RenderTargetBitmap(totalW, totalH, 96, 96, PixelFormats.Pbgra32);
+                rtb.Render(dv);
+                var enc = new JpegBitmapEncoder { QualityLevel = 88 };
+                enc.Frames.Add(BitmapFrame.Create(rtb));
+                Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath));
+                using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write)) enc.Save(fs);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SaveLogImage: " + ex.Message);
+                return false;
+            }
         }
 
         private void CaptureCanvasArea(string filePath)
