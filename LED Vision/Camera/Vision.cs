@@ -300,6 +300,9 @@ namespace LEDVision.Camera
                         frame.Dispose();
                         if (score) r.Samples++;
                         sampleIndex++;
+
+                        // Luật "một mẫu sáng là OK": mọi ROI đã OK → thoát sớm, không cần chờ hết Timeout
+                        if (PassOnAnySample && score && ledOk.All(x => x)) break;
                     }
                     Task.Delay(sampleMs).Wait();
                 }
