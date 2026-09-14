@@ -312,21 +312,47 @@ namespace LEDVision.Camera
         }
 
 
+        // Hình học ROI chụp trên luồng UI (Canvas.Width / Roi.Width là DependencyProperty, luồng nền không đọc được)
+        public struct RoiGeom
+        {
+            public double CanvasW, CanvasH, X, Y, W, H;
+        }
+
+        public RoiGeom SnapshotGeom()
+        {
+            return new RoiGeom
+            {
+                CanvasW = MainCanvas != null ? MainCanvas.Width : 1,
+                CanvasH = MainCanvas != null ? MainCanvas.Height : 1,
+                X = RoiPoint.X,
+                Y = RoiPoint.Y,
+                W = Roi != null ? Roi.Width : RoiRadius * 2,
+                H = Roi != null ? Roi.Height : RoiRadius * 2,
+            };
+        }
+
+        // Gọi từ luồng UI (trang Vision xem trực tiếp)
         public string CheckBlueArea(Mat frame, GroupLED groupLED)
+        {
+            return CheckBlueArea(frame, groupLED, SnapshotGeom());
+        }
+
+        // Gọi được từ luồng nền (test Auto): hình học đã chụp sẵn, chỉ màu viền ROI được đẩy lên UI
+        public string CheckBlueArea(Mat frame, GroupLED groupLED, RoiGeom geom)
         {
 
             if (frame == null || frame.Empty())
                 return "";
 
 
-            double scaleX = frame.Width / MainCanvas.Width;
-            double scaleY = frame.Height / MainCanvas.Height;
+            double scaleX = frame.Width / geom.CanvasW;
+            double scaleY = frame.Height / geom.CanvasH;
 
             // Scale circle ROI
-            int cx = (int)(RoiPoint.X * scaleX);
-            int cy = (int)(RoiPoint.Y * scaleY);
-            int rx = (int)(Roi.Width * scaleX / 2); // Keep uniform scaling
-            int ry = (int)(Roi.Height * scaleY / 2); // Keep uniform scaling
+            int cx = (int)(geom.X * scaleX);
+            int cy = (int)(geom.Y * scaleY);
+            int rx = (int)(geom.W * scaleX / 2); // Keep uniform scaling
+            int ry = (int)(geom.H * scaleY / 2); // Keep uniform scaling
 
             // Ensure the circle is within bounds
             int x = Math.Max(0, cx - rx);

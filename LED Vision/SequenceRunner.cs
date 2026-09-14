@@ -9,7 +9,7 @@ using System.Windows.Threading;
 namespace LEDVision
 {
     // Chạy chuỗi step (POWER / RELAY / DELAY / VISION CHECK) của model ở trang Auto.
-    // Chạy trên thread nền; step VISION CHECK được đẩy lên UI thread (ROI là Ellipse của WPF).
+    // Chạy trên thread nền, kể cả VISION CHECK (hình học ROI được chụp trên UI trước, màu ROI đẩy lên UI sau).
     // Mỗi step ghi Value / Result / Takt vào chính TestStep để bảng ở trang Auto hiện theo.
     public static class SequenceRunner
     {
@@ -158,11 +158,8 @@ namespace LEDVision
                         return false;
                     }
                     int ms = step.TimeoutMs(StepCmd.DefaultVisionMs);
-                    Vision.GroupCheckResult r = null;
-                    if (ui != null && !ui.CheckAccess())
-                        ui.Invoke(new Action(() => { r = vision.InspectGroup(group, ms); }));
-                    else
-                        r = vision.InspectGroup(group, ms);
+                    // Chạy ngay trên luồng nền: InspectGroup tự chụp hình học ROI trên UI rồi xử lý ảnh ở đây → ảnh camera vẫn realtime
+                    Vision.GroupCheckResult r = vision.InspectGroup(group, ms);
                     if (VisionTest.CancelRequested) return false;
                     if (r == null || r.Samples == 0)
                     {

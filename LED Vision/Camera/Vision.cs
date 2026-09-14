@@ -275,6 +275,12 @@ namespace LEDVision.Camera
             if (maxSettle < 0) maxSettle = 0;
             if (settle > maxSettle) settle = maxSettle;
 
+            // Hình học ROI chụp MỘT lần trên luồng UI → vòng lấy mẫu bên dưới chạy ở luồng nền, ảnh camera vẫn vẽ tiếp
+            var geoms = new SingleLED.RoiGeom[group.Colection.Count];
+            Action snap = () => { for (int i = 0; i < group.Colection.Count; i++) geoms[i] = group.Colection[i].SnapshotGeom(); };
+            var uiDisp = group.Colection.Count > 0 && group.Colection[0].Roi != null ? group.Colection[0].Roi.Dispatcher : null;
+            if (uiDisp != null && !uiDisp.CheckAccess()) uiDisp.Invoke(snap); else snap();
+
             bool[] ledNg = new bool[group.Colection.Count];    // luật "mọi mẫu": có 1 mẫu tắt là NG
             bool[] ledOk = new bool[group.Colection.Count];    // luật "một mẫu": có 1 mẫu sáng là OK
             int sampleIndex = 0;
@@ -291,7 +297,7 @@ namespace LEDVision.Camera
                         bool score = sampleIndex >= settle;
                         for (int i = 0; i < group.Colection.Count; i++)
                         {
-                            string output = group.Colection[i].CheckBlueArea(frame, group);
+                            string output = group.Colection[i].CheckBlueArea(frame, group, geoms[i]);
                             if (score)
                             {
                                 if (output != "1") ledNg[i] = true; else ledOk[i] = true;
