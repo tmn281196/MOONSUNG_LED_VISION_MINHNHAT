@@ -188,7 +188,7 @@
                             <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Orange}" Icon="FolderOpen" />
                             <TextBlock Text="Log Directory" Style="{StaticResource CardTitle}" />
                         </StackPanel>
-                        <TextBlock Text="Folder where test logs are written." Style="{StaticResource CardHint}" />
+                        <TextBlock Text="Folder where log images are written. One JPG per test: the camera view of every VISION CHECK step side by side, each with its step name and result." Style="{StaticResource CardHint}" />
 
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -203,6 +203,12 @@
                                 </StackPanel>
                             </Button>
                         </Grid>
+
+                        <TextBlock Text="Save log image when the test is" Style="{StaticResource FieldLabel}" Margin="0,12,0,4" />
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox Content="NG" IsChecked="{Binding LogImageNg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="13" Foreground="{StaticResource Ink}" VerticalContentAlignment="Center" Margin="0,0,28,0" />
+                            <CheckBox Content="PASS" IsChecked="{Binding LogImagePass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontSize="13" Foreground="{StaticResource Ink}" VerticalContentAlignment="Center" />
+                        </StackPanel>
                     </StackPanel>
                 </Border>
 

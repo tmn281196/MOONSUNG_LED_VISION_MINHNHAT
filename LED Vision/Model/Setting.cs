@@ -287,6 +287,21 @@ namespace LEDVision.Model
             }
         }
 
+        // Xuất ảnh log (ảnh ghép các step VISION CHECK) khi lượt test NG / PASS
+        private bool logImageNg = true;
+        public bool LogImageNg
+        {
+            get { return logImageNg; }
+            set { if (logImageNg != value) { logImageNg = value; NotifyPropertyChanged(nameof(LogImageNg)); } }
+        }
+
+        private bool logImagePass = false;
+        public bool LogImagePass
+        {
+            get { return logImagePass; }
+            set { if (logImagePass != value) { logImagePass = value; NotifyPropertyChanged(nameof(LogImagePass)); } }
+        }
+
         // Thời gian persist tính bằng ms (không phụ thuộc nhịp lấy mẫu). PersistFrames cũ giữ để tương thích file cũ.
         private int persistMs = 500;
         public int PersistMs

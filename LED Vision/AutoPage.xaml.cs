@@ -355,60 +355,46 @@ namespace LEDVision
 
             // Kết thúc: giữ nguyên màn hình ROI của step VISION CHECK cuối cùng đã chạy (không hiện lại các group khác)
 
-            if (VisionTest.PostTestNG)
+            bool ng = VisionTest.PostTestNG;
+            bool wantLog = ng ? (SettingModel?.SettingVal?.LogImageNg ?? true) : (SettingModel?.SettingVal?.LogImagePass ?? false);
+
+            if (ng)
             {
                 FailCnt += 1;
-
-
-
                 Task.Delay(1000).Wait();
-
                 Dispatcher.Invoke(new Action(() =>
                 {
-                    // Only capture when NG: ghép các ảnh đã chụp ở từng step VISION CHECK; không có ảnh nào thì chụp màn hình như cũ
-                    if (!SaveLogImage(path)) CaptureCanvasArea(path);
+                    // Ảnh log NG (nếu bật ở Setting): ghép các ảnh đã chụp ở từng step VISION CHECK; không có ảnh nào thì chụp màn hình như cũ
+                    if (wantLog && !SaveLogImage(path)) CaptureCanvasArea(path);
 
                     // Showing NG banner
                     testingPopup.Visibility = Visibility.Collapsed;
                     passPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Visible;
-
                 }));
-
-
             }
             else
             {
                 PassCnt += 1;
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    // Ảnh log PASS (nếu bật ở Setting)
+                    if (wantLog) SaveLogImage(path);
+
                     // Showing PASS banner
                     testingPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Collapsed;
-
                     passPopup.Visibility = Visibility.Visible;
-
                 }));
-
-                // if test result is PASS then reseting cylinder
-                VisionTest.Device.Power = false;
-                VisionTest.Device.CylinderDown = false;
-                VisionTest.Device.CylinderUp = true;
-                VisionTest.Device.SendControl();
-
-                Task.Delay(1000).Wait();
-
-
-
-
             }
 
-            // PASS: nguồn LED đã tắt ở trên, tắt nốt 5 relay. NG: GIỮ NGUYÊN nguồn / relay / xi lanh như lúc chuỗi step dừng
-            // (để người vận hành nhìn được trạng thái lỗi); chỉ EMERGENCY STOP hoặc lượt test kế tiếp mới tắt.
-            if (!VisionTest.PostTestNG)
-            {
-                try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
-            }
+            // Kết thúc (PASS hay NG): tắt nguồn LED và cả 5 relay. PASS thì nhấc jig lên; NG giữ jig ở dưới.
+            VisionTest.Device.Power = false;
+            VisionTest.Device.CylinderDown = false;
+            VisionTest.Device.CylinderUp = !ng;
+            VisionTest.Device.SendControl();
+            try { VisionTest.Device.AllRelaysOff(); } catch (Exception) { }
+            if (!ng) Task.Delay(1000).Wait();
             VisionTest.PostTestNG = false;
 
             // Switch to Ready Stage: xóa trigger còn sót + mở cửa sổ chặn 1,5 s (cạnh reed tới trễ sau khi xi lanh về)
