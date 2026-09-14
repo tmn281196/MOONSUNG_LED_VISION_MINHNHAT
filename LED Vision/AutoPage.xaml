@@ -55,7 +55,7 @@
             <!--  Takt time tổng của lượt test (từ lúc bắt đầu tới lúc có kết quả), chạy sống khi đang test  -->
             <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,-2,0,14" Padding="0,10"
                     ToolTip="Total test time: from the trigger to the result (includes retests)">
-                <TextBlock x:Name="taktText" Text="0.00 s" FontSize="48" FontWeight="Bold" Foreground="#323F4E" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock x:Name="taktText" Text="0.00 s" FontSize="64" FontWeight="Bold" Foreground="#323F4E" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Border>
 
             <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
