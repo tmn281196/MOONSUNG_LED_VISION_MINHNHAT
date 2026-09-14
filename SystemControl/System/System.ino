@@ -20,7 +20,7 @@
   board -> PC, unsolicited
       [0x49][2][level][chk][0x11]  every time the DOWN sensor changes (50 ms debounce).
       level = raw pin level of the INPUT_PULLUP sensor: 1 = cylinder fully down, 0 = not down.
-      The board also cuts POWER by itself the moment the DOWN sensor releases.
+      The board also cuts POWER and RELAY1..5 by itself the moment the DOWN sensor releases.
 
   Pin map:
       Input   DIO 2  DOWN_IN (INPUT_PULLUP)      DIO 3  UP_IN (reserved)

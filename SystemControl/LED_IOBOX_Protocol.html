@@ -100,7 +100,7 @@ so a serial monitor shows the conversation as pairs of 5-byte lines.</p>
 <tr><td>0</td><td class="en">POWER (product 220 V relay)</td><td class="th">POWER (รีเลย์ไฟ 220 V ของชิ้นงาน)</td><td>24</td><td class="en">interlocked: forced OFF while the DOWN sensor is not active (§5)</td><td class="th">มีอินเตอร์ล็อก: บังคับ OFF ขณะเซ็นเซอร์ DOWN ไม่ทำงาน (§5)</td></tr>
 <tr><td>1</td><td class="en">UP_OUT (cylinder up valve)</td><td class="th">UP_OUT (วาล์วยกกระบอกขึ้น)</td><td>22</td><td></td></tr>
 <tr><td>2</td><td class="en">DOWN_OUT (cylinder down valve)</td><td class="th">DOWN_OUT (วาล์วกดกระบอกลง)</td><td>26</td><td></td></tr>
-<tr><td>3</td><td>RELAY 1</td><td>28</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
+<tr><td>3</td><td>RELAY 1</td><td>28</td><td class="en">general purpose, forced OFF when the DOWN sensor releases (§5)</td><td class="th">อเนกประสงค์ บังคับ OFF เมื่อเซ็นเซอร์ DOWN หลุด (§5)</td></tr>
 <tr><td>4</td><td>RELAY 2</td><td>30</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
 <tr><td>5</td><td>RELAY 3</td><td>32</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
 <tr><td>6</td><td>RELAY 4</td><td>34</td><td class="en">general purpose</td><td class="th">อเนกประสงค์</td></tr>
@@ -142,14 +142,14 @@ A 0 → 1 change is the test trigger; a 1 → 0 change during a test cancels it.
 <ul class="en">
   <li>At power-on every output (POWER, UP_OUT, DOWN_OUT, RELAY 1..5) is LOW.</li>
   <li>POWER can only be switched ON while the DOWN sensor is active. A <span class="hex">52 00 01 53 11</span> arriving while the cylinder is not down is applied as OFF; the echo is still <span class="hex">52 00 01 53 11</span>.</li>
-  <li>When the DOWN sensor <b>releases</b> the board cuts POWER by itself, before the PC even receives the event frame.</li>
-  <li>The five relays have no interlock; they keep their state until commanded, RESET, or the board is reset.</li>
+  <li>When the DOWN sensor <b>releases</b> the board cuts POWER <b>and all five relays</b> by itself, before the PC even receives the event frame.</li>
+  <li>While the cylinder is down the relays have no interlock; they keep their state until commanded, RESET, or the board is reset.</li>
 </ul>
 <ul class="th">
   <li>ตอนเปิดเครื่อง เอาต์พุตทุกตัว (POWER, UP_OUT, DOWN_OUT, RELAY 1..5) เป็น LOW</li>
   <li>POWER เปิด ON ได้เฉพาะขณะเซ็นเซอร์ DOWN ทำงาน ถ้า <span class="hex">52 00 01 53 11</span> มาถึงขณะกระบอกไม่ได้อยู่ล่าง จะถูกใช้เป็น OFF แต่เฟรมตอบกลับยังคงเป็น <span class="hex">52 00 01 53 11</span></li>
-  <li>เมื่อเซ็นเซอร์ DOWN <b>หลุด</b> บอร์ดจะตัด POWER เอง ก่อนที่ PC จะได้รับเฟรม event เสียอีก</li>
-  <li>รีเลย์ทั้ง 5 ตัวไม่มีอินเตอร์ล็อก คงสถานะไว้จนกว่าจะได้รับคำสั่ง, RESET หรือรีเซ็ตบอร์ด</li>
+  <li>เมื่อเซ็นเซอร์ DOWN <b>หลุด</b> บอร์ดจะตัด POWER <b>และรีเลย์ทั้ง 5 ตัว</b> เอง ก่อนที่ PC จะได้รับเฟรม event เสียอีก</li>
+  <li>ขณะกระบอกอยู่ล่าง รีเลย์ไม่มีอินเตอร์ล็อก คงสถานะไว้จนกว่าจะได้รับคำสั่ง, RESET หรือรีเซ็ตบอร์ด</li>
 </ul>
 <div class="warn en">The board never times out an output. If the PC disconnects while POWER or a relay is ON, it stays ON. Send
 <span class="hex">D5 00 00 D5 11</span> when your software starts and when it exits.</div>
@@ -197,6 +197,7 @@ A 0 → 1 change is the test trigger; a 1 → 0 change during a test cancels it.
 <h2 class="th">§8 · ประวัติการเปลี่ยนแปลง</h2>
 <table>
 <tr><th class="en">Date</th><th class="th">วันที่</th><th class="en">Change</th><th class="th">การเปลี่ยนแปลง</th></tr>
+<tr><td>2026-09-14</td><td class="en">Firmware: the DOWN sensor releasing now also switches RELAY 1..5 off (not only POWER).</td><td class="th">เฟิร์มแวร์: เมื่อเซ็นเซอร์ DOWN หลุด บอร์ดจะปิด RELAY 1..5 ด้วย (ไม่ใช่แค่ POWER)</td></tr>
 <tr><td>2026-09-11</td><td class="en">Protocol v2.1: 1-byte XOR checksum added before the terminator; frame is now 5 bytes. Firmware and app updated together.</td><td class="th">โปรโตคอล v2.1: เพิ่มเช็คซัม XOR 1 ไบต์ก่อนไบต์ปิดท้าย เฟรมเป็น 5 ไบต์ อัปเดตเฟิร์มแวร์และโปรแกรมพร้อมกัน</td></tr>
 <tr><td>2026-09-11</td><td class="en">Protocol v2: 4-byte key/value frames replace the 10-byte prefixed frames (0x4F word, XOR checksum). Old firmware and new app are not compatible.</td><td class="th">โปรโตคอล v2: เฟรม key/value 4 ไบต์แทนเฟรม 10 ไบต์แบบมี prefix (คำ 0x4F, เช็คซัม XOR) เฟิร์มแวร์เก่ากับโปรแกรมใหม่ใช้ร่วมกันไม่ได้</td></tr>
 </table>

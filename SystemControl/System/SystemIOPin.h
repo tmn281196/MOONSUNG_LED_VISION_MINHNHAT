@@ -61,7 +61,7 @@ void SetSystemIOPinMode() {
   LastStartState = digitalRead(DOWN_IN);
 }
 
-// DOWN sensor edge (50 ms debounce) -> cut POWER when the cylinder leaves the bottom, then report the new level
+// DOWN sensor edge (50 ms debounce) -> when the cylinder leaves the bottom cut POWER and every RELAY, then report the new level
 void CollectInput() {
   uint8_t startSignal = digitalRead(DOWN_IN);
 
@@ -71,6 +71,7 @@ void CollectInput() {
     if (startSignal != LastStartState) {
       if (LastStartState) {
         digitalWrite(POWER, LOW);
+        for (int i = 0; i < 5; i++) digitalWrite(RELAY_PINS[i], LOW);
       }
       LastStartState = startSignal;
       SendFrame(CMD_GET, IN_DOWN, startSignal);
