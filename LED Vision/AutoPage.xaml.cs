@@ -81,10 +81,9 @@ namespace LEDVision
 
                     visionTester.ProgramModel = programModel;
                     try { stepsGrid.ItemsSource = programModel != null ? programModel.TestSteps : null; } catch (Exception) { }
-                    // Model vừa nạp: chưa test thì không hiện ROI nào (chỉ hiện theo step VISION CHECK hoặc khi bật toggle mắt)
+                    // Model vừa nạp: không hiện ROI nào (chỉ hiện trong lúc step VISION CHECK chạy)
                     try
                     {
-                        if (allRoiBtn != null) allRoiBtn.IsChecked = false;
                         if (programModel != null)
                             foreach (var led in programModel.Vision.AllLeds())
                                 if (led.Roi != null) led.Roi.Visibility = Visibility.Collapsed;
@@ -295,7 +294,6 @@ namespace LEDVision
                 testingPopup.Visibility = Visibility.Visible;
 
                 // Bắt đầu test: ẩn hết ROI; tới step VISION CHECK nào thì SequenceRunner chỉ hiện ROI của group đó
-                allRoiBtn.IsChecked = false;
                 foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
                 {
                     led.ResultFinal = SingleLED.RESULT.UNKNOWN;
@@ -353,7 +351,7 @@ namespace LEDVision
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            // Kết thúc: ROI đã được ẩn sau mỗi step VISION CHECK; muốn xem lại kết quả thì bật ALL ROI
+            // Kết thúc: ROI đã được ẩn sau mỗi step VISION CHECK; kết quả xem trong ảnh log
 
             bool ng = VisionTest.PostTestNG;
             bool wantLog = ng ? (SettingModel?.SettingVal?.LogImageNg ?? true) : (SettingModel?.SettingVal?.LogImagePass ?? false);
@@ -654,32 +652,6 @@ namespace LEDVision
         // Buộc chạy test thủ công khi không có tín hiệu trigger gửi tới
         // true từ lúc test bắt đầu (chờ xi lanh, bật nguồn) tới khi kết thúc / hủy → nút hiện CANCEL
         private volatile bool testBusy = false;
-
-        // Toggle mắt: bật = hiện mọi ROI với kết quả gần nhất (xanh OK / đỏ NG / xám chưa kiểm tra); tắt = ẩn hết
-        private static readonly System.Windows.Media.Brush UncheckedRoiBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x9A, 0xA5, 0xB1));
-
-        private void AllRoi_Click(object sender, RoutedEventArgs e)
-        {
-            bool on = allRoiBtn.IsChecked == true;
-            var model = visionTester.ProgramModel;
-            if (model == null) return;
-            foreach (var led in model.Vision.AllLeds())
-            {
-                if (led.Roi == null) continue;
-                if (!on)
-                {
-                    led.Roi.Visibility = Visibility.Collapsed;
-                    continue;
-                }
-                led.Roi.Visibility = Visibility.Visible;
-                switch (led.ResultFinal)
-                {
-                    case SingleLED.RESULT.OK: led.Roi.Stroke = SingleLED.PassBrush; break;
-                    case SingleLED.RESULT.NG: led.Roi.Stroke = Brushes.Red; break;
-                    default: led.Roi.Stroke = UncheckedRoiBrush; break;
-                }
-            }
-        }
 
         // START: chạy test bằng tay. Đang test: CANCEL → hủy theo cùng cơ chế với cảm biến rời đáy
         private void TestForce_Click(object sender, RoutedEventArgs e)
