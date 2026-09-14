@@ -271,6 +271,22 @@ namespace LEDVision.Model
             }
         }
 
+        // Luật chấm VISION CHECK: true = ROI OK khi có ÍT NHẤT MỘT mẫu sáng đúng màu (thiên về OK, hợp bảng LED quét);
+        // false = ROI phải sáng ở MỌI mẫu (thiên về NG).
+        private bool visionAnySample = true;
+        public bool VisionAnySample
+        {
+            get { return visionAnySample; }
+            set
+            {
+                if (visionAnySample != value)
+                {
+                    visionAnySample = value;
+                    NotifyPropertyChanged(nameof(VisionAnySample));
+                }
+            }
+        }
+
         // Thời gian persist tính bằng ms (không phụ thuộc nhịp lấy mẫu). PersistFrames cũ giữ để tương thích file cũ.
         private int persistMs = 500;
         public int PersistMs

@@ -1,4 +1,4 @@
-using OpenCvSharp;
+﻿using OpenCvSharp;
 using OpenCvSharp.WpfExtensions;
 using System;
 using System.Collections.Generic;
@@ -240,6 +240,9 @@ namespace LEDVision.Camera
             foreach (var led in AllLeds()) led.ResetPersist();
         }
 
+        // Luật chấm (đồng bộ từ setting.json): true = ROI OK khi có ít nhất một mẫu sáng đúng; false = phải sáng ở mọi mẫu
+        public static bool PassOnAnySample = true;
+
         // Kết quả một lần VISION CHECK của một group
         public class GroupCheckResult
         {
@@ -272,7 +275,8 @@ namespace LEDVision.Camera
             if (maxSettle < 0) maxSettle = 0;
             if (settle > maxSettle) settle = maxSettle;
 
-            bool[] ledNg = new bool[group.Colection.Count];
+            bool[] ledNg = new bool[group.Colection.Count];    // luật "mọi mẫu": có 1 mẫu tắt là NG
+            bool[] ledOk = new bool[group.Colection.Count];    // luật "một mẫu": có 1 mẫu sáng là OK
             int sampleIndex = 0;
             try
             {
@@ -288,7 +292,10 @@ namespace LEDVision.Camera
                         for (int i = 0; i < group.Colection.Count; i++)
                         {
                             string output = group.Colection[i].CheckBlueArea(frame, group);
-                            if (score && output != "1") ledNg[i] = true;
+                            if (score)
+                            {
+                                if (output != "1") ledNg[i] = true; else ledOk[i] = true;
+                            }
                         }
                         frame.Dispose();
                         if (score) r.Samples++;
@@ -301,7 +308,30 @@ namespace LEDVision.Camera
             {
             }
 
-            r.NgLeds = ledNg.Count(x => x);
+            if (PassOnAnySample)
+            {
+                r.NgLeds = ledOk.Count(x => !x);
+                // Màu ROI cuối cùng theo kết quả tổng (mẫu cuối có thể tắt nhưng ROI vẫn OK)
+                for (int i = 0; i < group.Colection.Count; i++)
+                {
+                    var led = group.Colection[i];
+                    led.ResultFinal = ledOk[i] ? SingleLED.RESULT.OK : SingleLED.RESULT.NG;
+                    try
+                    {
+                        var roi = led.Roi;
+                        if (roi != null)
+                        {
+                            var brush = ledOk[i] ? SingleLED.PassBrush : Brushes.Red;
+                            if (roi.Dispatcher.CheckAccess()) roi.Stroke = brush; else roi.Dispatcher.Invoke(() => roi.Stroke = brush);
+                        }
+                    }
+                    catch (Exception) { }
+                }
+            }
+            else
+            {
+                r.NgLeds = ledNg.Count(x => x);
+            }
             r.Pass = r.Samples > 0 && r.NgLeds == 0;
             return r;
         }

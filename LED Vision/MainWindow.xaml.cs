@@ -289,6 +289,7 @@ namespace LEDVision
             {
                 Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
                 Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
+                Camera.Vision.PassOnAnySample = settingModel.SettingVal.VisionAnySample;
             }
             catch (Exception)
             {

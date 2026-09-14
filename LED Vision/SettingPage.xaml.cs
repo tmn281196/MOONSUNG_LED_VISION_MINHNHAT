@@ -126,8 +126,15 @@ namespace LEDVision
 
         }
 
+        // Luật chấm VISION CHECK đổi → áp ngay cho lần test sau (lưu bằng SAVE SETTING)
+        private void VisionRule_Changed(object sender, RoutedEventArgs e)
+        {
+            try { Vision.PassOnAnySample = SettingModel.SettingVal.VisionAnySample; } catch (Exception) { }
+        }
+
         public void SaveSettingModel()
         {
+            try { Vision.PassOnAnySample = SettingModel.SettingVal.VisionAnySample; } catch (Exception) { }
             string json = JsonSerializer.Serialize(SettingModel, new JsonSerializerOptions
             {
                 WriteIndented = true // Makes JSON output more readable

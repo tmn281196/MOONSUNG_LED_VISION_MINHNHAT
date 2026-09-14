@@ -229,6 +229,12 @@
                                 <TextBox Style="{StaticResource NumInput}" Width="100" Text="{Binding SensorTimeoutMs, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
                             </StackPanel>
                         </StackPanel>
+
+                        <!--  Luật chấm VISION CHECK  -->
+                        <TextBlock Text="VISION CHECK pass rule" Style="{StaticResource FieldLabel}" Margin="0,14,0,4" />
+                        <CheckBox Content="An ROI is OK when it is lit with the right colour in AT LEAST ONE sample (lenient, for scanned LED boards). Unticked: it must be lit in EVERY sample (strict)."
+                                  IsChecked="{Binding VisionAnySample, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="VisionRule_Changed" Unchecked="VisionRule_Changed"
+                                  FontSize="12.5" Foreground="{StaticResource Ink}" VerticalContentAlignment="Center" />
                     </StackPanel>
                 </Border>
 
