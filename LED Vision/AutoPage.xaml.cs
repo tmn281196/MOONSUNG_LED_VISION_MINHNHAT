@@ -362,6 +362,7 @@ namespace LEDVision
                 Task.Delay(1000).Wait();
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    UpdateResultImage();
                     // Ảnh log NG (nếu bật ở Setting): ghép các ảnh đã chụp ở từng step VISION CHECK; không có ảnh nào thì chụp màn hình như cũ
                     if (wantLog && !SaveLogImage(path)) CaptureCanvasArea(path);
 
@@ -376,6 +377,7 @@ namespace LEDVision
                 PassCnt += 1;
                 Dispatcher.Invoke(new Action(() =>
                 {
+                    UpdateResultImage();
                     // Ảnh log PASS (nếu bật ở Setting)
                     if (wantLog) SaveLogImage(path);
 
@@ -447,11 +449,38 @@ namespace LEDVision
 
         // Ghép các ảnh đã chụp thành một tấm (xếp ngang, tối đa 4 ảnh một hàng, mỗi ảnh có dải nhãn ở trên) rồi lưu JPG.
         // Trả về false nếu chưa có ảnh nào (chuỗi step không có VISION CHECK, hoặc lỗi trước đó).
+        private BitmapSource lastResultImage = null;
+
+        // Ghép ảnh của lượt vừa xong và giữ lại cho nút RESULT (gọi trên UI thread)
+        private void UpdateResultImage()
+        {
+            lastResultImage = ComposeLogImage();
+        }
+
         private bool SaveLogImage(string filePath)
+        {
+            var img = lastResultImage ?? ComposeLogImage();
+            if (img == null) return false;
+            try
+            {
+                var enc = new JpegBitmapEncoder { QualityLevel = 88 };
+                enc.Frames.Add(BitmapFrame.Create(img));
+                Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath));
+                using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write)) enc.Save(fs);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SaveLogImage: " + ex.Message);
+                return false;
+            }
+        }
+
+        private BitmapSource ComposeLogImage()
         {
             List<KeyValuePair<string, BitmapSource>> shots;
             lock (logShots) shots = new List<KeyValuePair<string, BitmapSource>>(logShots);
-            if (shots.Count == 0) return false;
+            if (shots.Count == 0) return null;
             try
             {
                 const int perRow = 4, labelH = 40, gap = 6;
@@ -482,17 +511,36 @@ namespace LEDVision
                 }
                 var rtb = new RenderTargetBitmap(totalW, totalH, 96, 96, PixelFormats.Pbgra32);
                 rtb.Render(dv);
-                var enc = new JpegBitmapEncoder { QualityLevel = 88 };
-                enc.Frames.Add(BitmapFrame.Create(rtb));
-                Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath));
-                using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.Write)) enc.Save(fs);
-                return true;
+                rtb.Freeze();
+                return rtb;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("SaveLogImage: " + ex.Message);
-                return false;
+                Console.WriteLine("ComposeLogImage: " + ex.Message);
+                return null;
             }
+        }
+
+        // Nút RESULT: popup ảnh ghép của lượt test gần nhất, vừa màn hình, Esc / click đóng
+        private void ShowResult_Click(object sender, RoutedEventArgs e)
+        {
+            if (lastResultImage == null) return;
+            var wa = SystemParameters.WorkArea;
+            var img = new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12) };
+            var win = new System.Windows.Window
+            {
+                Title = "Last test result",
+                Content = img,
+                Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E)),
+                Width = Math.Min(wa.Width * 0.9, lastResultImage.PixelWidth + 40),
+                Height = Math.Min(wa.Height * 0.9, lastResultImage.PixelHeight + 80),
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                ShowInTaskbar = false,
+            };
+            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
+            win.KeyDown += (s2, a) => { if (a.Key == Key.Escape) win.Close(); };
+            img.MouseLeftButtonDown += (s2, a) => win.Close();
+            win.ShowDialog();
         }
 
         private void CaptureCanvasArea(string filePath)

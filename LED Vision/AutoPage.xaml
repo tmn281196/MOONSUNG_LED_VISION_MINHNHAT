@@ -106,13 +106,13 @@
             </StackPanel>
             </Border>
 
-            <!--  Panel nút: START / EMERGENCY STOP + ALL ROI  -->
+            <!--  Panel nút: START / EMERGENCY STOP + RESULT (xem ảnh ghép của lượt test gần nhất)  -->
             <Border Grid.Row="4" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,20,24,20">
             <StackPanel>
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <!--  "?" : hướng dẫn trang Auto + timeline chuỗi test (EN / TH)  -->
-            <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="300" Height="60" Margin="0" Cursor="Hand" Focusable="False"
+            <Button x:Name="startBtn" Content="START" Click="TestForce_Click" Width="300" Height="60" Margin="0,0,10,0" Cursor="Hand" Focusable="False"
                     ToolTip="Start a test manually (no trigger needed). While a test runs this button becomes EMERGENCY STOP.">
                 <Button.Style>
                     <!--  Nút phẳng xám, chữ + icon tối, rê chuột đậm hơn một chút  -->
@@ -125,6 +125,39 @@
                                 <ControlTemplate TargetType="Button">
                                     <Border x:Name="bd" Background="{TemplateBinding Background}">
                                         <TextBlock Text="{TemplateBinding Content}" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="bd" Property="Background" Value="#D2D8DF" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="True">
+                                            <Setter TargetName="bd" Property="Background" Value="#C0C8D1" />
+                                        </Trigger>
+                                        <Trigger Property="IsEnabled" Value="False">
+                                            <Setter Property="Opacity" Value="0.4" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="resultBtn" Width="150" Height="60" Click="ShowResult_Click" Cursor="Hand" Focusable="False"
+                    ToolTip="Show the result image of the last test (camera view of every VISION CHECK step)">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#E1E5EA" />
+                        <Setter Property="Foreground" Value="#323F4E" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border x:Name="bd" Background="{TemplateBinding Background}">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <fa:IconImage Width="22" Height="22" Foreground="{TemplateBinding Foreground}" Icon="Image" />
+                                            <TextBlock Text="RESULT" FontSize="18" FontWeight="Bold" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="{TemplateBinding Foreground}" />
+                                        </StackPanel>
                                     </Border>
                                     <ControlTemplate.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
