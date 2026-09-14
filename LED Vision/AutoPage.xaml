@@ -19,7 +19,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,24,0,0">
             <!--  Khung chứa CỐ ĐỊNH 680x906 (giữ đúng chỗ trên UI). Canvas căn giữa ở ĐÚNG kích thước tỉ lệ
                   ảnh thô (EnsureSurfaceSized scale tới khi chạm 2 cạnh) — KHÔNG scale thêm → không méo.  -->
             <Grid Width="680" Height="906" Background="Black" Margin="12,0,12,0">
@@ -41,10 +41,18 @@
         </StackPanel>
 
         <!--  Cột phải gom chung: Model + Total/Pass/Fail + Used Pins xếp dọc, căn giữa  -->
-        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,24,0,0">
+        <Grid Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="906" Margin="0,24,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
             <!--  Banner trạng thái/kết quả: vùng CỐ ĐỊNH trên cùng, chỉ 1 cái hiện → không đè lên số bên dưới  -->
-            <Grid Height="240" Margin="0,0,0,16">
+            <Grid Grid.Row="0" Height="240" Margin="0,0,0,16">
                 <Label x:Name="ngPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="Red" Content="NG" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
                 <Label x:Name="testingPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#E0A800" Content="TESTING" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
                 <Label x:Name="readyPopup" HorizontalAlignment="Center" Width="520" Height="220" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#007ACC" Content="READY" FontSize="80" FontWeight="Bold" Foreground="White" Visibility="Collapsed" />
@@ -53,13 +61,13 @@
 
 
             <!--  Takt time tổng của lượt test (từ lúc bắt đầu tới lúc có kết quả), chạy sống khi đang test  -->
-            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,-2,0,14" Padding="0,10"
+            <Border Grid.Row="1" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,-2,0,14" Padding="0,10"
                     ToolTip="Total test time: from the trigger to the result (includes retests)">
                 <TextBlock x:Name="taktText" Text="0.00 s" FontSize="64" FontWeight="Bold" Foreground="#323F4E" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Border>
 
             <!--  Khung xám nhẹ gom Total / Pass / Fail, Used Pins và nút TEST FORCE  -->
-            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,8">
+            <Border Grid.Row="2" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Padding="24,28,24,8">
             <StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,24">
                 <!--  Cột TOTAL: rê chuột vào là nút CLEAR hiện đè lên chữ TOTAL  -->
@@ -99,7 +107,7 @@
             </Border>
 
             <!--  Panel nút: START / EMERGENCY STOP + ALL ROI  -->
-            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,20,24,20">
+            <Border Grid.Row="4" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,20,24,20">
             <StackPanel>
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -175,7 +183,7 @@
             </Border>
 
             <!--  Panel dưới cùng: trạng thái xi lanh + số lần dùng pin  -->
-            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,18,24,18">
+            <Border Grid.Row="5" Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,18,24,18">
             <StackPanel>
             <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
@@ -195,13 +203,13 @@
             </Border>
 
 
-        </StackPanel>
+        </Grid>
 
 
 
 
         <!--  Cột 3: chuỗi step của model: Value / Result cập nhật theo từng bước khi test  -->
-        <Border Grid.Column="2" Background="White" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,24,24,24" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Border Grid.Column="2" Background="White" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,24,24,0" Height="906" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <DataGrid x:Name="stepsGrid" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column" GridLinesVisibility="Horizontal"
                       HorizontalGridLinesBrush="#E6EBF0" RowBackground="White" AlternatingRowBackground="#F7F9FB" BorderThickness="0"
                       CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="False" CanUserReorderColumns="False"
