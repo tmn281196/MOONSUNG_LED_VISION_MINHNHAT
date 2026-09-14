@@ -81,18 +81,13 @@ namespace LEDVision
 
                     visionTester.ProgramModel = programModel;
                     try { stepsGrid.ItemsSource = programModel != null ? programModel.TestSteps : null; } catch (Exception) { }
-                    // Model vừa nạp, chưa test: hiện mọi ROI màu trắng (chưa có kết quả). Khi test bắt đầu mới ẩn và hiện theo từng step.
+                    // Model vừa nạp: chưa test thì không hiện ROI nào (chỉ hiện theo step VISION CHECK hoặc khi bật toggle mắt)
                     try
                     {
                         if (allRoiBtn != null) allRoiBtn.IsChecked = false;
                         if (programModel != null)
                             foreach (var led in programModel.Vision.AllLeds())
-                                if (led.Roi != null)
-                                {
-                                    led.ResultFinal = SingleLED.RESULT.UNKNOWN;
-                                    led.Roi.Stroke = Brushes.White;
-                                    led.Roi.Visibility = Visibility.Visible;
-                                }
+                                if (led.Roi != null) led.Roi.Visibility = Visibility.Collapsed;
                     }
                     catch (Exception) { }
                 }
