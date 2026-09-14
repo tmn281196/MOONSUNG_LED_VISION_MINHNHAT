@@ -1,0 +1,1145 @@
+{
+  "Vision": {
+    "Groups": [
+      {
+        "Name": "L-7SEG",
+        "Colection": [
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 33.749999999999886,
+              "Y": 238.5542857142857
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 56.749999999999886,
+              "Y": 215.5542857142857
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 80.75,
+              "Y": 238.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 58.38636363636364,
+              "Y": 262.3208556149732
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 31.840909090909093,
+              "Y": 285.50267379679138
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 57.638888888888886,
+              "Y": 307.63398692810449
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 81.75,
+              "Y": 284.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 289.20454545454538,
+              "Y": 242.13717341482044
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 312.79278074866301,
+              "Y": 219.13717341482047
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 335.61631016042776,
+              "Y": 241.99465240641706
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 313.84090909090912,
+              "Y": 265.90374331550794
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 290.23663101604279,
+              "Y": 287.3208556149732
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 313.09343434343435,
+              "Y": 309.4521687462863
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 335.43983957219251,
+              "Y": 287.40641711229938
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 537.38636363636351,
+              "Y": 243.04626432391132
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 560.97459893048119,
+              "Y": 220.04626432391135
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 583.79812834224595,
+              "Y": 242.90374331550794
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 562.02272727272737,
+              "Y": 266.81283422459882
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 538.41844919786104,
+              "Y": 288.22994652406408
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 561.27525252525254,
+              "Y": 310.36125965537718
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 583.6216577540107,
+              "Y": 288.31550802139026
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 537.38636363636351,
+              "Y": 490.04626432391132
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 560.97459893048119,
+              "Y": 467.7304748502271
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 583.79812834224595,
+              "Y": 486.90374331550794
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 560.97009569378008,
+              "Y": 508.70757106670419
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 538.41844919786104,
+              "Y": 532.22994652406408
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 561.27525252525254,
+              "Y": 554.36125965537713
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 583.6216577540107,
+              "Y": 532.31550802139031
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 291.65559440559429,
+              "Y": 489.62318740083447
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 313.36882969971197,
+              "Y": 466.62318740083447
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 337.44235911147672,
+              "Y": 487.60566639243098
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 313.79195804195814,
+              "Y": 509.63975730152197
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 290.18767996709181,
+              "Y": 532.30686960098717
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 313.04448329448331,
+              "Y": 554.43818273230022
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 336.01588852324147,
+              "Y": 532.39243109831341
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 37.655594405594286,
+              "Y": 490.62318740083447
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 59.368829699711966,
+              "Y": 467.62318740083447
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 83.442359111476719,
+              "Y": 488.60566639243098
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 59.791958041958139,
+              "Y": 510.63975730152197
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 36.18767996709181,
+              "Y": 533.30686960098717
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 59.044483294483314,
+              "Y": 555.43818273230022
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 82.015888523241472,
+              "Y": 533.39243109831341
+            }
+          }
+        ],
+        "ContourArea": 40,
+        "RoiRadius": 9,
+        "HSV": {
+          "HUE": {
+            "Max": 104,
+            "Min": 97
+          },
+          "SAT": {
+            "Max": 255,
+            "Min": 198
+          },
+          "VAL": {
+            "Max": 255,
+            "Min": 130
+          }
+        },
+        "MaintainState": true
+      },
+      {
+        "Name": "R-7SEG",
+        "Colection": [
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 147.75,
+              "Y": 283.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 125.75,
+              "Y": 307.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 146.75,
+              "Y": 242.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 124.75,
+              "Y": 217.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 100.75,
+              "Y": 239.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 99.75,
+              "Y": 284.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 123.75,
+              "Y": 262.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 400.75,
+              "Y": 285.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 378.75,
+              "Y": 309.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 399.75,
+              "Y": 244.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 377.75,
+              "Y": 220.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 353.75,
+              "Y": 241.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 352.75,
+              "Y": 286.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 376.75,
+              "Y": 264.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 648.75,
+              "Y": 286.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 625.75,
+              "Y": 309.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 648.75,
+              "Y": 242.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 625.75,
+              "Y": 221.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 602.75,
+              "Y": 244.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 602.75,
+              "Y": 288.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 624.75,
+              "Y": 265.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 400.75,
+              "Y": 530.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 378.75,
+              "Y": 554.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 399.75,
+              "Y": 489.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 377.75,
+              "Y": 465.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 355.75,
+              "Y": 487.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 355.75,
+              "Y": 531.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 376.75,
+              "Y": 509.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 647.75,
+              "Y": 529.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 624.75,
+              "Y": 552.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 646.75,
+              "Y": 488.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 624.75,
+              "Y": 466.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 602.75,
+              "Y": 486.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 602.75,
+              "Y": 530.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 623.75,
+              "Y": 508.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 149.75,
+              "Y": 533.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 125.75,
+              "Y": 554.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 150.75,
+              "Y": 488.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 126.75,
+              "Y": 466.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 101.75,
+              "Y": 487.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 101.75,
+              "Y": 534.82352941176464
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 124.75,
+              "Y": 509.82352941176464
+            }
+          }
+        ],
+        "ContourArea": 40,
+        "RoiRadius": 9,
+        "HSV": {
+          "HUE": {
+            "Max": 104,
+            "Min": 1
+          },
+          "SAT": {
+            "Max": 255,
+            "Min": 198
+          },
+          "VAL": {
+            "Max": 255,
+            "Min": 130
+          }
+        },
+        "MaintainState": true
+      },
+      {
+        "Name": "U-5DOT",
+        "Colection": [
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 122.75,
+              "Y": 399.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 122.75,
+              "Y": 345.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 89.75,
+              "Y": 305.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 61.75,
+              "Y": 400.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 60.75,
+              "Y": 343.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 377.75,
+              "Y": 400.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 377.75,
+              "Y": 346.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 344.75,
+              "Y": 306.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 316.75,
+              "Y": 401.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 315.75,
+              "Y": 344.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 622.75,
+              "Y": 401.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 622.75,
+              "Y": 344.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 591.75,
+              "Y": 307.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 563.75,
+              "Y": 402.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 562.75,
+              "Y": 345.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 122.5,
+              "Y": 647.98319327731087
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 120.75,
+              "Y": 590.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 91.75,
+              "Y": 554.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 60.75,
+              "Y": 649.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 59.75,
+              "Y": 592.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 376.5,
+              "Y": 644.98319327731087
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 374.75,
+              "Y": 587.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 345.75,
+              "Y": 551.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 314.75,
+              "Y": 646.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 313.75,
+              "Y": 589.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 624.5,
+              "Y": 644.98319327731087
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 622.75,
+              "Y": 587.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 593.75,
+              "Y": 551.57142857142856
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 562.75,
+              "Y": 646.41176470588232
+            }
+          },
+          {
+            "RoiRadius": 9,
+            "ResultFinal": 0,
+            "RoiPoint": {
+              "X": 561.75,
+              "Y": 589.41176470588232
+            }
+          }
+        ],
+        "ContourArea": 40,
+        "RoiRadius": 9,
+        "HSV": {
+          "HUE": {
+            "Max": 104,
+            "Min": 1
+          },
+          "SAT": {
+            "Max": 255,
+            "Min": 198
+          },
+          "VAL": {
+            "Max": 255,
+            "Min": 130
+          }
+        },
+        "MaintainState": true
+      }
+    ]
+  },
+  "CameraSettingValues": {
+    "Brightness": 111,
+    "Contrast": 51,
+    "Saturation": 255,
+    "Hue": 0,
+    "Sharpness": 255,
+    "WhiteBalanceBlueU": 2990,
+    "BacklightComp": 1,
+    "Gain": 0,
+    "Zoom": 140,
+    "Focus": 20,
+    "Exposure": -10,
+    "Pan": 0,
+    "Tilt": 10,
+    "Gamma": 100,
+    "AutoExposure": false,
+    "AutoWhiteBalance": false,
+    "AutoFocus": false
+  },
+  "TestSteps": [
+    {
+      "No": 1,
+      "Skip": false,
+      "Cmd": "POWER",
+      "Sub": "ON",
+      "Target": "",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "LED power on"
+    },
+    {
+      "No": 2,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "ON",
+      "Target": "1",
+      "Spec": "",
+      "Timeout": "300",
+      "Comment": "Select 4-LED"
+    },
+    {
+      "No": 3,
+      "Skip": true,
+      "Cmd": "DELAY",
+      "Sub": "",
+      "Target": "",
+      "Spec": "200",
+      "Timeout": "",
+      "Comment": "Wait for LEDs to light up"
+    },
+    {
+      "No": 4,
+      "Skip": false,
+      "Cmd": "VISION CHECK",
+      "Sub": "",
+      "Target": "L-7SEG",
+      "Spec": "",
+      "Timeout": "2000",
+      "Comment": "Check 4-LED"
+    },
+    {
+      "No": 5,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "OFF",
+      "Target": "1",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "Release 4-LED"
+    },
+    {
+      "No": 6,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "ON",
+      "Target": "2",
+      "Spec": "",
+      "Timeout": "300",
+      "Comment": "Select 7-Segment"
+    },
+    {
+      "No": 7,
+      "Skip": true,
+      "Cmd": "DELAY",
+      "Sub": "",
+      "Target": "",
+      "Spec": "200",
+      "Timeout": "",
+      "Comment": "Wait for LEDs to light up"
+    },
+    {
+      "No": 8,
+      "Skip": false,
+      "Cmd": "VISION CHECK",
+      "Sub": "",
+      "Target": "R-7SEG",
+      "Spec": "",
+      "Timeout": "2000",
+      "Comment": "Check 7-Segment"
+    },
+    {
+      "No": 9,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "OFF",
+      "Target": "2",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "Release 7-Segment"
+    },
+    {
+      "No": 10,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "ON",
+      "Target": "3",
+      "Spec": "",
+      "Timeout": "300",
+      "Comment": "Select Decimal Point"
+    },
+    {
+      "No": 11,
+      "Skip": true,
+      "Cmd": "DELAY",
+      "Sub": "",
+      "Target": "",
+      "Spec": "200",
+      "Timeout": "",
+      "Comment": "Wait for LEDs to light up"
+    },
+    {
+      "No": 12,
+      "Skip": false,
+      "Cmd": "VISION CHECK",
+      "Sub": "",
+      "Target": "U-5DOT",
+      "Spec": "",
+      "Timeout": "2000",
+      "Comment": "Check Decimal Point"
+    },
+    {
+      "No": 13,
+      "Skip": false,
+      "Cmd": "RELAY",
+      "Sub": "OFF",
+      "Target": "3",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "Release Decimal Point"
+    },
+    {
+      "No": 14,
+      "Skip": false,
+      "Cmd": "POWER",
+      "Sub": "OFF",
+      "Target": "",
+      "Spec": "",
+      "Timeout": "",
+      "Comment": "LED power off"
+    }
+  ]
+}
