@@ -212,11 +212,21 @@ namespace LEDVision
         /// </summary>
         private bool _SS_DOWN;
 
+        // Trạng thái đầu tiên nhận được sau khi mở cổng (trả lời GET) chỉ là "xi lanh đang ở đâu", KHÔNG phải cạnh
+        // lên→xuống → không được phát start. Chỉ những thay đổi SAU đó mới là cạnh thật.
+        private bool downStateKnown = false;
+
         public bool SS_DOWN
         {
             get { return _SS_DOWN; }
             set
             {
+                if (!downStateKnown)
+                {
+                    downStateKnown = true;
+                    _SS_DOWN = value;
+                    return;
+                }
                 if (value != _SS_DOWN)
                 {
                     if (_SS_DOWN == OFF)
@@ -324,6 +334,7 @@ namespace LEDVision
                     port.Open();
                     IsConnected = true;
                     rxBuf.Clear();
+                    downStateKnown = false;   // mở cổng: trạng thái đầu tiên chỉ để biết vị trí, không trigger
                     statusLamp.Fill = (Brush)new BrushConverter().ConvertFromString("#06C755");
                     port.DataReceived -= Port_DataReceived;
                     port.DataReceived += Port_DataReceived;
