@@ -83,7 +83,7 @@ namespace LEDVision.Model
             foreach (var g in vision.Groups)
             {
                 bool hasRelay = relay <= 5;
-                if (hasRelay) testSteps.Add(new TestStep { Cmd = StepCmd.Relay, Sub = "ON", Target = relay.ToString(), Timeout = "300", Comment = "Select " + g.Name });
+                if (hasRelay) testSteps.Add(new TestStep { Cmd = StepCmd.Relay, Sub = "ON", Target = relay.ToString(), Comment = "Select " + g.Name });
                 testSteps.Add(new TestStep { Cmd = StepCmd.Vision, Target = g.Name, Timeout = StepCmd.DefaultVisionMs.ToString(), Comment = "Check " + g.Name });
                 if (hasRelay) testSteps.Add(new TestStep { Cmd = StepCmd.Relay, Sub = "OFF", Target = relay.ToString(), Comment = "Release " + g.Name });
                 relay++;

@@ -91,19 +91,12 @@ namespace LEDVision
                         return false;
                     }
                     step.Value = on ? "ON" : "OFF";
-                    // Timeout: chờ sau khi bật / tắt (ms), trống = không chờ
-                    int hold = step.TimeoutMs(0);
-                    if (hold > 0)
-                    {
-                        step.Value += " " + hold + "ms";
-                        return DelayUnlessCancelled(hold);
-                    }
                     return true;
                 }
 
                 case StepCmd.Relay:
                 {
-                    // Target: số relay 1..5; để trống = tất cả. Timeout: giữ / chờ sau khi đóng-mở (ms), trống = không chờ
+                    // Target: số relay 1..5; để trống = tất cả. Không chờ sau khi đóng-mở (cần thì thêm step DELAY)
                     bool all = string.IsNullOrWhiteSpace(step.Target);
                     int idx = step.RelayIndex();
                     if (!all && idx == 0)
@@ -132,12 +125,6 @@ namespace LEDVision
                         return false;
                     }
                     step.Value = (all ? "ALL " : "RL" + idx + " ") + (on ? "ON" : "OFF");
-                    int hold = step.TimeoutMs(0);
-                    if (hold > 0)
-                    {
-                        step.Value += " " + hold + "ms";
-                        return DelayUnlessCancelled(hold);
-                    }
                     return true;
                 }
 

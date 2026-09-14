@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ namespace LEDVision.Model
     public static class StepCmd
     {
         public const string Power = "POWER";          // Sub: ON / OFF
-        public const string Relay = "RELAY";          // Sub: ON / OFF, Target: 1..5
+        public const string Relay = "RELAY";          // Sub: ON / OFF, Target: 1..5 (trống = tất cả)
         public const string Delay = "DELAY";          // Spec: ms
         public const string Vision = "VISION CHECK";  // Target: tên group, Timeout: thời gian lấy mẫu (ms)
 
@@ -50,11 +50,10 @@ namespace LEDVision.Model
             return Canonical(cmd) == Delay;
         }
 
-        // Timeout: VISION CHECK = thời gian lấy mẫu; POWER / RELAY = chờ sau khi đóng-mở (trống = không chờ)
+        // Timeout: chỉ VISION CHECK dùng (thời gian lấy mẫu tối đa). POWER / RELAY không chờ; cần chờ thì thêm step DELAY.
         public static bool HasTimeout(string cmd)
         {
-            string c = Canonical(cmd);
-            return c == Vision || c == Relay || c == Power;
+            return Canonical(cmd) == Vision;
         }
     }
 

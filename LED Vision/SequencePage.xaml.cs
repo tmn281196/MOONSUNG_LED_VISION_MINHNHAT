@@ -1,4 +1,4 @@
-using LEDVision.Model;
+﻿using LEDVision.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -84,12 +84,12 @@ namespace LEDVision
                 case StepCmd.Power:
                     targetHint.Text = "";
                     specHint.Text = "";
-                    timeoutHint.Text = "Optional: wait this long (ms) after switching before the next step.";
+                    timeoutHint.Text = "";
                     break;
                 case StepCmd.Relay:
                     targetHint.Text = "Relay number 1 to 5. Leave empty = all five relays.";
                     specHint.Text = "";
-                    timeoutHint.Text = "Optional: wait this long (ms) after switching before the next step.";
+                    timeoutHint.Text = "";
                     break;
                 case StepCmd.Delay:
                     targetHint.Text = "";
@@ -100,7 +100,7 @@ namespace LEDVision
                 case StepCmd.Vision:
                     targetHint.Text = "Name of the LED group to check (Vision page → LED Group).";
                     specHint.Text = "";
-                    timeoutHint.Text = "Sampling time in ms (camera checks every 100 ms). Default " + StepCmd.DefaultVisionMs + ".";
+                    timeoutHint.Text = "Maximum sampling time in ms (camera checks every 100 ms; the step ends early once every ROI is OK). Default " + StepCmd.DefaultVisionMs + ".";
                     if (timeoutBox.Text.Trim().Length == 0) timeoutBox.Text = StepCmd.DefaultVisionMs.ToString();
                     break;
                 default:
