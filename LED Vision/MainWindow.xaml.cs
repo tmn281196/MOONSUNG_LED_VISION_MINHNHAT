@@ -104,10 +104,19 @@ namespace LEDVision
             }
         }
 
-        // Xi lanh rời vị trí dưới trong lúc đang test (không phải do app tự điều khiển) → hủy test đang chạy
+        // Xi lanh rời vị trí dưới (không phải do app tự điều khiển lúc retest):
+        //   - luôn tắt nguồn LED và cả 5 relay (firmware đã tự cắt POWER, app gửi lại cho đồng bộ trạng thái)
+        //   - đang test → hủy test đang chạy
         private void OnCancelRequest(object sender, EventArgs e)
         {
             if (device.IgnoreTrigger) return;
+            try
+            {
+                device.Power = false;
+                device.SendControl();
+                device.AllRelaysOff();
+            }
+            catch (Exception) { }
             if (visionTest.CurrentTestState == TestState.Testing && visionTest.currentPage == "Auto")
             {
                 VisionTest.CancelRequested = true;
