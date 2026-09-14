@@ -40,7 +40,7 @@ namespace LEDVision
                 step.Value = "";
                 step.Result = RUN;
                 step.Takt = "";
-                // Tới step VISION CHECK: xóa ROI đang hiện, chỉ hiện ROI của group này. Step khác giữ nguyên ROI đang hiện.
+                // Tới step VISION CHECK: chỉ hiện ROI của group này trong lúc kiểm tra; xong step thì ẩn lại.
                 if (StepCmd.Canonical(step.Cmd) == StepCmd.Vision) ShowOnly(vision, vision?.FindGroup(step.Target), ui);
                 var sw = Stopwatch.StartNew();
                 bool ok;
@@ -62,10 +62,11 @@ namespace LEDVision
                     return false;
                 }
                 step.Result = ok ? PASS : FAIL;
-                // VISION CHECK xong (ROI đã có màu kết quả) → AutoPage chụp khung camera để ghép ảnh log
-                if (onVisionStepDone != null && StepCmd.Canonical(step.Cmd) == StepCmd.Vision)
+                // VISION CHECK xong (ROI đã có màu kết quả) → AutoPage chụp khung camera để ghép ảnh log, rồi ẩn ROI của step
+                if (StepCmd.Canonical(step.Cmd) == StepCmd.Vision)
                 {
-                    try { onVisionStepDone(step); } catch (Exception) { }
+                    if (onVisionStepDone != null) { try { onVisionStepDone(step); } catch (Exception) { } }
+                    ShowOnly(vision, null, ui);
                 }
                 if (!ok) allPass = false;   // chạy tiếp step sau, lượt test sẽ NG
             }

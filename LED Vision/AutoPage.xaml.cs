@@ -353,7 +353,7 @@ namespace LEDVision
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            // Kết thúc: giữ nguyên màn hình ROI của step VISION CHECK cuối cùng đã chạy (không hiện lại các group khác)
+            // Kết thúc: ROI đã được ẩn sau mỗi step VISION CHECK; muốn xem lại kết quả thì bật ALL ROI
 
             bool ng = VisionTest.PostTestNG;
             bool wantLog = ng ? (SettingModel?.SettingVal?.LogImageNg ?? true) : (SettingModel?.SettingVal?.LogImagePass ?? false);
