@@ -94,20 +94,6 @@
                 </StackPanel>
             </StackPanel>
 
-            <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
-                <TextBlock Text="CYLINDER" FontSize="16" Foreground="#6B7A8C" VerticalAlignment="Center" />
-                <Ellipse x:Name="cylinderDot" Width="14" Height="14" Fill="Gray" Margin="10,0,6,0" VerticalAlignment="Center" />
-                <TextBlock x:Name="cylinderText" Text="--" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Used Pins" VerticalAlignment="Center" FontSize="24" />
-                <Label Content="{Binding SettingModel.SettingVal.CurNum}" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" />
-                <Label Content="/" VerticalAlignment="Center" FontSize="40" />
-                <Label Content="{Binding SettingModel.SettingVal.MaxNum}" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" />
-                <Label Content="times" VerticalAlignment="Center" FontSize="24" />
-            </StackPanel>
 
             <!--  Buộc chạy test khi không có tín hiệu trigger gửi tới  -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -178,6 +164,26 @@
                     </Style>
                 </ToggleButton.Style>
             </ToggleButton>
+            </StackPanel>
+            </StackPanel>
+            </Border>
+
+            <!--  Panel dưới cùng: trạng thái xi lanh + số lần dùng pin  -->
+            <Border Width="520" Background="#F4F6F8" BorderBrush="#DDE3EA" BorderThickness="1" Margin="0,14,0,0" Padding="24,18,24,18">
+            <StackPanel>
+            <!--  Đèn trạng thái xi lanh (một cảm biến dưới): DOWN xanh lá khi phát hiện, UP xanh dương khi không, gạch ngang khi chưa nối COM  -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
+                <TextBlock Text="CYLINDER" FontSize="16" Foreground="#6B7A8C" VerticalAlignment="Center" />
+                <Ellipse x:Name="cylinderDot" Width="14" Height="14" Fill="Gray" Margin="10,0,6,0" VerticalAlignment="Center" />
+                <TextBlock x:Name="cylinderText" Text="--" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Used Pins" VerticalAlignment="Center" FontSize="24" />
+                <Label Content="{Binding SettingModel.SettingVal.CurNum}" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" />
+                <Label Content="/" VerticalAlignment="Center" FontSize="40" />
+                <Label Content="{Binding SettingModel.SettingVal.MaxNum}" VerticalAlignment="Center" FontSize="40" FontWeight="Bold" />
+                <Label Content="times" VerticalAlignment="Center" FontSize="24" />
             </StackPanel>
             </StackPanel>
             </Border>
