@@ -18,7 +18,7 @@ namespace LEDVision
         public const string SKIP = "-";
         public const string RUN = "RUN";
 
-        // Trả về true = mọi step (không skip) PASS. Step FAIL → dừng ngay tại đó (các step sau không chạy, để trống).
+        // Trả về true = mọi step (không skip) PASS. Step FAIL → vẫn chạy tiếp các step sau (để thấy hết lỗi), kết quả lượt = NG.
         // Hủy giữa chừng → false.
         public static bool Run(IList<TestStep> steps, DeviceControl device, Vision vision, Dispatcher ui, Action<TestStep> onVisionStepDone = null)
         {
@@ -67,11 +67,7 @@ namespace LEDVision
                 {
                     try { onVisionStepDone(step); } catch (Exception) { }
                 }
-                if (!ok)
-                {
-                    allPass = false;
-                    break;   // dừng tại step NG: nguồn / relay / ROI giữ nguyên trạng thái lúc lỗi
-                }
+                if (!ok) allPass = false;   // chạy tiếp step sau, lượt test sẽ NG
             }
             return allPass;
         }

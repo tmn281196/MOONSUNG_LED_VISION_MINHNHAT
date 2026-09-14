@@ -173,7 +173,7 @@
                     <TextBlock Text="Test Sequence" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Ink}" VerticalAlignment="Center" />
                 </StackPanel>
                 <TextBlock Foreground="{StaticResource Muted}" FontSize="11.5" TextWrapping="Wrap" Margin="0,2,0,0"
-                           Text="Steps run top to bottom at every test, after the cylinder is down. The first step that FAILS stops the sequence and the test is NG. The sequence is saved in the model file: press Save (top bar) to apply it to the Auto page." />
+                           Text="Steps run top to bottom at every test, after the cylinder is down. A step that FAILS makes the test NG; the remaining steps still run. The sequence is saved in the model file: press Save (top bar) to apply it to the Auto page." />
             </StackPanel>
 
             <!--  Bảng step  -->
