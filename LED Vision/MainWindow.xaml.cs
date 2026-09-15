@@ -142,7 +142,6 @@ namespace LEDVision
 
             autoPage.DisableObtainFrameTimer();
             visionPage.DisableObtainFrameTimer();
-            SetSettling(false);
 
             autoPage.VisionTest.Device.CylinderDown = false;
             autoPage.VisionTest.Device.CylinderUp = false;
@@ -293,11 +292,9 @@ namespace LEDVision
 
             }
 
-            // Đồng bộ cấu hình persist toàn cục từ setting.json
+            // Đồng bộ luật chấm VISION CHECK từ setting.json
             try
             {
-                Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
-                Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
                 Camera.Vision.PassOnAnySample = settingModel.SettingVal.VisionAnySample;
             }
             catch (Exception)
@@ -473,14 +470,6 @@ namespace LEDVision
             reconnectComIcon.Foreground = comOk ? ConnectedBrush : DisconnectedBrush;
             reconnectComBtn.ToolTip = comOk ? "Disconnect COM" : "Connect COM (port chosen in Setting page)";
             try { settingPage?.RefreshConnectButton(); } catch (Exception) { }
-        }
-
-        // Chỉ báo "SETTLING…" ở thanh top: trang Vision bật khi Persist còn đang gom khung sau khi đổi tham số
-        public void SetSettling(bool on)
-        {
-            if (settlingText == null) return;
-            var v = on ? Visibility.Visible : Visibility.Collapsed;
-            if (settlingText.Visibility != v) settlingText.Visibility = v;
         }
 
         // Hiện tên model đang mở / vừa lưu ở thanh tiêu đề (bên trái 2 nút Open / Save)

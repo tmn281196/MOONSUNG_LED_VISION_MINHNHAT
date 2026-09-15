@@ -253,24 +253,6 @@ namespace LEDVision.Model
             }
         }
 
-        // Persist (chống nhấp nháy kết quả): giữ qua N khung hình liên tiếp mới đổi PASS/NG.
-        private bool persistEnabled = false;
-        public bool PersistEnabled
-        {
-            get
-            {
-                return persistEnabled;
-            }
-            set
-            {
-                if (persistEnabled != value)
-                {
-                    persistEnabled = value;
-                    NotifyPropertyChanged(nameof(PersistEnabled));
-                }
-            }
-        }
-
         // Luật chấm VISION CHECK: true = ROI OK khi có ÍT NHẤT MỘT mẫu sáng đúng màu (thiên về OK, hợp bảng LED quét);
         // false = ROI phải sáng ở MỌI mẫu (thiên về NG).
         private bool visionAnySample = true;
@@ -300,41 +282,6 @@ namespace LEDVision.Model
         {
             get { return logImagePass; }
             set { if (logImagePass != value) { logImagePass = value; NotifyPropertyChanged(nameof(LogImagePass)); } }
-        }
-
-        // Thời gian persist tính bằng ms (không phụ thuộc nhịp lấy mẫu). PersistFrames cũ giữ để tương thích file cũ.
-        private int persistMs = 500;
-        public int PersistMs
-        {
-            get
-            {
-                return persistMs;
-            }
-            set
-            {
-                if (persistMs != value)
-                {
-                    persistMs = value;
-                    NotifyPropertyChanged(nameof(PersistMs));
-                }
-            }
-        }
-
-        private int persistFrames = 5;
-        public int PersistFrames
-        {
-            get
-            {
-                return persistFrames;
-            }
-            set
-            {
-                if (persistFrames != value)
-                {
-                    persistFrames = value;
-                    NotifyPropertyChanged(nameof(PersistFrames));
-                }
-            }
         }
     }
 }

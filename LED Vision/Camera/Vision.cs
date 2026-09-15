@@ -234,12 +234,6 @@ namespace LEDVision.Camera
             return 0;
         }
 
-        // Xóa bộ đếm persist của mọi ROI
-        public void ResetPersistAll()
-        {
-            foreach (var led in AllLeds()) led.ResetPersist();
-        }
-
         // Luật chấm (đồng bộ từ setting.json):
         //   true  = ROI OK khi đã sáng đúng LIÊN TỤC đủ Hold ms (Hold = 0: một mẫu OK là đủ); mọi ROI đạt → PASS ngay,
         //           hết Timeout mà còn ROI chưa đạt → NG.
@@ -256,7 +250,7 @@ namespace LEDVision.Camera
         }
 
         // Lấy mẫu liên tục durationMs (chu kỳ 100 ms) và chấm mọi ROI của MỘT group. Dùng cho step VISION CHECK.
-        // Persist: mẫu đầu (chưa đủ N khung) chỉ nuôi bộ đếm, không chấm. Hủy test → dừng ngay.
+        // Hủy test → dừng ngay.
         public GroupCheckResult InspectGroup(GroupLED group, int durationMs)
         {
             return InspectGroup(group, durationMs, 0);
@@ -271,18 +265,9 @@ namespace LEDVision.Camera
             if (durationMs < 200) durationMs = 200;
 
             const int sampleMs = 100;
-            SingleLED.PersistFrames = SingleLED.FramesFor(sampleMs);
-            foreach (var led in group.Colection)
-            {
-                led.ResetPersist();
-                led.ResultFinal = SingleLED.RESULT.UNKNOWN;
-            }
+            foreach (var led in group.Colection) led.ResultFinal = SingleLED.RESULT.UNKNOWN;
             group.MaintainState = true;
-
-            int settle = (SingleLED.PersistEnabled && SingleLED.PersistFrames > 1) ? SingleLED.PersistFrames : 0;
-            int maxSettle = (int)(durationMs / sampleMs) - 5;   // luôn chừa ít nhất 5 mẫu để chấm
-            if (maxSettle < 0) maxSettle = 0;
-            if (settle > maxSettle) settle = maxSettle;
+            const int settle = 0;   // mọi mẫu đều được chấm (không còn Persist)
 
             // Hình học ROI chụp MỘT lần trên luồng UI → vòng lấy mẫu bên dưới chạy ở luồng nền, ảnh camera vẫn vẽ tiếp
             var geoms = new SingleLED.RoiGeom[group.Colection.Count];
@@ -366,11 +351,7 @@ namespace LEDVision.Camera
             List<bool> dpResults = new List<bool>();
 
             const int sampleMs = 100;
-            SingleLED.PersistFrames = SingleLED.FramesFor(sampleMs);
-            ResetPersistAll();
-            int settle = (SingleLED.PersistEnabled && SingleLED.PersistFrames > 1) ? SingleLED.PersistFrames : 0;
-            int maxSettle = (int)(2000 / sampleMs) - 5;
-            if (settle > maxSettle) settle = maxSettle;
+            const int settle = 0;
             int sampleIndex = 0;
 
             try

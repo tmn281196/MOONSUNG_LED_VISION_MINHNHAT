@@ -106,84 +106,8 @@ namespace LEDVision
                 if (settingModel != value)
                 {
                     settingModel = value;
-                    InitPersistUI();
                 }
             }
-        }
-
-        // ===== Persist (chống nhấp nháy kết quả) =====
-        private bool loadingPersist = false;
-
-        // Nạp trạng thái persist từ setting.json lên UI + đồng bộ cấu hình tĩnh.
-        private void InitPersistUI()
-        {
-            if (settingModel == null || settingModel.SettingVal == null) return;
-            if (persistCheckBox == null || persistFramesBox == null) return;
-
-            loadingPersist = true;
-            persistCheckBox.IsChecked = settingModel.SettingVal.PersistEnabled;
-            persistFramesBox.Text = settingModel.SettingVal.PersistMs.ToString();
-            loadingPersist = false;
-
-            Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
-            Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
-            ResetPersistCounters();
-        }
-
-        // ---- Persist: bộ đếm + giai đoạn ổn định (học theo SurfaceInspection) ----
-        private const int PreviewIntervalMs = 250;   // nhịp timer xem trực tiếp
-        private int framesSinceReset = 0;
-
-        // Đổi tham số (HSV, ngưỡng, bán kính, nhóm...) → số đếm cũ vô nghĩa → xóa và đếm lại từ đầu
-        private void ResetPersistCounters()
-        {
-            try { ProgramModel?.Vision?.ResetPersistAll(); } catch (Exception) { }
-            framesSinceReset = 0;
-        }
-
-        // Gọi mỗi tick xem trực tiếp: đặt số khung theo nhịp 250 ms, cập nhật chữ "settling"
-        private void TickPersist()
-        {
-            Camera.SingleLED.PersistFrames = Camera.SingleLED.FramesFor(PreviewIntervalMs);
-            bool active = Camera.SingleLED.PersistEnabled && Camera.SingleLED.PersistFrames > 1;
-            if (active && framesSinceReset < Camera.SingleLED.PersistFrames) framesSinceReset++;
-            bool settling = active && framesSinceReset < Camera.SingleLED.PersistFrames;
-            // Chỉ báo "SETTLING" nằm ở thanh top (trước icon camera), MainWindow giữ
-            try { mainWindow?.SetSettling(settling); } catch (Exception) { }
-        }
-
-        private void Persist_Changed(object sender, RoutedEventArgs e)
-        {
-            ApplyPersistSettings();
-        }
-
-        private void PersistFrames_Changed(object sender, RoutedEventArgs e)
-        {
-            ApplyPersistSettings();
-        }
-
-        // Lưu cấu hình persist vào setting.json + áp dụng cho inspection.
-        private void ApplyPersistSettings()
-        {
-            if (loadingPersist) return;
-            if (settingModel == null || settingModel.SettingVal == null) return;
-
-            settingModel.SettingVal.PersistEnabled = persistCheckBox.IsChecked == true;
-
-            if (int.TryParse(persistFramesBox.Text, out int ms) && ms >= 0 && ms <= 5000)
-            {
-                settingModel.SettingVal.PersistMs = ms;
-            }
-            else
-            {
-                persistFramesBox.Text = settingModel.SettingVal.PersistMs.ToString();
-            }
-
-            Camera.SingleLED.PersistEnabled = settingModel.SettingVal.PersistEnabled;
-            Camera.SingleLED.PersistMs = settingModel.SettingVal.PersistMs;
-            ResetPersistCounters();
-
-            try { mainWindow?.settingPage?.SaveSettingModel(); } catch { }
         }
 
         private Model.Model programModel;
@@ -355,7 +279,6 @@ namespace LEDVision
 
                     try
                     {
-                        TickPersist();
                         ProgramModel.Vision.Inspect(CameraSetting.Instance.LastMatFrame.Clone());
                         UpdateHistogram();
 
@@ -656,7 +579,6 @@ namespace LEDVision
         }
         private void cntSizeSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            ResetPersistCounters();
             if (ProgramModel.Vision.SelectedGroupLED != null)
             {
                 ProgramModel.Vision.SelectedGroupLED.ContourArea = (int)cntSizeSlider.Value;
@@ -758,7 +680,7 @@ namespace LEDVision
             }
         }
 
-        // Sửa thẳng trong ô: tên group (kiểm tra trùng, đổi Target của step VISION CHECK) hoặc Min / Max (đổ lại ô Set ẩn, reset persist)
+        // Sửa thẳng trong ô: tên group (kiểm tra trùng, đổi Target của step VISION CHECK) hoặc Min / Max (đổ lại ô Set ẩn)
         private string groupNameBeforeEdit = null;
 
         private void GroupGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
@@ -803,9 +725,8 @@ namespace LEDVision
                 }
                 else
                 {
-                    // Min / Max / Radius / Area đã ghi vào group → ô Set + slider ẩn + bộ đếm persist + kết quả ROI
+                    // Min / Max / Radius / Area đã ghi vào group → ô Set + slider ẩn + kết quả ROI
                     g.NotifyHsvChanged();
-                    ResetPersistCounters();
                     if (g == ProgramModel.Vision.SelectedGroupLED) UpdateSettings("");
                     foreach (var item in g.Colection) item.ResultFinal = SingleLED.RESULT.UNKNOWN;
                 }
@@ -879,7 +800,6 @@ namespace LEDVision
 
         private void UpdateSettings(string checkBoxName)
         {
-            ResetPersistCounters();
             if (ProgramModel.Vision.SelectedGroupLED == null)
             {
                 return;
@@ -902,7 +822,6 @@ namespace LEDVision
         }
         private void cntRadiusSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            ResetPersistCounters();
             builder.RoiRadius = (int)radiusSlider.Value;
 
             if (ProgramModel.Vision.SelectedGroupLED != null)
@@ -1277,7 +1196,6 @@ namespace LEDVision
         }
         private void ApplyRange_Click(object sender, RoutedEventArgs e)
         {
-            ResetPersistCounters();
             double hueMax = double.Parse(HueMax.Text);
             double hueMin = double.Parse(HueMin.Text);
             double hueMean = Math.Floor((hueMax + hueMin) / 2);
