@@ -352,7 +352,21 @@ namespace LEDVision
             string path = SettingModel.SettingVal.LogDirectory + "\\" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"; ;
             string datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            // Kết thúc: ROI đã được ẩn sau mỗi step VISION CHECK; kết quả xem trong ảnh log
+            // Kết thúc: hiện lại TẤT CẢ ROI với màu kết quả (xanh OK / đỏ NG / xám chưa kiểm tra); ảnh ghép xem bằng nút RESULT
+            Dispatcher.Invoke(new Action(() =>
+            {
+                foreach (var led in visionTester.ProgramModel.Vision.AllLeds())
+                {
+                    if (led.Roi == null) continue;
+                    switch (led.ResultFinal)
+                    {
+                        case SingleLED.RESULT.OK: led.Roi.Stroke = SingleLED.PassBrush; break;
+                        case SingleLED.RESULT.NG: led.Roi.Stroke = Brushes.Red; break;
+                        default: led.Roi.Stroke = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x9A, 0xA5, 0xB1)); break;
+                    }
+                    led.Roi.Visibility = Visibility.Visible;
+                }
+            }));
 
             bool ng = VisionTest.PostTestNG;
             bool wantLog = ng ? (SettingModel?.SettingVal?.LogImageNg ?? true) : (SettingModel?.SettingVal?.LogImagePass ?? false);
@@ -371,7 +385,6 @@ namespace LEDVision
                     testingPopup.Visibility = Visibility.Collapsed;
                     passPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Visible;
-                    OpenResultWindow();   // NG → hiện luôn cửa sổ kết quả
                 }));
             }
             else
@@ -555,12 +568,6 @@ namespace LEDVision
             resultWin = null;
         }
 
-        // Tự mở cửa sổ kết quả khi NG (đóng cửa sổ cũ nếu còn)
-        private void OpenResultWindow()
-        {
-            CloseResultWindow();
-            ShowResult_Click(null, null);
-        }
 
         private void CaptureCanvasArea(string filePath)
         {
