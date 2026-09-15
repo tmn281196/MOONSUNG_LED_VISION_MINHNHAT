@@ -412,7 +412,8 @@ namespace LEDVision
                                     "Colours look white / washed out and S is near 0 → the camera is over-exposed. Lower Exposure or Gain in Camera Settings.",
                                     "Everything is dark and V is low → raise Exposure, or lower V min.",
                                     "Two colours overlap in Hue (e.g. orange vs yellow) → narrow both ranges and give each its own group.",
-                                    "Reflections from the housing count as lit pixels → shrink the ROI radius or raise Area Threshold."),
+                                    "Reflections from the housing count as lit pixels → shrink the ROI radius or raise Area Threshold.",
+                                    "Result flickers between PASS and NG → set Hold (ms) on the tab row: an ROI turns green only after it has been OK continuously for that long. Use the same value in the Hold column of the VISION CHECK step."),
                             }
                         }
                     },
@@ -453,7 +454,8 @@ namespace LEDVision
                                     "สีดูขาว / ซีด และ S ใกล้ 0 → กล้องรับแสงมากเกินไป ให้ลด Exposure หรือ Gain ใน Camera Settings",
                                     "ภาพมืดทั้งหมดและ V ต่ำ → เพิ่ม Exposure หรือลด V min",
                                     "สองสีมี Hue ทับกัน (เช่น ส้มกับเหลือง) → บีบช่วงของทั้งคู่ให้แคบและแยกคนละกลุ่ม",
-                                    "แสงสะท้อนจากตัวเครื่องถูกนับเป็นพิกเซลสว่าง → ลดรัศมี ROI หรือเพิ่ม Area Threshold"),
+                                    "แสงสะท้อนจากตัวเครื่องถูกนับเป็นพิกเซลสว่าง → ลดรัศมี ROI หรือเพิ่ม Area Threshold",
+                                    "ผลกะพริบสลับ PASS / NG → ตั้ง Hold (ms) บนแถวแท็บ ROI จะเป็นสีเขียวก็ต่อเมื่อ OK ต่อเนื่องครบเวลานั้น ใช้ค่าเดียวกันในคอลัมน์ Hold ของ step VISION CHECK"),
                             }
                         }
                     },

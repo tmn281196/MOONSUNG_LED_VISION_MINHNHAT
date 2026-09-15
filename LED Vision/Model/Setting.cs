@@ -269,6 +269,14 @@ namespace LEDVision.Model
             }
         }
 
+        // Hold xem thử ở trang Vision (ms): ROI chỉ xanh khi OK liên tục đủ bấy nhiêu; 0 = theo từng khung
+        private int previewHoldMs = 0;
+        public int PreviewHoldMs
+        {
+            get { return previewHoldMs; }
+            set { if (previewHoldMs != value) { previewHoldMs = value; NotifyPropertyChanged(nameof(PreviewHoldMs)); } }
+        }
+
         // Xuất ảnh log (ảnh ghép các step VISION CHECK) khi lượt test NG / PASS
         private bool logImageNg = true;
         public bool LogImageNg

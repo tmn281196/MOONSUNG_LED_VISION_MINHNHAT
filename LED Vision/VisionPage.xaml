@@ -623,6 +623,13 @@
                     </StackPanel>
                 </TabItem>
                 </TabControl>
+                <!--  Hold xem thử: ROI chỉ xanh khi OK liên tục đủ bấy nhiêu ms (0 = theo từng khung). Cùng ý nghĩa với cột Hold của step VISION CHECK.  -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Height="34" Margin="0,0,6,0"
+                            ToolTip="Preview Hold: an ROI turns green only after it has been OK continuously for this many ms (0 = every frame). Same meaning as the Hold column of a VISION CHECK step.">
+                    <TextBlock Text="Hold" VerticalAlignment="Center" FontSize="12" Foreground="#323F4E" Margin="0,0,4,0" />
+                    <TextBox x:Name="previewHoldBox" Width="48" VerticalAlignment="Center" TextAlignment="Center" Text="0" LostFocus="PreviewHold_Changed" KeyDown="PreviewHold_KeyDown" />
+                    <TextBlock Text="ms" VerticalAlignment="Center" Margin="2,0,0,0" FontSize="11" />
+                </StackPanel>
                 </Grid>
 
                     <StackPanel  Margin="0 0"  Orientation="Vertical" Visibility="Collapsed" >

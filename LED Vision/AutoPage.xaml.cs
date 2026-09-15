@@ -503,7 +503,17 @@ namespace LEDVision
                 int cols = Math.Min(perRow, shots.Count);
                 int rows = (shots.Count + perRow - 1) / perRow;
                 int totalW = cols * tileW + (cols - 1) * gap;
-                int totalH = rows * (labelH + tileH) + (rows - 1) * gap;
+                int tilesH = rows * (labelH + tileH) + (rows - 1) * gap;
+
+                // Bảng step vẽ dưới các ảnh: No | Step | Hold | Timeout | Value | Result | Takt
+                var steps = visionTester.ProgramModel != null ? new List<TestStep>(visionTester.ProgramModel.TestSteps) : new List<TestStep>();
+                const int rowH = 26, tableTop = 10;
+                int[] colW = { 44, 0, 80, 90, 150, 90, 90 };
+                int fixedW = colW.Sum();
+                if (totalW < fixedW + 300) totalW = fixedW + 300;
+                colW[1] = totalW - fixedW;
+                int tableH = steps.Count > 0 ? tableTop + rowH * (steps.Count + 1) + 10 : 0;
+                int totalH = tilesH + tableH;
 
                 var dv = new DrawingVisual();
                 using (var dc = dv.RenderOpen())
@@ -522,6 +532,37 @@ namespace LEDVision
                         ft.MaxLineCount = 1;
                         dc.DrawText(ft, new System.Windows.Point(x + 8, y + (labelH - ft.Height) / 2));
                         dc.DrawImage(shots[i].Value, new System.Windows.Rect(x, y + labelH, tileW, tileH));
+                    }
+
+                    // ---- bảng step ----
+                    if (steps.Count > 0)
+                    {
+                        int ty = tilesH + tableTop;
+                        var hdrBg = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x46, 0x55, 0x6A));
+                        var okBrush = SingleLED.PassBrush;
+                        var failBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D));
+                        string[] heads = { "No", "Step", "Hold", "Timeout", "Value", "Result", "Takt (ms)" };
+                        Action<string, int, int, System.Windows.Media.Brush, bool> cell = (text, cx, cy, brush, bold) =>
+                        {
+                            var t = new FormattedText(text ?? "", System.Globalization.CultureInfo.InvariantCulture, System.Windows.FlowDirection.LeftToRight, tf, 15, brush, 96);
+                            if (bold) t.SetFontWeight(FontWeights.Bold);
+                            t.MaxLineCount = 1;
+                            dc.DrawText(t, new System.Windows.Point(cx + 6, cy + (rowH - t.Height) / 2));
+                        };
+                        dc.DrawRectangle(hdrBg, null, new System.Windows.Rect(0, ty, totalW, rowH));
+                        int cx0 = 0;
+                        for (int k = 0; k < heads.Length; k++) { cell(heads[k], cx0, ty, Brushes.White, true); cx0 += colW[k]; }
+                        for (int r2 = 0; r2 < steps.Count; r2++)
+                        {
+                            var st = steps[r2];
+                            int ry = ty + rowH * (r2 + 1);
+                            dc.DrawRectangle(new SolidColorBrush(r2 % 2 == 0 ? System.Windows.Media.Color.FromRgb(0xF7, 0xF9, 0xFB) : Colors.White), null, new System.Windows.Rect(0, ry, totalW, rowH));
+                            var ink2 = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x2B, 0x2B, 0x2B));
+                            var resBrush = st.Result == SequenceRunner.PASS ? okBrush : st.Result == SequenceRunner.FAIL ? failBrush : ink2;
+                            string[] vals = { st.No.ToString(), st.Label, st.Hold, st.Timeout, st.Value, st.Result, st.Takt };
+                            cx0 = 0;
+                            for (int k = 0; k < vals.Length; k++) { cell(vals[k], cx0, ry, k == 5 ? resBrush : ink2, k == 5); cx0 += colW[k]; }
+                        }
                     }
                 }
                 var rtb = new RenderTargetBitmap(totalW, totalH, 96, 96, PixelFormats.Pbgra32);

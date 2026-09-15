@@ -106,6 +106,7 @@ namespace LEDVision
                 if (settingModel != value)
                 {
                     settingModel = value;
+                    try { if (previewHoldBox != null) previewHoldBox.Text = settingModel.SettingVal.PreviewHoldMs.ToString(); } catch (Exception) { }
                 }
             }
         }
@@ -151,10 +152,63 @@ namespace LEDVision
 
         public bool ng = false;
 
+        private const int PreviewIntervalMs = 250;   // nhịp xem trực tiếp
+
         private System.Timers.Timer obtainFrameTimer = new System.Timers.Timer()
         {
-            Interval = 250
+            Interval = PreviewIntervalMs
         };
+
+        // ===== Hold xem thử: ROI chỉ xanh khi đã OK liên tục đủ Hold ms (giống cột Hold của step VISION CHECK) =====
+        private int previewHoldMs = 0;
+        private readonly Dictionary<SingleLED, int> previewRun = new Dictionary<SingleLED, int>();
+
+        private void PreviewHold_Changed(object sender, RoutedEventArgs e)
+        {
+            int ms;
+            if (!int.TryParse(previewHoldBox.Text.Trim(), out ms) || ms < 0) ms = 0;
+            previewHoldBox.Text = ms.ToString();
+            previewHoldMs = ms;
+            previewRun.Clear();
+            try
+            {
+                if (settingModel != null && settingModel.SettingVal.PreviewHoldMs != ms)
+                {
+                    settingModel.SettingVal.PreviewHoldMs = ms;
+                    mainWindow?.settingPage?.SaveSettingModel();
+                }
+            }
+            catch (Exception) { }
+        }
+
+        // MainWindow gọi lúc khởi động (setting.json)
+        public void SetPreviewHold(int ms)
+        {
+            previewHoldMs = Math.Max(0, ms);
+            if (previewHoldBox != null) previewHoldBox.Text = previewHoldMs.ToString();
+            previewRun.Clear();
+        }
+
+        private void PreviewHold_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) { PreviewHold_Changed(sender, null); Keyboard.ClearFocus(); }
+        }
+
+        // Gọi sau Inspect() mỗi khung: đếm số khung OK liên tiếp của từng ROI, chưa đủ Hold thì vẫn đỏ
+        private void ApplyPreviewHold()
+        {
+            var g = ProgramModel?.Vision?.SelectedGroupLED;
+            if (g == null || previewHoldMs <= 0) return;
+            int need = Math.Max(1, (previewHoldMs + PreviewIntervalMs - 1) / PreviewIntervalMs);
+            foreach (var led in g.Colection)
+            {
+                int run;
+                previewRun.TryGetValue(led, out run);
+                run = led.ResultFinal == SingleLED.RESULT.OK ? run + 1 : 0;
+                previewRun[led] = run;
+                if (led.Roi != null) led.Roi.Stroke = run >= need ? SingleLED.PassBrush : Brushes.Red;
+            }
+        }
 
         private ScaleTransform scaleTransform;
         private TranslateTransform translateTransform;
@@ -280,6 +334,7 @@ namespace LEDVision
                     try
                     {
                         ProgramModel.Vision.Inspect(CameraSetting.Instance.LastMatFrame.Clone());
+                        ApplyPreviewHold();
                         UpdateHistogram();
 
                     }
@@ -631,6 +686,7 @@ namespace LEDVision
             if (g != null && !ProgramModel.Vision.Groups.Contains(g)) g = null;
             ProgramModel.Vision.SelectedGroupLED = g;
             builder.SelectedVisionObject = g;
+            previewRun.Clear();
             if (groupGrid != null && !groupGridBusy)
             {
                 groupGridBusy = true;

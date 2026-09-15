@@ -296,6 +296,7 @@ namespace LEDVision
             try
             {
                 Camera.Vision.PassOnAnySample = settingModel.SettingVal.VisionAnySample;
+                visionPage?.SetPreviewHold(settingModel.SettingVal.PreviewHoldMs);
             }
             catch (Exception)
             {
