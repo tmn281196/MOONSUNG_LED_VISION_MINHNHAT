@@ -386,6 +386,9 @@ namespace LEDVision
                     passPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Visible;
                 }));
+
+                // Hộp thoại khóa: người vận hành phải bấm CONFIRM mới về READY
+                Dispatcher.Invoke(new Action(ShowNgDialog));
             }
             else
             {
@@ -541,7 +544,32 @@ namespace LEDVision
         private void ShowResult_Click(object sender, RoutedEventArgs e)
         {
             if (lastResultImage == null) return;
+            System.Windows.Controls.Image img;
+            var root = BuildResultContent(out img);
             var wa = SystemParameters.WorkArea;
+            var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
+
+            var win = new System.Windows.Window
+            {
+                Title = "Last test result",
+                Content = root,
+                Background = ink,
+                Width = Math.Min(wa.Width * 0.9, Math.Max(900, lastResultImage.PixelWidth + 40)),
+                Height = wa.Height * 0.9,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                ShowInTaskbar = false,
+            };
+            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
+            win.KeyDown += (s2, a) => { if (a.Key == Key.Escape) win.Close(); };
+            img.MouseLeftButtonDown += (s2, a) => win.Close();
+            win.Closed += (s2, a) => { if (ReferenceEquals(resultWin, win)) resultWin = null; };
+            resultWin = win;
+            win.Show();   // không modal: test mới bắt đầu là tự đóng
+        }
+
+        // Nội dung cửa sổ kết quả: ảnh ghép ở trên, bảng step ở dưới (dùng cho nút RESULT và hộp thoại NG)
+        private DockPanel BuildResultContent(out System.Windows.Controls.Image imgOut)
+        {
             var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
 
             // Ảnh ghép ở trên, bảng kết quả step (No / Step / Spec / Hold / Timeout / Value / Result / Takt) ở dưới
@@ -596,23 +624,68 @@ namespace LEDVision
             DockPanel.SetDock(grid, Dock.Bottom);
             root.Children.Add(grid);
             root.Children.Add(img);
+            imgOut = img;
+            return root;
+        }
+
+        // Hộp thoại KHÓA khi NG: modal, phải bấm CONFIRM mới về READY (trigger cảm biến / START không có tác dụng trong lúc này)
+        private void ShowNgDialog()
+        {
+            var wa = SystemParameters.WorkArea;
+            var red = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D));
+            var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
+
+            var outer = new DockPanel();
+            var header = new Border { Background = red, Padding = new Thickness(0, 10, 0, 10) };
+            header.Child = new TextBlock { Text = "NG", FontSize = 40, FontWeight = FontWeights.Bold, Foreground = Brushes.White, HorizontalAlignment = System.Windows.HorizontalAlignment.Center };
+            DockPanel.SetDock(header, Dock.Top);
+            outer.Children.Add(header);
+
+            var confirm = new Button
+            {
+                Content = "CONFIRM",
+                FontSize = 22,
+                FontWeight = FontWeights.Bold,
+                Foreground = Brushes.White,
+                Background = red,
+                BorderThickness = new Thickness(0),
+                Height = 64,
+                Margin = new Thickness(12, 6, 12, 12),
+                Cursor = Cursors.Hand,
+                Focusable = true,
+            };
+            DockPanel.SetDock(confirm, Dock.Bottom);
+            outer.Children.Add(confirm);
+
+            // Chỉ ảnh ghép, KHÔNG có bảng step
+            if (lastResultImage != null)
+            {
+                outer.Children.Add(new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12) });
+            }
+            else
+            {
+                outer.Children.Add(new TextBlock { Text = "No image", Foreground = Brushes.White, FontSize = 18, HorizontalAlignment = System.Windows.HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
+            }
 
             var win = new System.Windows.Window
             {
-                Title = "Last test result",
-                Content = root,
+                Title = "NG",
+                Content = outer,
                 Background = ink,
-                Width = Math.Min(wa.Width * 0.9, Math.Max(900, lastResultImage.PixelWidth + 40)),
+                Width = wa.Width * 0.9,
                 Height = wa.Height * 0.9,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 ShowInTaskbar = false,
+                ResizeMode = ResizeMode.NoResize,
+                WindowStyle = WindowStyle.None,
+                Topmost = true,
             };
             try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
-            win.KeyDown += (s2, a) => { if (a.Key == Key.Escape) win.Close(); };
-            img.MouseLeftButtonDown += (s2, a) => win.Close();
-            win.Closed += (s2, a) => { if (ReferenceEquals(resultWin, win)) resultWin = null; };
-            resultWin = win;
-            win.Show();   // không modal: test mới bắt đầu là tự đóng
+            confirm.Click += (s2, a) => win.Close();
+            win.KeyDown += (s2, a) => { if (a.Key == Key.Enter) win.Close(); };
+            win.Loaded += (s2, a) => confirm.Focus();
+            CloseResultWindow();
+            win.ShowDialog();   // chặn tới khi CONFIRM
         }
 
         private System.Windows.Window resultWin = null;
