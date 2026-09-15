@@ -289,6 +289,7 @@ namespace LEDVision
             Dispatcher.Invoke(new Action(() =>
             {
                 CloseResultWindow();   // đang test thì cửa sổ kết quả cũ tự tắt
+                CloseNgDialog();
                 readyPopup.Visibility = Visibility.Collapsed;
                 passPopup.Visibility = Visibility.Collapsed;
                 ngPopup.Visibility = Visibility.Collapsed;
@@ -387,7 +388,7 @@ namespace LEDVision
                     ngPopup.Visibility = Visibility.Visible;
                 }));
 
-                // Hộp thoại khóa: người vận hành phải bấm CONFIRM mới về READY
+                // Hộp thoại NG (không chặn: test mới sẽ tự đóng nó)
                 Dispatcher.Invoke(new Action(ShowNgDialog));
             }
             else
@@ -628,7 +629,7 @@ namespace LEDVision
             return root;
         }
 
-        // Hộp thoại KHÓA khi NG: modal, phải bấm CONFIRM mới về READY (trigger cảm biến / START không có tác dụng trong lúc này)
+        // Hộp thoại NG: nổi trên cùng, bấm CONFIRM để đóng; test mới bắt đầu (nhấc jig rồi hạ xuống / START) cũng tự đóng
         private void ShowNgDialog()
         {
             var wa = SystemParameters.WorkArea;
@@ -685,7 +686,18 @@ namespace LEDVision
             win.KeyDown += (s2, a) => { if (a.Key == Key.Enter) win.Close(); };
             win.Loaded += (s2, a) => confirm.Focus();
             CloseResultWindow();
-            win.ShowDialog();   // chặn tới khi CONFIRM
+            CloseNgDialog();
+            win.Closed += (s2, a) => { if (ReferenceEquals(ngWin, win)) ngWin = null; };
+            ngWin = win;
+            win.Show();   // không modal: app về READY ngay, hộp thoại tự đóng khi test mới bắt đầu hoặc bấm CONFIRM
+        }
+
+        private System.Windows.Window ngWin = null;
+
+        private void CloseNgDialog()
+        {
+            try { if (ngWin != null) ngWin.Close(); } catch (Exception) { }
+            ngWin = null;
         }
 
         private System.Windows.Window resultWin = null;
