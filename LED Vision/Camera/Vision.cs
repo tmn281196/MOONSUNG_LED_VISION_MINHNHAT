@@ -240,8 +240,8 @@ namespace LEDVision.Camera
             foreach (var led in AllLeds()) led.ResetPersist();
         }
 
-        // Luật chấm (đồng bộ từ setting.json): true = ĐA SỐ: ROI OK khi số mẫu sáng đúng NHIỀU HƠN số mẫu không sáng
-        // (bằng nhau = NG); false = NGHIÊM: phải sáng ở mọi mẫu.
+        // Luật chấm (đồng bộ từ setting.json): true = ROI OK khi có ÍT NHẤT MỘT mẫu sáng đúng trong suốt Timeout
+        // (luôn lấy mẫu đủ Timeout rồi mới chốt, không thoát sớm); false = NGHIÊM: phải sáng ở mọi mẫu.
         public static bool PassOnAnySample = true;
 
         // Kết quả một lần VISION CHECK của một group
@@ -283,9 +283,7 @@ namespace LEDVision.Camera
             if (uiDisp != null && !uiDisp.CheckAccess()) uiDisp.Invoke(snap); else snap();
 
             bool[] ledNg = new bool[group.Colection.Count];    // luật nghiêm: có 1 mẫu tắt là NG
-            int[] okCount = new int[group.Colection.Count];    // luật đa số: đếm mẫu sáng đúng / không sáng
-            int[] ngCount = new int[group.Colection.Count];
-            int maxScored = Math.Max(1, durationMs / sampleMs - settle);   // số mẫu chấm tối đa nếu chạy hết Timeout
+            bool[] ledOk = new bool[group.Colection.Count];    // luật "một mẫu": có 1 mẫu sáng đúng là OK
             int sampleIndex = 0;
             try
             {
@@ -303,15 +301,14 @@ namespace LEDVision.Camera
                             string output = group.Colection[i].CheckBlueArea(frame, group, geoms[i]);
                             if (score)
                             {
-                                if (output != "1") { ledNg[i] = true; ngCount[i]++; } else okCount[i]++;
+                                if (output != "1") ledNg[i] = true; else ledOk[i] = true;
                             }
                         }
                         frame.Dispose();
                         if (score) r.Samples++;
                         sampleIndex++;
 
-                        // Luật đa số: mọi ROI đã có số mẫu OK vượt quá nửa số mẫu tối đa → kết quả không thể đảo → thoát sớm
-                        if (PassOnAnySample && score && okCount.All(k => k * 2 > maxScored)) break;
+                        // Không thoát sớm: luôn lấy mẫu đủ Timeout rồi mới chốt (chỉ EMERGENCY STOP mới cắt ngang)
                     }
                     Task.Delay(sampleMs).Wait();
                 }
@@ -322,9 +319,7 @@ namespace LEDVision.Camera
 
             if (PassOnAnySample)
             {
-                // Đa số: OK khi sáng nhiều hơn không sáng; bằng nhau = NG
-                bool[] ledOk = new bool[group.Colection.Count];
-                for (int i = 0; i < ledOk.Length; i++) ledOk[i] = okCount[i] > ngCount[i];
+                // Một mẫu sáng đúng trong suốt Timeout là OK; không có mẫu nào = NG
                 r.NgLeds = ledOk.Count(x => !x);
                 // Màu ROI cuối cùng theo kết quả tổng (mẫu cuối có thể tắt nhưng ROI vẫn OK)
                 for (int i = 0; i < group.Colection.Count; i++)

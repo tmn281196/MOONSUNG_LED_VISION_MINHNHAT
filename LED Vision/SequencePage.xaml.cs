@@ -100,7 +100,7 @@ namespace LEDVision
                 case StepCmd.Vision:
                     targetHint.Text = "Name of the LED group to check (Vision page → LED Group).";
                     specHint.Text = "";
-                    timeoutHint.Text = "Maximum sampling time in ms (camera checks every 100 ms; the step ends early once every ROI is OK). Default " + StepCmd.DefaultVisionMs + ".";
+                    timeoutHint.Text = "Sampling time in ms (camera checks every 100 ms for the whole time, then decides). Default " + StepCmd.DefaultVisionMs + ".";
                     if (timeoutBox.Text.Trim().Length == 0) timeoutBox.Text = StepCmd.DefaultVisionMs.ToString();
                     break;
                 default:
