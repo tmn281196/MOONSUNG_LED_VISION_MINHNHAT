@@ -289,7 +289,6 @@ namespace LEDVision
             Dispatcher.Invoke(new Action(() =>
             {
                 CloseResultWindow();   // đang test thì cửa sổ kết quả cũ tự tắt
-                CloseNgDialog();
                 readyPopup.Visibility = Visibility.Collapsed;
                 passPopup.Visibility = Visibility.Collapsed;
                 ngPopup.Visibility = Visibility.Collapsed;
@@ -388,8 +387,8 @@ namespace LEDVision
                     ngPopup.Visibility = Visibility.Visible;
                 }));
 
-                // Hộp thoại NG (không chặn: test mới sẽ tự đóng nó)
-                Dispatcher.Invoke(new Action(ShowNgDialog));
+                // NG → tự hiện cửa sổ kết quả (không chặn; test mới sẽ tự đóng nó)
+                Dispatcher.Invoke(new Action(OpenResultWindow));
             }
             else
             {
@@ -541,163 +540,34 @@ namespace LEDVision
             }
         }
 
-        // Nút RESULT: popup ảnh ghép của lượt test gần nhất, vừa màn hình, Esc / click đóng
+        // Cửa sổ kết quả DUY NHẤT: chỉ ảnh ghép các step VISION CHECK, có nút đóng của Windows, không modal.
+        // NG → tự hiện; nút RESULT → mở lại; test mới bắt đầu → tự đóng.
         private void ShowResult_Click(object sender, RoutedEventArgs e)
         {
-            if (lastResultImage == null) return;
-            System.Windows.Controls.Image img;
-            var root = BuildResultContent(out img);
-            var wa = SystemParameters.WorkArea;
-            var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
+            OpenResultWindow();
+        }
 
+        private void OpenResultWindow()
+        {
+            if (lastResultImage == null) return;
+            CloseResultWindow();
+            var wa = SystemParameters.WorkArea;
+            var img = new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12) };
             var win = new System.Windows.Window
             {
-                Title = "Last test result",
-                Content = root,
-                Background = ink,
-                Width = Math.Min(wa.Width * 0.9, Math.Max(900, lastResultImage.PixelWidth + 40)),
-                Height = wa.Height * 0.9,
+                Title = "Test result",
+                Content = img,
+                Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E)),
+                Width = Math.Min(wa.Width * 0.9, lastResultImage.PixelWidth + 40),
+                Height = Math.Min(wa.Height * 0.9, lastResultImage.PixelHeight + 80),
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 ShowInTaskbar = false,
             };
             try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
             win.KeyDown += (s2, a) => { if (a.Key == Key.Escape) win.Close(); };
-            img.MouseLeftButtonDown += (s2, a) => win.Close();
             win.Closed += (s2, a) => { if (ReferenceEquals(resultWin, win)) resultWin = null; };
             resultWin = win;
-            win.Show();   // không modal: test mới bắt đầu là tự đóng
-        }
-
-        // Nội dung cửa sổ kết quả: ảnh ghép ở trên, bảng step ở dưới (dùng cho nút RESULT và hộp thoại NG)
-        private DockPanel BuildResultContent(out System.Windows.Controls.Image imgOut)
-        {
-            var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
-
-            // Ảnh ghép ở trên, bảng kết quả step (No / Step / Spec / Hold / Timeout / Value / Result / Takt) ở dưới
-            var img = new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12, 12, 12, 6) };
-
-            var grid = new DataGrid
-            {
-                AutoGenerateColumns = false,
-                IsReadOnly = true,
-                HeadersVisibility = DataGridHeadersVisibility.Column,
-                GridLinesVisibility = DataGridGridLinesVisibility.Horizontal,
-                HorizontalGridLinesBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE6, 0xEB, 0xF0)),
-                RowBackground = Brushes.White,
-                AlternatingRowBackground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xF7, 0xF9, 0xFB)),
-                BorderThickness = new Thickness(0),
-                CanUserAddRows = false, CanUserResizeRows = false, CanUserSortColumns = false, CanUserReorderColumns = false,
-                FontSize = 13, RowHeight = 24, Focusable = false, IsHitTestVisible = false,
-                Margin = new Thickness(12, 0, 12, 12),
-                MaxHeight = 320,
-                ItemsSource = visionTester.ProgramModel != null ? visionTester.ProgramModel.TestSteps : null,
-            };
-            var hdr = new Style(typeof(System.Windows.Controls.Primitives.DataGridColumnHeader));
-            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.BackgroundProperty, new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xF4, 0xF6, 0xF8))));
-            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.ForegroundProperty, ink));
-            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.FontWeightProperty, FontWeights.SemiBold));
-            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.PaddingProperty, new Thickness(6, 4, 6, 4)));
-            grid.ColumnHeaderStyle = hdr;
-            Func<string, string, double, DataGridTextColumn> col = (h, path, w) =>
-                new DataGridTextColumn { Header = h, Binding = new System.Windows.Data.Binding(path), Width = w > 0 ? new DataGridLength(w) : new DataGridLength(1, DataGridLengthUnitType.Star) };
-            grid.Columns.Add(col("No", "No", 40));
-            grid.Columns.Add(col("Step", "Label", 0));
-            grid.Columns.Add(col("Spec", "Spec", 70));
-            grid.Columns.Add(col("Hold", "Hold", 60));
-            grid.Columns.Add(col("Timeout", "Timeout", 70));
-            grid.Columns.Add(col("Value", "Value", 110));
-            var resCol = col("Result", "Result", 70);
-            var resStyle = new Style(typeof(TextBlock));
-            resStyle.Setters.Add(new Setter(TextBlock.FontWeightProperty, FontWeights.Bold));
-            resStyle.Setters.Add(new Setter(TextBlock.TextAlignmentProperty, TextAlignment.Center));
-            resStyle.Setters.Add(new Setter(TextBlock.ForegroundProperty, new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x6B, 0x7A, 0x8C))));
-            var tPass = new DataTrigger { Binding = new System.Windows.Data.Binding("Result"), Value = SequenceRunner.PASS };
-            tPass.Setters.Add(new Setter(TextBlock.ForegroundProperty, SingleLED.PassBrush));
-            var tFail = new DataTrigger { Binding = new System.Windows.Data.Binding("Result"), Value = SequenceRunner.FAIL };
-            tFail.Setters.Add(new Setter(TextBlock.ForegroundProperty, new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D))));
-            resStyle.Triggers.Add(tPass);
-            resStyle.Triggers.Add(tFail);
-            resCol.ElementStyle = resStyle;
-            grid.Columns.Add(resCol);
-            grid.Columns.Add(col("Takt (ms)", "Takt", 80));
-
-            var root = new DockPanel();
-            DockPanel.SetDock(grid, Dock.Bottom);
-            root.Children.Add(grid);
-            root.Children.Add(img);
-            imgOut = img;
-            return root;
-        }
-
-        // Hộp thoại NG: nổi trên cùng, bấm CONFIRM để đóng; test mới bắt đầu (nhấc jig rồi hạ xuống / START) cũng tự đóng
-        private void ShowNgDialog()
-        {
-            var wa = SystemParameters.WorkArea;
-            var red = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D));
-            var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
-
-            var outer = new DockPanel();
-            var header = new Border { Background = red, Padding = new Thickness(0, 10, 0, 10) };
-            header.Child = new TextBlock { Text = "NG", FontSize = 40, FontWeight = FontWeights.Bold, Foreground = Brushes.White, HorizontalAlignment = System.Windows.HorizontalAlignment.Center };
-            DockPanel.SetDock(header, Dock.Top);
-            outer.Children.Add(header);
-
-            var confirm = new Button
-            {
-                Content = "CONFIRM",
-                FontSize = 22,
-                FontWeight = FontWeights.Bold,
-                Foreground = Brushes.White,
-                Background = red,
-                BorderThickness = new Thickness(0),
-                Height = 64,
-                Margin = new Thickness(12, 6, 12, 12),
-                Cursor = Cursors.Hand,
-                Focusable = true,
-            };
-            DockPanel.SetDock(confirm, Dock.Bottom);
-            outer.Children.Add(confirm);
-
-            // Chỉ ảnh ghép, KHÔNG có bảng step
-            if (lastResultImage != null)
-            {
-                outer.Children.Add(new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12) });
-            }
-            else
-            {
-                outer.Children.Add(new TextBlock { Text = "No image", Foreground = Brushes.White, FontSize = 18, HorizontalAlignment = System.Windows.HorizontalAlignment.Center, VerticalAlignment = VerticalAlignment.Center });
-            }
-
-            var win = new System.Windows.Window
-            {
-                Title = "NG",
-                Content = outer,
-                Background = ink,
-                Width = wa.Width * 0.9,
-                Height = wa.Height * 0.9,
-                WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                ShowInTaskbar = false,
-                ResizeMode = ResizeMode.NoResize,
-                WindowStyle = System.Windows.WindowStyle.None,
-                Topmost = true,
-            };
-            try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
-            confirm.Click += (s2, a) => win.Close();
-            win.KeyDown += (s2, a) => { if (a.Key == Key.Enter) win.Close(); };
-            win.Loaded += (s2, a) => confirm.Focus();
-            CloseResultWindow();
-            CloseNgDialog();
-            win.Closed += (s2, a) => { if (ReferenceEquals(ngWin, win)) ngWin = null; };
-            ngWin = win;
-            win.Show();   // không modal: app về READY ngay, hộp thoại tự đóng khi test mới bắt đầu hoặc bấm CONFIRM
-        }
-
-        private System.Windows.Window ngWin = null;
-
-        private void CloseNgDialog()
-        {
-            try { if (ngWin != null) ngWin.Close(); } catch (Exception) { }
-            ngWin = null;
+            win.Show();
         }
 
         private System.Windows.Window resultWin = null;
