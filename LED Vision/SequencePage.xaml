@@ -171,6 +171,9 @@
             <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,12">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Test Sequence" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Ink}" VerticalAlignment="Center" />
+                    <Button Style="{StaticResource IconBtn}" Margin="8,0,0,0" Click="SequenceHelp_Click" ToolTip="Help: commands and columns of the test sequence (EN / TH)">
+                        <fa:IconImage Width="18" Height="18" Foreground="{StaticResource Ink}" Icon="CircleQuestion" />
+                    </Button>
                 </StackPanel>
                 <TextBlock Foreground="{StaticResource Muted}" FontSize="11.5" TextWrapping="Wrap" Margin="0,2,0,0"
                            Text="Steps run top to bottom at every test, after the cylinder is down. A step that FAILS makes the test NG; the remaining steps still run. The sequence is saved in the model file: press Save (top bar) to apply it to the Auto page." />
