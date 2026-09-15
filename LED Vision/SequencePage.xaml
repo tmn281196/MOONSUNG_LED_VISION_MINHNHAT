@@ -217,7 +217,8 @@
                         <DataGridTextColumn Header="Sub CMD" Binding="{Binding Sub, UpdateSourceTrigger=PropertyChanged}" Width="80" />
                         <DataGridTextColumn Header="Target" Binding="{Binding Target, UpdateSourceTrigger=PropertyChanged}" Width="130" />
                         <DataGridTextColumn Header="Spec" Binding="{Binding Spec, UpdateSourceTrigger=PropertyChanged}" Width="90" />
-                        <DataGridTextColumn Header="Timeout" Binding="{Binding Timeout, UpdateSourceTrigger=PropertyChanged}" Width="90" />
+                        <DataGridTextColumn Header="Hold" Binding="{Binding Hold, UpdateSourceTrigger=PropertyChanged}" Width="70" />
+                        <DataGridTextColumn Header="Timeout" Binding="{Binding Timeout, UpdateSourceTrigger=PropertyChanged}" Width="80" />
                         <DataGridTextColumn Header="Comment" Binding="{Binding Comment, UpdateSourceTrigger=PropertyChanged}" Width="*" MinWidth="160" />
                         <DataGridTemplateColumn Header="Skip" Width="56">
                             <DataGridTemplateColumn.CellTemplate>
@@ -247,6 +248,10 @@
                         <TextBlock Text="Spec" Style="{StaticResource FieldLabel}" />
                         <TextBox x:Name="specBox" Style="{StaticResource Input}" />
                         <TextBlock x:Name="specHint" Style="{StaticResource Hint}" />
+
+                        <TextBlock Text="Hold (ms)" Style="{StaticResource FieldLabel}" />
+                        <TextBox x:Name="holdBox" Style="{StaticResource Input}" />
+                        <TextBlock x:Name="holdHint" Style="{StaticResource Hint}" />
 
                         <TextBlock Text="Timeout (ms)" Style="{StaticResource FieldLabel}" />
                         <TextBox x:Name="timeoutBox" Style="{StaticResource Input}" />

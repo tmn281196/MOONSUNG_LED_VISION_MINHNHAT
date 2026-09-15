@@ -73,6 +73,7 @@ namespace LEDVision
             targetCombo.IsEnabled = StepCmd.HasTarget(c);
             specBox.IsEnabled = StepCmd.HasSpec(c);
             timeoutBox.IsEnabled = StepCmd.HasTimeout(c);
+            holdBox.IsEnabled = StepCmd.HasHold(c);
 
             if (!subCombo.IsEnabled) subCombo.SelectedIndex = -1;
             else if (subCombo.SelectedIndex < 0) subCombo.SelectedIndex = 0;
@@ -82,29 +83,26 @@ namespace LEDVision
             switch (c)
             {
                 case StepCmd.Power:
-                    targetHint.Text = "";
-                    specHint.Text = "";
-                    timeoutHint.Text = "";
+                    targetHint.Text = specHint.Text = timeoutHint.Text = holdHint.Text = "";
                     break;
                 case StepCmd.Relay:
                     targetHint.Text = "Relay number 1 to 5. Leave empty = all five relays.";
-                    specHint.Text = "";
-                    timeoutHint.Text = "";
+                    specHint.Text = timeoutHint.Text = holdHint.Text = "";
                     break;
                 case StepCmd.Delay:
-                    targetHint.Text = "";
+                    targetHint.Text = timeoutHint.Text = holdHint.Text = "";
                     specHint.Text = "Wait time in ms, e.g. 1000.";
-                    timeoutHint.Text = "";
                     if (specBox.Text.Trim().Length == 0) specBox.Text = "1000";
                     break;
                 case StepCmd.Vision:
                     targetHint.Text = "Name of the LED group to check (Vision page → LED Group).";
                     specHint.Text = "";
-                    timeoutHint.Text = "Sampling time in ms (camera checks every 100 ms for the whole time, then decides). Default " + StepCmd.DefaultVisionMs + ".";
+                    holdHint.Text = "Each ROI must be lit with the right colour continuously for this long (ms) to be OK. Empty or 0 = one OK sample is enough.";
+                    timeoutHint.Text = "Maximum wait in ms (camera checks every 100 ms). PASS as soon as every ROI reached Hold; ROIs that never did by the timeout are NG. Default " + StepCmd.DefaultVisionMs + ".";
                     if (timeoutBox.Text.Trim().Length == 0) timeoutBox.Text = StepCmd.DefaultVisionMs.ToString();
                     break;
                 default:
-                    targetHint.Text = specHint.Text = timeoutHint.Text = "";
+                    targetHint.Text = specHint.Text = timeoutHint.Text = holdHint.Text = "";
                     break;
             }
         }
@@ -150,6 +148,7 @@ namespace LEDVision
                 targetCombo.Text = st.Target;
                 specBox.Text = st.Spec;
                 timeoutBox.Text = st.Timeout;
+                holdBox.Text = st.Hold;
                 commentBox.Text = st.Comment;
             }
             finally
@@ -177,6 +176,7 @@ namespace LEDVision
                 Target = targetCombo.IsEnabled ? targetCombo.Text : "",
                 Spec = specBox.IsEnabled ? specBox.Text : "",
                 Timeout = timeoutBox.IsEnabled ? timeoutBox.Text : "",
+                Hold = holdBox.IsEnabled ? holdBox.Text : "",
                 Comment = commentBox.Text,
             };
             return st;
@@ -196,7 +196,9 @@ namespace LEDVision
                     break;
                 case StepCmd.Vision:
                     if (st.Target.Length == 0) msg = "Target must be the name of an LED group.";
-                    else if (!int.TryParse(st.Timeout, out n) || n <= 0) msg = "Timeout must be the sampling time in ms (e.g. 2000).";
+                    else if (!int.TryParse(st.Timeout, out n) || n <= 0) msg = "Timeout must be the maximum wait in ms (e.g. 2000).";
+                    else if (st.Hold.Length > 0 && (!int.TryParse(st.Hold, out n) || n < 0)) msg = "Hold must be a number of ms (empty = one OK sample is enough).";
+                    else if (st.Hold.Length > 0 && int.Parse(st.Hold) > int.Parse(st.Timeout)) msg = "Hold cannot be longer than Timeout.";
                     break;
             }
             if (StepCmd.HasTimeout(st.Cmd) && st.Timeout.Length > 0 && msg == null && (!int.TryParse(st.Timeout, out n) || n < 0))
@@ -241,6 +243,7 @@ namespace LEDVision
             st.Target = n.Target;
             st.Spec = n.Spec;
             st.Timeout = n.Timeout;
+            st.Hold = n.Hold;
             st.Comment = n.Comment;
             Commit(st);
         }

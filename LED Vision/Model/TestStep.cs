@@ -13,7 +13,7 @@ namespace LEDVision.Model
         public const string Power = "POWER";          // Sub: ON / OFF
         public const string Relay = "RELAY";          // Sub: ON / OFF, Target: 1..5 (trống = tất cả)
         public const string Delay = "DELAY";          // Spec: ms
-        public const string Vision = "VISION CHECK";  // Target: tên group, Timeout: thời gian lấy mẫu (ms)
+        public const string Vision = "VISION CHECK";  // Target: tên group, Hold: phải OK liên tục (ms), Timeout: chờ tối đa (ms)
 
         public static readonly string[] All = { Power, Relay, Delay, Vision };
         public static readonly string[] OnOff = { "ON", "OFF" };
@@ -50,8 +50,14 @@ namespace LEDVision.Model
             return Canonical(cmd) == Delay;
         }
 
-        // Timeout: chỉ VISION CHECK dùng (thời gian lấy mẫu tối đa). POWER / RELAY không chờ; cần chờ thì thêm step DELAY.
+        // Timeout: chỉ VISION CHECK dùng (thời gian chờ tối đa). POWER / RELAY không chờ; cần chờ thì thêm step DELAY.
         public static bool HasTimeout(string cmd)
+        {
+            return Canonical(cmd) == Vision;
+        }
+
+        // Hold: chỉ VISION CHECK dùng (ROI phải sáng đúng liên tục bấy nhiêu ms mới tính OK; trống = 1 mẫu là đủ)
+        public static bool HasHold(string cmd)
         {
             return Canonical(cmd) == Vision;
         }
@@ -110,12 +116,20 @@ namespace LEDVision.Model
             set { spec = (value ?? "").Trim(); OnPropertyChanged(); }
         }
 
-        // VISION CHECK: thời gian lấy mẫu (ms)
+        // VISION CHECK: thời gian chờ tối đa (ms)
         private string timeout = "";
         public string Timeout
         {
             get { return timeout; }
             set { timeout = (value ?? "").Trim(); OnPropertyChanged(); }
+        }
+
+        // VISION CHECK: ROI phải sáng đúng LIÊN TỤC bấy nhiêu ms mới OK (trống / 0 = một mẫu OK là đủ)
+        private string hold = "";
+        public string Hold
+        {
+            get { return hold; }
+            set { hold = (value ?? "").Trim(); OnPropertyChanged(); }
         }
 
         private string comment = "";
@@ -178,6 +192,13 @@ namespace LEDVision.Model
             return fallback;
         }
 
+        public int HoldMs()
+        {
+            int ms;
+            if (int.TryParse(hold, out ms) && ms > 0) return ms;
+            return 0;
+        }
+
         public int RelayIndex()
         {
             int n;
@@ -202,6 +223,7 @@ namespace LEDVision.Model
                 Target = Target,
                 Spec = Spec,
                 Timeout = Timeout,
+                Hold = Hold,
                 Comment = Comment,
             };
         }

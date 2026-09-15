@@ -161,7 +161,7 @@ namespace LEDVision
                     }
                     int ms = step.TimeoutMs(StepCmd.DefaultVisionMs);
                     // Chạy ngay trên luồng nền: InspectGroup tự chụp hình học ROI trên UI rồi xử lý ảnh ở đây → ảnh camera vẫn realtime
-                    Vision.GroupCheckResult r = vision.InspectGroup(group, ms);
+                    Vision.GroupCheckResult r = vision.InspectGroup(group, ms, step.HoldMs());
                     if (VisionTest.CancelRequested) return false;
                     if (r == null || r.Samples == 0)
                     {

@@ -238,7 +238,7 @@
 
                         <!--  Luật chấm VISION CHECK  -->
                         <TextBlock Text="VISION CHECK pass rule" Style="{StaticResource FieldLabel}" Margin="0,14,0,4" />
-                        <CheckBox Content="An ROI is OK when it is lit with the right colour in AT LEAST ONE sample during the whole Timeout (lenient, for scanned LED boards). Unticked: it must be lit in EVERY sample (strict)."
+                        <CheckBox Content="An ROI is OK once it has been lit with the right colour continuously for the step's Hold time (empty Hold = one sample); PASS as soon as every ROI is OK, NG if some ROI never gets there by Timeout. Unticked: strict, every sample for the whole Timeout must be OK."
                                   IsChecked="{Binding VisionAnySample, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="VisionRule_Changed" Unchecked="VisionRule_Changed"
                                   FontSize="12.5" Foreground="{StaticResource Ink}" VerticalContentAlignment="Center" />
                     </StackPanel>

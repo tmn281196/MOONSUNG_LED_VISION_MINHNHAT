@@ -240,8 +240,10 @@ namespace LEDVision.Camera
             foreach (var led in AllLeds()) led.ResetPersist();
         }
 
-        // Luật chấm (đồng bộ từ setting.json): true = ROI OK khi có ÍT NHẤT MỘT mẫu sáng đúng trong suốt Timeout
-        // (luôn lấy mẫu đủ Timeout rồi mới chốt, không thoát sớm); false = NGHIÊM: phải sáng ở mọi mẫu.
+        // Luật chấm (đồng bộ từ setting.json):
+        //   true  = ROI OK khi đã sáng đúng LIÊN TỤC đủ Hold ms (Hold = 0: một mẫu OK là đủ); mọi ROI đạt → PASS ngay,
+        //           hết Timeout mà còn ROI chưa đạt → NG.
+        //   false = NGHIÊM: phải sáng ở mọi mẫu suốt Timeout.
         public static bool PassOnAnySample = true;
 
         // Kết quả một lần VISION CHECK của một group
@@ -256,6 +258,12 @@ namespace LEDVision.Camera
         // Lấy mẫu liên tục durationMs (chu kỳ 100 ms) và chấm mọi ROI của MỘT group. Dùng cho step VISION CHECK.
         // Persist: mẫu đầu (chưa đủ N khung) chỉ nuôi bộ đếm, không chấm. Hủy test → dừng ngay.
         public GroupCheckResult InspectGroup(GroupLED group, int durationMs)
+        {
+            return InspectGroup(group, durationMs, 0);
+        }
+
+        // durationMs = chờ tối đa (Timeout); holdMs = phải OK liên tục bấy nhiêu ms (Hold), 0 = một mẫu OK là đủ
+        public GroupCheckResult InspectGroup(GroupLED group, int durationMs, int holdMs)
         {
             var r = new GroupCheckResult();
             if (group == null) return r;
@@ -283,7 +291,9 @@ namespace LEDVision.Camera
             if (uiDisp != null && !uiDisp.CheckAccess()) uiDisp.Invoke(snap); else snap();
 
             bool[] ledNg = new bool[group.Colection.Count];    // luật nghiêm: có 1 mẫu tắt là NG
-            bool[] ledOk = new bool[group.Colection.Count];    // luật "một mẫu": có 1 mẫu sáng đúng là OK
+            bool[] ledOk = new bool[group.Colection.Count];    // luật Hold: đã OK liên tục đủ Hold ms (Hold = 0: 1 mẫu OK)
+            int[] runOk = new int[group.Colection.Count];      // số mẫu OK liên tiếp hiện tại
+            int needRun = holdMs > 0 ? Math.Max(1, (holdMs + sampleMs - 1) / sampleMs) : 1;
             int sampleIndex = 0;
             try
             {
@@ -301,14 +311,16 @@ namespace LEDVision.Camera
                             string output = group.Colection[i].CheckBlueArea(frame, group, geoms[i]);
                             if (score)
                             {
-                                if (output != "1") ledNg[i] = true; else ledOk[i] = true;
+                                if (output != "1") { ledNg[i] = true; runOk[i] = 0; }
+                                else { runOk[i]++; if (runOk[i] >= needRun) ledOk[i] = true; }
                             }
                         }
                         frame.Dispose();
                         if (score) r.Samples++;
                         sampleIndex++;
 
-                        // Không thoát sớm: luôn lấy mẫu đủ Timeout rồi mới chốt (chỉ EMERGENCY STOP mới cắt ngang)
+                        // Luật Hold: mọi ROI đã OK liên tục đủ Hold → PASS ngay, không chờ hết Timeout
+                        if (PassOnAnySample && score && ledOk.All(x => x)) break;
                     }
                     Task.Delay(sampleMs).Wait();
                 }
@@ -319,7 +331,7 @@ namespace LEDVision.Camera
 
             if (PassOnAnySample)
             {
-                // Một mẫu sáng đúng trong suốt Timeout là OK; không có mẫu nào = NG
+                // ROI chưa từng OK liên tục đủ Hold trong Timeout = NG
                 r.NgLeds = ledOk.Count(x => !x);
                 // Màu ROI cuối cùng theo kết quả tổng (mẫu cuối có thể tắt nhưng ROI vẫn OK)
                 for (int i = 0; i < group.Colection.Count; i++)

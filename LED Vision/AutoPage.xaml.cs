@@ -288,6 +288,7 @@ namespace LEDVision
             // Showing Testing banner
             Dispatcher.Invoke(new Action(() =>
             {
+                CloseResultWindow();   // đang test thì cửa sổ kết quả cũ tự tắt
                 readyPopup.Visibility = Visibility.Collapsed;
                 passPopup.Visibility = Visibility.Collapsed;
                 ngPopup.Visibility = Visibility.Collapsed;
@@ -370,6 +371,7 @@ namespace LEDVision
                     testingPopup.Visibility = Visibility.Collapsed;
                     passPopup.Visibility = Visibility.Collapsed;
                     ngPopup.Visibility = Visibility.Visible;
+                    OpenResultWindow();   // NG → hiện luôn cửa sổ kết quả
                 }));
             }
             else
@@ -540,7 +542,24 @@ namespace LEDVision
             try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
             win.KeyDown += (s2, a) => { if (a.Key == Key.Escape) win.Close(); };
             img.MouseLeftButtonDown += (s2, a) => win.Close();
-            win.ShowDialog();
+            win.Closed += (s2, a) => { if (ReferenceEquals(resultWin, win)) resultWin = null; };
+            resultWin = win;
+            win.Show();   // không modal: test mới bắt đầu là tự đóng
+        }
+
+        private System.Windows.Window resultWin = null;
+
+        private void CloseResultWindow()
+        {
+            try { if (resultWin != null) resultWin.Close(); } catch (Exception) { }
+            resultWin = null;
+        }
+
+        // Tự mở cửa sổ kết quả khi NG (đóng cửa sổ cũ nếu còn)
+        private void OpenResultWindow()
+        {
+            CloseResultWindow();
+            ShowResult_Click(null, null);
         }
 
         private void CaptureCanvasArea(string filePath)
