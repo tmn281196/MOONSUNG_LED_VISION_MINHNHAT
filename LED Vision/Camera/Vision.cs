@@ -240,7 +240,8 @@ namespace LEDVision.Camera
             foreach (var led in AllLeds()) led.ResetPersist();
         }
 
-        // Luật chấm (đồng bộ từ setting.json): true = ROI OK khi có ít nhất một mẫu sáng đúng; false = phải sáng ở mọi mẫu
+        // Luật chấm (đồng bộ từ setting.json): true = ĐA SỐ: ROI OK khi số mẫu sáng đúng NHIỀU HƠN số mẫu không sáng
+        // (bằng nhau = NG); false = NGHIÊM: phải sáng ở mọi mẫu.
         public static bool PassOnAnySample = true;
 
         // Kết quả một lần VISION CHECK của một group
@@ -281,8 +282,10 @@ namespace LEDVision.Camera
             var uiDisp = group.Colection.Count > 0 && group.Colection[0].Roi != null ? group.Colection[0].Roi.Dispatcher : null;
             if (uiDisp != null && !uiDisp.CheckAccess()) uiDisp.Invoke(snap); else snap();
 
-            bool[] ledNg = new bool[group.Colection.Count];    // luật "mọi mẫu": có 1 mẫu tắt là NG
-            bool[] ledOk = new bool[group.Colection.Count];    // luật "một mẫu": có 1 mẫu sáng là OK
+            bool[] ledNg = new bool[group.Colection.Count];    // luật nghiêm: có 1 mẫu tắt là NG
+            int[] okCount = new int[group.Colection.Count];    // luật đa số: đếm mẫu sáng đúng / không sáng
+            int[] ngCount = new int[group.Colection.Count];
+            int maxScored = Math.Max(1, durationMs / sampleMs - settle);   // số mẫu chấm tối đa nếu chạy hết Timeout
             int sampleIndex = 0;
             try
             {
@@ -300,15 +303,15 @@ namespace LEDVision.Camera
                             string output = group.Colection[i].CheckBlueArea(frame, group, geoms[i]);
                             if (score)
                             {
-                                if (output != "1") ledNg[i] = true; else ledOk[i] = true;
+                                if (output != "1") { ledNg[i] = true; ngCount[i]++; } else okCount[i]++;
                             }
                         }
                         frame.Dispose();
                         if (score) r.Samples++;
                         sampleIndex++;
 
-                        // Luật "một mẫu sáng là OK": mọi ROI đã OK → thoát sớm, không cần chờ hết Timeout
-                        if (PassOnAnySample && score && ledOk.All(x => x)) break;
+                        // Luật đa số: mọi ROI đã có số mẫu OK vượt quá nửa số mẫu tối đa → kết quả không thể đảo → thoát sớm
+                        if (PassOnAnySample && score && okCount.All(k => k * 2 > maxScored)) break;
                     }
                     Task.Delay(sampleMs).Wait();
                 }
@@ -319,6 +322,9 @@ namespace LEDVision.Camera
 
             if (PassOnAnySample)
             {
+                // Đa số: OK khi sáng nhiều hơn không sáng; bằng nhau = NG
+                bool[] ledOk = new bool[group.Colection.Count];
+                for (int i = 0; i < ledOk.Length; i++) ledOk[i] = okCount[i] > ngCount[i];
                 r.NgLeds = ledOk.Count(x => !x);
                 // Màu ROI cuối cùng theo kết quả tổng (mẫu cuối có thể tắt nhưng ROI vẫn OK)
                 for (int i = 0; i < group.Colection.Count; i++)
