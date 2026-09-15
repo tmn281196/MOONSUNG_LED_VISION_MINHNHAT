@@ -541,14 +541,68 @@ namespace LEDVision
         {
             if (lastResultImage == null) return;
             var wa = SystemParameters.WorkArea;
-            var img = new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12) };
+            var ink = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E));
+
+            // Ảnh ghép ở trên, bảng kết quả step (No / Step / Spec / Hold / Timeout / Value / Result / Takt) ở dưới
+            var img = new System.Windows.Controls.Image { Source = lastResultImage, Stretch = Stretch.Uniform, Margin = new Thickness(12, 12, 12, 6) };
+
+            var grid = new DataGrid
+            {
+                AutoGenerateColumns = false,
+                IsReadOnly = true,
+                HeadersVisibility = DataGridHeadersVisibility.Column,
+                GridLinesVisibility = DataGridGridLinesVisibility.Horizontal,
+                HorizontalGridLinesBrush = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE6, 0xEB, 0xF0)),
+                RowBackground = Brushes.White,
+                AlternatingRowBackground = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xF7, 0xF9, 0xFB)),
+                BorderThickness = new Thickness(0),
+                CanUserAddRows = false, CanUserResizeRows = false, CanUserSortColumns = false, CanUserReorderColumns = false,
+                FontSize = 13, RowHeight = 24, Focusable = false, IsHitTestVisible = false,
+                Margin = new Thickness(12, 0, 12, 12),
+                MaxHeight = 320,
+                ItemsSource = visionTester.ProgramModel != null ? visionTester.ProgramModel.TestSteps : null,
+            };
+            var hdr = new Style(typeof(System.Windows.Controls.Primitives.DataGridColumnHeader));
+            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.BackgroundProperty, new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xF4, 0xF6, 0xF8))));
+            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.ForegroundProperty, ink));
+            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.FontWeightProperty, FontWeights.SemiBold));
+            hdr.Setters.Add(new Setter(System.Windows.Controls.Control.PaddingProperty, new Thickness(6, 4, 6, 4)));
+            grid.ColumnHeaderStyle = hdr;
+            Func<string, string, double, DataGridTextColumn> col = (h, path, w) =>
+                new DataGridTextColumn { Header = h, Binding = new System.Windows.Data.Binding(path), Width = w > 0 ? new DataGridLength(w) : new DataGridLength(1, DataGridLengthUnitType.Star) };
+            grid.Columns.Add(col("No", "No", 40));
+            grid.Columns.Add(col("Step", "Label", 0));
+            grid.Columns.Add(col("Spec", "Spec", 70));
+            grid.Columns.Add(col("Hold", "Hold", 60));
+            grid.Columns.Add(col("Timeout", "Timeout", 70));
+            grid.Columns.Add(col("Value", "Value", 110));
+            var resCol = col("Result", "Result", 70);
+            var resStyle = new Style(typeof(TextBlock));
+            resStyle.Setters.Add(new Setter(TextBlock.FontWeightProperty, FontWeights.Bold));
+            resStyle.Setters.Add(new Setter(TextBlock.TextAlignmentProperty, TextAlignment.Center));
+            resStyle.Setters.Add(new Setter(TextBlock.ForegroundProperty, new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x6B, 0x7A, 0x8C))));
+            var tPass = new DataTrigger { Binding = new System.Windows.Data.Binding("Result"), Value = SequenceRunner.PASS };
+            tPass.Setters.Add(new Setter(TextBlock.ForegroundProperty, SingleLED.PassBrush));
+            var tFail = new DataTrigger { Binding = new System.Windows.Data.Binding("Result"), Value = SequenceRunner.FAIL };
+            tFail.Setters.Add(new Setter(TextBlock.ForegroundProperty, new SolidColorBrush(System.Windows.Media.Color.FromRgb(0xE5, 0x48, 0x4D))));
+            resStyle.Triggers.Add(tPass);
+            resStyle.Triggers.Add(tFail);
+            resCol.ElementStyle = resStyle;
+            grid.Columns.Add(resCol);
+            grid.Columns.Add(col("Takt (ms)", "Takt", 80));
+
+            var root = new DockPanel();
+            DockPanel.SetDock(grid, Dock.Bottom);
+            root.Children.Add(grid);
+            root.Children.Add(img);
+
             var win = new System.Windows.Window
             {
                 Title = "Last test result",
-                Content = img,
-                Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(0x32, 0x3F, 0x4E)),
-                Width = Math.Min(wa.Width * 0.9, lastResultImage.PixelWidth + 40),
-                Height = Math.Min(wa.Height * 0.9, lastResultImage.PixelHeight + 80),
+                Content = root,
+                Background = ink,
+                Width = Math.Min(wa.Width * 0.9, Math.Max(900, lastResultImage.PixelWidth + 40)),
+                Height = wa.Height * 0.9,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 ShowInTaskbar = false,
             };
