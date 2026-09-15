@@ -677,7 +677,7 @@ namespace LEDVision
                 WindowStartupLocation = WindowStartupLocation.CenterOwner,
                 ShowInTaskbar = false,
                 ResizeMode = ResizeMode.NoResize,
-                WindowStyle = WindowStyle.None,
+                WindowStyle = System.Windows.WindowStyle.None,
                 Topmost = true,
             };
             try { win.Owner = System.Windows.Window.GetWindow(this); } catch (Exception) { }
